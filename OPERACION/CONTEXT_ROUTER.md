@@ -34,7 +34,8 @@ Fallback cuando se esta trabajando en este framework, no en un proyecto instanci
 |---|---|---|
 | 1 | `README.md` | Entrada humana del framework |
 | 2 | `OPERACION/CONTEXT_ROUTER.md` | Router de contexto |
-| 3 | `PROJECT_TEMPLATE/` | Molde estructural, no verdad operativa |
+| 3 | `PROJECT_BLUEPRINT/` | Plano documental para entender estructura de proyecto |
+| 4 | `PROJECT_TEMPLATE/` | Molde estructural, no verdad operativa |
 
 ## 3. Niveles de Contexto
 
@@ -94,7 +95,7 @@ Graphify entra antes de leer documentacion amplia o explorar modulos completos. 
 | 7 | `docs/architecture/sdd.md` | Diseno tecnico |
 | 8 | `OPERACION/AGENTS/*.md` | Rol y limites del agente |
 | 9 | `graphify-out/*` | Contexto estructural derivado |
-| 10 | `PROJECT_TEMPLATE/` y `TEMPLATES/` | Formato, no verdad |
+| 10 | `PROJECT_TEMPLATE/` y `DOC_TEMPLATES/` | Formato, no verdad |
 | 11 | `THEORY/*.md` | Explicacion humana |
 
 ## 7. Prohibiciones

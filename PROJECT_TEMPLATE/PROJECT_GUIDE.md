@@ -1,11 +1,28 @@
-# PROJECT_GUIDE.md
+﻿# PROJECT_GUIDE.md
 
-> [!NOTE]
-> Plantilla. Completar al instanciar un proyecto real.
+> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
 
 ## Proposito
 
-Describir que es el proyecto, para quien existe y que problema resuelve.
+Describir que es el proyecto, para quien existe, que problema resuelve, cual es su alcance y como esta organizado.
+
+## Como llenarlo
+
+Completar este archivo primero al instanciar un proyecto. Mantenerlo breve y factual: identidad, alcance, estructura principal, stack y restricciones relevantes.
+
+## Ejemplo minimo
+
+```text
+Proyecto: Portal interno de soporte.
+Problema: Centralizar tickets y estado de clientes.
+Stack: Next.js, API REST, PostgreSQL.
+```
+
+## Identidad
+
+- Nombre:
+- Usuario principal:
+- Problema que resuelve:
 
 ## Alcance
 
@@ -29,7 +46,6 @@ Describir carpetas principales del proyecto activo.
 - Negocio:
 - Seguridad:
 
-## Nota
+## Nota de uso
 
-> [!IMPORTANT]
-> Este archivo es canonico solo despues de copiarse o adaptarse en un proyecto activo.
+Si este documento contradice archivos mas especificos, actualizar la fuente que corresponda y reflejar el cambio aqui solo si afecta la identidad o estructura general del proyecto.

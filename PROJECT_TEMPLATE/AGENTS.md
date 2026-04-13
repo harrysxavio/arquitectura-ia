@@ -1,18 +1,36 @@
-# AGENTS.md
+﻿# AGENTS.md
 
-Este archivo pertenece a un proyecto instanciado desde `PROJECT_TEMPLATE/`.
+> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
 
-> [!NOTE]
-> En la plantilla, es solo un ejemplo estructural. No describe un proyecto activo.
+## Proposito
 
-## Agentes Base
+Definir como se aplican en este proyecto los roles base del framework sin duplicar los contratos oficiales de `OPERACION/AGENTS/`.
+
+## Como llenarlo
+
+Indicar ajustes locales, limites especificos del proyecto y rutas relevantes. No redefinir misiones completas si ya existen en el framework global.
+
+## Ejemplo minimo
+
+```text
+Manager: usa PROJECT_GUIDE.md, CONTEXT_INDEX.md y active_task.md como contexto base.
+Coder: no modifica migraciones sin revisar docs/architecture/sdd.md.
+```
+
+## Roles Base
 
 - Manager: clasifica tarea y contexto.
 - Coder: implementa dentro del alcance.
 - Reviewer: revisa calidad y riesgo.
 - Debugger: investiga causa raiz.
 
-## Regla
+## Ajustes Locales
 
-> [!IMPORTANT]
-> Usar los contratos de rol definidos en `OPERACION/AGENTS/` del framework global.
+- Manager:
+- Coder:
+- Reviewer:
+- Debugger:
+
+## Nota de uso
+
+Si este archivo contradice `OPERACION/AGENTS/*.md`, gana el contrato global salvo decision documentada.

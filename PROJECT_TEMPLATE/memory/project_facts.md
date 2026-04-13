@@ -1,7 +1,22 @@
 # Project Facts
 
-> [!WARNING]
-> Plantilla. No contiene hechos reales mientras este dentro de `PROJECT_TEMPLATE/`.
+> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+
+## Proposito
+
+Guardar hechos vigentes del proyecto que los agentes deben poder consultar rapido.
+
+## Como llenarlo
+
+Registrar solo datos confirmados. No guardar opiniones, hipotesis, backlog ni decisiones completas.
+
+## Ejemplo minimo
+
+```text
+Backend: FastAPI.
+Base de datos: PostgreSQL.
+Hosting: Render para API, Vercel para frontend.
+```
 
 ## Stack
 
@@ -18,3 +33,15 @@
 
 - Desarrollo:
 - Produccion:
+
+## Proveedores Aprobados
+
+- TBD
+
+## Auth
+
+- TBD
+
+## Nota de uso
+
+Si un hecho cambia por decision, actualizar tambien `decisions/decision_log.md`.
