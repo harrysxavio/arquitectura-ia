@@ -1,90 +1,176 @@
-# Módulo 5 — Ejecución Operativa con Agentes
+# Modulo 5 - Ejecucion Operativa con Agentes
 
 ## 1. Principio Operativo
 
-> El usuario NO ejecuta tareas directamente. El sistema las traduce.
+El usuario expresa una intencion. El sistema la convierte en ejecucion disciplinada.
 
-El usuario expresa intención → El sistema clasifica → El manager orquesta → El agente ejecuta → Se revisa → Se actualiza memoria si corresponde.
+Flujo conceptual:
 
-## 2. Flujo Oficial de Ejecución
+1. Usuario expresa intencion.
+2. Manager clasifica tipo y complejidad.
+3. Manager usa `OPERACION/CONTEXT_ROUTER.md` para decidir contexto minimo.
+4. Se asigna agente responsable.
+5. El agente ejecuta o analiza dentro del alcance.
+6. Reviewer valida cuando hay impacto funcional, tecnico o estructural.
+7. Se actualiza memoria o decisiones si corresponde.
 
-1. Usuario expresa intención.
-2. Manager interpreta y clasifica tipo de tarea.
-3. Define contexto mínimo necesario.
-4. Decide si necesita contexto dirigido.
-5. Selecciona skill o workflow.
-6. Asigna agente responsable.
-7. Ejecuta.
-8. Evalúa resultado.
-9. Decide si actualizar memoria o decisiones.
+La meta no es tener mas agentes. La meta es que cada rol reduzca ambiguedad.
 
-## 3. Agentes Oficiales
+## 2. Agentes Oficiales
 
-### 3.1 Manager (Orquestador)
-- Interpreta intención, clasifica tarea, selecciona contexto.
-- Elige agente, activa skill o workflow, controla ejecución.
-- Lee SIEMPRE: `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `active_task.md`.
-- **No** implementa código, no debuggea directamente, no revisa en profundidad.
+Solo existen cuatro agentes base:
 
-### 3.2 Coder (Ejecutor Técnico)
-- Implementa código, modifica archivos, refactoriza, integra componentes.
-- Lee: contexto mínimo + skill técnica + archivos específicos.
-- **No** decide arquitectura, no redefine reglas, no interpreta intención global.
+- Manager,
+- Coder,
+- Reviewer,
+- Debugger.
 
-### 3.3 Reviewer (Control de Calidad)
-- Valida código, detecta errores, evalúa impacto, revisa coherencia.
-- Revisa: cambios del coder, integración con sistema, cumplimiento de reglas.
-- **No** implementa cambios (solo sugiere), no redefine el plan.
+Los contratos detallados viven en `OPERACION/AGENTS/*.md`. Este modulo explica el razonamiento detras de esos roles.
 
-### 3.4 Debugger (Analista de Fallos)
-- Investiga errores, genera hipótesis, identifica causa raíz, propone soluciones.
-- Usa: logs, código afectado, `known_issues.md`, contexto dirigido.
-- **No** implementa directamente, no redefine arquitectura.
+## 3. Manager
 
-## 4. Regla Estructural
+### Funcion
 
-> Si algo puede resolverse con una skill o workflow, NO debe ser un agente.
+El Manager traduce intencion a plan operativo. No implementa codigo ni revisa diffs a profundidad.
 
-## 5. Subagentes (Nivel Avanzado)
+### Responsabilidades
 
-Los subagentes son **opcionales** y solo en etapa avanzada.
+- Interpretar la intencion del usuario.
+- Clasificar tipo de tarea: `bug`, `feature`, `refactor`, `arquitectura`, `review`, `testing`, `deploy`, `research`, `docs` o `memoria`.
+- Clasificar nivel: 1, 2 o 3.
+- Elegir contexto segun `OPERACION/CONTEXT_ROUTER.md`.
+- Seleccionar agente, skill o workflow.
+- Detectar documentos canonicos faltantes.
+- Decidir siguiente paso concreto.
 
-**Cuándo sí**: repos grandes, tareas paralelizables, research complejo, validaciones especializadas.
+### Porque existe
 
-**Cuándo no**: tareas simples, trabajo diario, debugging básico, implementaciones directas.
+Sin Manager, el agente tiende a leer demasiado, saltar a implementacion o confundir tareas simples con tareas arquitectonicas.
 
-**Riesgos**: sobreingeniería, mayor consumo de tokens, complejidad de coordinación, duplicación de funciones.
+## 4. Coder
 
-## 6. Relación Agentes ↔ Skills ↔ Workflows
+### Funcion
 
-| Elemento | Rol |
-|----------|-----|
-| Agente | Ejecuta |
-| Skill | Guía cómo ejecutar |
-| Workflow | Define secuencia |
+El Coder implementa cambios tecnicos con precision y minimo ruido.
 
-**Ejemplo**: Tarea "crear endpoint" → Manager clasifica como desarrollo backend → Activa `skill/python-backend.md` + `workflow/implementation.md` → Asigna Coder.
+### Responsabilidades
 
-## 7. Estrategia de Modelos por Agente
+- Modificar archivos dentro del alcance.
+- Respetar spec, SDD, decisiones y memoria cuando apliquen.
+- Mantener coherencia con patrones existentes.
+- Validar con tests, build o revision manual segun riesgo.
+- Reportar archivos tocados, supuestos y riesgos remanentes.
 
-| Agente | Modelo base | Modelo premium | Observación |
-|--------|------------|----------------|-------------|
-| Manager | GPT-4.1-mini / Qwen | GPT-5 / Claude Opus | No necesita modelo caro si el contexto está bien estructurado |
-| Coder | GPT-4.1 / DeepSeek | GPT-5 / Claude Sonnet | El 80% del código NO necesita modelo premium |
-| Reviewer | GPT-4.1 / Claude Sonnet | Claude Opus / GPT-5 | Donde más se justifica subir calidad |
-| Debugger | Claude Sonnet | GPT-5 / Claude Opus | Debugging complejo es el caso más caro pero más crítico |
+### Limites
 
-## 8. Reglas de Optimización de Costos
+- No inventa reglas de negocio.
+- No cambia arquitectura sin SDD, decision registrada o aprobacion explicita.
+- No usa `PROJECT_TEMPLATE/` como verdad de proyecto activo.
 
-1. No todos los agentes usan el mismo modelo.
-2. Escalar modelo solo si falla el resultado.
-3. El problema casi nunca es el modelo → **es el contexto**.
+### Porque existe
 
-Impacto estimado: ↓ 40–70% costo en tokens, ↑ calidad promedio, ↓ retrabajo.
+Separar implementacion de orquestacion evita que el mismo rol decida arquitectura, contexto, scope y codigo a la vez.
 
-## 9. Anti-Patrones Críticos
+## 5. Reviewer
 
-- ❌ Usar un solo agente para todo → sobrecarga, peor calidad.
-- ❌ Cargar todo el repo → alto costo, respuestas difusas.
-- ❌ No usar workflows → inconsistencia, repetición de errores.
-- ❌ Crear demasiados agentes → sistema inmanejable.
+### Funcion
+
+El Reviewer valida calidad, coherencia, riesgos y cumplimiento del alcance.
+
+### Responsabilidades
+
+- Revisar diff o archivos cambiados.
+- Ordenar hallazgos por severidad.
+- Evaluar riesgos funcionales, tecnicos y de seguridad.
+- Confirmar si la evidencia de testing es suficiente.
+- Dar veredicto: `APROBADO` o `NO APROBADO` cuando aplique.
+
+### Limites
+
+- No redefine el objetivo de negocio.
+- No exige `spec.md` para una tarea realmente Nivel 1.
+- No convierte una revision en rediseno amplio sin justificacion.
+
+### Porque existe
+
+El Coder puede optimizar por resolver. El Reviewer optimiza por no romper, no duplicar y no degradar el sistema.
+
+## 6. Debugger
+
+### Funcion
+
+El Debugger investiga fallos con metodo y convierte incertidumbre en evidencia.
+
+### Responsabilidades
+
+- Describir sintoma observable.
+- Revisar logs, traces o tests fallidos.
+- Formular hipotesis.
+- Aislar causa raiz.
+- Proponer correccion.
+- Recomendar pruebas.
+- Indicar si corresponde actualizar `memory/known_issues.md` o decisiones.
+
+### Limites
+
+- No asume causas sin evidencia.
+- No redisenia el sistema para un bug puntual.
+- No implementa directamente el fix final si el contrato del flujo lo separa.
+
+### Porque existe
+
+Debuggear requiere metodo distinto a implementar. Separarlo evita fixes superficiales y cambios arquitectonicos innecesarios.
+
+## 7. Skills, Workflows y Subagentes
+
+| Elemento | Funcion | Cuando usarlo |
+|---|---|---|
+| Agente | Rol responsable | Cuando hay responsabilidad estable y limites claros |
+| Skill | Guia de como ejecutar | Cuando una tecnica se repite o requiere instrucciones especializadas |
+| Workflow | Secuencia de pasos | Cuando una operacion tiene orden recurrente |
+| Subagente | Delegacion opcional avanzada | Cuando reduce contexto o permite paralelismo real |
+
+Regla: si una necesidad puede resolverse con skill, workflow o checklist, no crear un agente nuevo.
+
+Subagentes solo se justifican si:
+
+- reducen carga de contexto,
+- permiten trabajo paralelo real,
+- devuelven resultados comprimidos,
+- no duplican un agente base,
+- la tarea no es simple ni local.
+
+## 8. Contexto por Agente
+
+| Agente | Contexto minimo |
+|---|---|
+| Manager | Intencion del usuario, contexto base, router y constraints relevantes |
+| Coder | Tarea activa, contexto del router, archivos afectados, spec/SDD si aplica |
+| Reviewer | Tarea activa, diff, evidencia de testing, fuentes canonicas aplicables |
+| Debugger | Sintoma, logs/tests, codigo afectado, `known_issues.md` si aplica |
+
+Graphify entra en tareas Nivel 3, multi-modulo, ambiguas o estructurales. No entra por defecto en cambios locales obvios.
+
+## 9. Modelos por Rol
+
+| Rol | Modelo sugerido | Cuando escalar |
+|---|---|---|
+| Manager | Barato o medio | Ambiguedad alta o decision estrategica |
+| Coder | Medio | Refactor amplio, contratos delicados o baja confianza |
+| Reviewer | Medio/alto | Riesgo funcional, seguridad o arquitectura |
+| Debugger | Medio/alto | Fallos intermitentes, multi-modulo o causa raiz incierta |
+
+No todos los agentes necesitan el mejor modelo. El primer ajuste debe ser contexto y alcance, no costo.
+
+## 10. Anti-Patrones
+
+- Un solo agente decide todo, implementa todo y se revisa a si mismo.
+- Cargar todo el repo por defecto.
+- Crear agentes por nombre atractivo, no por funcion.
+- Usar subagentes para tareas simples.
+- Pedir al usuario informacion que ya vive en memoria oficial.
+- Usar `THEORY/` como instrucciones de runtime.
+
+## 11. Regla Final
+
+Los agentes no son personajes decorativos. Son contratos de responsabilidad para que el trabajo sea trazable, acotado y revisable.

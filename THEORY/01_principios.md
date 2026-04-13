@@ -1,88 +1,143 @@
-# Módulo 1 — Principios Rectores y Marco de Decisión
+# Modulo 1 - Principios Rectores y Marco de Decision
 
-## 1. Propósito del Framework
+## 1. Proposito
 
-Este framework resuelve un problema concreto: trabajar con múltiples herramientas de IA sin estructura produce desorden, gasto innecesario, prompts pobres, duplicación documental y resultados inconsistentes.
+Este framework existe para trabajar con agentes de IA sin depender de improvisacion, prompts largos ni memoria mental del usuario.
 
-El propósito no es "tener más herramientas". Es construir un sistema donde el usuario pueda trabajar con claridad, bajo desperdicio de contexto, buena trazabilidad y una ruta de crecimiento realista.
+Su objetivo no es acumular herramientas. Su objetivo es crear un sistema documental y operativo donde cada agente sepa:
 
-El framework permite:
-- Programar con apoyo de IA sin improvisación constante.
-- Entender repositorios grandes con menos fricción.
-- Ejecutar cambios con criterio.
-- Automatizar tareas repetitivas.
-- Investigar documentación extensa.
-- Desplegar aplicaciones y servicios.
-- Mantener memoria útil del proyecto.
-- Cambiar de herramienta o proveedor sin romper la lógica del sistema.
+- que esta intentando resolver,
+- que contexto debe leer,
+- que documentos tienen autoridad,
+- que rol cumple,
+- que no debe tocar,
+- cuando debe actualizar memoria o decisiones.
 
-## 2. Principio Rector Oficial
+La estructura actual separa siete zonas:
+
+| Carpeta | Funcion |
+|---|---|
+| `OPERACION/` | Router, constraints y contratos de agentes para ejecucion diaria |
+| `PROJECT_TEMPLATE/` | Molde reusable para instanciar proyectos reales |
+| `THEORY/` | Manual pedagogico del framework |
+| `GRAPHIFY/` | Politica y contrato del mapa estructural derivado |
+| `SATELLITE/` | Politicas de Obsidian y NotebookLM como conocimiento externo al nucleo |
+| `TEMPLATES/` | Formatos reutilizables para tareas, specs y decisiones |
+| `EXAMPLES/` | Casos de uso de referencia |
+
+`ARCHIVE/` conserva fuentes historicas no canonicas.
+
+## 2. Principio Rector
 
 > La calidad del resultado no debe depender del modelo. Debe depender del sistema.
 
-Un modelo menos potente rinde bien si:
-- Recibe una tarea bien acotada.
-- Accede solo al contexto que necesita.
-- Trabaja bajo reglas explícitas.
-- No necesita adivinar la organización del proyecto.
-- Existe una fuente de verdad clara.
-- Las decisiones previas ya están registradas.
+Un modelo potente falla si el repo no tiene estructura, si las fuentes se contradicen o si el agente debe adivinar que leer. Un modelo mas barato puede rendir bien si recibe una tarea acotada, contexto minimo suficiente y reglas claras.
 
-Incluso un modelo premium rinde mal si el proyecto está desordenado y la documentación se contradice.
+El framework reduce dependencia del modelo mediante:
+
+- documentos canonicos,
+- separacion entre teoria y operacion,
+- router de contexto,
+- memoria persistente,
+- decisiones registradas,
+- agentes con limites,
+- politicas para herramientas externas.
 
 ## 3. Problemas que Resuelve
 
-| Problema | Solución del framework |
-|----------|----------------------|
-| Exceso de contexto | Cargar contexto por necesidad, no por disponibilidad |
-| Prompts pobres | El sistema traduce intención a ejecución |
-| Caos documental | Documentación separada por función, sin duplicación |
-| Pérdida de memoria | Decisiones registradas en `decision_log.md` |
-| Uso arbitrario de herramientas | Toda incorporación debe justificarse |
-| Dificultad para retomar proyectos | El sistema permite retomar sin reconstruir contexto |
-| Dependencia del usuario experto | Principiantes pueden operar con orden creciente |
+| Problema | Respuesta del framework |
+|---|---|
+| Exceso de contexto | Cargar por necesidad, no por disponibilidad |
+| Prompts pobres | Convertir intencion del usuario en flujo operativo |
+| Documentacion duplicada | Una fuente de verdad por tipo de informacion |
+| Perdida de decisiones | Registrar decisiones en `decisions/decision_log.md` dentro del proyecto activo |
+| Mezcla de teoria y runtime | `THEORY/` explica; `OPERACION/` gobierna ejecucion |
+| Dependencia de una herramienta | Cline o Codex pueden ser agente principal, pero el sistema no depende de uno |
+| Research disperso | NotebookLM y Obsidian son satelite; lo canonico vuelve al repo |
+| Onboarding lento | `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y Graphify orientan lectura |
 
-## 4. Qué NO Es Este Framework
+## 4. Que No Es
 
-- No es una colección de herramientas de moda.
-- No depende de un proveedor específico.
-- No es un catálogo de prompts sueltos.
-- No es un sistema multiagente inflado.
-- No es un reemplazo de criterio técnico.
-- No intenta meter todo lo "potencialmente útil" desde el inicio.
+Este framework no es:
 
-## 5. Decisiones Oficiales de Simplificación
+- un catalogo de prompts,
+- una coleccion de herramientas de moda,
+- un sistema multiagente inflado,
+- un reemplazo del criterio tecnico,
+- una base de conocimiento externa al repo,
+- una invitacion a cargar todo el proyecto en cada tarea.
 
-### 5.1 Un solo agente principal por proyecto
-Se permite Cline o Codex, pero no ambos gobernando el mismo proyecto simultáneamente.
+## 5. Decisiones Oficiales
 
-### 5.2 Pocos agentes reales
-Solo 4 agentes base: Manager, Coder, Reviewer, Debugger. Todo lo demás se resuelve con skills o workflows.
+### 5.1 Un agente principal por proyecto
 
-### 5.3 Contexto mínimo por defecto
-El sistema trabaja primero con guía, índice y tarea activa. Cargar más contexto es una decisión, no una costumbre.
+Cada proyecto instanciado debe elegir un agente principal: Cline o Codex. No se usan ambos como cerebro principal del mismo proyecto.
 
-### 5.4 Una sola fuente de verdad por tipo de información
-- Lo activo → `tasks/`
-- Las decisiones → `decisions/`
-- Los hechos → `memory/`
-- La guía estructural → `PROJECT_GUIDE.md`
-- La ruta de consulta → `CONTEXT_INDEX.md`
+La razon es gobernanza: si dos agentes intentan dirigir contexto, memoria y decisiones a la vez, la autoridad se vuelve ambigua.
 
-### 5.5 Subagentes como capacidad opcional avanzada
-Los subagentes no son base obligatoria. Solo se justifican si reducen carga mental real, evitan leer contexto innecesario y devuelven resultados comprimidos. Si una necesidad se resuelve con skill o workflow, no debe crearse un subagente.
+### 5.2 Cuatro agentes base
 
-## 6. Criterio de Éxito
+Los agentes base oficiales son:
 
-El framework está bien implementado si:
-- El usuario no necesita recordar todo para retomar un proyecto.
-- El sistema no depende de un solo proveedor.
-- El contexto cargado es pequeño pero suficiente.
-- Las decisiones ya no se pierden.
-- El trabajo diario es más rápido y menos caótico.
-- El costo del razonamiento baja.
-- El sistema puede crecer sin rehacerse entero.
+- Manager,
+- Coder,
+- Reviewer,
+- Debugger.
 
-## 7. Cierre
+Si una necesidad puede resolverse con skill, workflow o checklist, no debe convertirse en agente nuevo.
 
-> No se debe construir un proyecto donde la IA tenga que adivinar el sistema. Se debe construir un sistema donde la IA solo tenga que ejecutar bien.
+### 5.3 Contexto minimo por defecto
+
+La ruta normal empieza con:
+
+- `PROJECT_GUIDE.md`,
+- `CONTEXT_INDEX.md`,
+- `tasks/current/active_task.md`.
+
+Dentro de este repo framework, cuando no hay proyecto instanciado, el fallback es:
+
+- `README.md`,
+- `OPERACION/CONTEXT_ROUTER.md`,
+- `PROJECT_TEMPLATE/` como molde, no como verdad operativa.
+
+### 5.4 Una fuente de verdad por tipo de informacion
+
+En un proyecto activo:
+
+| Informacion | Fuente canonica |
+|---|---|
+| Identidad y alcance | `PROJECT_GUIDE.md` |
+| Ruta de consulta | `CONTEXT_INDEX.md` |
+| Trabajo actual | `tasks/current/active_task.md` |
+| Plan actual | `tasks/current/implementation_plan.md` |
+| Preguntas abiertas | `tasks/current/open_questions.md` |
+| Decisiones | `decisions/decision_log.md` |
+| Hechos vigentes | `memory/project_facts.md` |
+| Restricciones | `memory/constraints.md` |
+| Problemas conocidos | `memory/known_issues.md` |
+| Patrones | `memory/patterns.md` |
+| Glosario | `memory/glossary.md` |
+| Spec funcional | `docs/product/spec.md` |
+| Diseno tecnico | `docs/architecture/sdd.md` |
+| Mapa derivado | `graphify-out/*` |
+
+### 5.5 `PROJECT_TEMPLATE/` no es un proyecto activo
+
+Los archivos dentro de `PROJECT_TEMPLATE/` son ejemplos estructurales. No contienen tarea activa real, decisiones reales ni memoria real. Solo se vuelven canonicos cuando se copian o adaptan dentro de un repo de proyecto.
+
+## 6. Criterio de Exito
+
+El framework esta sano si:
+
+- el usuario puede retomar un proyecto sin reconstruir contexto desde cero,
+- los agentes leen menos pero mejor,
+- las decisiones importantes quedan registradas,
+- `THEORY/` no se usa como instruccion de runtime,
+- `PROJECT_TEMPLATE/` no se confunde con proyecto activo,
+- Graphify orienta navegacion sin reemplazar fuentes canonicas,
+- Obsidian y NotebookLM no gobiernan el repo,
+- el stack crece por necesidad real, no por moda.
+
+## 7. Regla Final
+
+No se debe construir un proyecto donde la IA tenga que adivinar el sistema. Se debe construir un sistema donde la IA solo tenga que ejecutar bien.

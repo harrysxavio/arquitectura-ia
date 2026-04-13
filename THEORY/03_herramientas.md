@@ -1,90 +1,125 @@
-# Módulo 3 — Herramientas Oficiales del Stack
+# Modulo 3 - Herramientas Oficiales del Stack
 
-## 1. Principio de Adopción
+## 1. Principio de Adopcion
 
-Una herramienta entra al framework solo si responde claramente:
-- Qué problema resuelve.
-- Qué reemplaza o complementa.
-- Qué complejidad agrega.
-- Qué complejidad reduce.
-- Si duplica otra herramienta ya presente.
-- Si mejora el retorno del sistema más de lo que aumenta su mantenimiento.
+Una herramienta entra al framework solo si resuelve un problema real y mejora el retorno del sistema mas de lo que aumenta su mantenimiento.
 
-## 2. Clasificación Oficial
+Antes de incorporarla, debe responder:
 
-### A. Núcleo Obligatorio
-| Herramienta | Función |
-|-------------|---------|
-| VS Code | Superficie visual principal (IDE) |
-| Git | Control de versiones, trazabilidad |
-| GitHub | Hosting de repos, PRs, CI/CD |
-| Agente principal (Cline o Codex) | Cerebro de ejecución |
-| Markdown versionado | Documentación dentro del repo |
+- que problema resuelve,
+- que reemplaza o complementa,
+- que complejidad agrega,
+- que complejidad reduce,
+- si duplica otra herramienta ya aprobada,
+- como se documenta su uso,
+- que agente o workflow la necesita.
 
-### B. Núcleo Recomendado
-| Herramienta | Función |
-|-------------|---------|
-| Aider | Edición quirúrgica con diffs limpios |
-| NotebookLM | Research sobre fuentes externas |
-| n8n | Automatización de flujos externos |
+La herramienta se adapta al sistema. El sistema no se reorganiza por moda.
 
-### C. Herramientas de Ejecución y Delivery
-GitHub Actions, Playwright, Stagehand, Docker, FastAPI, Next.js, TypeScript, Postgres, Supabase, Vercel.
+## 2. Nucleo Obligatorio
 
-### D. Opcionales de Etapa 2
-OpenCode, OpenRouter, Gemini CLI, Sentry, Clerk/Auth0/Stripe, Hostinger VPS, Cloudflare.
+| Herramienta | Funcion | Porque es obligatoria |
+|---|---|---|
+| VS Code | Superficie principal de trabajo | Permite operar repo, agente, terminal y documentos en un lugar |
+| Git | Control de versiones | Da trazabilidad, rollback y comparacion de cambios |
+| GitHub | Hosting, PRs, colaboracion y CI/CD | Centraliza repos, issues, pull requests y automatizacion |
+| Agente principal | Ejecucion asistida por IA | Traduce intencion a cambios, analisis o documentacion |
+| Markdown versionado | Documentacion dentro del repo | Mantiene reglas y memoria cerca del codigo |
 
-## 3. Decisión Cline vs Codex
+El agente principal debe ser uno por proyecto: Cline o Codex.
 
-El framework **no obliga** uno de los dos, pero **sí obliga a elegir uno como principal** por proyecto.
+## 3. Cline vs Codex
+
+El framework permite ambos, pero obliga a elegir uno como cerebro principal del proyecto.
 
 | Criterio | Cline | Codex |
-|----------|-------|-------|
-| Fortaleza | Gobernanza documental, Memory Bank, rules, subagents | Simplicidad operativa, integración OpenAI |
-| Memoria | Muy fuerte (Memory Bank nativo) | Configuración compartida IDE/CLI |
-| Mejor para | Frameworks con fuerte contexto persistente | Productividad rápida en ecosistema OpenAI |
+|---|---|---|
+| Fortaleza | Gobernanza documental, Memory Bank, reglas persistentes | Simplicidad operativa, integracion OpenAI, flujo CLI/IDE |
+| Mejor uso | Proyectos con mucha memoria documental | Productividad rapida y cambios de codigo guiados |
+| Riesgo | Sobrecargar estructura si no se controla | Depender demasiado del prompt si falta documentacion |
 
-**Regla**: No usar ambos como cerebro principal del mismo proyecto.
+Regla: no usar Cline y Codex como directores simultaneos del mismo proyecto. Pueden coexistir solo si uno tiene rol principal y el otro rol auxiliar claramente documentado.
 
-**Claude Code** y **OpenCode** no quedan excluidos por debilidad, sino para mantener dos rutas base simples y gobernables. Pueden incorporarse como herramientas complementarias o de etapa 2.
+## 4. Herramientas Recomendadas
 
-## 4. Roles Claros por Herramienta
+| Herramienta | Rol | Limite |
+|---|---|---|
+| Aider | Edicion quirurgica con diffs controlados | No reemplaza al agente principal ni la gobernanza |
+| NotebookLM | Research sobre fuentes externas extensas | No es memoria oficial del repo |
+| n8n | Automatizacion externa de flujos | No sustituye backend cuando hay logica compleja |
+| GitHub Actions | Validacion y despliegue automatizado | No arregla ausencia de tests o scripts reproducibles |
+| Playwright | Testing E2E y automatizacion web robusta | No debe reemplazarse por herramientas semanticas por defecto |
+| Stagehand | Automatizacion web semantica en flujos fragiles | Solo despues de Playwright si el flujo lo justifica |
+| Docker | Portabilidad y consistencia de entornos | No usar en scripts simples o prototipos locales sin necesidad |
 
-- **VS Code**: la superficie.
-- **Git + GitHub**: trazabilidad y colaboración.
-- **Cline o Codex**: el agente principal.
-- **Aider**: herramienta quirúrgica de cambios controlados.
-- **NotebookLM**: capa de investigación.
-- **n8n**: capa de automatización externa.
+## 5. Stack Tecnico Recomendado
 
-## 5. Stack Técnico Recomendado
+### App web estandar
 
-### App Web Estándar
-Next.js + TypeScript + Vercel + FastAPI + Postgres/Supabase + GitHub Actions + Playwright.
+- Frontend: Next.js + TypeScript.
+- Backend: FastAPI si la logica no cabe bien en el frontend.
+- Base de datos: Postgres o Supabase.
+- Hosting: Vercel para frontend; Railway, Render o VPS para backend.
+- Validacion: GitHub Actions + Playwright.
 
-### SaaS Liviano/Mediano
-Lo anterior + Docker (backend) + Sentry (posterior) + Stripe (si hay cobro).
+### SaaS liviano o mediano
 
-### Bot o Automatización Web
-Python + Playwright + Stagehand (si sitio cambiante) + Docker + n8n.
+- Next.js + TypeScript.
+- FastAPI o backend equivalente.
+- Supabase para Postgres, auth y storage cuando simplifique.
+- Stripe solo si hay cobro real.
+- Sentry cuando ya hay usuarios o debugging recurrente.
+- Docker cuando haya produccion, multiples servicios o necesidad de portabilidad.
 
-### API / Servicio Interno
-FastAPI + Postgres + Docker + GitHub Actions + Sentry (posterior).
+### Bot o automatizacion
 
-## 6. Secuencia Oficial de Adopción
+- Python para logica local o scripts.
+- Playwright para flujos web estables.
+- Stagehand si la UI cambia o los selectores son fragiles.
+- n8n para orquestacion externa, webhooks, Gmail, Sheets o APIs.
+- Docker si se ejecuta en servidor o necesita entorno reproducible.
 
-1. VS Code → 2. Git → 3. GitHub → 4. Cline o Codex → 5. Aider → 6. NotebookLM → 7. n8n → 8. GitHub Actions → 9. FastAPI → 10. Next.js + TypeScript → 11. Postgres → 12. Supabase → 13. Vercel → 14. Docker → 15. Playwright → 16. Stagehand → 17. Sentry.
+### API o servicio interno
 
-## 7. Política Playwright vs Stagehand
+- FastAPI.
+- Postgres o Supabase.
+- Docker si se despliega como servicio.
+- GitHub Actions para tests/build.
+- Sentry cuando los fallos ya no se puedan investigar solo localmente.
 
-- **Playwright**: estándar base para testing E2E y automatización robusta.
-- **Stagehand**: capa especializada para exploración web, scraping semántico y flujos frágiles.
-- Stagehand **no reemplaza** Playwright. Empezar siempre con Playwright.
+## 6. Secuencia de Adopcion
 
-## 8. Política de Modelos
+1. VS Code.
+2. Git.
+3. GitHub.
+4. Cline o Codex como agente principal.
+5. Markdown canonico dentro del repo.
+6. Aider si se necesitan diffs quirurgicos.
+7. NotebookLM si hay research externo largo.
+8. n8n si hay automatizacion repetible.
+9. GitHub Actions cuando haya validacion automatizable.
+10. FastAPI, Next.js, TypeScript, Postgres o Supabase segun producto.
+11. Vercel, Railway, Render o VPS segun delivery.
+12. Docker, Playwright, Stagehand y Sentry cuando el proyecto lo justifique.
+
+## 7. Politica Playwright vs Stagehand
+
+Playwright es la base. Es preciso, trazable y compatible con testing E2E.
+
+Stagehand es una capa especializada para exploracion semantica, scraping o flujos donde la UI cambia y los selectores se rompen.
+
+Regla: empezar con Playwright. Escalar a Stagehand solo si hay evidencia de fragilidad o necesidad semantica.
+
+## 8. Politica de Modelos
 
 | Nivel | Uso | Ejemplos |
-|-------|-----|----------|
-| Baratos/locales | Clasificación, resumen, preprocesamiento | Qwen, DeepSeek, GPT-4.1-mini |
-| Medios | Implementación, revisión, debugging moderado | GPT-4.1, Claude Sonnet |
-| Premium | Arquitectura, refactors grandes, debugging difícil | GPT-5, Claude Opus |
+|---|---|---|
+| Barato/local | Clasificacion, resumen, preprocesamiento | Qwen, DeepSeek, modelos mini |
+| Medio | Implementacion, revision moderada, debugging simple | GPT-4.1, Claude Sonnet, equivalentes |
+| Premium | Arquitectura, refactors grandes, debugging dificil | GPT-5, Claude Opus, equivalentes |
+
+El modelo se escala cuando falla el resultado o sube el riesgo. Si el costo sube demasiado, revisar primero contexto, fuentes y workflow antes de culpar al modelo.
+
+## 9. Regla Final
+
+El stack correcto es el minimo que permite entregar valor, validar calidad y mantener trazabilidad. Agregar herramientas sin caso de uso documentado degrada el framework.

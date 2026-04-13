@@ -1,98 +1,159 @@
-﻿# Modulo 2 - Arquitectura Troncal del Framework
+# Modulo 2 - Arquitectura Troncal del Framework
 
 ## 1. Vision General
 
-El framework separa cuatro niveles para que teoria, operacion y conocimiento satelite convivan sin competir.
+La arquitectura actual separa framework global, proyecto instanciado, teoria, herramientas estructurales y conocimiento satelite.
 
-| Nivel | Rol | Fuente de verdad operativa |
+La separacion evita que una nota pedagogica, un output derivado o una investigacion externa gobiernen una tarea tecnica.
+
+| Nivel | Donde vive | Autoridad |
 |---|---|---|
-| Framework global reusable | Reglas, agentes, router, plantillas, teoria y politicas | Si, para el framework |
-| Nucleo operativo del proyecto | Documentos canonicos del proyecto activo | Si, despues de instanciarse |
-| Capa teorica / manual | Explicacion y onboarding humano | No para runtime tecnico |
-| Conocimiento satelite | Obsidian, NotebookLM, outputs visuales o historicos | No |
+| Framework global reusable | Este repo | Canonico para definir el metodo |
+| Operacion del framework | `OPERACION/` | Canonico para ejecucion, reglas y roles |
+| Proyecto activo | Repo creado desde `PROJECT_TEMPLATE/` | Canonico para ese proyecto |
+| Manual teorico | `THEORY/` | Explicativo, no runtime |
+| Mapa estructural | `graphify-out/*` en proyecto instanciado | Derivado, no canonico |
+| Conocimiento satelite | Obsidian, NotebookLM, `SATELLITE/` | Apoyo humano/research, no canonico |
+| Historico | `ARCHIVE/` | Referencia historica, no canonica |
 
-## 2. Framework Global Reusable
+## 2. Estructura del Repo Framework
 
-Este repo contiene el framework global. Su proposito es dar estructura reusable para trabajar con proyectos distintos sin mezclar tareas activas ni decisiones locales.
+```text
+/
+|-- README.md
+|-- OPERACION/
+|   |-- CONTEXT_ROUTER.md
+|   |-- AGENTS/
+|   +-- CONSTRAINTS/
+|-- GRAPHIFY/
+|   |-- GRAPHIFY_POLICY.md
+|   +-- OUTPUT_CONTRACT.md
+|-- PROJECT_TEMPLATE/
+|-- THEORY/
+|-- TEMPLATES/
+|-- EXAMPLES/
+|-- SATELLITE/
++-- ARCHIVE/
+```
 
-Incluye:
+### `README.md`
 
-- `OPERACION/`: router, constraints y contratos de agentes.
-- `GRAPHIFY/`: politica y contrato de outputs estructurales.
-- `PROJECT_TEMPLATE/`: molde para crear proyectos individuales.
-- `THEORY/`: manual teorico y pedagogico.
-- `TEMPLATES/`: formatos reutilizables.
-- `EXAMPLES/`: casos de uso.
-- `SATELLITE/`: politicas para conocimiento fuera del nucleo.
-- `ARCHIVE/`: fuentes historicas no canonicas.
+Es la puerta de entrada humana. Explica como esta organizado el framework y que fuente consultar primero.
 
-## 3. Proyecto Individual Operativo
+### `OPERACION/`
 
-Un proyecto activo real no es `PROJECT_TEMPLATE/`. Nace cuando la plantilla se copia o adapta dentro de un repo concreto.
+Contiene lo que gobierna ejecucion:
 
-Debe contener:
+- `CONTEXT_ROUTER.md`: matriz oficial para decidir que leer.
+- `CONSTRAINTS/*.md`: reglas ejecutables de arquitectura, contexto, memoria, herramientas, agentes y proceso.
+- `AGENTS/*.md`: contratos de Manager, Coder, Reviewer y Debugger.
+
+No debe acumular teoria larga ni tutoriales.
+
+### `GRAPHIFY/`
+
+Define como usar Graphify:
+
+- `GRAPHIFY_POLICY.md`: cuando usarlo y con que limites.
+- `OUTPUT_CONTRACT.md`: ubicacion y rol esperado de `GRAPH_REPORT.md`, `graph.json` y `graph.html`.
+
+Graphify ayuda a navegar y analizar impacto. No decide por encima de specs, SDD, decisiones o memoria.
+
+### `PROJECT_TEMPLATE/`
+
+Es el molde para crear proyectos reales. Tiene estructura canonica esperada, pero sus contenidos son placeholders.
+
+### `THEORY/`
+
+Explica el por que del framework. Sirve para onboarding, criterio y aprendizaje. No se carga durante una tarea tecnica rutinaria.
+
+### `TEMPLATES/`
+
+Contiene formatos reutilizables que pueden copiarse o adaptarse: tarea activa, decision, hechos del proyecto y spec.
+
+### `EXAMPLES/`
+
+Muestra casos de referencia para entender uso practico: bug backend, nuevo feature y research con NotebookLM.
+
+### `SATELLITE/`
+
+Define limites de herramientas externas:
+
+- Obsidian ayuda a pensar y visualizar.
+- NotebookLM ayuda a investigar fuentes externas.
+
+Ninguno reemplaza el repo como fuente oficial.
+
+## 3. Proyecto Instanciado
+
+Un proyecto real debe nacer al copiar o adaptar `PROJECT_TEMPLATE/` dentro de un repo concreto.
+
+Estructura minima recomendada:
 
 ```text
 project/
-├── AGENTS.md
-├── PROJECT_GUIDE.md
-├── CONTEXT_INDEX.md
-├── tasks/current/
-│   ├── active_task.md
-│   ├── implementation_plan.md
-│   └── open_questions.md
-├── decisions/
-│   ├── decision_log.md
-│   └── adr/
-├── memory/
-│   ├── project_facts.md
-│   ├── constraints.md
-│   ├── known_issues.md
-│   ├── patterns.md
-│   └── glossary.md
-├── docs/
-│   ├── product/spec.md
-│   └── architecture/sdd.md
-└── graphify-out/
-    ├── GRAPH_REPORT.md
-    ├── graph.json
-    └── graph.html
+|-- AGENTS.md
+|-- PROJECT_GUIDE.md
+|-- CONTEXT_INDEX.md
+|-- tasks/
+|   +-- current/
+|       |-- active_task.md
+|       |-- implementation_plan.md
+|       +-- open_questions.md
+|-- decisions/
+|   |-- decision_log.md
+|   +-- adr/
+|-- memory/
+|   |-- project_facts.md
+|   |-- constraints.md
+|   |-- known_issues.md
+|   |-- patterns.md
+|   +-- glossary.md
+|-- docs/
+|   |-- product/spec.md
+|   +-- architecture/sdd.md
++-- graphify-out/
+    |-- GRAPH_REPORT.md
+    |-- graph.json
+    +-- graph.html
 ```
 
-## 4. Rol de PROJECT_TEMPLATE
+## 4. Porque Esta Separacion Importa
 
-`PROJECT_TEMPLATE/` es solo una plantilla reusable.
+La IA falla cuando todo parece igual de importante. Esta arquitectura marca autoridad:
 
-No contiene:
+- `OPERACION/` dice como actuar.
+- `PROJECT_TEMPLATE/` dice que forma debe tener un proyecto.
+- El proyecto instanciado dice que es verdad para su dominio.
+- `THEORY/` explica el sistema.
+- `GRAPHIFY/` define un mapa derivado.
+- `SATELLITE/` limita herramientas externas.
 
-- tarea activa real,
-- decisiones reales,
-- hechos reales,
-- memoria oficial,
-- documentacion tecnica aprobada.
+Asi el agente puede resolver tareas sin transformar notas, ejemplos o outputs en reglas falsas.
 
-Solo despues de instanciarse en un proyecto, sus archivos pasan a ser canonicos para ese proyecto.
+## 5. Flujo de Instanciacion
 
-## 5. Rol de OPERACION
+1. Copiar o adaptar `PROJECT_TEMPLATE/` en el repo del proyecto.
+2. Completar `PROJECT_GUIDE.md` con proposito, alcance, estructura, stack y restricciones.
+3. Completar `CONTEXT_INDEX.md` con las fuentes oficiales reales.
+4. Definir `tasks/current/active_task.md`.
+5. Registrar decisiones iniciales en `decisions/decision_log.md`.
+6. Completar memoria minima en `memory/project_facts.md` y `memory/constraints.md`.
+7. Agregar `docs/product/spec.md` y `docs/architecture/sdd.md` cuando el proyecto lo justifique.
+8. Generar o actualizar `graphify-out/*` para tareas estructurales, onboarding o impacto transversal.
 
-`OPERACION/` contiene documentos para ejecutar:
+## 6. Regla de Ubicacion
 
-- `CONTEXT_ROUTER.md`: autoridad unica de carga contextual.
-- `CONSTRAINTS/*.md`: reglas ejecutables.
-- `AGENTS/*.md`: contratos de rol.
+| Si el contenido... | Debe vivir en... |
+|---|---|
+| gobierna ejecucion diaria | `OPERACION/` |
+| explica el framework | `THEORY/` |
+| sirve como molde reusable | `PROJECT_TEMPLATE/` o `TEMPLATES/` |
+| representa verdad del proyecto | proyecto instanciado |
+| resume relaciones del repo | `graphify-out/*` |
+| es research externo o nota personal | `SATELLITE/`, Obsidian o NotebookLM |
+| es historico | `ARCHIVE/` |
 
-No debe contener teoria larga ni ejemplos pedagogicos.
+## 7. Regla Final
 
-## 6. Rol de Graphify
-
-Graphify actua como contexto estructural persistente derivado. En tareas estructurales entra despues del contexto base y del router, pero antes de exploracion amplia de documentacion o modulos.
-
-No reemplaza `spec.md`, `sdd.md`, `decision_log.md`, `project_facts.md` ni `CONTEXT_INDEX.md`.
-
-## 7. Rol de THEORY
-
-`THEORY/` explica el sistema para humanos. Ayuda al onboarding, pero no se carga durante ejecucion tecnica rutinaria.
-
-## 8. Regla Final
-
-Si explica el sistema, va a `THEORY/`. Si guia ejecucion diaria, va a `OPERACION/`. Si es conocimiento humano no oficial, va a `SATELLITE/` o `ARCHIVE/`.
+Si un documento sera obedecido por un agente, debe estar en la capa operativa o canonica correcta. Si solo ayuda a entender, debe permanecer como teoria, ejemplo, plantilla, satelite o archivo historico.

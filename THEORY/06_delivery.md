@@ -1,83 +1,166 @@
-# Módulo 6 — Delivery, Deploy y Operación
+# Modulo 6 - Delivery, Deploy y Operacion
 
 ## 1. Principio Rector
 
-> No todo lo que construyes debe desplegarse. Pero todo lo que se usa repetidamente debe automatizarse.
+No todo lo que se construye debe desplegarse. Pero todo lo que se usa repetidamente debe automatizarse.
 
-## 2. Tipos de Delivery
+Delivery en este framework significa llevar una solucion desde intencion hasta uso real con el menor nivel de complejidad suficiente.
 
-| Tipo | Ejemplo | Complejidad |
-|------|---------|-------------|
-| Script local | Automatización Excel / scraping | Baja |
-| Bot automatizado | n8n + API + Gmail | Media |
-| API / backend | FastAPI + DB | Media-alta |
-| SaaS completo | Web + backend + auth | Alta |
+## 2. Preguntas Antes de Desplegar
 
-## 3. Estrategia de Deployment
+Antes de elegir plataforma o stack, responder:
 
-**Regla clave**: Empieza siempre con el nivel mínimo que permita validar valor real.
+1. Se ejecuta una sola vez o muchas veces?
+2. Necesita acceso externo?
+3. Tiene logica reutilizable?
+4. Necesita usuarios, auth o pagos?
+5. Debe escalar?
+6. Hay datos persistentes?
+7. Hay requisitos de seguridad?
+8. Hay tests o checks reproducibles?
 
-Antes de desplegar, responde:
-1. ¿Se ejecuta una sola vez o varias? → Una vez = local. Varias = automatizar.
-2. ¿Necesita acceso externo? → No = local. Sí = API/servicio.
-3. ¿Tiene lógica reutilizable? → No = script. Sí = backend.
-4. ¿Debe escalar? → No = simple. Sí = arquitectura deployada.
+Primero demostrar que funciona. Luego demostrar que se usa. Despues desplegar en serio.
 
-> Primero demuestra que funciona. Luego demuestra que se usa. Recién después despliegas en serio.
+## 3. Tipos de Delivery
+
+| Tipo | Ejemplo | Stack sugerido | Complejidad |
+|---|---|---|---|
+| Script local | Limpieza de CSV, automatizacion puntual | Python, CLI, archivos locales | Baja |
+| Automatizacion | Gmail, Sheets, webhooks, APIs | n8n + scripts/API | Media |
+| Bot o scraping | Flujo web repetible | Python + Playwright, Stagehand si aplica | Media |
+| API interna | Servicio reutilizable | FastAPI + Postgres/Supabase | Media-alta |
+| App web | Producto con UI | Next.js + TypeScript + backend si aplica | Alta |
+| SaaS | Usuarios, auth, pagos, observabilidad | Next.js, FastAPI, Supabase, Stripe, Sentry | Alta |
 
 ## 4. Niveles de Deployment
 
-### Nivel 1: Local (inicio obligatorio)
-VS Code, Python, Playwright, scripts. Costo cero, control total, debug fácil.
+### Nivel 1: Local
 
-### Nivel 2: Automatización (n8n)
-Flujos automáticos, integración con Gmail/Sheets/APIs. La forma más rápida de generar impacto sin backend complejo.
+Usar para scripts, prototipos, pruebas rapidas y tareas sin usuarios externos.
+
+Stack comun:
+
+- VS Code,
+- Python o Node,
+- Playwright si hay navegador,
+- archivos locales o SQLite si basta.
+
+### Nivel 2: Automatizacion externa
+
+Usar cuando el flujo se repite y conecta sistemas.
+
+Stack comun:
+
+- n8n,
+- webhooks,
+- Gmail/Sheets/APIs,
+- scripts pequenos o endpoint interno.
+
+n8n orquesta. No debe cargar logica compleja que pertenezca a un backend.
 
 ### Nivel 3: Backend/API
-FastAPI + PostgreSQL (Supabase). Para lógica reutilizable e integraciones externas.
 
-### Nivel 4: SaaS
-Next.js (frontend) + FastAPI (backend) + Supabase (DB/auth) + Vercel (hosting frontend) + Railway/Render (hosting backend).
+Usar cuando hay logica reutilizable, integraciones externas o necesidad de servicio.
 
-## 5. Plataformas de Deploy
+Stack recomendado:
 
-| Plataforma | Uso ideal | Costo |
-|-----------|-----------|-------|
-| Vercel | Frontend Next.js | Bajo |
-| Railway | Backend simple | Bajo-medio |
-| Render | Backend estable | Medio |
-| Supabase | DB + Auth + Storage | Bajo |
-| Hostinger VPS | Control total | Bajo |
+- FastAPI,
+- Postgres o Supabase,
+- Docker si hay produccion o portabilidad,
+- GitHub Actions para validacion,
+- Sentry cuando haya fallos en uso real.
 
-## 6. Docker: Cuándo Sí / Cuándo No
+### Nivel 4: App web o SaaS
 
-**Sí**: portabilidad, producción, múltiples servicios, consistencia entre entornos.
-**No**: scripts simples, aprendizaje, prototipos rápidos, automatización local.
+Usar cuando hay usuarios, UI, auth, persistencia y evolucion de producto.
 
-## 7. n8n como Pieza Clave
+Stack recomendado:
 
-n8n es el **orquestador externo** del framework. Conecta APIs, scripts Python, Google Sheets, Gmail, webhooks e IA. Reduce necesidad de backend, código y aumenta velocidad de entrega.
+- Next.js + TypeScript,
+- FastAPI si el backend merece separacion,
+- Supabase para DB/auth/storage cuando simplifique,
+- Vercel para frontend,
+- Railway, Render o VPS para backend,
+- Stripe solo si hay cobro real,
+- Playwright para flujos criticos,
+- GitHub Actions para CI/CD.
 
-## 8. Playwright vs Stagehand
+## 5. Plataformas
 
-- **Playwright**: flujos claros y estables, selectores identificables, procesos repetitivos. Preciso y controlable.
-- **Stagehand**: UI cambiante, flujos complejos, elementos difíciles de identificar. Más resiliente a cambios.
-- **Regla**: Empezar siempre con Playwright. Solo escalar a Stagehand si el flujo se rompe.
+| Plataforma | Uso ideal |
+|---|---|
+| Vercel | Frontend Next.js |
+| Railway | Backend simple o prototipo deployado |
+| Render | Backend estable con bajo mantenimiento |
+| Supabase | Postgres, auth y storage gestionados |
+| Hostinger VPS | Control total con mas responsabilidad operativa |
+| GitHub Actions | Tests, build, checks y despliegues automatizados |
 
-## 9. CI/CD con GitHub Actions
+## 6. Docker
 
-Flujo: Push → Test → Build → Deploy. Automatiza validación y despliegue.
+Usar Docker cuando:
 
-## 10. Seguridad Básica
+- se necesita portabilidad,
+- hay produccion,
+- hay multiples servicios,
+- el entorno local y remoto deben coincidir,
+- hay dependencias dificiles de reproducir.
+
+Evitar Docker cuando:
+
+- es un script simple,
+- el proyecto esta en aprendizaje,
+- el prototipo cambia demasiado,
+- no hay despliegue real.
+
+## 7. Playwright y Stagehand
+
+Playwright es la herramienta base para E2E y automatizacion robusta.
+
+Stagehand se usa cuando:
+
+- la UI cambia con frecuencia,
+- los selectores son fragiles,
+- el flujo requiere interpretacion semantica,
+- scraping o navegacion exploratoria son parte del trabajo.
+
+Regla: empezar con Playwright. Escalar a Stagehand solo con evidencia.
+
+## 8. CI/CD
+
+Flujo minimo:
+
+1. Push o pull request.
+2. Instalar dependencias.
+3. Ejecutar lint/tests si existen.
+4. Build si aplica.
+5. Deploy solo si los checks pasan.
+
+No introducir CI/CD si no hay comandos reproducibles. Primero definir scripts locales, despues automatizarlos.
+
+## 9. Seguridad Basica
 
 - No subir API keys.
-- Usar `.env` y variables de entorno.
-- Control de accesos.
-- `.gitignore` para excluir `.env`, credenciales y archivos sensibles.
+- Usar variables de entorno.
+- Mantener `.env.example` con valores dummy cuando aplique.
+- Excluir `.env`, `.env.*` y credenciales locales.
+- No guardar secretos en Markdown, logs o decisiones.
+- Registrar restricciones de seguridad en `memory/constraints.md`.
 
-## 11. Anti-Patrones Críticos
+## 10. Documentacion Operativa
 
-- ❌ Desplegar demasiado pronto → pérdida de tiempo.
-- ❌ Usar microservicios sin necesidad → sobreingeniería.
-- ❌ No automatizar → pierdes valor del framework.
-- ❌ Depender solo de scripts manuales → no escalable.
+Cuando el proyecto ya esta desplegado, debe existir informacion suficiente para operar:
+
+- como correr localmente,
+- como testear,
+- como desplegar,
+- que variables de entorno requiere,
+- donde mirar logs,
+- que integraciones externas existen,
+- que riesgos o incidentes conocidos hay.
+
+Segun el proyecto, esto puede vivir en `PROJECT_GUIDE.md`, `docs/architecture/sdd.md`, `memory/known_issues.md` o un runbook listado en `CONTEXT_INDEX.md`.
+
+## 11. Regla Final
+
+El mejor delivery es el menor sistema que resuelve el problema real y deja una ruta clara para crecer sin reescribir todo.
