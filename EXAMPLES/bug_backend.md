@@ -1,18 +1,20 @@
-﻿# Ejemplo: Bug en Backend
+# Ejemplo: Bug en Backend
 
-> Caso prÃ¡ctico que muestra cÃ³mo el framework maneja un bug en un endpoint.
+> [!NOTE]
+> Caso practico que muestra como el framework maneja un bug en un endpoint.
 
-## SituaciÃ³n
-"El endpoint de login dejÃ³ de funcionar despuÃ©s de mover una validaciÃ³n al backend."
+## Situacion
 
-## ClasificaciÃ³n por el Manager
+"El endpoint de login dejo de funcionar despues de mover una validacion al backend."
+
+## Clasificacion por el Manager
 - **Tipo**: Bug / Debugging.
 - **Nivel**: 2 (requiere contexto dirigido).
-- **Agente asignado**: Debugger â†’ Coder â†’ Reviewer.
+- **Agente asignado**: Debugger -> Coder -> Reviewer.
 
-## Contexto Cargado (segÃºn OPERACION/CONTEXT_ROUTER.md)
+## Contexto Cargado (segun OPERACION/CONTEXT_ROUTER.md)
 
-### Contexto mÃ­nimo (siempre)
+### Contexto minimo (siempre)
 - `PROJECT_GUIDE.md`
 - `CONTEXT_INDEX.md`
 - `active_task.md`
@@ -24,23 +26,26 @@
 - Archivo del endpoint login.
 - Archivo del servicio auth.
 
-### QuÃ© NO se carga
-- âŒ Toda la arquitectura.
-- âŒ Todo el backlog.
-- âŒ Todas las ADRs.
-- âŒ Todo el repo.
+### Que NO se carga
 
-## Flujo de EjecuciÃ³n
+> [!WARNING]
+> No se carga contexto amplio por si acaso.
+
+- Toda la arquitectura.
+- Todo el backlog.
+- Todas las ADRs.
+- Todo el repo.
+
+## Flujo de Ejecucion
 
 1. **Debugger** recopila logs y stack traces.
-2. **Debugger** consulta `known_issues.md` â†’ no hay bug similar.
-3. **Debugger** genera hipÃ³tesis: la validaciÃ³n movida impide el flujo de auth.
-4. **Debugger** verifica: confirma que el middleware de validaciÃ³n ahora bloquea antes del login.
-5. **Debugger** propone correcciÃ³n: reordenar middleware.
+2. **Debugger** consulta `known_issues.md` -> no hay bug similar.
+3. **Debugger** genera hipotesis: la validacion movida impide el flujo de auth.
+4. **Debugger** verifica: confirma que el middleware de validacion ahora bloquea antes del login.
+5. **Debugger** propone correccion: reordenar middleware.
 6. **Coder** implementa el fix.
 7. **Reviewer** valida: el cambio es coherente, no afecta otros endpoints.
 
-## Post-EjecuciÃ³n
-- Se actualiza `memory/known_issues.md` con el patrÃ³n detectado.
-- Se registra decisiÃ³n en `decision_log.md` si el reordenamiento de middleware es significativo.
-
+## Post-Ejecucion
+- Se actualiza `memory/known_issues.md` con el patron detectado.
+- Se registra decision en `decision_log.md` si el reordenamiento de middleware es significativo.

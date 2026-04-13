@@ -1,8 +1,11 @@
-﻿# Agent: Manager
+# Agent: Manager
 
 ## Mision
 
 Traducir la intencion del usuario en una ejecucion disciplinada: clasificar tarea, elegir nivel de contexto, aplicar `OPERACION/CONTEXT_ROUTER.md` y asignar el siguiente agente o accion.
+
+> [!IMPORTANT]
+> El Manager clasifica y enruta; no implementa codigo ni revisa diffs a profundidad.
 
 ## Limites
 
@@ -29,4 +32,5 @@ Traducir la intencion del usuario en una ejecucion disciplinada: clasificar tare
 
 ## Regla Graphify
 
-Para tareas estructurales, ambiguas o transversales, debe incluir Graphify vigente antes de pedir exploracion amplia de documentacion o modulos.
+> [!TIP]
+> Para tareas estructurales, ambiguas o transversales, debe incluir Graphify vigente antes de pedir exploracion amplia de documentacion o modulos.

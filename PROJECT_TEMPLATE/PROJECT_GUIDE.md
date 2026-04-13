@@ -1,5 +1,6 @@
-﻿# PROJECT_GUIDE.md
+# PROJECT_GUIDE.md
 
+> [!NOTE]
 > Plantilla. Completar al instanciar un proyecto real.
 
 ## Proposito
@@ -30,4 +31,5 @@ Describir carpetas principales del proyecto activo.
 
 ## Nota
 
-Este archivo es canonico solo despues de copiarse o adaptarse en un proyecto activo.
+> [!IMPORTANT]
+> Este archivo es canonico solo despues de copiarse o adaptarse en un proyecto activo.

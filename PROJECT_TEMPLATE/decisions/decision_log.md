@@ -1,5 +1,6 @@
-﻿# Decision Log
+# Decision Log
 
+> [!WARNING]
 > Plantilla. No contiene decisiones reales mientras este dentro de `PROJECT_TEMPLATE/`.
 
 | Fecha | Decision | Motivo | Impacto | Referencia |

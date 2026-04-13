@@ -4,6 +4,9 @@
 
 Una herramienta entra al framework solo si resuelve un problema real y mejora el retorno del sistema mas de lo que aumenta su mantenimiento.
 
+> [!IMPORTANT]
+> La herramienta se adapta al sistema. El sistema no se reorganiza por moda.
+
 Antes de incorporarla, debe responder:
 
 - que problema resuelve,
@@ -13,8 +16,6 @@ Antes de incorporarla, debe responder:
 - si duplica otra herramienta ya aprobada,
 - como se documenta su uso,
 - que agente o workflow la necesita.
-
-La herramienta se adapta al sistema. El sistema no se reorganiza por moda.
 
 ## 2. Nucleo Obligatorio
 
@@ -103,6 +104,9 @@ Regla: no usar Cline y Codex como directores simultaneos del mismo proyecto. Pue
 12. Docker, Playwright, Stagehand y Sentry cuando el proyecto lo justifique.
 
 ## 7. Politica Playwright vs Stagehand
+
+> [!TIP]
+> Empezar con Playwright. Escalar a Stagehand solo si hay evidencia de fragilidad o necesidad semantica.
 
 Playwright es la base. Es preciso, trazable y compatible con testing E2E.
 

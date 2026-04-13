@@ -6,6 +6,9 @@ Este modulo explica la logica del contexto. La decision concreta de que leer por
 
 La regla principal es simple: el agente no debe leer mas; debe leer mejor.
 
+> [!IMPORTANT]
+> La decision concreta de que leer por tipo de tarea vive en `OPERACION/CONTEXT_ROUTER.md`.
+
 ## 2. Contexto vs Memoria vs Mapa
 
 | Concepto | Funcion | Ejemplo |
@@ -44,7 +47,10 @@ Nivel 3 no es modo normal. Se usa cuando el cambio puede afectar arquitectura, m
 
 ## 5. Graphify
 
-Graphify es contexto estructural persistente y derivado. Ayuda a responder:
+> [!NOTE]
+> Graphify es contexto estructural persistente y derivado, no fuente canonica.
+
+Ayuda a responder:
 
 - donde esta el nucleo del repo,
 - que modulos se relacionan,

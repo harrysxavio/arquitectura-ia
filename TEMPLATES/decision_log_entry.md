@@ -1,20 +1,23 @@
 # Decision Log Entry
 
+> [!NOTE]
+> Plantilla reutilizable para registrar una decision puntual.
+
 ## Fecha
 <!-- YYYY-MM-DD -->
 
-## Decisión
-<!-- Qué se decidió, en una oración clara -->
+## Decision
+<!-- Que se decidio, en una oracion clara -->
 
 ## Motivo
-<!-- Por qué se tomó esta decisión -->
+<!-- Por que se tomo esta decision -->
 
 ## Alternativas Consideradas
-<!-- Qué otras opciones existían y por qué se descartaron -->
-- 
+<!-- Que otras opciones existian y por que se descartaron -->
+-
 
 ## Impacto
-<!-- Qué cambia a partir de esta decisión -->
+<!-- Que cambia a partir de esta decision -->
 
 ## Referencia
 <!-- ADR relacionada, tarea, PR o documento si aplica -->

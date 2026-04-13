@@ -4,7 +4,8 @@
 
 La arquitectura actual separa framework global, proyecto instanciado, teoria, herramientas estructurales y conocimiento satelite.
 
-La separacion evita que una nota pedagogica, un output derivado o una investigacion externa gobiernen una tarea tecnica.
+> [!IMPORTANT]
+> La separacion evita que una nota pedagogica, un output derivado o una investigacion externa gobiernen una tarea tecnica.
 
 | Nivel | Donde vive | Autoridad |
 |---|---|---|
@@ -85,6 +86,9 @@ Define limites de herramientas externas:
 Ninguno reemplaza el repo como fuente oficial.
 
 ## 3. Proyecto Instanciado
+
+> [!WARNING]
+> `PROJECT_TEMPLATE/` solo se vuelve canonico despues de copiarse o adaptarse en un repo concreto.
 
 Un proyecto real debe nacer al copiar o adaptar `PROJECT_TEMPLATE/` dentro de un repo concreto.
 

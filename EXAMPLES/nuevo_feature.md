@@ -1,18 +1,19 @@
-﻿# Ejemplo: Nuevo Feature
+# Ejemplo: Nuevo Feature
 
-> Caso prÃ¡ctico que muestra cÃ³mo el framework maneja una nueva funcionalidad.
+> [!NOTE]
+> Caso practico que muestra como el framework maneja una nueva funcionalidad.
 
-## SituaciÃ³n
-"Agregar validaciÃ³n para no permitir Ã³rdenes de clientes bloqueados."
+## Situacion
+"Agregar validacion para no permitir ordenes de clientes bloqueados."
 
-## ClasificaciÃ³n por el Manager
+## Clasificacion por el Manager
 - **Tipo**: Feature.
 - **Nivel**: 2 (funcionalidad media, requiere spec).
-- **Agente asignado**: Coder â†’ Reviewer.
+- **Agente asignado**: Coder -> Reviewer.
 
-## Contexto Cargado (segÃºn OPERACION/CONTEXT_ROUTER.md)
+## Contexto Cargado (segun OPERACION/CONTEXT_ROUTER.md)
 
-### Contexto mÃ­nimo (siempre)
+### Contexto minimo (siempre)
 - `PROJECT_GUIDE.md`
 - `CONTEXT_INDEX.md`
 - `active_task.md`
@@ -25,20 +26,19 @@
 - `docs/engineering/coding_standards.md`
 - Archivos afectados del caso de uso.
 
-## Flujo de EjecuciÃ³n
+## Flujo de Ejecucion
 
 1. **Manager** clasifica como feature Nivel 2.
 2. **Manager** verifica que existe `spec.md` actualizada con la regla de negocio.
-3. **Coder** lee spec: `Si customer.status = blocked â†’ orden rechazada con mensaje`.
-4. **Coder** implementa validaciÃ³n en el servicio de Ã³rdenes.
+3. **Coder** lee spec: `Si customer.status = blocked -> orden rechazada con mensaje`.
+4. **Coder** implementa validacion en el servicio de ordenes.
 5. **Coder** agrega test unitario para el caso.
 6. **Reviewer** valida:
-   - âœ… Cumple la regla de negocio.
-   - âœ… No afecta flujo de clientes activos.
-   - âœ… Mensaje de error es claro.
-   - âœ… Test cubre ambos escenarios.
+   - Cumple la regla de negocio.
+   - No afecta flujo de clientes activos.
+   - Mensaje de error es claro.
+   - Test cubre ambos escenarios.
 
-## Post-EjecuciÃ³n
-- Se actualiza `memory/patterns.md` si la validaciÃ³n establece un nuevo patrÃ³n.
-- Se registra en `decision_log.md`: "ValidaciÃ³n de bloqueo implementada a nivel de servicio, no de base de datos."
-
+## Post-Ejecucion
+- Se actualiza `memory/patterns.md` si la validacion establece un nuevo patron.
+- Se registra en `decision_log.md`: "Validacion de bloqueo implementada a nivel de servicio, no de base de datos."

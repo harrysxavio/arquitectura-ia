@@ -1,8 +1,9 @@
-﻿# CONTEXT_ROUTER.md - Matriz Operativa de Contexto
+# CONTEXT_ROUTER.md - Matriz Operativa de Contexto
 
 Este archivo es la autoridad unica para decidir que contexto debe cargar un agente segun tipo y complejidad de tarea.
 
-No explica la filosofia del sistema. No define agentes. No reemplaza constraints. Su funcion es enrutar lectura.
+> [!IMPORTANT]
+> Su funcion es enrutar lectura. No explica la filosofia del sistema, no define agentes y no reemplaza constraints.
 
 ## 1. Protocolo Base
 
@@ -13,7 +14,8 @@ No explica la filosofia del sistema. No define agentes. No reemplaza constraints
 5. Si falta un documento canonico obligatorio, solicitarlo o instanciarlo desde `PROJECT_TEMPLATE/`.
 6. Si hay conflicto documental, obedecer la jerarquia de fuentes.
 
-Regla: prohibido cargar el repo completo por defecto.
+> [!WARNING]
+> Regla: prohibido cargar el repo completo por defecto.
 
 ## 2. Contexto Base del Proyecto Activo
 
@@ -24,6 +26,9 @@ Regla: prohibido cargar el repo completo por defecto.
 | 3 | `tasks/current/active_task.md` | Trabajo actual, alcance y no alcance |
 
 Fallback cuando se esta trabajando en este framework, no en un proyecto instanciado:
+
+> [!NOTE]
+> Este fallback aplica solo para operar el framework global; `PROJECT_TEMPLATE/` sigue siendo molde, no verdad operativa.
 
 | Prioridad | Archivo | Uso |
 |---|---|---|
@@ -42,6 +47,9 @@ Fallback cuando se esta trabajando en este framework, no en un proyecto instanci
 ## 4. Politica de Graphify en el Router
 
 Graphify se consulta como mapa estructural derivado, no como fuente de verdad.
+
+> [!TIP]
+> En tareas estructurales, usa Graphify para orientar navegacion antes de abrir documentacion amplia o modulos completos.
 
 Ruta para tareas estructurales o ambiguas:
 
@@ -91,6 +99,9 @@ Graphify entra antes de leer documentacion amplia o explorar modulos completos. 
 
 ## 7. Prohibiciones
 
+> [!WARNING]
+> Estas prohibiciones evitan sobrecarga de contexto y fuentes de autoridad falsas.
+
 - No cargar `THEORY/*` durante ejecucion tecnica rutinaria.
 - No cargar todo `docs/`, toda `memory/` ni todo `decisions/` por si acaso.
 - No usar Graphify para sustituir spec, SDD, decision log o memoria canonica.
@@ -99,4 +110,5 @@ Graphify entra antes de leer documentacion amplia o explorar modulos completos. 
 
 ## 8. Regla Final
 
-El objetivo es leer menos, pero mejor.
+> [!IMPORTANT]
+> El objetivo es leer menos, pero mejor.

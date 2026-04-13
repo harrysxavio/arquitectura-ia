@@ -1,38 +1,41 @@
-# SPEC — Especificación Funcional
+# SPEC - Especificacion Funcional
+
+> [!NOTE]
+> Plantilla reutilizable para definir una funcionalidad antes de implementarla.
 
 ## Objetivo
-<!-- Qué debe lograr esta funcionalidad -->
+<!-- Que debe lograr esta funcionalidad -->
 
 ## Problema
-<!-- Qué problema resuelve -->
+<!-- Que problema resuelve -->
 
 ## Usuario / Actor
-<!-- Quién interactúa con esta funcionalidad -->
+<!-- Quien interactua con esta funcionalidad -->
 
 ## Alcance
-<!-- Qué está incluido -->
+<!-- Que esta incluido -->
 
 ## No Alcance
-<!-- Qué queda explícitamente fuera -->
+<!-- Que queda explicitamente fuera -->
 
 ## Reglas de Negocio
-<!-- Lógica de negocio que aplica -->
-- 
+<!-- Logica de negocio que aplica -->
+-
 
 ## Casos de Uso
 <!-- Escenarios principales -->
-- Usuario hace X → Sistema responde Y.
-- Usuario hace Z → Sistema rechaza con mensaje.
+- Usuario hace X -> Sistema responde Y.
+- Usuario hace Z -> Sistema rechaza con mensaje.
 
-## Criterios de Aceptación
-- [ ] 
-- [ ] 
-- [ ] 
+## Criterios de Aceptacion
+- [ ]
+- [ ]
+- [ ]
 
 ## Riesgos Funcionales
-<!-- Qué podría salir mal a nivel funcional -->
-- 
+<!-- Que podria salir mal a nivel funcional -->
+-
 
 ## Dependencias
-<!-- Otros módulos, APIs o servicios involucrados -->
-- 
+<!-- Otros modulos, APIs o servicios involucrados -->
+-

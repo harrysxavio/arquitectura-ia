@@ -1,4 +1,4 @@
-﻿# CONSTRAINTS: Memoria y Persistencia
+# CONSTRAINTS: Memoria y Persistencia
 
 ## Fuentes Oficiales de Memoria
 
@@ -11,11 +11,14 @@
 
 ## Regla de No Duplicacion
 
-Una idea debe vivir en un solo lugar canonico. Si aparece en Graphify, Obsidian o research externo y debe gobernar el proyecto, debe volver al repo en la fuente oficial correspondiente.
+> [!IMPORTANT]
+> Una idea debe vivir en un solo lugar canonico. Si aparece en Graphify, Obsidian o research externo y debe gobernar el proyecto, debe volver al repo en la fuente oficial correspondiente.
 
 ## Graphify
 
-- `graphify-out/*` es memoria estructural derivada, no memoria canonica.
+> [!NOTE]
+> `graphify-out/*` es memoria estructural derivada, no memoria canonica.
+
 - Puede ayudar a descubrir relaciones, dependencias y zonas de impacto.
 - No debe usarse para sustituir decisiones, hechos, restricciones o patrones aprobados.
 
@@ -26,6 +29,9 @@ Una idea debe vivir en un solo lugar canonico. Si aparece en Graphify, Obsidian 
 - El repo del proyecto activo es siempre la fuente oficial para tareas, decisiones, memoria y documentacion tecnica.
 
 ## Actualizacion
+
+> [!TIP]
+> Al cerrar una tarea importante, revisa si corresponde actualizar memoria o decisiones.
 
 Al cerrar una tarea importante, evaluar si corresponde actualizar:
 

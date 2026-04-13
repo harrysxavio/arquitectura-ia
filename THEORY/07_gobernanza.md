@@ -4,7 +4,8 @@
 
 El problema no es construir el sistema. El problema es evitar que se degrade.
 
-Gobernanza es el conjunto de reglas que mantiene usable el framework cuando crecen los proyectos, las herramientas, los agentes y la documentacion.
+> [!IMPORTANT]
+> Gobernanza es el conjunto de reglas que mantiene usable el framework cuando crecen los proyectos, las herramientas, los agentes y la documentacion.
 
 ## 2. Que Gobierna el Framework
 
@@ -54,7 +55,10 @@ Ejemplos:
 
 ### 4.2 No confundir plantilla con proyecto
 
-`PROJECT_TEMPLATE/` no contiene verdad operativa. Si un agente lo trata como proyecto activo, puede inventar tareas, decisiones o memoria falsas.
+> [!WARNING]
+> `PROJECT_TEMPLATE/` no contiene verdad operativa.
+
+Si un agente lo trata como proyecto activo, puede inventar tareas, decisiones o memoria falsas.
 
 ### 4.3 No convertir teoria en runtime
 

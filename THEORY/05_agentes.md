@@ -16,6 +16,9 @@ Flujo conceptual:
 
 La meta no es tener mas agentes. La meta es que cada rol reduzca ambiguedad.
 
+> [!IMPORTANT]
+> Si una necesidad puede resolverse con skill, workflow o checklist, no debe convertirse en agente nuevo.
+
 ## 2. Agentes Oficiales
 
 Solo existen cuatro agentes base:
@@ -122,6 +125,9 @@ El Debugger investiga fallos con metodo y convierte incertidumbre en evidencia.
 Debuggear requiere metodo distinto a implementar. Separarlo evita fixes superficiales y cambios arquitectonicos innecesarios.
 
 ## 7. Skills, Workflows y Subagentes
+
+> [!TIP]
+> Evalua skills y workflows antes de crear roles nuevos.
 
 | Elemento | Funcion | Cuando usarlo |
 |---|---|---|

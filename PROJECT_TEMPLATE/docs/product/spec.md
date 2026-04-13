@@ -1,5 +1,6 @@
-﻿# SPEC - Especificacion Funcional
+# SPEC - Especificacion Funcional
 
+> [!NOTE]
 > Plantilla. Canonica solo dentro de un proyecto activo.
 
 ## Objetivo
@@ -14,12 +15,12 @@
 
 ## Reglas de Negocio
 
-- 
+-
 
 ## Criterios de Aceptacion
 
-- [ ] 
+- [ ]
 
 ## Riesgos Funcionales
 
-- 
+-

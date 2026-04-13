@@ -29,6 +29,7 @@ La estructura actual separa siete zonas:
 
 ## 2. Principio Rector
 
+> [!IMPORTANT]
 > La calidad del resultado no debe depender del modelo. Debe depender del sistema.
 
 Un modelo potente falla si el repo no tiene estructura, si las fuentes se contradicen o si el agente debe adivinar que leer. Un modelo mas barato puede rendir bien si recibe una tarea acotada, contexto minimo suficiente y reglas claras.
@@ -122,6 +123,9 @@ En un proyecto activo:
 | Mapa derivado | `graphify-out/*` |
 
 ### 5.5 `PROJECT_TEMPLATE/` no es un proyecto activo
+
+> [!WARNING]
+> `PROJECT_TEMPLATE/` no debe confundirse con memoria, decisiones ni tarea activa reales.
 
 Los archivos dentro de `PROJECT_TEMPLATE/` son ejemplos estructurales. No contienen tarea activa real, decisiones reales ni memoria real. Solo se vuelven canonicos cuando se copian o adaptan dentro de un repo de proyecto.
 

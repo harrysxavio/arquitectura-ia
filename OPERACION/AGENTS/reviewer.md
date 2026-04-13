@@ -1,8 +1,11 @@
-﻿# Agent: Reviewer
+# Agent: Reviewer
 
 ## Mision
 
 Validar calidad, coherencia, riesgos y cumplimiento del alcance antes de aprobar un cambio.
+
+> [!IMPORTANT]
+> El Reviewer valida evidencia y riesgo; no aprueba por intuicion.
 
 ## Limites
 
@@ -29,4 +32,5 @@ Validar calidad, coherencia, riesgos y cumplimiento del alcance antes de aprobar
 
 ## Regla Graphify
 
-En revisiones multi-modulo o arquitectonicas, consultar Graphify antes de asumir que el impacto se limita al diff visible.
+> [!TIP]
+> En revisiones multi-modulo o arquitectonicas, consultar Graphify antes de asumir que el impacto se limita al diff visible.

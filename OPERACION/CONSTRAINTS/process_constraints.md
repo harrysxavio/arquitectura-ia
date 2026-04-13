@@ -1,4 +1,4 @@
-﻿# CONSTRAINTS: Flujo y Ejecucion
+# CONSTRAINTS: Flujo y Ejecucion
 
 ## Flujo Base
 
@@ -10,6 +10,9 @@
 6. Se actualiza memoria o decisiones si corresponde.
 
 ## Micro-Specs
+
+> [!NOTE]
+> El nivel de la tarea define cuanta especificacion y validacion se exige.
 
 - Nivel 1: requiere tarea clara y archivo afectado. No requiere `spec.md`.
 - Nivel 2: requiere `docs/product/spec.md` cuando hay regla funcional, usuario, contrato o criterio de aceptacion.
@@ -24,8 +27,9 @@
 
 ## Reglas de Ejecucion
 
-- No iniciar cambios fuera del alcance declarado.
-- No cambiar arquitectura sin SDD, decision o aprobacion explicita.
+> [!WARNING]
+> No iniciar cambios fuera del alcance declarado ni cambiar arquitectura sin SDD, decision o aprobacion explicita.
+
 - Registrar decisiones relevantes en `decisions/decision_log.md`.
 - En tareas Nivel 2 o 3, no cerrar sin validacion suficiente.
 - No usar `PROJECT_TEMPLATE/` como fuente de verdad del proyecto activo.

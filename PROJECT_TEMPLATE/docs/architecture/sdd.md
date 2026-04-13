@@ -1,5 +1,6 @@
-﻿# SDD - Diseno Tecnico
+# SDD - Diseno Tecnico
 
+> [!NOTE]
 > Plantilla. Canonica solo dentro de un proyecto activo.
 
 ## Contexto

@@ -1,58 +1,69 @@
-# CONSTRAINTS: Política de Herramientas y Modelos
+# CONSTRAINTS: Politica de Herramientas y Modelos
 
-## Regla maestra de adopción
+## Regla maestra de adopcion
+
+> [!IMPORTANT]
+> La herramienta se adapta al sistema, NO al reves.
+
 - Ninguna herramienta entra al framework si no responde claramente:
-  - Qué problema resuelve.
-  - Qué reemplaza o complementa.
-  - Qué complejidad agrega.
-  - Qué complejidad reduce.
+  - Que problema resuelve.
+  - Que reemplaza o complementa.
+  - Que complejidad agrega.
+  - Que complejidad reduce.
   - Si compite con otra ya aprobada.
-- La herramienta se adapta al sistema, NO al revés.
 - PROHIBIDO agregar herramientas por tendencia, curiosidad o sin caso de uso.
 
-## Núcleo obligatorio
+## Nucleo obligatorio
 - VS Code, Git, GitHub, agente principal (Cline o Codex), Markdown versionado.
 - Estos NO son negociables.
 
 ## Agente principal
+
+> [!WARNING]
+> PROHIBIDO usar Cline y Codex como cerebro principal del mismo proyecto.
+
 - OBLIGATORIO elegir uno como principal por proyecto: Cline o Codex.
-- PROHIBIDO usar ambos como cerebro principal del mismo proyecto.
 - Cline: para frameworks con fuerte gobernanza documental y contexto persistente.
 - Codex: para simplicidad operativa y productividad en ecosistema OpenAI.
 
-## Política de modelos
+## Politica de modelos
 - No todos los agentes usan el mismo modelo.
-- Manager → modelo barato (GPT-4.1-mini / Qwen / DeepSeek). PROHIBIDO usar GPT-5 para clasificación.
-- Coder → modelo medio (GPT-4.1 / DeepSeek). El 80% del código NO necesita modelo premium.
-- Reviewer → modelo medio/alto (GPT-4.1 / Claude Sonnet). Donde más se justifica subir calidad.
-- Debugger → modelo alto (Claude Sonnet / GPT-5). Debugging complejo es el caso más crítico.
+- Manager -> modelo barato (GPT-4.1-mini / Qwen / DeepSeek). PROHIBIDO usar GPT-5 para clasificacion.
+- Coder -> modelo medio (GPT-4.1 / DeepSeek). El 80% del codigo NO necesita modelo premium.
+- Reviewer -> modelo medio/alto (GPT-4.1 / Claude Sonnet). Donde mas se justifica subir calidad.
+- Debugger -> modelo alto (Claude Sonnet / GPT-5). Debugging complejo es el caso mas critico.
 - Escalar modelo SOLO si falla el resultado.
-- Si estás pagando mucho → el problema es de contexto, no de modelo.
+- Si estas pagando mucho -> el problema es de contexto, no de modelo.
 
 ## Playwright vs Stagehand
+
+> [!TIP]
+> Empezar con Playwright y escalar a Stagehand solo si el flujo se rompe o se vuelve inestable.
+
 - Playwright es la base. Stagehand es capa especializada.
 - OBLIGATORIO empezar con Playwright.
 - Solo escalar a Stagehand si el flujo se rompe o se vuelve inestable.
-- PROHIBIDO usar Stagehand como reemplazo estándar de E2E.
+- PROHIBIDO usar Stagehand como reemplazo estandar de E2E.
 
 ## n8n
-- Es el orquestador externo para automatización.
+- Es el orquestador externo para automatizacion.
 - NO usarlo como sustituto de backend.
-- Mantener workflows pequeños y trazables.
-- Guardar lógica compleja fuera y llamar scripts/servicios cuando haga falta.
+- Mantener workflows pequenos y trazables.
+- Guardar logica compleja fuera y llamar scripts/servicios cuando haga falta.
 
 ## Docker
-- Usar cuando: portabilidad, producción, múltiples servicios, consistencia entre entornos.
-- NO usar en: scripts simples, aprendizaje, prototipos rápidos, automatización local.
+- Usar cuando: portabilidad, produccion, multiples servicios, consistencia entre entornos.
+- NO usar en: scripts simples, aprendizaje, prototipos rapidos, automatizacion local.
 
-## Herramientas fuera del núcleo
-- NO entran al inicio: Kubernetes, microservicios, Airflow, múltiples clouds, auth enterprise compleja, RAG/embeddings por defecto.
+## Herramientas fuera del nucleo
+- NO entran al inicio: Kubernetes, microservicios, Airflow, multiples clouds, auth enterprise compleja, RAG/embeddings por defecto.
 
 ## Gobernanza de herramientas
-- La evolución del stack DEBE ser controlada.
+- La evolucion del stack DEBE ser controlada.
 - PROHIBIDO cambiar todo de golpe.
 - PROHIBIDO reestructurar sin necesidad.
 - PROHIBIDO introducir herramientas sin uso claro documentado.
 
 ---
-> Para contexto filosófico, consulte `/THEORY/03_herramientas.md` y `/THEORY/07_gobernanza.md`.
+> [!NOTE]
+> Para contexto filosofico, consulte `/THEORY/03_herramientas.md` y `/THEORY/07_gobernanza.md`.

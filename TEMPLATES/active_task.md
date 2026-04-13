@@ -1,7 +1,10 @@
-﻿# Active Task
+# Active Task
+
+> [!NOTE]
+> Plantilla reutilizable. Completar sin cambiar la estructura base del documento.
 
 ## Tarea
-<!-- DescripciÃ³n clara y concisa de la tarea -->
+<!-- Descripcion clara y concisa de la tarea -->
 
 ## Tipo
 <!-- bug | feature | refactor | deploy | research | docs -->
@@ -10,20 +13,19 @@
 <!-- 1 (simple) | 2 (media) | 3 (estructural) -->
 
 ## Objetivo
-<!-- QuÃ© resultado se espera al completar la tarea -->
+<!-- Que resultado se espera al completar la tarea -->
 
 ## Alcance
-<!-- QuÃ© archivos/mÃ³dulos estÃ¡n involucrados -->
+<!-- Que archivos/modulos estan involucrados -->
 
 ## No Alcance
-<!-- QuÃ© NO debe tocarse -->
+<!-- Que NO debe tocarse -->
 
 ## Estado
-<!-- pendiente | en progreso | en revisiÃ³n | completada -->
+<!-- pendiente | en progreso | en revision | completada -->
 
 ## Contexto Cargado
-<!-- Listar archivos que se cargaron segÃºn OPERACION/CONTEXT_ROUTER.md -->
+<!-- Listar archivos que se cargaron segun OPERACION/CONTEXT_ROUTER.md -->
 
 ## Notas
-<!-- Observaciones relevantes durante la ejecuciÃ³n -->
-
+<!-- Observaciones relevantes durante la ejecucion -->

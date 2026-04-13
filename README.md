@@ -1,24 +1,25 @@
-﻿# Arquitectura Transversal para IA
+# Arquitectura Transversal para IA
 
 Framework documental para trabajar con agentes de IA usando contexto minimo, fuentes de verdad claras y separacion limpia entre operacion, teoria y conocimiento satelite.
 
 Principio rector:
 
+> [!IMPORTANT]
 > La calidad del resultado no debe depender del modelo. Debe depender del sistema.
 
 ## Como Esta Organizado
 
 ```text
 /
-├── README.md                 # Puerta de entrada humana
-├── OPERACION/                # Documentos que guian la ejecucion diaria
-├── GRAPHIFY/                 # Politica de contexto estructural persistente
-├── PROJECT_TEMPLATE/         # Plantilla reusable, no proyecto activo
-├── THEORY/                   # Manual teorico y pedagogico
-├── TEMPLATES/                # Formatos reutilizables
-├── EXAMPLES/                 # Casos de uso de referencia
-├── SATELLITE/                # Politicas de conocimiento fuera del nucleo
-└── ARCHIVE/                  # Fuentes historicas no canonicas
+|-- README.md                 # Puerta de entrada humana
+|-- OPERACION/                # Documentos que guian la ejecucion diaria
+|-- GRAPHIFY/                 # Politica de contexto estructural persistente
+|-- PROJECT_TEMPLATE/         # Plantilla reusable, no proyecto activo
+|-- THEORY/                   # Manual teorico y pedagogico
+|-- TEMPLATES/                # Formatos reutilizables
+|-- EXAMPLES/                 # Casos de uso de referencia
+|-- SATELLITE/                # Politicas de conocimiento fuera del nucleo
++-- ARCHIVE/                  # Fuentes historicas no canonicas
 ```
 
 ## Capas Principales
@@ -33,7 +34,8 @@ Principio rector:
 
 ## Advertencia Sobre PROJECT_TEMPLATE
 
-`PROJECT_TEMPLATE/` no representa el proyecto actual.
+> [!WARNING]
+> `PROJECT_TEMPLATE/` no representa el proyecto actual.
 
 Sus archivos son ejemplos estructurales:
 
@@ -73,4 +75,5 @@ Solo cuando esta plantilla se copia o adapta dentro de un repo de proyecto, esos
 
 ## Regla de Uso Diario
 
-No cargues todo el repo por defecto. Empieza por el contexto minimo del proyecto activo y escala solo cuando la tarea lo justifique.
+> [!TIP]
+> No cargues todo el repo por defecto. Empieza por el contexto minimo del proyecto activo y escala solo cuando la tarea lo justifique.

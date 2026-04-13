@@ -1,6 +1,9 @@
-﻿# CONSTRAINTS: Agentes
+# CONSTRAINTS: Agentes
 
 ## Agentes Oficiales
+
+> [!IMPORTANT]
+> Si una necesidad puede resolverse con skill, workflow o checklist, no debe convertirse en agente.
 
 Solo existen cuatro agentes base:
 
@@ -9,9 +12,12 @@ Solo existen cuatro agentes base:
 - Reviewer
 - Debugger
 
-No crear agentes nuevos sin decision documentada. Si una necesidad puede resolverse con skill, workflow o checklist, no debe convertirse en agente.
+No crear agentes nuevos sin decision documentada.
 
 ## Subagentes
+
+> [!TIP]
+> Usa subagentes solo cuando reduzcan contexto o permitan paralelismo real.
 
 Los subagentes son opcionales y avanzados. Usarlos solo si:
 

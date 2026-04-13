@@ -1,8 +1,11 @@
-﻿# Politica Oficial de NotebookLM
+# Politica Oficial de NotebookLM
 
 ## Rol
 
 NotebookLM sirve para research sobre fuentes externas: PDFs, documentacion de terceros, papers, links y material largo que no debe cargarse completo al agente en cada tarea.
+
+> [!NOTE]
+> NotebookLM es una herramienta de research externo, no memoria viva del repo.
 
 ## Flujo Correcto
 
@@ -13,6 +16,9 @@ NotebookLM sirve para research sobre fuentes externas: PDFs, documentacion de te
 5. Registrar decisiones o restricciones si la investigacion cambia el proyecto.
 
 ## Limites
+
+> [!WARNING]
+> No uses NotebookLM como fuente oficial del proyecto.
 
 - No es memoria viva del repo.
 - No es fuente oficial del proyecto.

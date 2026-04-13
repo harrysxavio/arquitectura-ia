@@ -1,10 +1,12 @@
-﻿# CONSTRAINTS: Arquitectura y Estructura
+# CONSTRAINTS: Arquitectura y Estructura
 
 ## Separacion Obligatoria
 
+> [!IMPORTANT]
+> `PROJECT_TEMPLATE/` es molde, no fuente de verdad operativa.
+
 - El framework global reusable vive en este repo.
 - Un proyecto activo real vive en un repo instanciado desde `PROJECT_TEMPLATE/`.
-- `PROJECT_TEMPLATE/` es molde, no fuente de verdad operativa.
 - Obsidian y NotebookLM son conocimiento satelite, no nucleo oficial.
 
 ## Proyecto Activo
@@ -18,7 +20,8 @@ Todo proyecto instanciado debe tener:
 - `decisions/decision_log.md`
 - `memory/project_facts.md`
 
-Si falta alguno, el proyecto esta incompleto para operacion disciplinada.
+> [!WARNING]
+> Si falta alguno, el proyecto esta incompleto para operacion disciplinada.
 
 ## Fuente de Verdad
 
@@ -44,7 +47,9 @@ Si falta alguno, el proyecto esta incompleto para operacion disciplinada.
 
 ## Seguridad Basica
 
-- No guardar credenciales reales en Markdown, logs o decisiones.
+> [!WARNING]
+> No guardar credenciales reales en Markdown, logs o decisiones.
+
 - Referenciar secretos, no escribirlos.
 - Mantener `.env.example` con valores dummy cuando aplique.
 - Excluir `.env`, `.env.*` y credenciales locales cuando el proyecto use Git.

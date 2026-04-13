@@ -1,6 +1,9 @@
-﻿# Contrato de Outputs Graphify
+# Contrato de Outputs Graphify
 
 ## Ubicacion Esperada
+
+> [!NOTE]
+> Estos outputs viven en el proyecto instanciado, no como fuente canonica del framework global.
 
 En un proyecto instanciado, los outputs de Graphify deben vivir en:
 
@@ -21,6 +24,9 @@ graphify-out/
 
 ## Reglas de Consumo
 
+> [!TIP]
+> Lee `GRAPH_REPORT.md` antes de abrir muchos archivos cuando la tarea sea Nivel 3.
+
 - Leer `GRAPH_REPORT.md` antes de abrir muchos archivos en tareas Nivel 3.
 - Usar `graph.json` cuando se necesite consulta estructurada.
 - Usar `graph.html` para navegacion humana o Obsidian.
@@ -36,4 +42,5 @@ Un output Graphify se considera potencialmente stale cuando:
 - cambio la arquitectura documentada,
 - el agente detecta contradiccion con el repo.
 
-Si esta stale, no debe usarse como base de decision sin regenerarse o verificarse contra archivos canonicos.
+> [!WARNING]
+> No uses outputs stale como base de decision sin regenerarlos o verificarlos contra archivos canonicos.

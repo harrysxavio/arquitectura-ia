@@ -1,32 +1,32 @@
 # Project Facts
 
-## Stack Tecnológico
+> [!IMPORTANT]
+> Solo hechos vigentes. No opiniones. No debates. No historico.
+
+## Stack Tecnologico
 <!-- Lenguajes, frameworks, bases de datos -->
-- Backend: 
-- Frontend: 
-- Base de datos: 
-- Hosting: 
+- Backend:
+- Frontend:
+- Base de datos:
+- Hosting:
 
 ## Entornos
-<!-- Desarrollo, staging, producción -->
-- Desarrollo: 
-- Producción: 
+<!-- Desarrollo, staging, produccion -->
+- Desarrollo:
+- Produccion:
 
 ## Proveedores Aprobados
 <!-- Servicios externos en uso -->
-- 
+-
 
 ## Auth
-<!-- Tipo de autenticación -->
-- 
+<!-- Tipo de autenticacion -->
+-
 
 ## Restricciones Estructurales
-<!-- Límites técnicos o de negocio vigentes -->
-- 
+<!-- Limites tecnicos o de negocio vigentes -->
+-
 
 ## Integraciones Activas
 <!-- APIs externas, servicios conectados -->
-- 
-
----
-> Solo hechos vigentes. No opiniones. No debates. No histórico.
+-

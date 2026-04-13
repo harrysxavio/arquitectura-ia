@@ -1,5 +1,6 @@
-﻿# CONTEXT_INDEX.md
+# CONTEXT_INDEX.md
 
+> [!NOTE]
 > Plantilla. Este indice se vuelve canonico solo dentro de un proyecto activo.
 
 ## Fuentes Oficiales
@@ -22,4 +23,5 @@
 
 ## Regla
 
-No agregar documentos a este indice si no tienen funcion clara de consulta.
+> [!IMPORTANT]
+> No agregar documentos a este indice si no tienen funcion clara de consulta.

@@ -1,8 +1,9 @@
-﻿# AGENTS.md
+# AGENTS.md
 
 Este archivo pertenece a un proyecto instanciado desde `PROJECT_TEMPLATE/`.
 
-En la plantilla, es solo un ejemplo estructural. No describe un proyecto activo.
+> [!NOTE]
+> En la plantilla, es solo un ejemplo estructural. No describe un proyecto activo.
 
 ## Agentes Base
 
@@ -13,4 +14,5 @@ En la plantilla, es solo un ejemplo estructural. No describe un proyecto activo.
 
 ## Regla
 
-Usar los contratos de rol definidos en `OPERACION/AGENTS/` del framework global.
+> [!IMPORTANT]
+> Usar los contratos de rol definidos en `OPERACION/AGENTS/` del framework global.

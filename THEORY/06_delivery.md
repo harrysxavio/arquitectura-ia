@@ -6,6 +6,9 @@ No todo lo que se construye debe desplegarse. Pero todo lo que se usa repetidame
 
 Delivery en este framework significa llevar una solucion desde intencion hasta uso real con el menor nivel de complejidad suficiente.
 
+> [!TIP]
+> Primero demostrar que funciona. Luego demostrar que se usa. Despues desplegar en serio.
+
 ## 2. Preguntas Antes de Desplegar
 
 Antes de elegir plataforma o stack, responder:
@@ -18,8 +21,6 @@ Antes de elegir plataforma o stack, responder:
 6. Hay datos persistentes?
 7. Hay requisitos de seguridad?
 8. Hay tests o checks reproducibles?
-
-Primero demostrar que funciona. Luego demostrar que se usa. Despues desplegar en serio.
 
 ## 3. Tipos de Delivery
 
@@ -139,6 +140,9 @@ Flujo minimo:
 No introducir CI/CD si no hay comandos reproducibles. Primero definir scripts locales, despues automatizarlos.
 
 ## 9. Seguridad Basica
+
+> [!WARNING]
+> No subir API keys ni guardar secretos en Markdown, logs o decisiones.
 
 - No subir API keys.
 - Usar variables de entorno.

@@ -1,5 +1,6 @@
-﻿# Project Facts
+# Project Facts
 
+> [!WARNING]
 > Plantilla. No contiene hechos reales mientras este dentro de `PROJECT_TEMPLATE/`.
 
 ## Stack
@@ -11,7 +12,7 @@
 
 ## Integraciones
 
-- 
+-
 
 ## Entornos
 

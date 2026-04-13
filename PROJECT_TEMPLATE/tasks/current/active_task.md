@@ -1,5 +1,6 @@
-﻿# Active Task
+# Active Task
 
+> [!WARNING]
 > Plantilla. No es una tarea activa real mientras este dentro de `PROJECT_TEMPLATE/`.
 
 ## Tarea

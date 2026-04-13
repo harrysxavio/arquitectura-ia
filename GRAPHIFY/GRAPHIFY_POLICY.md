@@ -1,12 +1,16 @@
-﻿# Politica Oficial de Graphify
+# Politica Oficial de Graphify
 
 ## Rol
 
 Graphify es la capa central de contexto estructural persistente. Su funcion es orientar navegacion, onboarding, investigacion interna, analisis de impacto y refactors amplios.
 
-Sus outputs son derivados. Ayudan a leer mejor el repo, pero no reemplazan documentos canonicos.
+> [!IMPORTANT]
+> Sus outputs son derivados. Ayudan a leer mejor el repo, pero no reemplazan documentos canonicos.
 
 ## Prioridad
+
+> [!TIP]
+> Usa Graphify cuando el problema sea estructural, transversal o ambiguo.
 
 Usar Graphify con prioridad alta en:
 
@@ -43,11 +47,13 @@ Para tareas estructurales o ambiguas, Graphify entra despues del contexto base y
 
 ## Limites
 
+> [!WARNING]
+> Si Graphify esta desactualizado, debe marcarse como stale y regenerarse antes de usarlo para decisiones estructurales.
+
 - No es fuente de verdad oficial.
 - No reemplaza `PROJECT_GUIDE.md`.
 - No reemplaza `CONTEXT_INDEX.md`.
 - No reemplaza `spec.md`, `sdd.md`, `decision_log.md` ni memoria oficial.
-- Si esta desactualizado, debe marcarse como stale y regenerarse antes de usarlo para decisiones estructurales.
 
 ## Gobernanza
 
