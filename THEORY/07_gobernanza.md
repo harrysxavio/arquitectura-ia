@@ -29,8 +29,10 @@ La gobernanza cubre:
 | Como navegar este framework | `README.md` |
 | Que contexto cargar | `OPERACION/CONTEXT_ROUTER.md` |
 | Reglas ejecutables | `OPERACION/CONSTRAINTS/*.md` |
+| Instrucciones locales de tooling en este repo | `AGENTS.md` raiz |
 | Roles de agentes | `OPERACION/AGENTS/*.md` |
 | Explicacion pedagogica | `THEORY/*.md` |
+| Plano de proyecto instanciado | `PROJECT_BLUEPRINT/` |
 | Politica Graphify | `GRAPHIFY/GRAPHIFY_POLICY.md` |
 | Contrato Graphify | `GRAPHIFY/OUTPUT_CONTRACT.md` |
 | Politica Obsidian | `SATELLITE/OBSIDIAN_POLICY.md` |
@@ -39,6 +41,8 @@ La gobernanza cubre:
 | Proyecto activo real | Repo instanciado desde `PROJECT_TEMPLATE/` |
 
 En un proyecto activo, la autoridad pasa a sus documentos canonicos: `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `tasks/`, `decisions/`, `memory/`, `docs/` y `graphify-out/` como derivado.
+
+El `AGENTS.md` raiz de este repo-framework no reemplaza `OPERACION/AGENTS/*.md`: solo entrega instrucciones locales de tooling para esta copia del framework.
 
 ## 4. Reglas de No Degradacion
 

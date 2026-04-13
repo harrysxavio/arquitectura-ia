@@ -1,3 +1,7 @@
+# AGENTS.md
+
+> Instruccion local de tooling para este repo-framework. No reemplaza `OPERACION/AGENTS/*.md` ni la plantilla `PROJECT_TEMPLATE/AGENTS.md`.
+
 ## graphify
 
 This project has a graphify knowledge graph at graphify-out/.

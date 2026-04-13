@@ -42,6 +42,10 @@ Hosting: Render para API, Vercel para frontend.
 
 - TBD
 
+## Restricciones Estructurales
+
+-
+
 ## Nota de uso
 
-Si un hecho cambia por decision, actualizar tambien `decisions/decision_log.md`.
+Si un hecho cambia por decision, actualizar tambien `decisions/decision_log.md`. Si una restriccion estructural limita implementaciones futuras, reflejarla tambien en `memory/constraints.md`.

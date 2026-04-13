@@ -1,6 +1,6 @@
 ﻿# Arquitectura Transversal para IA
 
-Framework documental para trabajar con agentes de IA usando contexto minimo, fuentes de verdad claras y separacion limpia entre operacion, teoria, blueprint de proyecto, plantillas y conocimiento satelite.
+Framework documental para trabajar con agentes de IA usando contexto minimo, fuentes de verdad claras y separacion limpia entre operacion, teoria, blueprint de proyecto, plantilla integral y conocimiento satelite.
 
 Principio rector:
 
@@ -11,13 +11,13 @@ Principio rector:
 ```text
 /
 |-- README.md                 # Mapa maestro del framework
-|-- STRUCTURE_AUDIT.md        # Auditoria estructural vigente
+|-- AGENTS.md                 # Instruccion local de tooling para este repo
+|-- STRUCTURE_AUDIT.md        # Registro estructural de referencia
 |-- OPERACION/                # Router, constraints y contratos de agentes
 |-- GRAPHIFY/                 # Politica de contexto estructural derivado
 |-- THEORY/                   # Fundamentos y explicacion conceptual
 |-- PROJECT_BLUEPRINT/        # Plano documental de un proyecto real
-|-- PROJECT_TEMPLATE/         # Molde reusable, no proyecto activo
-|-- DOC_TEMPLATES/            # Plantillas documentales sueltas
+|-- PROJECT_TEMPLATE/         # Molde integral reusable, no proyecto activo
 |-- EXAMPLES/                 # Casos de uso de referencia
 |-- SATELLITE/                # Politicas de conocimiento fuera del nucleo
 `-- ARCHIVE/                  # Fuentes historicas no canonicas
@@ -28,12 +28,12 @@ Principio rector:
 | Capa | Proposito | Autoridad |
 |---|---|---|
 | `README.md` | Mapa maestro y ruta de lectura. | Si, para orientacion del framework. |
+| `AGENTS.md` raiz | Puente operativo minimo para Codex/Graphify en este repo-framework. | Si, solo para tooling local del repo. |
 | `OPERACION/` | Router, constraints y roles de agentes para ejecucion diaria. | Si, para ejecucion. |
 | `GRAPHIFY/` | Politica y contrato del contexto estructural derivado. | Politica si; outputs derivados no. |
 | `THEORY/` | Fundamentos, principios y explicacion pedagogica. | No para runtime tecnico. |
 | `PROJECT_BLUEPRINT/` | Anatomia documental de un proyecto instanciado. | Si, para explicar estructura de proyecto. |
-| `PROJECT_TEMPLATE/` | Molde completo para crear un proyecto individual operativo. | No, hasta instanciarse. |
-| `DOC_TEMPLATES/` | Plantillas documentales sueltas. | No; formato auxiliar. |
+| `PROJECT_TEMPLATE/` | Molde integral y unico para crear un proyecto individual operativo. | No, hasta instanciarse. |
 | `SATELLITE/` | Politicas para Obsidian y NotebookLM. | No; conocimiento fuera del nucleo. |
 | `EXAMPLES/` | Casos practicos de referencia. | No. |
 | `ARCHIVE/` | Fuentes historicas no canonicas. | No. |
@@ -48,9 +48,22 @@ framework -> blueprint -> template -> proyecto activo
 
 - `THEORY/` explica por que existe el framework y que principios lo sostienen.
 - `PROJECT_BLUEPRINT/` explica como debe organizarse documentalmente un proyecto real.
-- `PROJECT_TEMPLATE/` contiene archivos copiables para crear ese proyecto.
-- `DOC_TEMPLATES/` contiene plantillas documentales sueltas, no una estructura completa.
+- `PROJECT_TEMPLATE/` contiene el molde integral y unico para crear ese proyecto.
 - `OPERACION/` gobierna la ejecucion diaria y la carga de contexto.
+
+## Rol del AGENTS.md raiz
+
+El `AGENTS.md` de la raiz existe para instrucciones locales de tooling en este repo-framework, especialmente Codex y Graphify.
+
+No es una autoridad paralela sobre roles de agentes:
+
+| Archivo | Rol |
+|---|---|
+| `AGENTS.md` raiz | Puente operativo minimo para herramientas que leen instrucciones locales del repo. |
+| `OPERACION/AGENTS/*.md` | Contratos globales de Manager, Coder, Reviewer y Debugger. |
+| `PROJECT_TEMPLATE/AGENTS.md` | Plantilla para adaptar esos roles dentro de un proyecto instanciado. |
+
+Si hay conflicto de rol, ganan los contratos de `OPERACION/AGENTS/*.md`, salvo decision documentada.
 
 ## Advertencia Sobre PROJECT_TEMPLATE
 
@@ -63,6 +76,8 @@ Sus archivos son ejemplos estructurales:
 - `PROJECT_TEMPLATE/memory/project_facts.md` no contiene hechos reales.
 
 Solo cuando esta plantilla se copia o adapta dentro de un repo de proyecto, esos archivos pasan a ser canonicos para ese proyecto.
+
+`PROJECT_TEMPLATE/` tambien es la unica fuente de plantillas `.md` para la arquitectura propuesta. No hay una carpeta separada de plantillas documentales sueltas.
 
 ## Advertencia Sobre PROJECT_BLUEPRINT
 
@@ -88,6 +103,7 @@ Regla de frontera:
 | Como navegar este framework | `README.md` |
 | Que contexto cargar | `OPERACION/CONTEXT_ROUTER.md` |
 | Reglas de ejecucion | `OPERACION/CONSTRAINTS/*.md` |
+| Instrucciones locales de tooling en este repo | `AGENTS.md` raiz |
 | Rol de cada agente | `OPERACION/AGENTS/*.md` |
 | Explicacion pedagogica | `THEORY/*.md` |
 | Plano de proyecto instanciado | `PROJECT_BLUEPRINT/*.md` |
@@ -95,7 +111,6 @@ Regla de frontera:
 | Contrato de outputs Graphify | `GRAPHIFY/OUTPUT_CONTRACT.md` |
 | Rol de Obsidian | `SATELLITE/OBSIDIAN_POLICY.md` |
 | Molde de proyecto | `PROJECT_TEMPLATE/` |
-| Plantillas documentales sueltas | `DOC_TEMPLATES/` |
 | Proyecto activo real | Repo instanciado desde `PROJECT_TEMPLATE/` |
 
 ## Ruta de Lectura Humana
@@ -103,15 +118,15 @@ Regla de frontera:
 1. `README.md`
 2. `THEORY/01_principios.md`
 3. `THEORY/02_arquitectura.md`
-4. `PROJECT_BLUEPRINT/PROJECT_DOCUMENTS.md`
-5. `PROJECT_BLUEPRINT/PROJECT_STRUCTURE_EXAMPLE.md`
-6. `THEORY/04_contexto.md`
-7. `THEORY/05_agentes.md`
-8. `OPERACION/CONTEXT_ROUTER.md`
-9. `GRAPHIFY/GRAPHIFY_POLICY.md`
-10. `SATELLITE/OBSIDIAN_POLICY.md`
-11. `PROJECT_TEMPLATE/`
-12. `DOC_TEMPLATES/`
+4. `PROJECT_BLUEPRINT/README.md`
+5. `PROJECT_BLUEPRINT/PROJECT_DOCUMENTS.md`
+6. `PROJECT_BLUEPRINT/PROJECT_STRUCTURE_EXAMPLE.md`
+7. `THEORY/04_contexto.md`
+8. `THEORY/05_agentes.md`
+9. `OPERACION/CONTEXT_ROUTER.md`
+10. `GRAPHIFY/GRAPHIFY_POLICY.md`
+11. `SATELLITE/OBSIDIAN_POLICY.md`
+12. `PROJECT_TEMPLATE/`
 13. `EXAMPLES/`
 
 ## Regla de Uso Diario

@@ -23,7 +23,6 @@ Incluye:
 - `PROJECT_BLUEPRINT/`: plano documental de un proyecto instanciado.
 - `PROJECT_TEMPLATE/`: molde para crear proyectos individuales.
 - `THEORY/`: manual teorico y pedagogico.
-- `DOC_TEMPLATES/`: plantillas documentales sueltas.
 - `EXAMPLES/`: casos de uso.
 - `SATELLITE/`: politicas para conocimiento fuera del nucleo.
 - `ARCHIVE/`: fuentes historicas no canonicas.
@@ -90,11 +89,7 @@ No contiene teoria general ni archivos copiables como molde. Explica:
 
 Regla: si explica principios generales, va en `THEORY/`; si explica anatomia documental de un proyecto real, va en `PROJECT_BLUEPRINT/`.
 
-## 6. Rol de DOC_TEMPLATES
-
-`DOC_TEMPLATES/` contiene plantillas documentales sueltas. No es un molde completo de proyecto y no debe competir con `PROJECT_TEMPLATE/`.
-
-## 7. Rol de OPERACION
+## 6. Rol de OPERACION
 
 `OPERACION/` contiene documentos para ejecutar:
 
@@ -104,16 +99,16 @@ Regla: si explica principios generales, va en `THEORY/`; si explica anatomia doc
 
 No debe contener teoria larga ni ejemplos pedagogicos.
 
-## 8. Rol de Graphify
+## 7. Rol de Graphify
 
 Graphify actua como contexto estructural persistente derivado. En tareas estructurales entra despues del contexto base y del router, pero antes de exploracion amplia de documentacion o modulos.
 
 No reemplaza `spec.md`, `sdd.md`, `decision_log.md`, `project_facts.md` ni `CONTEXT_INDEX.md`.
 
-## 9. Rol de THEORY
+## 8. Rol de THEORY
 
 `THEORY/` explica el sistema para humanos. Ayuda al onboarding conceptual, pero no se carga durante ejecucion tecnica rutinaria.
 
-## 10. Regla Final
+## 9. Regla Final
 
 Si explica principios del sistema, va a `THEORY/`. Si explica estructura documental de un proyecto real, va a `PROJECT_BLUEPRINT/`. Si guia ejecucion diaria, va a `OPERACION/`. Si es conocimiento humano no oficial, va a `SATELLITE/` o `ARCHIVE/`.

@@ -10,18 +10,17 @@ El problema principal no es la ausencia de arquitectura, sino la ambiguedad entr
 - plano operativo de un proyecto real;
 - archivos copiables o reutilizables.
 
-La estructura final recomendada agrega `PROJECT_BLUEPRINT/` como capa explicativa intermedia y renombra `TEMPLATES/` a `DOC_TEMPLATES/` para distinguir plantillas documentales sueltas del molde integral `PROJECT_TEMPLATE/`.
+La consolidacion final mantiene `PROJECT_BLUEPRINT/` como capa explicativa intermedia y deja `PROJECT_TEMPLATE/` como unico molde documental reusable. La carpeta auxiliar de plantillas sueltas fue eliminada para evitar duplicacion.
 
 ## Diagnostico estructural
 
 | Area | Hallazgo | Riesgo | Recomendacion |
 |---|---|---|---|
 | `PROJECT_TEMPLATE/` | Ya representa un proyecto instanciable, pero sus archivos eran demasiado minimos. | El usuario o agente copia una plantilla sin suficiente guia de llenado. | Fortalecer cada `.md` con proposito, instruccion, ejemplo minimo y nota de uso. |
-| `TEMPLATES/` | Contenia plantillas documentales sueltas que se parecen a archivos dentro de `PROJECT_TEMPLATE/`. | Confusion entre molde integral y formatos auxiliares. | Renombrar a `DOC_TEMPLATES/` y documentar que es biblioteca auxiliar, no proyecto completo. |
+| Plantillas sueltas | Contenian documentos que se parecen a archivos dentro de `PROJECT_TEMPLATE/`. | Confusion entre molde integral y formatos auxiliares. | Integrar solo contenido util en `PROJECT_TEMPLATE/` y eliminar la capa separada. |
 | Capa explicativa | No habia una capa dedicada a explicar la anatomia documental de un proyecto real. | `THEORY/` podia terminar absorbiendo guias operativas de adopcion. | Crear `PROJECT_BLUEPRINT/`. |
 | `README.md` | Funcionaba como entrada inicial, pero no como mapa maestro completo. | Humanos y agentes no ven con suficiente rapidez que gobierna, que explica y que solo sirve de referencia. | Fortalecerlo como mapa de capas, autoridad y ruta de lectura. |
-| `AGENTS.md` raiz | No existe en la raiz; si existen `OPERACION/AGENTS/*.md` y `PROJECT_TEMPLATE/AGENTS.md`. | Crear un `AGENTS.md` raiz podria duplicar autoridad. | No crearlo por defecto; solo crear un indice minimo si se aprueba despues. |
-| `documentacion/` | Existe localmente vacia y no aparece como capa trackeada. | Puede convertirse en una arquitectura paralela accidental. | No adoptarla como capa oficial. |
+| `AGENTS.md` raiz | Existe como instruccion local de tooling para este repo-framework. | Puede confundirse con contratos de rol. | Documentarlo como puente operativo minimo para Codex/Graphify, no como autoridad paralela. |
 
 ## Estructura final recomendada
 
@@ -33,10 +32,10 @@ La estructura final recomendada agrega `PROJECT_BLUEPRINT/` como capa explicativ
 |-- GRAPHIFY/
 |-- THEORY/
 |-- PROJECT_BLUEPRINT/
+|   |-- README.md
 |   |-- PROJECT_DOCUMENTS.md
 |   `-- PROJECT_STRUCTURE_EXAMPLE.md
 |-- PROJECT_TEMPLATE/
-|-- DOC_TEMPLATES/
 |-- SATELLITE/
 |-- EXAMPLES/
 `-- ARCHIVE/
@@ -52,7 +51,7 @@ La estructura final recomendada agrega `PROJECT_BLUEPRINT/` como capa explicativ
 | `THEORY/` | Fundamentos, principios y explicacion pedagogica del framework. | No para runtime tecnico. |
 | `PROJECT_BLUEPRINT/` | Plano explicativo de como debe organizarse un proyecto real. | Si, para la anatomia documental recomendada. |
 | `PROJECT_TEMPLATE/` | Molde completo copiable para iniciar un proyecto. | No en este repo; se vuelve canonico al instanciarse. |
-| `DOC_TEMPLATES/` | Plantillas documentales sueltas y auxiliares. | No; formato auxiliar. |
+| `AGENTS.md` raiz | Instruccion local de tooling para este repo-framework. | Si, solo para integracion local Codex/Graphify. |
 | `SATELLITE/` | Politicas para Obsidian, NotebookLM y conocimiento fuera del nucleo. | No gobierna el proyecto activo. |
 | `EXAMPLES/` | Casos practicos de uso del framework. | No; referencia. |
 | `ARCHIVE/` | Fuentes historicas o materiales no canonicos. | No. |
@@ -70,15 +69,13 @@ Regla practica:
 - Si es copiable como molde, va en `PROJECT_TEMPLATE/`.
 - Si enruta ejecucion diaria, va en `OPERACION/`.
 
-## TEMPLATES vs PROJECT_TEMPLATE
+## Plantillas y PROJECT_TEMPLATE
 
-La recomendacion final es no unificar ambas capas.
+La consolidacion final unifica el molde reusable en una sola capa.
 
 `PROJECT_TEMPLATE/` debe mantenerse como molde integral de proyecto. Incluye estructura, carpetas y archivos base que se copian o adaptan al crear un proyecto real.
 
-`DOC_TEMPLATES/` debe existir como biblioteca auxiliar de plantillas documentales sueltas. Su contenido puede reutilizarse dentro o fuera de un proyecto instanciado, pero no representa una estructura completa ni una fuente de verdad.
-
-El nombre `DOC_TEMPLATES/` es mas preciso que `SNIPPETS/` porque los archivos actuales son documentos completos o semi-completos, no fragmentos parciales.
+No debe existir una carpeta paralela de plantillas documentales sueltas. Si un formato aporta valor al molde estandar, se integra en `PROJECT_TEMPLATE/`; si duplica contenido existente, se descarta.
 
 ## Fortalecimiento de PROJECT_TEMPLATE
 
@@ -109,6 +106,7 @@ Mejoras aplicadas o esperadas:
 - mejorar `memory/*` para separar hechos, restricciones, problemas, patrones y glosario;
 - agregar `decisions/adr/ADR_TEMPLATE.md`;
 - mantener `graphify-out/` como destino de outputs derivados, no canonicos.
+- incluir `graphify-out/GRAPH_REPORT.md` solo como placeholder de output derivado, no como reporte manual.
 
 ## Fortalecimiento del README
 
@@ -118,7 +116,8 @@ El README principal debe operar como mapa maestro. Debe explicar:
 - que capa explica fundamentos;
 - que capa explica la estructura documental de un proyecto real;
 - que capa es molde copiable;
-- que capa contiene plantillas auxiliares;
+- que `PROJECT_TEMPLATE/` es la unica fuente de plantillas `.md`;
+- que rol cumple el `AGENTS.md` raiz sin duplicar `OPERACION/AGENTS/`;
 - que capa es satelite o historica;
 - que no debe cargarse todo el repo por defecto;
 - como leer el repositorio sin mezclar contexto canonico y derivado.
@@ -127,25 +126,23 @@ El README principal debe operar como mapa maestro. Debe explicar:
 
 - Crear mas capas si `PROJECT_BLUEPRINT/` ya resuelve la ambiguedad.
 - Convertir `PROJECT_BLUEPRINT/` en teoria larga.
-- Duplicar plantillas completas entre `PROJECT_TEMPLATE/` y `DOC_TEMPLATES/`.
-- Crear `AGENTS.md` raiz sin funcion distinta a `OPERACION/AGENTS/`.
+- Reintroducir plantillas documentales sueltas fuera de `PROJECT_TEMPLATE/`.
+- Tratar `AGENTS.md` raiz como contrato de rol equivalente a `OPERACION/AGENTS/`.
 - Mezclar Obsidian o NotebookLM con memoria canonica.
 - Usar Graphify como fuente de verdad en vez de contexto derivado.
 - Hacer una reorganizacion masiva antes de validar los documentos nuevos.
 
 ## Plan de etapa 2
 
-1. Mantener la nueva estructura con `PROJECT_BLUEPRINT/` y `DOC_TEMPLATES/`.
-2. Actualizar referencias internas a `DOC_TEMPLATES/`.
-3. Usar `PROJECT_BLUEPRINT/` como guia de adopcion y no como teoria.
-4. Mantener `PROJECT_TEMPLATE/` como molde reusable completo.
-5. No crear `AGENTS.md` raiz salvo decision explicita.
-6. No adoptar `documentacion/` como capa oficial.
-7. Revisar periodicamente si `DOC_TEMPLATES/` acumula documentos que deberian integrarse al molde completo.
+1. Mantener la estructura con `PROJECT_BLUEPRINT/` y `PROJECT_TEMPLATE/`.
+2. Usar `PROJECT_BLUEPRINT/` como guia de adopcion y no como teoria.
+3. Mantener `PROJECT_TEMPLATE/` como molde reusable completo y unico.
+4. Documentar `AGENTS.md` raiz como instruccion local de tooling.
+5. Revisar periodicamente que no reaparezcan plantillas duplicadas fuera de `PROJECT_TEMPLATE/`.
 
 ## Checklist de validacion
 
-- La diferencia entre plantilla integral y plantillas documentales sueltas queda explicita.
+- `PROJECT_TEMPLATE/` queda como plantilla integral unica.
 - La capa explicativa intermedia existe y no compite con `THEORY/`.
 - `SATELLITE/` se mantiene.
 - `PROJECT_TEMPLATE/` queda fortalecido.

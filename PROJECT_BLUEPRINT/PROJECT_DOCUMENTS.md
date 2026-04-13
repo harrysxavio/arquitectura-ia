@@ -8,6 +8,9 @@ Definir que documentos debe tener un proyecto instanciado, donde viven, que auto
 
 Este documento no es teoria general y no es una plantilla copiable. La teoria vive en `THEORY/`; los archivos copiables viven en `PROJECT_TEMPLATE/`.
 
+> [!NOTE]
+> El `AGENTS.md` descrito abajo corresponde a la raiz de un proyecto instanciado. El `AGENTS.md` de la raiz de este repo-framework es una instruccion local de tooling para Codex/Graphify y no reemplaza `OPERACION/AGENTS/*.md` ni `PROJECT_TEMPLATE/AGENTS.md`.
+
 ## Documentos base
 
 | Documento | Ubicacion | Rol | Se consulta cuando | Canonico cuando |

@@ -13,19 +13,20 @@ Su objetivo no es acumular herramientas. Su objetivo es crear un sistema documen
 - que no debe tocar,
 - cuando debe actualizar memoria o decisiones.
 
-La estructura actual separa siete zonas:
+La estructura actual separa ocho zonas:
 
 | Carpeta | Funcion |
 |---|---|
 | `OPERACION/` | Router, constraints y contratos de agentes para ejecucion diaria |
+| `PROJECT_BLUEPRINT/` | Plano documental de un proyecto instanciado |
 | `PROJECT_TEMPLATE/` | Molde reusable para instanciar proyectos reales |
 | `THEORY/` | Manual pedagogico del framework |
 | `GRAPHIFY/` | Politica y contrato del mapa estructural derivado |
 | `SATELLITE/` | Politicas de Obsidian y NotebookLM como conocimiento externo al nucleo |
-| `TEMPLATES/` | Formatos reutilizables para tareas, specs y decisiones |
 | `EXAMPLES/` | Casos de uso de referencia |
+| `ARCHIVE/` | Fuentes historicas no canonicas |
 
-`ARCHIVE/` conserva fuentes historicas no canonicas.
+`PROJECT_TEMPLATE/` es la unica fuente de plantillas `.md` del molde propuesto.
 
 ## 2. Principio Rector
 
@@ -98,7 +99,9 @@ La ruta normal empieza con:
 Dentro de este repo framework, cuando no hay proyecto instanciado, el fallback es:
 
 - `README.md`,
+- `AGENTS.md` raiz si hay instrucciones locales de tooling,
 - `OPERACION/CONTEXT_ROUTER.md`,
+- `PROJECT_BLUEPRINT/` para entender la estructura documental,
 - `PROJECT_TEMPLATE/` como molde, no como verdad operativa.
 
 ### 5.4 Una fuente de verdad por tipo de informacion
