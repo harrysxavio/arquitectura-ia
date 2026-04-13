@@ -18,6 +18,7 @@ Principio rector:
 |-- THEORY/                   # Fundamentos y explicacion conceptual
 |-- PROJECT_BLUEPRINT/        # Plano documental de un proyecto real
 |-- PROJECT_TEMPLATE/         # Molde integral reusable, no proyecto activo
+|-- SAMPLE_PROJECT/           # Ejemplo completo ya instanciado y guiado
 |-- EXAMPLES/                 # Casos de uso de referencia
 |-- SATELLITE/                # Politicas de conocimiento fuera del nucleo
 `-- ARCHIVE/                  # Fuentes historicas no canonicas
@@ -34,6 +35,7 @@ Principio rector:
 | `THEORY/` | Fundamentos, principios y explicacion pedagogica. | No para runtime tecnico. |
 | `PROJECT_BLUEPRINT/` | Anatomia documental de un proyecto instanciado. | Si, para explicar estructura de proyecto. |
 | `PROJECT_TEMPLATE/` | Molde integral y unico para crear un proyecto individual operativo. | No, hasta instanciarse. |
+| `SAMPLE_PROJECT/` | Ejemplo completo, rellenado y guiado de un proyecto instanciado. | No; demostracion practica. |
 | `SATELLITE/` | Politicas para Obsidian y NotebookLM. | No; conocimiento fuera del nucleo. |
 | `EXAMPLES/` | Casos practicos de referencia. | No. |
 | `ARCHIVE/` | Fuentes historicas no canonicas. | No. |
@@ -49,6 +51,7 @@ framework -> blueprint -> template -> proyecto activo
 - `THEORY/` explica por que existe el framework y que principios lo sostienen.
 - `PROJECT_BLUEPRINT/` explica como debe organizarse documentalmente un proyecto real.
 - `PROJECT_TEMPLATE/` contiene el molde integral y unico para crear ese proyecto.
+- `SAMPLE_PROJECT/` muestra ese molde ya instanciado, rellenado y guiado para aprender en la practica.
 - `OPERACION/` gobierna la ejecucion diaria y la carga de contexto.
 
 ## Rol del AGENTS.md raiz
@@ -111,6 +114,7 @@ Regla de frontera:
 | Contrato de outputs Graphify | `GRAPHIFY/OUTPUT_CONTRACT.md` |
 | Rol de Obsidian | `SATELLITE/OBSIDIAN_POLICY.md` |
 | Molde de proyecto | `PROJECT_TEMPLATE/` |
+| Ejemplo guiado de proyecto instanciado | `SAMPLE_PROJECT/` |
 | Proyecto activo real | Repo instanciado desde `PROJECT_TEMPLATE/` |
 
 ## Ruta de Lectura Humana
@@ -127,7 +131,8 @@ Regla de frontera:
 10. `GRAPHIFY/GRAPHIFY_POLICY.md`
 11. `SATELLITE/OBSIDIAN_POLICY.md`
 12. `PROJECT_TEMPLATE/`
-13. `EXAMPLES/`
+13. `SAMPLE_PROJECT/`
+14. `EXAMPLES/`
 
 ## Regla de Uso Diario
 

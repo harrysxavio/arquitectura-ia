@@ -1,0 +1,17 @@
+{
+  "status": "placeholder-pedagogico",
+  "generated_by_graphify": false,
+  "note": "Este JSON no fue generado por Graphify sobre SAMPLE_PROJECT. Existe solo para mostrar el tipo de artefacto que podria vivir en graphify-out/.",
+  "nodes": [
+    { "id": "PROJECT_GUIDE.md", "type": "canonical-doc" },
+    { "id": "CONTEXT_INDEX.md", "type": "canonical-doc" },
+    { "id": "docs/product/spec.md", "type": "canonical-doc" },
+    { "id": "docs/architecture/sdd.md", "type": "canonical-doc" },
+    { "id": "src/sample_flow.py", "type": "illustrative-code" }
+  ],
+  "edges": [
+    { "from": "CONTEXT_INDEX.md", "to": "docs/product/spec.md", "relation": "routes-to" },
+    { "from": "docs/architecture/sdd.md", "to": "src/sample_flow.py", "relation": "describes-illustrative-code" }
+  ]
+}
+

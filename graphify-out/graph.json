@@ -1,0 +1,124 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "sample_flow.py",
+      "file_type": "code",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L1",
+      "id": "sample_project_src_sample_flow_py",
+      "community": 0,
+      "norm_label": "sample_flow.py"
+    },
+    {
+      "label": "SupportRequest",
+      "file_type": "code",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L11",
+      "id": "sample_flow_supportrequest",
+      "community": 0,
+      "norm_label": "supportrequest"
+    },
+    {
+      "label": "triage()",
+      "file_type": "code",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L20",
+      "id": "sample_flow_triage",
+      "community": 1,
+      "norm_label": "triage()"
+    },
+    {
+      "label": "close_request()",
+      "file_type": "code",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L30",
+      "id": "sample_flow_close_request",
+      "community": 0,
+      "norm_label": "close_request()"
+    },
+    {
+      "label": "Small illustrative flow for SAMPLE_PROJECT.  This module is not a production imp",
+      "file_type": "rationale",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "small illustrative flow for sample_project.  this module is not a production imp",
+      "id": "sample_flow_rationale_1"
+    },
+    {
+      "label": "Apply the smallest illustrative triage rule from the spec.",
+      "file_type": "rationale",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L21",
+      "community": 1,
+      "norm_label": "apply the smallest illustrative triage rule from the spec.",
+      "id": "sample_flow_rationale_21"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "sample_project_src_sample_flow_py",
+      "_tgt": "sample_flow_supportrequest",
+      "source": "sample_project_src_sample_flow_py",
+      "target": "sample_flow_supportrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "sample_project_src_sample_flow_py",
+      "_tgt": "sample_flow_triage",
+      "source": "sample_project_src_sample_flow_py",
+      "target": "sample_flow_triage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "sample_project_src_sample_flow_py",
+      "_tgt": "sample_flow_close_request",
+      "source": "sample_project_src_sample_flow_py",
+      "target": "sample_flow_close_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "sample_flow_rationale_1",
+      "_tgt": "sample_project_src_sample_flow_py",
+      "source": "sample_project_src_sample_flow_py",
+      "target": "sample_flow_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "SAMPLE_PROJECT\\src\\sample_flow.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "sample_flow_rationale_21",
+      "_tgt": "sample_flow_triage",
+      "source": "sample_flow_triage",
+      "target": "sample_flow_rationale_21",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
