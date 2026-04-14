@@ -44,9 +44,9 @@
       "file_type": "rationale",
       "source_file": "app.py",
       "source_location": "L1",
-      "id": "app_rationale_1",
       "community": 6,
-      "norm_label": "cli for the sample_project support desk example."
+      "norm_label": "cli for the sample_project support desk example.",
+      "id": "app_rationale_1"
     },
     {
       "label": "enums.py",
@@ -134,18 +134,18 @@
       "file_type": "rationale",
       "source_file": "src\\enums.py",
       "source_location": "L1",
-      "id": "enums_rationale_1",
       "community": 1,
-      "norm_label": "enumerations for the support desk domain."
+      "norm_label": "enumerations for the support desk domain.",
+      "id": "enums_rationale_1"
     },
     {
       "label": "String enum with a compact parser for CLI and JSON inputs.",
       "file_type": "rationale",
       "source_file": "src\\enums.py",
       "source_location": "L9",
-      "id": "enums_rationale_9",
       "community": 1,
-      "norm_label": "string enum with a compact parser for cli and json inputs."
+      "norm_label": "string enum with a compact parser for cli and json inputs.",
+      "id": "enums_rationale_9"
     },
     {
       "label": "models.py",
@@ -188,9 +188,9 @@
       "file_type": "rationale",
       "source_file": "src\\models.py",
       "source_location": "L1",
-      "id": "models_rationale_1",
       "community": 0,
-      "norm_label": "data models for the support desk example."
+      "norm_label": "data models for the support desk example.",
+      "id": "models_rationale_1"
     },
     {
       "label": "reporter.py",
@@ -224,9 +224,9 @@
       "file_type": "rationale",
       "source_file": "src\\reporter.py",
       "source_location": "L1",
-      "id": "reporter_rationale_1",
       "community": 2,
-      "norm_label": "formatting helpers for cli output."
+      "norm_label": "formatting helpers for cli output.",
+      "id": "reporter_rationale_1"
     },
     {
       "label": "service.py",
@@ -314,18 +314,18 @@
       "file_type": "rationale",
       "source_file": "src\\service.py",
       "source_location": "L1",
-      "id": "service_rationale_1",
       "community": 0,
-      "norm_label": "application service for support desk requests."
+      "norm_label": "application service for support desk requests.",
+      "id": "service_rationale_1"
     },
     {
       "label": "Raised when a request id is not present in storage.",
       "file_type": "rationale",
       "source_file": "src\\service.py",
       "source_location": "L15",
-      "id": "service_rationale_15",
       "community": 0,
-      "norm_label": "raised when a request id is not present in storage."
+      "norm_label": "raised when a request id is not present in storage.",
+      "id": "service_rationale_15"
     },
     {
       "label": "storage.py",
@@ -377,9 +377,9 @@
       "file_type": "rationale",
       "source_file": "src\\storage.py",
       "source_location": "L1",
-      "id": "storage_rationale_1",
       "community": 2,
-      "norm_label": "json storage for the runtime example data."
+      "norm_label": "json storage for the runtime example data.",
+      "id": "storage_rationale_1"
     },
     {
       "label": "triage.py",
@@ -413,9 +413,9 @@
       "file_type": "rationale",
       "source_file": "src\\triage.py",
       "source_location": "L1",
-      "id": "triage_rationale_1",
       "community": 0,
-      "norm_label": "triage rules aligned with docs/product/spec.md."
+      "norm_label": "triage rules aligned with docs/product/spec.md.",
+      "id": "triage_rationale_1"
     },
     {
       "label": "utils.py",
@@ -458,9 +458,9 @@
       "file_type": "rationale",
       "source_file": "src\\utils.py",
       "source_location": "L1",
-      "id": "utils_rationale_1",
       "community": 7,
-      "norm_label": "small utilities for the support desk example."
+      "norm_label": "small utilities for the support desk example.",
+      "id": "utils_rationale_1"
     },
     {
       "label": "__init__.py",
@@ -476,9 +476,9 @@
       "file_type": "rationale",
       "source_file": "tests\\__init__.py",
       "source_location": "L1",
-      "id": "init_rationale_1",
       "community": 8,
-      "norm_label": "tests for sample_project."
+      "norm_label": "tests for sample_project.",
+      "id": "init_rationale_1"
     },
     {
       "label": "test_service.py",
@@ -733,9 +733,9 @@
       "weight": 0.8,
       "_src": "app_rationale_1",
       "_tgt": "enums_requesttype",
+      "confidence_score": 0.5,
       "source": "app_rationale_1",
-      "target": "enums_requesttype",
-      "confidence_score": 0.5
+      "target": "enums_requesttype"
     },
     {
       "relation": "uses",
@@ -745,9 +745,9 @@
       "weight": 0.8,
       "_src": "app_rationale_1",
       "_tgt": "service_requestnotfounderror",
+      "confidence_score": 0.5,
       "source": "app_rationale_1",
-      "target": "service_requestnotfounderror",
-      "confidence_score": 0.5
+      "target": "service_requestnotfounderror"
     },
     {
       "relation": "uses",
@@ -757,9 +757,9 @@
       "weight": 0.8,
       "_src": "app_rationale_1",
       "_tgt": "service_supportdeskservice",
+      "confidence_score": 0.5,
       "source": "app_rationale_1",
-      "target": "service_supportdeskservice",
-      "confidence_score": 0.5
+      "target": "service_supportdeskservice"
     },
     {
       "relation": "imports_from",
@@ -971,11 +971,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_supportrequest",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "models_supportrequest",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "models_supportrequest",
-      "confidence_score": 0.5
+      "target": "models_supportrequest"
     },
     {
       "relation": "uses",
@@ -983,11 +983,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_rationale_1",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "models_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "models_rationale_1",
-      "confidence_score": 0.5
+      "target": "models_rationale_1"
     },
     {
       "relation": "uses",
@@ -995,11 +995,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_requestnotfounderror",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "service_requestnotfounderror",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "service_requestnotfounderror",
-      "confidence_score": 0.5
+      "target": "service_requestnotfounderror"
     },
     {
       "relation": "uses",
@@ -1007,11 +1007,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_supportdeskservice",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "service_supportdeskservice",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "service_supportdeskservice",
-      "confidence_score": 0.5
+      "target": "service_supportdeskservice"
     },
     {
       "relation": "uses",
@@ -1019,11 +1019,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_1",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "service_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "service_rationale_1",
-      "confidence_score": 0.5
+      "target": "service_rationale_1"
     },
     {
       "relation": "uses",
@@ -1031,11 +1031,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_15",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "service_rationale_15",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "service_rationale_15",
-      "confidence_score": 0.5
+      "target": "service_rationale_15"
     },
     {
       "relation": "uses",
@@ -1043,11 +1043,11 @@
       "source_file": "src\\triage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "triage_rationale_1",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "triage_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "triage_rationale_1",
-      "confidence_score": 0.5
+      "target": "triage_rationale_1"
     },
     {
       "relation": "uses",
@@ -1055,11 +1055,11 @@
       "source_file": "tests\\test_service.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_service_supportdeskservicetest",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "test_service_supportdeskservicetest",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "test_service_supportdeskservicetest",
-      "confidence_score": 0.5
+      "target": "test_service_supportdeskservicetest"
     },
     {
       "relation": "uses",
@@ -1067,11 +1067,11 @@
       "source_file": "tests\\test_storage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_storage_jsonrequeststoretest",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "test_storage_jsonrequeststoretest",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "test_storage_jsonrequeststoretest",
-      "confidence_score": 0.5
+      "target": "test_storage_jsonrequeststoretest"
     },
     {
       "relation": "uses",
@@ -1079,11 +1079,11 @@
       "source_file": "tests\\test_triage.py",
       "source_location": "L3",
       "weight": 0.8,
-      "_src": "test_triage_triagetest",
-      "_tgt": "enums_requesttype",
+      "_src": "enums_requesttype",
+      "_tgt": "test_triage_triagetest",
+      "confidence_score": 0.5,
       "source": "enums_requesttype",
-      "target": "test_triage_triagetest",
-      "confidence_score": 0.5
+      "target": "test_triage_triagetest"
     },
     {
       "relation": "uses",
@@ -1091,11 +1091,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_supportrequest",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "models_supportrequest",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "models_supportrequest",
-      "confidence_score": 0.5
+      "target": "models_supportrequest"
     },
     {
       "relation": "uses",
@@ -1103,11 +1103,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_rationale_1",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "models_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "models_rationale_1",
-      "confidence_score": 0.5
+      "target": "models_rationale_1"
     },
     {
       "relation": "uses",
@@ -1115,11 +1115,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_requestnotfounderror",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "service_requestnotfounderror",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "service_requestnotfounderror",
-      "confidence_score": 0.5
+      "target": "service_requestnotfounderror"
     },
     {
       "relation": "uses",
@@ -1127,11 +1127,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_supportdeskservice",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "service_supportdeskservice",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "service_supportdeskservice",
-      "confidence_score": 0.5
+      "target": "service_supportdeskservice"
     },
     {
       "relation": "uses",
@@ -1139,11 +1139,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_1",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "service_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "service_rationale_1",
-      "confidence_score": 0.5
+      "target": "service_rationale_1"
     },
     {
       "relation": "uses",
@@ -1151,11 +1151,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_15",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "service_rationale_15",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "service_rationale_15",
-      "confidence_score": 0.5
+      "target": "service_rationale_15"
     },
     {
       "relation": "uses",
@@ -1163,11 +1163,11 @@
       "source_file": "src\\triage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "triage_rationale_1",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "triage_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "triage_rationale_1",
-      "confidence_score": 0.5
+      "target": "triage_rationale_1"
     },
     {
       "relation": "uses",
@@ -1175,11 +1175,11 @@
       "source_file": "tests\\test_service.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_service_supportdeskservicetest",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "test_service_supportdeskservicetest",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "test_service_supportdeskservicetest",
-      "confidence_score": 0.5
+      "target": "test_service_supportdeskservicetest"
     },
     {
       "relation": "uses",
@@ -1187,11 +1187,11 @@
       "source_file": "tests\\test_storage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_storage_jsonrequeststoretest",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "test_storage_jsonrequeststoretest",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "test_storage_jsonrequeststoretest",
-      "confidence_score": 0.5
+      "target": "test_storage_jsonrequeststoretest"
     },
     {
       "relation": "uses",
@@ -1199,11 +1199,11 @@
       "source_file": "tests\\test_triage.py",
       "source_location": "L3",
       "weight": 0.8,
-      "_src": "test_triage_triagetest",
-      "_tgt": "enums_priority",
+      "_src": "enums_priority",
+      "_tgt": "test_triage_triagetest",
+      "confidence_score": 0.5,
       "source": "enums_priority",
-      "target": "test_triage_triagetest",
-      "confidence_score": 0.5
+      "target": "test_triage_triagetest"
     },
     {
       "relation": "uses",
@@ -1211,11 +1211,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_supportrequest",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "models_supportrequest",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "models_supportrequest",
-      "confidence_score": 0.5
+      "target": "models_supportrequest"
     },
     {
       "relation": "uses",
@@ -1223,11 +1223,11 @@
       "source_file": "src\\models.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "models_rationale_1",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "models_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "models_rationale_1",
-      "confidence_score": 0.5
+      "target": "models_rationale_1"
     },
     {
       "relation": "uses",
@@ -1235,11 +1235,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_requestnotfounderror",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "service_requestnotfounderror",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "service_requestnotfounderror",
-      "confidence_score": 0.5
+      "target": "service_requestnotfounderror"
     },
     {
       "relation": "uses",
@@ -1247,11 +1247,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_supportdeskservice",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "service_supportdeskservice",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "service_supportdeskservice",
-      "confidence_score": 0.5
+      "target": "service_supportdeskservice"
     },
     {
       "relation": "uses",
@@ -1259,11 +1259,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_1",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "service_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "service_rationale_1",
-      "confidence_score": 0.5
+      "target": "service_rationale_1"
     },
     {
       "relation": "uses",
@@ -1271,11 +1271,11 @@
       "source_file": "src\\service.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "service_rationale_15",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "service_rationale_15",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "service_rationale_15",
-      "confidence_score": 0.5
+      "target": "service_rationale_15"
     },
     {
       "relation": "uses",
@@ -1283,11 +1283,11 @@
       "source_file": "src\\triage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "triage_rationale_1",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "triage_rationale_1",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "triage_rationale_1",
-      "confidence_score": 0.5
+      "target": "triage_rationale_1"
     },
     {
       "relation": "uses",
@@ -1295,11 +1295,11 @@
       "source_file": "tests\\test_service.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_service_supportdeskservicetest",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "test_service_supportdeskservicetest",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "test_service_supportdeskservicetest",
-      "confidence_score": 0.5
+      "target": "test_service_supportdeskservicetest"
     },
     {
       "relation": "uses",
@@ -1307,11 +1307,11 @@
       "source_file": "tests\\test_storage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "test_storage_jsonrequeststoretest",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "test_storage_jsonrequeststoretest",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "test_storage_jsonrequeststoretest",
-      "confidence_score": 0.5
+      "target": "test_storage_jsonrequeststoretest"
     },
     {
       "relation": "uses",
@@ -1319,11 +1319,11 @@
       "source_file": "tests\\test_triage.py",
       "source_location": "L3",
       "weight": 0.8,
-      "_src": "test_triage_triagetest",
-      "_tgt": "enums_requeststatus",
+      "_src": "enums_requeststatus",
+      "_tgt": "test_triage_triagetest",
+      "confidence_score": 0.5,
       "source": "enums_requeststatus",
-      "target": "test_triage_triagetest",
-      "confidence_score": 0.5
+      "target": "test_triage_triagetest"
     },
     {
       "relation": "contains",
@@ -1415,11 +1415,11 @@
       "source_file": "src\\reporter.py",
       "source_location": "L5",
       "weight": 0.8,
-      "_src": "reporter_rationale_1",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "reporter_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "reporter_rationale_1",
-      "confidence_score": 0.5
+      "target": "reporter_rationale_1"
     },
     {
       "relation": "uses",
@@ -1427,11 +1427,11 @@
       "source_file": "src\\service.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "service_requestnotfounderror",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "service_requestnotfounderror",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "service_requestnotfounderror",
-      "confidence_score": 0.5
+      "target": "service_requestnotfounderror"
     },
     {
       "relation": "uses",
@@ -1439,11 +1439,11 @@
       "source_file": "src\\service.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "service_supportdeskservice",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "service_supportdeskservice",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "service_supportdeskservice",
-      "confidence_score": 0.5
+      "target": "service_supportdeskservice"
     },
     {
       "relation": "uses",
@@ -1451,11 +1451,11 @@
       "source_file": "src\\service.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "service_rationale_1",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "service_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "service_rationale_1",
-      "confidence_score": 0.5
+      "target": "service_rationale_1"
     },
     {
       "relation": "uses",
@@ -1463,11 +1463,11 @@
       "source_file": "src\\service.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "service_rationale_15",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "service_rationale_15",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "service_rationale_15",
-      "confidence_score": 0.5
+      "target": "service_rationale_15"
     },
     {
       "relation": "uses",
@@ -1475,11 +1475,11 @@
       "source_file": "src\\storage.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "storage_jsonrequeststore",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "storage_jsonrequeststore",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "storage_jsonrequeststore",
-      "confidence_score": 0.5
+      "target": "storage_jsonrequeststore"
     },
     {
       "relation": "uses",
@@ -1487,11 +1487,11 @@
       "source_file": "src\\storage.py",
       "source_location": "L8",
       "weight": 0.8,
-      "_src": "storage_rationale_1",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "storage_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "storage_rationale_1",
-      "confidence_score": 0.5
+      "target": "storage_rationale_1"
     },
     {
       "relation": "uses",
@@ -1499,11 +1499,11 @@
       "source_file": "tests\\test_storage.py",
       "source_location": "L6",
       "weight": 0.8,
-      "_src": "test_storage_jsonrequeststoretest",
-      "_tgt": "models_supportrequest",
+      "_src": "models_supportrequest",
+      "_tgt": "test_storage_jsonrequeststoretest",
+      "confidence_score": 0.5,
       "source": "models_supportrequest",
-      "target": "test_storage_jsonrequeststoretest",
-      "confidence_score": 0.5
+      "target": "test_storage_jsonrequeststoretest"
     },
     {
       "relation": "contains",
@@ -1669,9 +1669,9 @@
       "weight": 0.8,
       "_src": "service_requestnotfounderror",
       "_tgt": "storage_jsonrequeststore",
+      "confidence_score": 0.5,
       "source": "service_requestnotfounderror",
-      "target": "storage_jsonrequeststore",
-      "confidence_score": 0.5
+      "target": "storage_jsonrequeststore"
     },
     {
       "relation": "uses",
@@ -1679,11 +1679,11 @@
       "source_file": "tests\\test_service.py",
       "source_location": "L6",
       "weight": 0.8,
-      "_src": "test_service_supportdeskservicetest",
-      "_tgt": "service_requestnotfounderror",
+      "_src": "service_requestnotfounderror",
+      "_tgt": "test_service_supportdeskservicetest",
+      "confidence_score": 0.5,
       "source": "service_requestnotfounderror",
-      "target": "test_service_supportdeskservicetest",
-      "confidence_score": 0.5
+      "target": "test_service_supportdeskservicetest"
     },
     {
       "relation": "calls",
@@ -1753,9 +1753,9 @@
       "weight": 0.8,
       "_src": "service_supportdeskservice",
       "_tgt": "storage_jsonrequeststore",
+      "confidence_score": 0.5,
       "source": "service_supportdeskservice",
-      "target": "storage_jsonrequeststore",
-      "confidence_score": 0.5
+      "target": "storage_jsonrequeststore"
     },
     {
       "relation": "uses",
@@ -1763,11 +1763,11 @@
       "source_file": "tests\\test_service.py",
       "source_location": "L6",
       "weight": 0.8,
-      "_src": "test_service_supportdeskservicetest",
-      "_tgt": "service_supportdeskservice",
+      "_src": "service_supportdeskservice",
+      "_tgt": "test_service_supportdeskservicetest",
+      "confidence_score": 0.5,
       "source": "service_supportdeskservice",
-      "target": "test_service_supportdeskservicetest",
-      "confidence_score": 0.5
+      "target": "test_service_supportdeskservicetest"
     },
     {
       "relation": "uses",
@@ -1777,9 +1777,9 @@
       "weight": 0.8,
       "_src": "service_rationale_1",
       "_tgt": "storage_jsonrequeststore",
+      "confidence_score": 0.5,
       "source": "service_rationale_1",
-      "target": "storage_jsonrequeststore",
-      "confidence_score": 0.5
+      "target": "storage_jsonrequeststore"
     },
     {
       "relation": "uses",
@@ -1789,9 +1789,9 @@
       "weight": 0.8,
       "_src": "service_rationale_15",
       "_tgt": "storage_jsonrequeststore",
+      "confidence_score": 0.5,
       "source": "service_rationale_15",
-      "target": "storage_jsonrequeststore",
-      "confidence_score": 0.5
+      "target": "storage_jsonrequeststore"
     },
     {
       "relation": "contains",
@@ -1859,11 +1859,11 @@
       "source_file": "tests\\test_storage.py",
       "source_location": "L7",
       "weight": 0.8,
-      "_src": "test_storage_jsonrequeststoretest",
-      "_tgt": "storage_jsonrequeststore",
+      "_src": "storage_jsonrequeststore",
+      "_tgt": "test_storage_jsonrequeststoretest",
+      "confidence_score": 0.5,
       "source": "storage_jsonrequeststore",
-      "target": "test_storage_jsonrequeststoretest",
-      "confidence_score": 0.5
+      "target": "test_storage_jsonrequeststoretest"
     },
     {
       "relation": "contains",

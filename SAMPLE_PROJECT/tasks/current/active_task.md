@@ -4,11 +4,11 @@
 
 ## Tarea
 
-Convertir `SAMPLE_PROJECT/` en una mini app funcional y pedagogica para probar Graphify.
+Consolidar documentacion y validacion total de `SAMPLE_PROJECT/`.
 
 ## Tipo
 
-`code+docs`
+`docs+validation`
 
 ## Nivel
 
@@ -16,15 +16,15 @@ Convertir `SAMPLE_PROJECT/` en una mini app funcional y pedagogica para probar G
 
 ## Objetivo
 
-Implementar una mesa interna de soporte operativo pequena, ejecutable por CLI, con persistencia JSON runtime, tests basicos y documentacion alineada con el framework.
+Dejar una validacion practica de la mini app, la arquitectura documental, los escenarios de chat y el valor real de Graphify.
 
 ## Alcance
 
-- Crear app CLI con comandos `demo`, `create`, `list` y `close`.
-- Implementar modulos Python pequenos en `src/`.
-- Agregar tests con `unittest`.
-- Documentar que `data/requests.json` es runtime y no canonico.
-- Usar `graphify update .` desde `SAMPLE_PROJECT/` como comando principal de Graphify.
+- Corregir referencias documentales desactualizadas.
+- Fortalecer `VALIDATION_GUIDE.md`.
+- Crear prueba de arquitectura total.
+- Crear escenarios de chat con trazas sin/con Graphify.
+- Documentar criterios practicos para decidir si Graphify aporta valor.
 - Mantener `SAMPLE_PROJECT/` como ejemplo pedagogico, no plantilla de produccion.
 
 ## No Alcance
@@ -34,6 +34,7 @@ Implementar una mesa interna de soporte operativo pequena, ejecutable por CLI, c
 - Agregar base de datos productiva.
 - Integrar sistemas externos.
 - Modificar `PROJECT_TEMPLATE/`.
+- Redisenar la arquitectura base.
 
 ## Estado
 

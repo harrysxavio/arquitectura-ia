@@ -19,7 +19,8 @@ No es una plantilla de produccion ni una base recomendada para sistemas producti
 - mini app CLI en Python estandar;
 - tests basicos;
 - persistencia runtime local en `data/requests.json`;
-- outputs Graphify derivados dentro de `graphify-out/`.
+- outputs Graphify derivados dentro de `graphify-out/`;
+- guias pedagogicas para validar la arquitectura y comparar trabajo con/sin Graphify.
 
 ## Que no es
 
@@ -72,9 +73,9 @@ Un proyecto puede empezar con pocos documentos y crecer despues.
 | Nivel | Archivos | Uso |
 |---|---|---|
 | Minimo | `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `AGENTS.md`, `tasks/current/active_task.md`, `decisions/decision_log.md`, `memory/project_facts.md` | Base para operar sin perder identidad, contexto, tarea activa, decisiones y hechos. |
-| Estandar | Todo lo anterior mas `implementation_plan.md`, `open_questions.md`, ADRs, `docs/product/spec.md`, `docs/architecture/sdd.md`, `memory/constraints.md`, `memory/known_issues.md`, `memory/patterns.md`, `memory/glossary.md`, `VALIDATION_GUIDE.md` y `graphify-out/` | Version completa alineada con `PROJECT_TEMPLATE/`. |
+| Estandar | Todo lo anterior mas `implementation_plan.md`, `open_questions.md`, ADRs, `docs/product/spec.md`, `docs/architecture/sdd.md`, `memory/constraints.md`, `memory/known_issues.md`, `memory/patterns.md`, `memory/glossary.md` y `graphify-out/` | Version completa alineada con `PROJECT_TEMPLATE/`. |
 
-En este ejemplo se incluye la estructura estandar para que puedas ver como conversa todo. En un proyecto real no tienes que llenar todo desde el dia uno.
+En este ejemplo se incluye la estructura estandar para que puedas ver como conversa todo. Tambien se agregan `VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `app.py`, `src/`, `tests/` y `data/` como extras pedagogicos del laboratorio; no son estandar obligatorio del template. En un proyecto real no tienes que llenar todo desde el dia uno.
 
 ## Orden recomendado de lectura
 
@@ -89,7 +90,9 @@ En este ejemplo se incluye la estructura estandar para que puedas ver como conve
 9. `decisions/adr/`: decisiones arquitectonicas con contexto.
 10. `memory/`: hechos, restricciones, problemas, patrones y glosario.
 11. `VALIDATION_GUIDE.md`: pruebas funcionales, documentales y comparativa Graphify.
-12. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
+12. `ARCHITECTURE_VALIDATION.md`: prueba de arquitectura total como sistema.
+13. `CHAT_SCENARIOS.md`: escenarios de chat con trazas de decision.
+14. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
 
 ## Que se llena primero
 
@@ -239,7 +242,7 @@ Mantener Markdown breve y factual suele ser mejor que crear documentos largos qu
 | Debes adaptar | Dominio, alcance, reglas de negocio, stack, restricciones, agentes locales, rutas del `CONTEXT_INDEX.md` y contenido de memoria. |
 | Solo ilustrativo | Dominio, datos runtime de `data/requests.json` y la escala de la automatizacion. |
 
-`src/`, `app.py`, `tests/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con una mini app funcional.
+`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `src/`, `app.py`, `tests/`, `data/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con una mini app funcional y con validaciones pedagogicas.
 
 ## Donde buscar mas documentacion
 

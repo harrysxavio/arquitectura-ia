@@ -1,7 +1,7 @@
 # Graph Report - .  (2026-04-13)
 
 ## Corpus Check
-- 13 files · ~7,197 words
+- 13 files · ~10,815 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -33,10 +33,10 @@
 10. `JsonRequestStoreTest` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Formatting helpers for CLI output.` --uses--> `SupportRequest`  [INFERRED]
-  src\reporter.py → src\models.py
-- `JSON storage for the runtime example data.` --uses--> `SupportRequest`  [INFERRED]
-  src\storage.py → src\models.py
+- `SupportRequest` --uses--> `Formatting helpers for CLI output.`  [INFERRED]
+  src\models.py → src\reporter.py
+- `SupportRequest` --uses--> `JSON storage for the runtime example data.`  [INFERRED]
+  src\models.py → src\storage.py
 - `CLI for the SAMPLE_PROJECT support desk example.` --uses--> `RequestType`  [INFERRED]
   app.py → src\enums.py
 - `CLI for the SAMPLE_PROJECT support desk example.` --uses--> `RequestNotFoundError`  [INFERRED]

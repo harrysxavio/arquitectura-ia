@@ -35,6 +35,8 @@ Describir la identidad, alcance, estructura, stack y restricciones principales d
 - `CONTEXT_INDEX.md`: mapa de fuentes oficiales del proyecto.
 - `AGENTS.md`: ajustes locales para roles de agente.
 - `VALIDATION_GUIDE.md`: guia para validar app, docs y Graphify.
+- `ARCHITECTURE_VALIDATION.md`: prueba de arquitectura total como sistema.
+- `CHAT_SCENARIOS.md`: prompts y trazas para evaluar rutas de contexto.
 - `app.py`: CLI ejecutable del ejemplo.
 - `requirements.txt`: declara que no hay dependencias runtime externas.
 - `tasks/current/`: tarea activa, plan y preguntas abiertas.
@@ -46,6 +48,8 @@ Describir la identidad, alcance, estructura, stack y restricciones principales d
 - `tests/`: pruebas basicas con `unittest`.
 - `data/requests.json`: persistencia runtime del ejemplo, no fuente canonica.
 - `graphify-out/`: outputs derivados de Graphify para este proyecto instanciado.
+
+`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `app.py`, `src/`, `tests/` y `data/` son extras pedagogicos del laboratorio. No son estandar obligatorio de `PROJECT_TEMPLATE/`.
 
 ## Stack
 

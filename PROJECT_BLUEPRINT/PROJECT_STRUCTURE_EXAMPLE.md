@@ -59,7 +59,7 @@ project/
 `-- graphify-out/
     |-- GRAPH_REPORT.md
     |-- graph.json
-    `-- graph.html
+    `-- graph.html  # opcional, si la herramienta lo genera
 ```
 
 ## Diferencia entre minimo y estandar
@@ -83,7 +83,7 @@ La raiz contiene los documentos que un humano o agente debe consultar primero: i
 
 `docs/product/` contiene verdad funcional. `docs/architecture/` contiene diseno tecnico.
 
-`graphify-out/` contiene outputs derivados. Debe estar disponible para tareas estructurales, pero no debe gobernar el proyecto. `GRAPH_REPORT.md` aparece en la estructura estandar porque es el punto de entrada humano para Graphify; en `PROJECT_TEMPLATE/` existe solo como placeholder, no como reporte real.
+`graphify-out/` contiene outputs derivados. Debe estar disponible para tareas estructurales, pero no debe gobernar el proyecto. `GRAPH_REPORT.md` aparece en la estructura estandar porque es el punto de entrada humano para Graphify; en `PROJECT_TEMPLATE/` existe solo como placeholder, no como reporte real. El output minimo esperado es `GRAPH_REPORT.md` y `graph.json`; `graph.html` es opcional cuando la herramienta lo genera.
 
 ## Flujo de adopcion
 

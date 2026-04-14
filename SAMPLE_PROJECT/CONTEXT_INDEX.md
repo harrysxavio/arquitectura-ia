@@ -14,6 +14,8 @@ Indicar que documento consultar segun la necesidad de trabajo dentro de la Mesa 
 | Identidad del proyecto | `PROJECT_GUIDE.md` | Entrada base del proyecto y alcance. |
 | Reglas locales de agentes | `AGENTS.md` | Ajustes locales sin reemplazar `OPERACION/AGENTS/*.md`. |
 | Validacion del ejemplo | `VALIDATION_GUIDE.md` | Pruebas funcionales, documentales y comparativa con Graphify. |
+| Validacion arquitectonica | `ARCHITECTURE_VALIDATION.md` | Prueba del sistema completo: contexto, docs, memoria, decisiones y Graphify. |
+| Escenarios de chat | `CHAT_SCENARIOS.md` | Prompts y trazas para comparar rutas con y sin Graphify. |
 | Tarea actual | `tasks/current/active_task.md` | Alcance y estado del trabajo activo. |
 | Plan actual | `tasks/current/implementation_plan.md` | Secuencia de ejecucion de la tarea activa. |
 | Preguntas abiertas | `tasks/current/open_questions.md` | Dudas que bloquean o cambian alcance. |
@@ -37,3 +39,5 @@ Indicar que documento consultar segun la necesidad de trabajo dentro de la Mesa 
 Para tareas simples, empezar por `PROJECT_GUIDE.md`, este indice y `tasks/current/active_task.md`. Escalar a `spec.md`, `sdd.md`, decisiones, memoria, codigo o Graphify solo cuando la tarea lo justifique.
 
 Graphify orienta navegacion, pero no reemplaza spec, SDD, decision log ni memoria canonica. `data/requests.json` tampoco es canonico: solo refleja datos runtime del ejemplo.
+
+`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md` y `CHAT_SCENARIOS.md` son guias pedagogicas del laboratorio `SAMPLE_PROJECT/`; no son requisitos obligatorios de `PROJECT_TEMPLATE/`.
