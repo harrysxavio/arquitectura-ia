@@ -1,38 +1,105 @@
-# GRAPH_REPORT.md
+# Graph Report - .  (2026-04-13)
 
-> Placeholder pedagogico. Este archivo no fue generado por Graphify sobre `SAMPLE_PROJECT/`.
+## Corpus Check
+- 13 files · ~7,197 words
+- Verdict: corpus is large enough that graph structure adds value.
 
-## Proposito
+## Summary
+- 72 nodes · 130 edges · 9 communities detected
+- Extraction: 63% EXTRACTED · 37% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.5)
+- Token cost: 0 input · 0 output
 
-Mostrar como podria verse el punto de entrada humano a un reporte Graphify dentro de un proyecto instanciado.
+## Community Hubs (Navigation)
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
 
-En un proyecto real, este archivo debe generarse o regenerarse con Graphify. No debe completarse a mano como fuente canonica.
+## God Nodes (most connected - your core abstractions)
+1. `RequestType` - 13 edges
+2. `SupportRequest` - 13 edges
+3. `Priority` - 12 edges
+4. `RequestStatus` - 12 edges
+5. `SupportDeskService` - 12 edges
+6. `SupportDeskServiceTest` - 12 edges
+7. `RequestNotFoundError` - 11 edges
+8. `JsonRequestStore` - 10 edges
+9. `TextEnum` - 8 edges
+10. `JsonRequestStoreTest` - 8 edges
 
-## Estado
+## Surprising Connections (you probably didn't know these)
+- `Formatting helpers for CLI output.` --uses--> `SupportRequest`  [INFERRED]
+  src\reporter.py → src\models.py
+- `JSON storage for the runtime example data.` --uses--> `SupportRequest`  [INFERRED]
+  src\storage.py → src\models.py
+- `CLI for the SAMPLE_PROJECT support desk example.` --uses--> `RequestType`  [INFERRED]
+  app.py → src\enums.py
+- `CLI for the SAMPLE_PROJECT support desk example.` --uses--> `RequestNotFoundError`  [INFERRED]
+  app.py → src\service.py
+- `CLI for the SAMPLE_PROJECT support desk example.` --uses--> `SupportDeskService`  [INFERRED]
+  app.py → src\service.py
 
-`placeholder-pedagogico`
+## Communities
 
-## Ejemplo de Nodos Importantes
+### Community 0 - "Community 0"
+Cohesion: 0.25
+Nodes (11): Priority, RequestStatus, RequestType, Data models for the support desk example., SupportRequest, Application service for support desk requests., Raised when a request id is not present in storage., RequestNotFoundError (+3 more)
 
-- `PROJECT_GUIDE.md`: identidad y alcance del proyecto.
-- `CONTEXT_INDEX.md`: mapa de fuentes oficiales.
-- `docs/product/spec.md`: reglas funcionales del flujo de solicitudes.
-- `docs/architecture/sdd.md`: diseno tecnico minimo.
-- `memory/patterns.md`: patrones aprobados para futuras tareas.
+### Community 1 - "Community 1"
+Cohesion: 0.2
+Nodes (5): Enum, Enumerations for the support desk domain., String enum with a compact parser for CLI and JSON inputs., TextEnum, str
 
-## Ejemplo de Comunidades
+### Community 2 - "Community 2"
+Cohesion: 0.22
+Nodes (2): Formatting helpers for CLI output., JSON storage for the runtime example data.
 
-- Documentacion base: `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `AGENTS.md`.
-- Ejecucion actual: `tasks/current/*`.
-- Producto y arquitectura: `docs/product/spec.md`, `docs/architecture/sdd.md`.
-- Decisiones y memoria: `decisions/*`, `memory/*`.
-- Codigo ilustrativo: `src/*`.
+### Community 3 - "Community 3"
+Cohesion: 0.43
+Nodes (1): SupportDeskServiceTest
 
-## Como usarlo en este ejemplo
+### Community 4 - "Community 4"
+Cohesion: 0.33
+Nodes (2): SupportDeskService, ValueError
 
-Usalo solo para entender el rol de Graphify. Si necesitas decidir algo, consulta primero los documentos canonicos.
+### Community 5 - "Community 5"
+Cohesion: 0.33
+Nodes (1): TriageTest
 
-## Nota de uso
+### Community 6 - "Community 6"
+Cohesion: 0.6
+Nodes (4): build_parser(), main(), CLI for the SAMPLE_PROJECT support desk example., run_demo()
 
-`graphify-out/` orienta navegacion y analisis estructural, pero no reemplaza `PROJECT_GUIDE.md`, `docs/product/spec.md`, `docs/architecture/sdd.md`, `decisions/decision_log.md` ni `memory/*`.
+### Community 7 - "Community 7"
+Cohesion: 0.4
+Nodes (1): Small utilities for the support desk example.
 
+### Community 8 - "Community 8"
+Cohesion: 0.67
+Nodes (1): Tests for SAMPLE_PROJECT.
+
+## Knowledge Gaps
+- **3 isolated node(s):** `Enumerations for the support desk domain.`, `String enum with a compact parser for CLI and JSON inputs.`, `Small utilities for the support desk example.`
+  These have ≤1 connection - possible missing edges or undocumented components.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `SupportDeskServiceTest` connect `Community 3` to `Community 0`, `Community 4`?**
+  _High betweenness centrality (0.176) - this node is a cross-community bridge._
+- **Why does `RequestType` connect `Community 0` to `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 6`?**
+  _High betweenness centrality (0.166) - this node is a cross-community bridge._
+- **Why does `SupportDeskService` connect `Community 4` to `Community 0`, `Community 2`, `Community 3`, `Community 6`?**
+  _High betweenness centrality (0.165) - this node is a cross-community bridge._
+- **Are the 11 inferred relationships involving `RequestType` (e.g. with `CLI for the SAMPLE_PROJECT support desk example.` and `SupportRequest`) actually correct?**
+  _`RequestType` has 11 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 11 inferred relationships involving `SupportRequest` (e.g. with `Priority` and `RequestStatus`) actually correct?**
+  _`SupportRequest` has 11 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 10 inferred relationships involving `Priority` (e.g. with `SupportRequest` and `Data models for the support desk example.`) actually correct?**
+  _`Priority` has 10 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 10 inferred relationships involving `RequestStatus` (e.g. with `SupportRequest` and `Data models for the support desk example.`) actually correct?**
+  _`RequestStatus` has 10 INFERRED edges - model-reasoned connections that need verification._

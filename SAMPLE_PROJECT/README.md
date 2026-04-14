@@ -1,8 +1,10 @@
 # SAMPLE_PROJECT - Mesa Interna de Soporte Operativo
 
-Este proyecto ejemplo muestra como se ve una instancia ya rellenada de `PROJECT_TEMPLATE/`.
+Este proyecto ejemplo muestra como se ve una instancia ya rellenada de `PROJECT_TEMPLATE/` con una mini app funcional.
 
-No es una aplicacion completa. Es una guia practica para aprender a usar la arquitectura con un caso realista: una mesa interna que recibe solicitudes operativas, las clasifica, prioriza y documenta su resolucion.
+Es una aplicacion pequena, ejecutable y pedagogica para aprender a usar la arquitectura con un caso realista: una mesa interna que recibe solicitudes operativas, las clasifica, prioriza, lista y cierra con persistencia JSON local.
+
+No es una plantilla de produccion ni una base recomendada para sistemas productivos. El objetivo es validar el framework y Graphify sobre un proyecto simple con codigo, documentacion, memoria, decisiones y contexto derivado.
 
 ## Que es
 
@@ -14,8 +16,10 @@ No es una aplicacion completa. Es una guia practica para aprender a usar la arqu
 - memoria breve del proyecto;
 - una spec funcional y un SDD tecnico;
 - una adaptacion local de agentes;
-- placeholders pedagogicos de Graphify;
-- archivos tecnicos minimos solo para mostrar convivencia con codigo.
+- mini app CLI en Python estandar;
+- tests basicos;
+- persistencia runtime local en `data/requests.json`;
+- outputs Graphify derivados dentro de `graphify-out/`.
 
 ## Que no es
 
@@ -42,9 +46,24 @@ Haz esto:
 5. Lee `docs/product/spec.md` solo si necesitas comportamiento funcional.
 6. Lee `docs/architecture/sdd.md` solo si necesitas diseno tecnico.
 7. Consulta `decisions/` y `memory/` cuando necesites contexto duradero.
-8. Consulta `graphify-out/GRAPH_REPORT.md` solo para orientacion estructural.
+8. Ejecuta `python app.py demo` para ver el flujo funcional.
+9. Consulta `graphify-out/GRAPH_REPORT.md` solo para orientacion estructural cuando exista.
 
-Primer paso concreto: imagina que quieres cambiar la regla de prioridad de solicitudes urgentes. Antes de editar nada, carga `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `tasks/current/active_task.md` y `docs/product/spec.md`. Si el cambio afecta componentes o datos, agrega `docs/architecture/sdd.md`.
+Primer paso concreto: imagina que quieres cambiar la regla de prioridad de solicitudes urgentes. Antes de editar codigo, carga `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `tasks/current/active_task.md` y `docs/product/spec.md`. Si el cambio afecta componentes o datos, agrega `docs/architecture/sdd.md`.
+
+## Ejecutar la mini app
+
+Desde `SAMPLE_PROJECT/`:
+
+```bash
+python -m unittest discover -s tests
+python app.py demo
+python app.py create --title "Acceso VPN" --description "Alta para equipo operaciones" --area "Operaciones" --type acceso
+python app.py list
+python app.py close --id <id> --note "Resuelto con alta manual"
+```
+
+`data/requests.json` guarda datos runtime del ejemplo. No es fuente canonica. Las reglas viven en `docs/product/spec.md`, el diseno en `docs/architecture/sdd.md`, las decisiones en `decisions/` y la memoria en `memory/`.
 
 ## Documentos minimos y estandar
 
@@ -53,7 +72,7 @@ Un proyecto puede empezar con pocos documentos y crecer despues.
 | Nivel | Archivos | Uso |
 |---|---|---|
 | Minimo | `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `AGENTS.md`, `tasks/current/active_task.md`, `decisions/decision_log.md`, `memory/project_facts.md` | Base para operar sin perder identidad, contexto, tarea activa, decisiones y hechos. |
-| Estandar | Todo lo anterior mas `implementation_plan.md`, `open_questions.md`, ADRs, `docs/product/spec.md`, `docs/architecture/sdd.md`, `memory/constraints.md`, `memory/known_issues.md`, `memory/patterns.md`, `memory/glossary.md` y `graphify-out/` | Version completa alineada con `PROJECT_TEMPLATE/`. |
+| Estandar | Todo lo anterior mas `implementation_plan.md`, `open_questions.md`, ADRs, `docs/product/spec.md`, `docs/architecture/sdd.md`, `memory/constraints.md`, `memory/known_issues.md`, `memory/patterns.md`, `memory/glossary.md`, `VALIDATION_GUIDE.md` y `graphify-out/` | Version completa alineada con `PROJECT_TEMPLATE/`. |
 
 En este ejemplo se incluye la estructura estandar para que puedas ver como conversa todo. En un proyecto real no tienes que llenar todo desde el dia uno.
 
@@ -69,7 +88,8 @@ En este ejemplo se incluye la estructura estandar para que puedas ver como conve
 8. `decisions/decision_log.md`: decisiones aprobadas en formato breve.
 9. `decisions/adr/`: decisiones arquitectonicas con contexto.
 10. `memory/`: hechos, restricciones, problemas, patrones y glosario.
-11. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
+11. `VALIDATION_GUIDE.md`: pruebas funcionales, documentales y comparativa Graphify.
+12. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
 
 ## Que se llena primero
 
@@ -93,14 +113,15 @@ Despues llena lo que la tarea realmente necesite:
 
 ## Primer ejercicio sugerido
 
-Usa este ejercicio para practicar el flujo sin construir una app completa:
+Usa este ejercicio para practicar el flujo con una app pequena sin convertirla en producto:
 
 1. Abre `tasks/current/active_task.md`.
 2. Lee el objetivo de documentar el flujo de triage.
 3. Consulta `docs/product/spec.md` para ver las reglas.
 4. Consulta `decisions/decision_log.md` para entender por que el flujo vive en Markdown.
-5. Propone una regla nueva: "solicitudes de seguridad siempre son prioridad alta".
-6. Decide donde debe documentarse:
+5. Ejecuta `python app.py demo`.
+6. Propone una regla nueva: "solicitudes de seguridad siempre son prioridad alta".
+7. Decide donde debe documentarse:
    - regla funcional: `docs/product/spec.md`;
    - impacto tecnico: `docs/architecture/sdd.md`;
    - decision duradera: `decisions/decision_log.md`;
@@ -116,7 +137,7 @@ Ejemplo: llega una solicitud para agregar prioridad automatica por area.
 2. `CONTEXT_INDEX.md` indica que la verdad funcional vive en `docs/product/spec.md`.
 3. `active_task.md` dice si el cambio entra en la tarea actual.
 4. `spec.md` define la regla funcional de prioridad.
-5. `sdd.md` explica si el calculo vive en `src/sample_flow.py` o en otro componente futuro.
+5. `sdd.md` explica si el calculo vive en `src/triage.py`, `src/service.py` u otro componente futuro.
 6. `decision_log.md` registra la decision si cambia el criterio oficial.
 7. `memory/patterns.md` conserva el patron para tareas posteriores.
 8. `graphify-out/GRAPH_REPORT.md` puede orientar que archivos revisar, pero no decide por si mismo.
@@ -144,7 +165,7 @@ Para evitar cargar contexto de mas, empieza siempre por `PROJECT_GUIDE.md`, `CON
 
 `graphify-out/` contiene contexto estructural derivado. Ayuda a navegar relaciones, detectar nodos importantes y orientar tareas amplias.
 
-En este ejemplo, los archivos de `graphify-out/*` son placeholders pedagogicos. No son salidas reales generadas por Graphify sobre `SAMPLE_PROJECT/`.
+En este ejemplo, Graphify debe enfocarse operativamente en `SAMPLE_PROJECT/`, no en la raiz del framework. La capa `GRAPHIFY/` de la raiz sigue definiendo politica y contrato.
 
 Graphify ayuda cuando:
 
@@ -161,11 +182,10 @@ Graphify no ayuda tanto cuando:
 
 Regla clave: Graphify no es fuente de verdad. Si Graphify contradice `PROJECT_GUIDE.md`, `spec.md`, `sdd.md`, `decision_log.md` o `memory/*`, gana la fuente canonica.
 
-Uso basico esperado en un proyecto real:
+Uso basico esperado desde `SAMPLE_PROJECT/`:
 
 ```bash
-pip install graphify
-python -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"
+graphify update .
 ```
 
 Para mas detalle, consulta `GRAPHIFY/GRAPHIFY_POLICY.md` y `GRAPHIFY/OUTPUT_CONTRACT.md` en la raiz del framework.
@@ -217,9 +237,9 @@ Mantener Markdown breve y factual suele ser mejor que crear documentos largos qu
 |---|---|
 | Puedes copiar | Estructura documental, orden de lectura, estilo de `active_task.md`, formato de decision/ADR, memoria breve y `CONTEXT_INDEX.md` como mapa. |
 | Debes adaptar | Dominio, alcance, reglas de negocio, stack, restricciones, agentes locales, rutas del `CONTEXT_INDEX.md` y contenido de memoria. |
-| Solo ilustrativo | `src/`, `.env.example`, `graphify-out/graph.json`, `graphify-out/graph.html` y todos los placeholders de Graphify incluidos aqui. |
+| Solo ilustrativo | Dominio, datos runtime de `data/requests.json` y la escala de la automatizacion. |
 
-`src/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con un poco de codigo.
+`src/`, `app.py`, `tests/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con una mini app funcional.
 
 ## Donde buscar mas documentacion
 
@@ -233,4 +253,3 @@ Desde la raiz del framework:
 - `OPERACION/AGENTS/*.md`: contratos globales de agentes.
 - `GRAPHIFY/`: politica y contrato de outputs Graphify.
 - `THEORY/`: fundamentos conceptuales.
-

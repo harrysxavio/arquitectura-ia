@@ -4,33 +4,33 @@
 
 ## Pasos
 
-1. Confirmar alcance del flujo de triage en `PROJECT_GUIDE.md`.
-2. Documentar reglas funcionales en `docs/product/spec.md`.
-3. Describir el diseno tecnico minimo en `docs/architecture/sdd.md`.
-4. Registrar la decision en `decisions/decision_log.md`.
-5. Crear una ADR para explicar por que el triage vive primero en Markdown.
-6. Actualizar `memory/constraints.md` y `memory/patterns.md` con conocimiento vigente.
-7. Mantener `src/sample_flow.py` como ejemplo opcional, sin convertirlo en sistema productivo.
+1. Reemplazar el flujo anterior de ejemplo por modulos funcionales en `src/`.
+2. Crear `app.py` con CLI `demo`, `create`, `list` y `close`.
+3. Agregar persistencia runtime en `data/requests.json`.
+4. Agregar tests basicos con `unittest`.
+5. Actualizar spec, SDD, decision log, ADR, memoria y agentes locales.
+6. Crear `VALIDATION_GUIDE.md` con pruebas funcionales, documentales y comparativa Graphify.
+7. Eliminar `src/graphify-out/` residual y usar solo `SAMPLE_PROJECT/graphify-out/`.
+8. Ejecutar `graphify update .` desde `SAMPLE_PROJECT/`.
 
 ## Validacion
 
-- La spec describe entrada, clasificacion, prioridad, asignacion y cierre.
-- La SDD no promete una app completa.
-- La decision y la ADR apuntan al mismo criterio.
-- La memoria contiene solo hechos vigentes, restricciones y patrones breves.
-- `graphify-out/*` queda marcado como placeholder pedagogico.
+- `python -m unittest discover -s tests` pasa.
+- `python app.py demo` ejecuta un flujo real.
+- `data/requests.json` se documenta como runtime, no canonico.
+- `CONTEXT_INDEX.md` apunta a fuentes, codigo y Graphify con roles claros.
+- `VALIDATION_GUIDE.md` permite comparar trabajo sin Graphify vs con `GRAPH_REPORT.md`.
 
 ## Riesgos
 
-- Que `src/` parezca parte obligatoria del framework.
+- Que `SAMPLE_PROJECT/` parezca plantilla de produccion.
+- Que `data/requests.json` se interprete como fuente canonica.
 - Que Graphify se interprete como fuente canonica.
-- Que el ejemplo copie teoria ya documentada en `THEORY/`.
 
 ## Criterio de Cierre
 
-La tarea se considera cerrada cuando un principiante puede leer el README del ejemplo, entender el flujo de documentos y saber donde documentar un cambio de regla sin cargar todo el repo.
+La tarea se considera cerrada cuando un principiante puede ejecutar la mini app, correr tests, entender donde vive cada fuente canonica y usar Graphify como orientacion derivada.
 
 ## Nota de uso
 
 Este plan guia la tarea actual. Si queda una regla duradera, debe vivir en spec, SDD, decision o memoria.
-

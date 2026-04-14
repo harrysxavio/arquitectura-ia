@@ -1,0 +1,3 @@
+# Runtime sin dependencias externas.
+# Ejecuta tests con la biblioteca estandar:
+# python -m unittest discover -s tests

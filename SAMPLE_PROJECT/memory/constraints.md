@@ -4,9 +4,10 @@
 
 ## Tecnicas
 
-- No construir una app completa dentro de `SAMPLE_PROJECT/`.
-- No agregar dependencias tecnicas salvo que sean necesarias para explicar el flujo.
-- Mantener `src/` como apoyo ilustrativo y opcional.
+- No construir una app completa ni productiva dentro de `SAMPLE_PROJECT/`.
+- No agregar dependencias runtime externas para la mini app.
+- Mantener `src/` pequeno y alineado con la documentacion canonica.
+- No tratar `data/requests.json` como fuente canonica.
 - No usar `graphify-out/*` como fuente de verdad.
 
 ## Negocio
@@ -24,9 +25,8 @@
 ## Costo
 
 - No agregar servicios pagos ni hosting.
-- No asumir herramientas externas como obligatorias salvo Markdown, Git y el agente principal elegido por el usuario.
+- No asumir servicios pagos ni hosting. Graphify puede requerir instalacion local para regenerar `graphify-out/`.
 
 ## Nota de uso
 
 Cuando una restriccion provenga de una decision, enlazar o mencionar la referencia en `decisions/decision_log.md`.
-

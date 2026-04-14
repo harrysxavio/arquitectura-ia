@@ -14,8 +14,9 @@
 | Nota de cierre | Resumen breve que explica como se resolvio o por que se cerro la solicitud. |
 | Fuente canonica | Documento que gobierna una regla, decision o hecho vigente. |
 | Contexto derivado | Informacion generada para orientar lectura, como Graphify, sin autoridad canonica. |
+| Persistencia runtime | Datos locales usados por la ejecucion del ejemplo, como `data/requests.json`, sin autoridad canonica. |
+| Mini app pedagogica | Aplicacion pequena y ejecutable para aprender y validar el framework, no una plantilla productiva. |
 
 ## Nota de uso
 
 No duplicar definiciones extensas de producto. Si un termino implica una regla de negocio, documentarla en `docs/product/spec.md`.
-

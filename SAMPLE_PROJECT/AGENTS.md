@@ -43,10 +43,12 @@ Despues debe cargar solo los documentos que correspondan segun el tipo y nivel d
 - Coder:
   - tratar `docs/product/spec.md` como verdad funcional;
   - tratar `docs/architecture/sdd.md` como verdad tecnica cuando aplique;
-  - mantener `src/` como ilustrativo y opcional.
+  - mantener `src/` como automatizacion minima y pedagogica;
+  - no tratar `data/requests.json` como fuente canonica.
 - Reviewer:
   - validar que cambios de reglas tambien actualicen decision o memoria si corresponde;
   - verificar que Graphify no se use como fuente canonica;
+  - verificar que `VALIDATION_GUIDE.md` siga permitiendo probar app y Graphify;
   - revisar que el ejemplo siga alineado con `PROJECT_TEMPLATE/`.
 - Debugger:
   - revisar primero `memory/known_issues.md`;
@@ -56,4 +58,3 @@ Despues debe cargar solo los documentos que correspondan segun el tipo y nivel d
 ## Nota de uso
 
 No crear agentes nuevos para este ejemplo. Si aparece una necesidad repetible, documentarla como patron o workflow antes de convertirla en rol.
-

@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Definir como se registran, clasifican, priorizan, asignan y cierran solicitudes internas de soporte operativo.
+Definir como se registran, clasifican, priorizan, asignan y cierran solicitudes internas de soporte operativo dentro de una mini app funcional y pedagogica.
 
 ## Problema
 
@@ -24,6 +24,7 @@ Las solicitudes llegan por canales distintos y se pierden criterios de prioridad
 - Asignar responsable.
 - Registrar estado: nueva, en triage, asignada, bloqueada, cerrada.
 - Cerrar con una nota breve de resultado.
+- Persistir solicitudes localmente en `data/requests.json` como dato runtime.
 
 ## No Alcance
 
@@ -32,6 +33,7 @@ Las solicitudes llegan por canales distintos y se pierden criterios de prioridad
 - Adjuntos obligatorios.
 - Portal web productivo.
 - Integraciones con sistemas externos.
+- Uso de `data/requests.json` como fuente canonica del proyecto.
 
 ## Reglas de Negocio
 
@@ -40,6 +42,7 @@ Las solicitudes llegan por canales distintos y se pierden criterios de prioridad
 - Una solicitud bloqueada debe registrar motivo de bloqueo.
 - Una solicitud cerrada debe incluir nota de cierre.
 - La prioridad puede ajustarse manualmente si el coordinador documenta el motivo.
+- Las reglas funcionales viven primero en este documento y luego se reflejan en la automatizacion minima.
 
 ## Casos de Uso
 
@@ -53,7 +56,8 @@ Las solicitudes llegan por canales distintos y se pierden criterios de prioridad
 - [x] El flujo permite distinguir solicitudes nuevas, en triage, asignadas, bloqueadas y cerradas.
 - [x] Las solicitudes de seguridad parten en prioridad alta.
 - [x] El cierre requiere nota breve.
-- [x] El ejemplo deja claro que el codigo en `src/` no es implementacion productiva.
+- [x] El ejemplo permite ejecutar un flujo real pequeno desde `app.py`.
+- [x] `data/requests.json` se trata como persistencia runtime, no como fuente canonica.
 - [x] Las reglas funcionales no dependen de Graphify.
 
 ## Riesgos Funcionales
@@ -72,4 +76,3 @@ Las solicitudes llegan por canales distintos y se pierden criterios de prioridad
 ## Nota de uso
 
 Si una decision funcional cambia arquitectura, crear o actualizar tambien `docs/architecture/sdd.md` y `decisions/decision_log.md`.
-
