@@ -16,6 +16,8 @@ Indicar que documento consultar segun la necesidad de trabajo dentro de la Mesa 
 | Validacion del ejemplo | `VALIDATION_GUIDE.md` | Pruebas funcionales, documentales y comparativa con Graphify. |
 | Validacion arquitectonica | `ARCHITECTURE_VALIDATION.md` | Prueba del sistema completo: contexto, docs, memoria, decisiones y Graphify. |
 | Escenarios de chat | `CHAT_SCENARIOS.md` | Prompts y trazas para comparar rutas con y sin Graphify. |
+| Reporte de ejecucion | `TEST_EXECUTION_REPORT.md` | Evidencia de comandos ejecutados y resultados observados. |
+| Traza observada | `TRACE_LOG.md` | Registro auditable de contexto cargado, Graphify y resultados por escenario. |
 | Tarea actual | `tasks/current/active_task.md` | Alcance y estado del trabajo activo. |
 | Plan actual | `tasks/current/implementation_plan.md` | Secuencia de ejecucion de la tarea activa. |
 | Preguntas abiertas | `tasks/current/open_questions.md` | Dudas que bloquean o cambian alcance. |

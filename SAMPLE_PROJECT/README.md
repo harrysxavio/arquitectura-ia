@@ -92,7 +92,9 @@ En este ejemplo se incluye la estructura estandar para que puedas ver como conve
 11. `VALIDATION_GUIDE.md`: pruebas funcionales, documentales y comparativa Graphify.
 12. `ARCHITECTURE_VALIDATION.md`: prueba de arquitectura total como sistema.
 13. `CHAT_SCENARIOS.md`: escenarios de chat con trazas de decision.
-14. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
+14. `TEST_EXECUTION_REPORT.md`: evidencia real de comandos ejecutados.
+15. `TRACE_LOG.md`: trazas observadas por escenario.
+16. `graphify-out/GRAPH_REPORT.md`: mapa derivado para orientacion.
 
 ## Que se llena primero
 
@@ -242,7 +244,7 @@ Mantener Markdown breve y factual suele ser mejor que crear documentos largos qu
 | Debes adaptar | Dominio, alcance, reglas de negocio, stack, restricciones, agentes locales, rutas del `CONTEXT_INDEX.md` y contenido de memoria. |
 | Solo ilustrativo | Dominio, datos runtime de `data/requests.json` y la escala de la automatizacion. |
 
-`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `src/`, `app.py`, `tests/`, `data/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con una mini app funcional y con validaciones pedagogicas.
+`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `TEST_EXECUTION_REPORT.md`, `TRACE_LOG.md`, `src/`, `app.py`, `tests/`, `data/` y `.env.example` no son parte obligatoria del nucleo del framework. Estan aqui para mostrar como una estructura documental puede convivir con una mini app funcional y con validaciones pedagogicas.
 
 ## Donde buscar mas documentacion
 

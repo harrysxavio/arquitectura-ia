@@ -37,6 +37,8 @@ Describir la identidad, alcance, estructura, stack y restricciones principales d
 - `VALIDATION_GUIDE.md`: guia para validar app, docs y Graphify.
 - `ARCHITECTURE_VALIDATION.md`: prueba de arquitectura total como sistema.
 - `CHAT_SCENARIOS.md`: prompts y trazas para evaluar rutas de contexto.
+- `TEST_EXECUTION_REPORT.md`: evidencia de comandos ejecutados y resultados.
+- `TRACE_LOG.md`: trazas observadas de escenarios de chat y Graphify.
 - `app.py`: CLI ejecutable del ejemplo.
 - `requirements.txt`: declara que no hay dependencias runtime externas.
 - `tasks/current/`: tarea activa, plan y preguntas abiertas.
@@ -49,7 +51,7 @@ Describir la identidad, alcance, estructura, stack y restricciones principales d
 - `data/requests.json`: persistencia runtime del ejemplo, no fuente canonica.
 - `graphify-out/`: outputs derivados de Graphify para este proyecto instanciado.
 
-`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `app.py`, `src/`, `tests/` y `data/` son extras pedagogicos del laboratorio. No son estandar obligatorio de `PROJECT_TEMPLATE/`.
+`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md`, `CHAT_SCENARIOS.md`, `TEST_EXECUTION_REPORT.md`, `TRACE_LOG.md`, `app.py`, `src/`, `tests/` y `data/` son extras pedagogicos del laboratorio. No son estandar obligatorio de `PROJECT_TEMPLATE/`.
 
 ## Stack
 
