@@ -105,9 +105,9 @@ Que debe pasar:
 - Git empieza a controlar cambios.
 - Este sera tu proyecto real, no una copia completa del framework.
 
-### 2. Copiar el Template
+### 2. Copiar la Plantilla
 
-Desde el repo del framework, copia `PROJECT_TEMPLATE/` hacia tu proyecto.
+Desde el repo del framework, copia el contenido de `PROJECT_TEMPLATE/` hacia tu proyecto.
 
 En PowerShell:
 
@@ -121,19 +121,42 @@ En macOS/Linux:
 cp -r PROJECT_TEMPLATE/* ../solicitudes-internas/
 ```
 
-Ahora en VS Code deberias ver, como minimo:
+Ahora en VS Code deberias ver una estructura como esta. Esta lista refleja la plantilla actual:
 
 ```text
 AGENTS.md
 PROJECT_GUIDE.md
 CONTEXT_INDEX.md
+README.md
 openspec/
-docs/architecture/
+  specs/example-capability/spec.md
+  changes/.gitkeep
+  archive/.gitkeep
+docs/
+  architecture/system.md
+  architecture/sdd.md
+  product/spec.md
 decisions/
+  decision_log.md
+  adr/ADR_TEMPLATE.md
 memory/
+  facts.md
+  constraints.md
+  patterns.md
+  glossary.md
+  known_issues.md
+  project_facts.md
+graphify-out/
+  GRAPH_REPORT.md
+tasks/current/
+  active_task.md
+  implementation_plan.md
+  open_questions.md
 ```
 
-Si no ves esos archivos, revisa que copiaste el contenido de `PROJECT_TEMPLATE/`, no solo la carpeta vacia.
+No tienes que llenar todo de inmediato. Para empezar bien, enfocate primero en `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `AGENTS.md`, una primera especificacion en `openspec/specs/` y una descripcion breve en `docs/architecture/system.md`.
+
+Si no ves esos bloques, revisa que copiaste el contenido de `PROJECT_TEMPLATE/`, no solo la carpeta vacia.
 
 ### 3. Completar `PROJECT_GUIDE.md`
 
@@ -186,9 +209,18 @@ Ejecutar tests o explicar por que no se pudieron ejecutar.
 
 No pongas aqui reglas funcionales del producto. Las reglas funcionales viven en OpenSpec.
 
-### 6. Crear la Primera Spec Vigente
+### 6. Crear la Primera Especificacion Vigente
 
-Una spec vigente describe lo que el sistema debe hacer. No describe codigo ni tareas.
+Una especificacion vigente describe lo que el sistema debe hacer para una capacidad concreta. No describe codigo, clases, tablas ni tareas.
+
+Para un principiante, piensa en una capacidad como una funcion importante del proyecto. Por ejemplo:
+
+| Proyecto | Primera capacidad posible |
+|---|---|
+| Solicitudes internas | Crear y consultar solicitudes |
+| Tienda online | Crear pedido |
+| Agenda medica | Reservar hora |
+| Control de inventario | Registrar producto |
 
 Crea una carpeta para tu primera capacidad:
 
@@ -201,21 +233,21 @@ Ejemplo para solicitudes internas:
 ```markdown
 # Solicitudes Internas
 
-## Requirements
+## Requisitos
 
-### Requirement: Crear solicitud
-El sistema SHALL permitir crear una solicitud con titulo, descripcion, area solicitante y tipo.
+### Requisito: Crear solicitud
+El sistema debe permitir crear una solicitud con titulo, descripcion, area solicitante y tipo.
 
-#### Scenario: Solicitud valida
-- WHEN una persona envia titulo, descripcion, area solicitante y tipo validos
-- THEN el sistema registra la solicitud
-- AND asigna un identificador unico
-- AND deja la solicitud en estado inicial `nueva`
+#### Escenario: Solicitud valida
+- Cuando una persona envia titulo, descripcion, area solicitante y tipo validos
+- Entonces el sistema registra la solicitud
+- Y asigna un identificador unico
+- Y deja la solicitud en estado inicial `nueva`
 
-#### Scenario: Solicitud incompleta
-- WHEN una persona intenta crear una solicitud sin titulo
-- THEN el sistema rechaza la solicitud
-- AND informa que dato falta
+#### Escenario: Solicitud incompleta
+- Cuando una persona intenta crear una solicitud sin titulo
+- Entonces el sistema rechaza la solicitud
+- Y informa que dato falta
 ```
 
 Como adaptarlo:
@@ -224,10 +256,11 @@ Como adaptarlo:
 - cambia `Crear solicitud` por una accion real de tu sistema;
 - cambia los datos obligatorios por los datos reales;
 - agrega escenarios rechazados cuando haya errores importantes para usuarios.
+- si no sabes una regla, no la inventes; dejala como pregunta para revisar.
 
 ### 7. Crear el Primer Cambio Activo
 
-La spec vigente dice que ya esta aprobado. Un cambio activo dice que quieres modificar o agregar algo.
+La especificacion vigente dice que ya esta aprobado. Un cambio activo dice que quieres modificar o agregar algo.
 
 Ejemplo: agregar prioridad urgente.
 
@@ -264,15 +297,24 @@ Las solicitudes relacionadas con seguridad necesitan distinguirse de solicitudes
 Ejemplo de `tasks.md`:
 
 ```markdown
-# Tasks
+# Tareas
 
-- [ ] Actualizar delta OpenSpec de `requests`
+- [ ] Actualizar delta de especificacion de `requests`
 - [ ] Implementar prioridad urgente
 - [ ] Agregar validacion
 - [ ] Agregar prueba o validacion manual
 ```
 
-### 8. Version Manual: Hacerlo Tu Mismo
+### 8. Subescenario 1A: Lo Hace la Persona Paso a Paso
+
+Usa este camino si quieres llenar los documentos tu mismo y entender cada pieza antes de pedir ayuda a Codex.
+
+Instalacion necesaria:
+
+- Git.
+- VS Code.
+- El lenguaje o framework que usara tu proyecto, por ejemplo Python o Node.
+- OpenSpec CLI solo si quieres validar con comandos; no es obligatorio para empezar.
 
 Sigue este orden:
 
@@ -282,7 +324,7 @@ Sigue este orden:
 4. Crea `openspec/specs/requests/spec.md`.
 5. Crea `openspec/changes/add-urgent-priority/`.
 6. Revisa el diff.
-7. Implementa codigo solo despues de tener spec y cambio activo.
+7. Implementa codigo solo despues de tener especificacion y cambio activo.
 
 Comandos utiles:
 
@@ -297,11 +339,33 @@ Si instalaste OpenSpec CLI:
 openspec validate add-urgent-priority --strict
 ```
 
-Si todavia no tienes codigo, valida leyendo: deberias poder explicar que hace el proyecto solo con `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y la spec.
+Si todavia no tienes codigo, valida leyendo: deberias poder explicar que hace el proyecto solo con `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y la especificacion.
 
-### 9. Version con Codex: Pedir Ayuda sin Perder Control
+### 9. Subescenario 1B: Pedirle a Codex que Complete la Base
 
-Primero pide ayuda documental, no codigo.
+Usa este camino si quieres que Codex te ayude desde VS Code. Primero pide ayuda documental, no codigo.
+
+Antes de pedirle trabajo, deja escrito al menos el nombre del proyecto, usuarios, problema y stack deseado. Si no sabes algo, dilo explicitamente.
+
+Prompt para revisar instalacion y stack:
+
+```text
+Estoy creando un proyecto nuevo llamado solicitudes-internas.
+Trabajo en VS Code con Codex.
+Quiero usar esta arquitectura OpenSpec-first.
+Revisa PROJECT_GUIDE.md y docs/stack.md si existen.
+Indicame que necesito instalar para este proyecto y que herramientas son opcionales.
+No instales nada sin pedirme confirmacion.
+```
+
+Prompt para instalar despues de revisar:
+
+```text
+Confirmo que este proyecto usara Python y OpenSpec CLI.
+Prepara los comandos de instalacion paso a paso para Windows en VS Code.
+Ejecuta solo comandos seguros y explicame que hace cada uno.
+No agregues herramientas opcionales como Graphify o MarkItDown salvo que sean necesarias.
+```
 
 Prompt para completar la base:
 
@@ -314,20 +378,21 @@ No implementes codigo todavia.
 Si falta informacion, haz preguntas concretas.
 ```
 
-Prompt para mejorar la primera spec:
+Prompt para mejorar la primera especificacion:
 
 ```text
 Revisa openspec/specs/requests/spec.md.
 Quiero que sea clara para una capacidad de solicitudes internas.
-Mejora requirements y scenarios sin inventar reglas nuevas.
-Mantiene la spec enfocada en comportamiento observable, no en arquitectura.
+Mejora requisitos y escenarios sin inventar reglas nuevas.
+Mantiene la especificacion enfocada en comportamiento observable, no en arquitectura.
+Usa espanol claro en titulos, requisitos y escenarios.
 ```
 
 Prompt para crear el primer cambio:
 
 ```text
 Necesito agregar prioridad urgente a solicitudes internas.
-Crea openspec/changes/add-urgent-priority/ con proposal.md, tasks.md y delta de spec para requests.
+Crea openspec/changes/add-urgent-priority/ con proposal.md, tasks.md y delta de especificacion para requests.
 Agrega design.md solo si justificas impacto tecnico.
 No implementes codigo hasta que yo apruebe el proposal.
 ```
@@ -336,7 +401,7 @@ Prompt para implementar despues de aprobar:
 
 ```text
 Ya revise y apruebo el cambio add-urgent-priority.
-Implementa solo lo necesario para cumplir la spec y tasks.md.
+Implementa solo lo necesario para cumplir la especificacion y tasks.md.
 Actualiza checkboxes completados.
 Ejecuta la validacion disponible o explica por que no se puede ejecutar.
 No cambies arquitectura fuera del alcance.
@@ -357,7 +422,7 @@ Checklist:
 - [ ] `tasks.md` tiene pasos verificables.
 - [ ] `design.md` existe solo si habia impacto tecnico real.
 - [ ] `git diff` muestra cambios entendibles.
-- [ ] Codex no implemento codigo antes de que aprobaras la spec o el cambio.
+- [ ] Codex no implemento codigo antes de que aprobaras la especificacion o el cambio.
 
 ## Escenario 2: Adaptar un Proyecto Existente
 
@@ -420,7 +485,7 @@ La prioridad de seguridad existe como regla informal.
 No esta claro donde se valida el area solicitante.
 ```
 
-### 3. Copiar el Template sin Pisar tu Proyecto
+### 3. Copiar la Plantilla sin Pisar tu Proyecto
 
 No copies encima de archivos importantes sin revisar. Si tu proyecto ya tiene docs, conserva lo que sirve y agrega la estructura del framework de forma controlada.
 
@@ -500,7 +565,7 @@ Los tests de solicitudes viven en tests/test_requests.py.
 
 No pongas aqui todas las reglas funcionales. Si una regla dice que debe hacer el sistema, va en OpenSpec.
 
-### 7. Convertir Comportamiento Existente en Spec
+### 7. Convertir Comportamiento Existente en Especificacion
 
 Elige una capacidad real y pequena. En el ejemplo: `requests`.
 
@@ -515,33 +580,43 @@ Ejemplo basado en comportamiento actual:
 ```markdown
 # Solicitudes Internas
 
-## Requirements
+## Requisitos
 
-### Requirement: Crear solicitud
-El sistema SHALL permitir crear una solicitud interna con titulo, descripcion y area.
+### Requisito: Crear solicitud
+El sistema debe permitir crear una solicitud interna con titulo, descripcion y area.
 
-#### Scenario: Solicitud valida
-- WHEN una persona envia titulo, descripcion y area validos
-- THEN el sistema registra la solicitud
-- AND devuelve su identificador
+#### Escenario: Solicitud valida
+- Cuando una persona envia titulo, descripcion y area validos
+- Entonces el sistema registra la solicitud
+- Y devuelve su identificador
 
-#### Scenario: Solicitud sin titulo
-- WHEN una persona intenta crear una solicitud sin titulo
-- THEN el sistema rechaza la solicitud
+#### Escenario: Solicitud sin titulo
+- Cuando una persona intenta crear una solicitud sin titulo
+- Entonces el sistema rechaza la solicitud
 ```
 
 Importante: no escribas deseos futuros como si ya estuvieran aprobados. Si quieres agregar algo nuevo, crea un cambio en `openspec/changes/*`.
 
-### 8. Version Manual: Adaptarlo Tu Mismo
+### 8. Subescenario 2A: Lo Hace la Persona Paso a Paso
+
+Usa este camino si quieres adoptar el framework con cuidado, sin pedirle a Codex que modifique archivos todavia.
+
+Instalacion necesaria:
+
+- Git.
+- VS Code.
+- El stack actual del proyecto para ejecutar pruebas o la app.
+- OpenSpec CLI solo si quieres validar cambios con comandos.
+- Graphify solo si el proyecto es grande y no sabes donde mirar.
 
 Sigue este orden:
 
 1. Crea rama `adopt-openspec-first`.
-2. Copia piezas del template sin pisar docs existentes.
+2. Copia piezas de la plantilla sin pisar docs existentes.
 3. Completa `PROJECT_GUIDE.md`.
 4. Completa `CONTEXT_INDEX.md`.
 5. Escribe arquitectura basica en `docs/architecture/system.md`.
-6. Crea una spec vigente para una capacidad real.
+6. Crea una especificacion vigente para una capacidad real.
 7. Registra restricciones confirmadas en `memory/constraints.md`.
 8. Registra decisiones durables en `decisions/decision_log.md` solo si existen.
 9. Revisa `git diff`.
@@ -569,9 +644,30 @@ npm test
 
 Usa el comando real de tu proyecto. Si no hay tests, documenta una validacion manual en `tasks.md`.
 
-### 9. Version con Codex: Primero Mapear, Luego Cambiar
+### 9. Subescenario 2B: Pedirle a Codex que Estructure el Proyecto
 
 En un proyecto existente, Codex no debe empezar refactorizando. Primero debe mapear.
+
+Prompt para revisar instalacion y stack:
+
+```text
+Estoy adaptando un proyecto existente a esta arquitectura.
+Trabajo en VS Code con Codex.
+Revisa PROJECT_GUIDE.md, CONTEXT_INDEX.md y la estructura del repo.
+Indicame que debo instalar para validar este proyecto.
+Distingue entre dependencias runtime, herramientas de desarrollo y herramientas opcionales.
+No instales nada sin pedirme confirmacion.
+```
+
+Prompt para instalar despues de revisar:
+
+```text
+Confirmo que puedes preparar el entorno de validacion del proyecto.
+Usa el stack detectado en PROJECT_GUIDE.md y en los archivos del repo.
+Si hay requirements.txt, requirements-dev.txt o package.json, explicame cual usaras.
+Ejecuta solo la instalacion necesaria para validar el proyecto.
+No instales Graphify, MarkItDown ni OpenSpec CLI si no son necesarios para esta tarea.
+```
 
 Prompt para mapa inicial:
 
@@ -589,13 +685,14 @@ No modifiques archivos.
 No refactorices.
 ```
 
-Prompt para crear spec vigente:
+Prompt para crear la especificacion vigente:
 
 ```text
 Con base en el mapa anterior, propone openspec/specs/requests/spec.md.
 Debe describir comportamiento actual verificable.
 No inventes reglas de negocio.
-Si algo no esta claro, dejalo como pregunta abierta y no como requirement aprobado.
+Si algo no esta claro, dejalo como pregunta abierta y no como requisito aprobado.
+Usa espanol claro en requisitos y escenarios.
 No implementes codigo.
 ```
 
@@ -604,7 +701,7 @@ Prompt para crear primer cambio:
 ```text
 Necesito agregar prioridad urgente al proyecto existente.
 Primero crea un cambio OpenSpec en openspec/changes/add-urgent-priority/.
-Incluye proposal.md, delta de spec para requests y tasks.md.
+Incluye proposal.md, delta de especificacion para requests y tasks.md.
 Agrega design.md solo si hay impacto en datos, permisos, arquitectura o migracion.
 No implementes codigo todavia.
 Explica que archivos probablemente se tocarian.
@@ -617,17 +714,17 @@ Pide refactor solo cuando ya tengas:
 - `PROJECT_GUIDE.md` completado;
 - `CONTEXT_INDEX.md` con rutas reales;
 - `docs/architecture/system.md` con arquitectura basica;
-- spec vigente de la capacidad;
+- especificacion vigente de la capacidad;
 - cambio activo con `proposal.md`, delta y `tasks.md`;
 - forma de validar con tests o revision manual.
 
 Prompt para refactor controlado:
 
 ```text
-Ya existe spec vigente para requests y el cambio add-urgent-priority esta aprobado.
+Ya existe especificacion vigente para requests y el cambio add-urgent-priority esta aprobado.
 Refactoriza solo lo necesario para implementar ese cambio.
 Respeta docs/architecture/system.md y memory/constraints.md.
-No cambies comportamiento fuera de la spec.
+No cambies comportamiento fuera de la especificacion.
 No reorganices modulos salvo que tasks.md lo pida explicitamente.
 Actualiza tasks.md y dime como validar.
 Ejecuta los tests disponibles.
@@ -652,11 +749,11 @@ Checklist:
 - [ ] `CONTEXT_INDEX.md` apunta a rutas reales.
 - [ ] `AGENTS.md` le dice a Codex como trabajar.
 - [ ] `docs/architecture/system.md` explica la arquitectura actual sin duplicar OpenSpec.
-- [ ] Existe al menos una spec vigente en `openspec/specs/*/spec.md`.
+- [ ] Existe al menos una especificacion vigente en `openspec/specs/*/spec.md`.
 - [ ] El primer cambio nuevo vive en `openspec/changes/<change-id>/`.
 - [ ] Las decisiones importantes estan resumidas en `decisions/` si existen.
 - [ ] `memory/` contiene restricciones o hechos confirmados, no backlog.
-- [ ] Codex no hizo refactor antes de que aprobaras spec y cambio.
+- [ ] Codex no hizo refactor antes de que aprobaras especificacion y cambio.
 - [ ] `git diff` muestra cambios que puedes explicar.
 - [ ] Las pruebas existentes pasan o hay una validacion manual documentada.
 

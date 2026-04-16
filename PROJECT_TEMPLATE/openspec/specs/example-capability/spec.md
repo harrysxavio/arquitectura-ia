@@ -1,6 +1,6 @@
-﻿# Spec de Ejemplo: Solicitudes Internas
+# Especificacion de Ejemplo: Solicitudes Internas
 
-> Ejemplo de spec vigente para una capacidad funcional. Al usarla en un proyecto real, renombra `example-capability` y reemplaza solicitudes internas por una capacidad de tu dominio.
+> Ejemplo de especificacion vigente para una capacidad funcional. Al usarla en un proyecto real, renombra `example-capability` y reemplaza solicitudes internas por una capacidad de tu dominio.
 
 ## Proposito
 
@@ -16,39 +16,39 @@ La idea es que una persona o un agente pueda entender que debe hacer el sistema 
 4. Escribe escenarios verificables para casos exitosos y casos rechazados.
 5. Mueve detalles tecnicos a `docs/architecture/system.md` o al `design.md` de un cambio activo.
 
-## Requirements
+## Requisitos
 
-### Requirement: Crear solicitud interna
+### Requisito: Crear solicitud interna
 
-El sistema SHALL permitir crear una solicitud interna con titulo, descripcion, area solicitante y tipo.
+El sistema debe permitir crear una solicitud interna con titulo, descripcion, area solicitante y tipo.
 
-#### Scenario: Solicitud valida
+#### Escenario: Solicitud valida
 
-- WHEN una persona envia titulo, descripcion, area solicitante y tipo validos
-- THEN el sistema registra la solicitud
-- AND asigna un identificador unico
-- AND deja la solicitud en estado inicial `nueva`
+- Cuando una persona envia titulo, descripcion, area solicitante y tipo validos
+- Entonces el sistema registra la solicitud
+- Y asigna un identificador unico
+- Y deja la solicitud en estado inicial `nueva`
 
-#### Scenario: Solicitud incompleta
+#### Escenario: Solicitud incompleta
 
-- WHEN una persona intenta crear una solicitud sin un dato obligatorio
-- THEN el sistema rechaza la solicitud
-- AND informa que dato falta
+- Cuando una persona intenta crear una solicitud sin un dato obligatorio
+- Entonces el sistema rechaza la solicitud
+- Y informa que dato falta
 
-### Requirement: Consultar solicitud interna
+### Requisito: Consultar solicitud interna
 
-El sistema SHALL permitir consultar una solicitud existente por su identificador.
+El sistema debe permitir consultar una solicitud existente por su identificador.
 
-#### Scenario: Solicitud existente
+#### Escenario: Solicitud existente
 
-- WHEN una persona consulta una solicitud con un identificador existente
-- THEN el sistema devuelve los datos de la solicitud
-- AND muestra su estado actual
+- Cuando una persona consulta una solicitud con un identificador existente
+- Entonces el sistema devuelve los datos de la solicitud
+- Y muestra su estado actual
 
-#### Scenario: Solicitud inexistente
+#### Escenario: Solicitud inexistente
 
-- WHEN una persona consulta una solicitud con un identificador que no existe
-- THEN el sistema informa que la solicitud no fue encontrada
+- Cuando una persona consulta una solicitud con un identificador que no existe
+- Entonces el sistema informa que la solicitud no fue encontrada
 
 ## Que No Debe Ir Aqui
 
@@ -63,7 +63,7 @@ Para cambios propuestos usa `openspec/changes/<change-id>/`. Para arquitectura e
 ## Checklist de Calidad
 
 - La capacidad gobernada se entiende sin leer codigo.
-- Cada requirement expresa una obligacion observable del sistema.
-- Cada scenario tiene condicion y resultado.
+- Cada requisito expresa una obligacion observable del sistema.
+- Cada escenario tiene condicion y resultado.
 - Los casos rechazados estan cubiertos cuando afectan al usuario.
-- La spec no duplica arquitectura ni tareas.
+- La especificacion no duplica arquitectura ni tareas.
