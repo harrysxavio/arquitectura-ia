@@ -1,19 +1,19 @@
-﻿# Spec de Capacidad de Ejemplo
+﻿# Spec de Ejemplo: Solicitudes Internas
 
-> Plantilla OpenSpec para una capacidad funcional. Al usarla en un proyecto real, renombra `example-capability` y reemplaza este ejemplo por reglas del dominio.
+> Ejemplo de spec vigente para una capacidad funcional. Al usarla en un proyecto real, renombra `example-capability` y reemplaza solicitudes internas por una capacidad de tu dominio.
 
 ## Proposito
 
-Este archivo muestra como debe verse una spec vigente en `openspec/specs/*/spec.md`.
+Este archivo muestra como describir comportamiento aprobado en `openspec/specs/*/spec.md`.
 
-Una spec vigente describe comportamiento aprobado y observable. No describe arquitectura interna, librerias, tareas pendientes ni decisiones historicas.
+La idea es que una persona o un agente pueda entender que debe hacer el sistema sin leer codigo primero.
 
 ## Como Adaptar Esta Plantilla
 
 1. Cambia el nombre de la carpeta `example-capability` por el nombre real de la capacidad, por ejemplo `requests`, `auth` o `billing`.
 2. Cambia el titulo por el nombre de la capacidad.
-3. Reemplaza los requirements de ejemplo por reglas reales del proyecto.
-4. Escribe scenarios verificables para casos exitosos y casos rechazados.
+3. Reemplaza las reglas de ejemplo por reglas reales del proyecto.
+4. Escribe escenarios verificables para casos exitosos y casos rechazados.
 5. Mueve detalles tecnicos a `docs/architecture/system.md` o al `design.md` de un cambio activo.
 
 ## Requirements
