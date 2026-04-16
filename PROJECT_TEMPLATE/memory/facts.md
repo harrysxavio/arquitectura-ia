@@ -6,7 +6,7 @@ Este archivo guarda informacion estable que una persona o agente no deberia rede
 
 ## Que Contiene
 
-Hechos confirmados del proyecto, entornos, integraciones, datos de ejecucion y problemas vigentes que afectan trabajo futuro.
+Hechos confirmados del proyecto, entornos, integraciones y datos de ejecucion que afectan trabajo futuro.
 
 ## Orden de Uso
 
@@ -14,7 +14,7 @@ Completar despues de que existan hechos reales. Consultar cuando una tarea pueda
 
 ## Relacion con Otros Documentos
 
-No duplica OpenSpec ni arquitectura. Si un hecho se vuelve regla funcional, moverlo a OpenSpec. Si describe estructura estable, moverlo a `docs/architecture/system.md`.
+No duplica OpenSpec ni arquitectura. Si un hecho se vuelve regla funcional, moverlo a OpenSpec. Si describe estructura estable, moverlo a `docs/architecture/system.md`. Si es un problema vigente, registrarlo en `memory/known_issues.md`.
 
 ## Proyecto
 
@@ -31,14 +31,6 @@ No duplica OpenSpec ni arquitectura. Si un hecho se vuelve regla funcional, move
 
 - Por definir
 
-## Problemas Vigentes
-
-Registrar solo problemas que sigan siendo relevantes para investigacion, implementacion o soporte.
-
-| Problema | Impacto | Mitigacion |
-|---|---|---|
-| Por definir | Por definir | Por definir |
-
 ## Ejemplo Minimo
 
 ```markdown
@@ -49,16 +41,14 @@ Registrar solo problemas que sigan siendo relevantes para investigacion, impleme
 - Entornos de ejecucion: local y staging.
 - Integraciones: correo interno para notificaciones.
 
-## Problemas Vigentes
+## Datos de Ejecucion
 
-| Problema | Impacto | Mitigacion |
-|---|---|---|
-| El entorno staging no tiene datos representativos. | Las pruebas manuales pueden ser incompletas. | Usar fixtures controlados antes de validar releases. |
+- Staging usa fixtures controlados; no contiene datos productivos.
 ```
 
 ## Criterio de Entrada
 
-Agregar un hecho solo si esta confirmado y cambia decisiones futuras. Si es una opinion, una tarea pendiente o una hipotesis, no pertenece aqui.
+Agregar un hecho solo si esta confirmado y cambia decisiones futuras. Si es una opinion, una tarea pendiente, una hipotesis o un problema por resolver, no pertenece aqui.
 
 ## Regla Breve
 

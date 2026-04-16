@@ -21,8 +21,6 @@ PROJECT_TEMPLATE/
 |   |-- changes/.gitkeep
 |   `-- archive/.gitkeep
 |-- docs/architecture/system.md
-|-- docs/architecture/sdd.md
-|-- docs/product/spec.md
 |-- decisions/decision_log.md
 |-- decisions/adr/ADR_TEMPLATE.md
 |-- memory/facts.md
@@ -30,9 +28,7 @@ PROJECT_TEMPLATE/
 |-- memory/patterns.md
 |-- memory/glossary.md
 |-- memory/known_issues.md
-|-- memory/project_facts.md
-|-- graphify-out/GRAPH_REPORT.md
-`-- tasks/current/
+`-- graphify-out/GRAPH_REPORT.md
 ```
 
 ## Vista Maestra del Template
@@ -48,8 +44,6 @@ PROJECT_TEMPLATE/
 | `openspec/changes/*/design.md` | Diseno tecnico del cambio. | Persona tecnica o agente con revision. | Solo si cambia arquitectura, datos, contratos o integraciones. | Reglas funcionales completas. | Enlaza OpenSpec con `docs/architecture/system.md`. |
 | `openspec/changes/*/tasks.md` | Lista verificable de ejecucion y validacion. | Agente puede proponer; persona revisa. | Durante implementacion del cambio. | Backlog general del proyecto. | Sigue `proposal.md`, `design.md` y deltas OpenSpec. |
 | `docs/architecture/system.md` | Arquitectura tecnica estable. | Persona tecnica o agente desde codigo real. | Despues de definir primeras capacidades y estructura. | Requisitos funcionales detallados. | Explica como se implementa lo que OpenSpec gobierna. |
-| `docs/architecture/sdd.md` | Puente opcional de diseno narrativo. | Persona tecnica si ayuda a explicar. | Solo si ayuda a lectores humanos. | Arquitectura completa duplicada. | Enlaza a `system.md` y OpenSpec. |
-| `docs/product/spec.md` | Puente opcional de lectura de producto. | Persona de producto si hace falta. | Solo si hace falta una narrativa de producto separada. | Escenarios funcionales autoritativos. | Enlaza a `PROJECT_GUIDE.md` y OpenSpec. |
 | `decisions/decision_log.md` | Indice breve de decisiones vigentes. | Persona responsable o tech lead. | Cuando se aprueba una direccion durable. | Tareas pendientes o debates largos. | Puede enlazar ADRs y cambios OpenSpec. |
 | `decisions/adr/*.md` | Contexto y consecuencias de decisiones grandes. | Persona tecnica; agente puede redactar borrador. | Para decisiones estructurales o de alto impacto. | Cambios funcionales que pertenecen a OpenSpec. | Se indexa desde `decision_log.md`. |
 | `memory/facts.md` | Hechos confirmados que conviene recordar. | Persona o agente con evidencia. | Cuando existan hechos reales y vigentes. | Hipotesis, backlog o historia larga. | Complementa contexto sin reemplazar fuentes. |
@@ -57,9 +51,7 @@ PROJECT_TEMPLATE/
 | `memory/patterns.md` | Patrones aprobados y antipatrones. | Persona tecnica o agente tras repeticion validada. | Cuando una forma de trabajo ya esta validada. | Reglas funcionales. | Ayuda a consistencia de implementacion y revision. |
 | `memory/glossary.md` | Terminos ambiguos del dominio. | Persona del dominio. | Solo cuando evita malentendidos reales. | Diccionario general. | Ayuda a specs, docs y agentes. |
 | `memory/known_issues.md` | Problemas conocidos que afectan trabajo futuro. | Persona tecnica o agente con evidencia. | Cuando un problema existe y aun no se resuelve. | Backlog general o deseos futuros. | Puede alimentar cambios OpenSpec o tareas de mantenimiento. |
-| `memory/project_facts.md` | Hechos compactos de proyecto cuando una herramienta espera ese nombre. | Persona o agente con revision. | Solo por compatibilidad o migracion documental. | Duplicar todo `facts.md`. | Debe mantenerse alineado con `memory/facts.md`. |
 | `graphify-out/*` | Salida derivada para navegacion. | Herramienta; persona o agente la valida contra fuentes. | Cuando Graphify se use en el proyecto. | Autoridad funcional o tecnica. | Ayuda a encontrar archivos; no decide. |
-| `tasks/current/*` | Puente de compatibilidad. | Nadie como fuente principal. | Solo si una herramienta espera esa ruta. | Trabajo activo real. | Debe enlazar a `openspec/changes/*`. |
 
 ## Uso
 
@@ -99,7 +91,7 @@ No empieces llenando memoria, decisiones o Graphify. Esas piezas sirven cuando y
 
 - Dejar placeholders como si fueran contenido final.
 - Poner reglas funcionales en `PROJECT_GUIDE.md` o arquitectura.
-- Usar `tasks/current/` como sistema principal de trabajo activo.
+- Crear planes o tareas paralelas fuera de `openspec/changes/*`.
 - Tratar `graphify-out/` como fuente canonica.
 
 ## Regla Breve

@@ -53,7 +53,7 @@ En un proyecto activo, la autoridad se reparte asi:
 | Que falta ejecutar o validar? | `openspec/changes/*/tasks.md` |
 | Como esta construido el sistema de forma estable? | `docs/architecture/system.md` |
 | Por que se aprobo una direccion? | `decisions/decision_log.md` y `decisions/adr/*.md` |
-| Que hechos o restricciones conviene recordar? | `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md` |
+| Que hechos, restricciones o problemas conviene recordar? | `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`, `memory/known_issues.md` |
 | Donde conviene mirar primero en un sistema grande? | `graphify-out/*` como contexto derivado |
 
 ## Mapa del Repositorio

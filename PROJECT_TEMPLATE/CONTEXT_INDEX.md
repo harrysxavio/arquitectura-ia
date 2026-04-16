@@ -37,6 +37,7 @@ Se completa despues de `PROJECT_GUIDE.md` y se actualiza cada vez que aparece un
 | Restricciones | `memory/constraints.md` | Limites vigentes. |
 | Patrones | `memory/patterns.md` | Formas aprobadas de trabajar. |
 | Glosario | `memory/glossary.md` | Terminos opcionales del dominio. |
+| Problemas conocidos | `memory/known_issues.md` | Problemas confirmados que siguen afectando trabajo futuro. |
 | Graphify | `graphify-out/GRAPH_REPORT.md` | Contexto derivado, no canonico. |
 
 ## Regla

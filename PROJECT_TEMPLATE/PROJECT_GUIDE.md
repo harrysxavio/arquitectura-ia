@@ -45,7 +45,7 @@ El alcance evita que el proyecto crezca por inercia. "Fuera de alcance" es tan i
 - `openspec/`: verdad funcional y cambios activos.
 - `docs/architecture/system.md`: arquitectura estable.
 - `decisions/`: indice de decisiones y ADRs.
-- `memory/`: hechos, restricciones y patrones compactos.
+- `memory/`: hechos, restricciones, patrones, glosario y problemas conocidos compactos.
 - `graphify-out/`: contexto derivado.
 
 Esta seccion debe explicar las carpetas propias del proyecto si hay particularidades. Si la estructura es estandar, mantenerla breve y enlazar a `CONTEXT_INDEX.md`.

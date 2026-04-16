@@ -27,7 +27,7 @@ OpenSpec define comportamiento; este documento define estructura. ADRs explican 
 - Comportamiento funcional: `openspec/specs/*/spec.md`
 - Cambios activos: `openspec/changes/*`
 - Decisiones: `decisions/decision_log.md` y ADRs
-- Memoria compacta: `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`
+- Memoria compacta: `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`, `memory/known_issues.md`
 
 ## Componentes
 
