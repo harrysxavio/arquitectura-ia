@@ -10,6 +10,14 @@ No usar este archivo como fuente principal. Si se conserva, debe enlazar al camb
 Trabajo activo actual: `openspec/changes/<change-id>/`
 ```
 
+## Ejemplo Minimo
+
+```markdown
+Trabajo activo actual: `openspec/changes/add-request-priority/`
+
+Este archivo no contiene tareas. Consultar `proposal.md`, `design.md` y `tasks.md` dentro del cambio.
+```
+
 ## Regla Breve
 
 La tarea activa no debe competir con OpenSpec.

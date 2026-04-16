@@ -52,6 +52,10 @@ Si Graphify revela una relacion que debe gobernar el proyecto, validala contra a
 4. Si aparece conocimiento durable, registrarlo en la fuente canonica adecuada.
 5. Mantener claro que `graphify-out/*` es salida derivada.
 
+## Instalacion
+
+Graphify no es requisito minimo para usar el framework. Si el proyecto lo usa, documentar el comando concreto de instalacion y regeneracion en la guia del proyecto o en `AGENTS.md`. La guia general de stack esta en `../docs/stack.md`.
+
 ## Regla Breve
 
 Graphify orienta la exploracion; las fuentes canonicas gobiernan el proyecto.

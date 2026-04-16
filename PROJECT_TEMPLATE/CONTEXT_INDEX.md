@@ -8,6 +8,18 @@ Este archivo es el mapa de fuentes oficiales. Su trabajo es decir donde mirar se
 
 Sin un indice de contexto, humanos y agentes tienden a abrir carpetas completas. Este archivo reduce busqueda y ruido: para cada necesidad, indica el documento que tiene autoridad o utilidad principal.
 
+## Que Contiene
+
+Una tabla de necesidades, rutas y usos. No contiene la explicacion completa de cada fuente; solo indica donde leer.
+
+## Orden de Uso
+
+Se completa despues de `PROJECT_GUIDE.md` y se actualiza cada vez que aparece una fuente oficial nueva, una spec relevante o un cambio estable de rutas.
+
+## Relacion con Otros Documentos
+
+`AGENTS.md` usa este indice para orientar agentes. `OPERACION/CONTEXT_ROUTER.md` usa el mismo criterio a nivel framework. OpenSpec, arquitectura, decisiones y memoria son las fuentes que este indice ayuda a ubicar.
+
 ## Fuentes Oficiales
 
 | Necesidad | Archivo | Uso |
@@ -30,6 +42,18 @@ Sin un indice de contexto, humanos y agentes tienden a abrir carpetas completas.
 ## Regla
 
 El comportamiento funcional empieza en OpenSpec. Graphify ayuda a navegar, pero nunca reemplaza fuentes canonicas.
+
+## Ejemplo Minimo
+
+```markdown
+| Necesidad | Archivo | Uso |
+|---|---|---|
+| Identidad y alcance | `PROJECT_GUIDE.md` | Entrada base del proyecto. |
+| Solicitudes | `openspec/specs/requests/spec.md` | Comportamiento aprobado de solicitudes. |
+| Cambio activo | `openspec/changes/add-request-priority/proposal.md` | Alcance del cambio actual. |
+| Arquitectura | `docs/architecture/system.md` | Componentes, datos y validacion. |
+| Restricciones | `memory/constraints.md` | Limites vigentes de seguridad y costo. |
+```
 
 ## Como Mantenerlo
 

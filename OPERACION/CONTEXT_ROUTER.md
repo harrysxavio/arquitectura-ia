@@ -18,6 +18,16 @@ Para una persona no tecnica, este archivo responde "por donde empiezo a mirar?".
 
 El router no reemplaza criterio. Lo ordena.
 
+## Relacion con Archivos Base
+
+- `AGENTS.md` dice como debe comportarse el agente en ese proyecto.
+- `PROJECT_GUIDE.md` explica identidad, alcance y stack.
+- `CONTEXT_INDEX.md` indica que fuente oficial leer para cada pregunta.
+- OpenSpec gobierna comportamiento funcional.
+- `docs/architecture/system.md` gobierna estructura tecnica estable.
+
+El router usa esos archivos como escalera de lectura: primero orientacion, luego autoridad especifica, despues contexto adicional si hace falta.
+
 ## Protocolo Base
 
 1. Identificar tipo de tarea y complejidad.

@@ -6,11 +6,31 @@ Este archivo es opcional. Usarlo solo si el proyecto necesita separar problemas 
 
 Registrar problemas confirmados que afectan investigacion, soporte o priorizacion. Cada problema debe tener impacto y una mitigacion o proximo paso claro.
 
+## Que Contiene
+
+Problemas vigentes, impacto y mitigacion. No contiene historia cerrada ni backlog general.
+
+## Orden de Uso
+
+Consultar al investigar bugs o planificar cambios. Actualizar cuando un problema se confirma, se mitiga o deja de estar vigente.
+
+## Relacion con Otros Documentos
+
+Puede enlazar a OpenSpec si afecta comportamiento, a ADRs si implica decision estructural o a `memory/constraints.md` si crea una restriccion.
+
 ## Formato Sugerido
 
 | Problema | Impacto | Mitigacion o seguimiento |
 |---|---|---|
 | Por definir | Por definir | Por definir |
+
+## Ejemplo Minimo
+
+```markdown
+| Problema | Impacto | Mitigacion o seguimiento |
+|---|---|---|
+| La busqueda por texto no soporta acentos. | Usuarios pueden no encontrar solicitudes. | Crear cambio OpenSpec si se aprueba soporte de normalizacion. |
+```
 
 ## Relacion con Otras Fuentes
 

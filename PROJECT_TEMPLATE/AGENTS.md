@@ -8,6 +8,18 @@ Este archivo define como deben operar los agentes dentro del proyecto activo. De
 
 Un agente necesita saber que fuentes respetar antes de editar. `AGENTS.md` evita que el agente improvise orden de lectura, trate Graphify como autoridad o modifique comportamiento sin OpenSpec.
 
+## Que Contiene
+
+Orden de lectura, reglas locales, comandos relevantes y restricciones de trabajo para agentes. Debe ser operativo y breve.
+
+## Alcance
+
+Aplica a agentes dentro del proyecto activo. No define reglas funcionales ni decisiones de arquitectura.
+
+## Relacion con Otros Documentos
+
+Usa `PROJECT_GUIDE.md` para contexto, `CONTEXT_INDEX.md` para fuentes, OpenSpec para comportamiento y `docs/architecture/system.md` para estructura tecnica.
+
 ## Orden de Contexto
 
 1. `PROJECT_GUIDE.md`
@@ -24,6 +36,22 @@ Un agente necesita saber que fuentes respetar antes de editar. `AGENTS.md` evita
 - No tratar Graphify como autoridad.
 - Mantener memoria compacta y vigente.
 - Mantener decisiones breves salvo que un ADR este justificado.
+
+## Ejemplo Minimo
+
+```markdown
+## Orden de Contexto
+
+1. `PROJECT_GUIDE.md`
+2. `CONTEXT_INDEX.md`
+3. `openspec/specs/requests/spec.md` si la tarea toca solicitudes
+4. `docs/architecture/system.md` si cambia persistencia o integraciones
+
+## Reglas Locales
+
+- Ejecutar `python -m pytest` antes de cerrar cambios de backend.
+- No modificar migraciones sin revisar `decisions/decision_log.md`.
+```
 
 ## Como Adaptarlo
 

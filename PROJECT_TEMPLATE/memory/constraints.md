@@ -4,6 +4,18 @@
 
 Este archivo guarda limites vigentes que deben respetarse antes de decidir o implementar. Una restriccion puede ser tecnica, de negocio, seguridad, costo, compliance o equipo.
 
+## Que Contiene
+
+Restricciones tecnicas, de negocio, seguridad y costo que cambian decisiones. Deben ser concretas y verificables.
+
+## Orden de Uso
+
+Consultar antes de ampliar alcance, cambiar arquitectura, instalar herramientas o tocar datos sensibles. Actualizar cuando una decision durable agrega o retira un limite.
+
+## Relacion con Otros Documentos
+
+OpenSpec define comportamiento; restricciones define limites. ADRs explican decisiones que crean restricciones durables.
+
 ## Tecnicas
 
 - Mantener comportamiento funcional en OpenSpec.
@@ -21,6 +33,24 @@ Este archivo guarda limites vigentes que deben respetarse antes de decidir o imp
 ## Costo
 
 - Por definir
+
+## Ejemplo Minimo
+
+```markdown
+## Tecnicas
+
+- Mantener comportamiento funcional en OpenSpec.
+- No introducir servicios externos sin ADR.
+
+## Seguridad
+
+- No almacenar tokens en Markdown.
+- Toda exportacion debe excluir datos personales.
+
+## Costo
+
+- No agregar servicios pagos en la primera version.
+```
 
 ## Como Usarlo
 

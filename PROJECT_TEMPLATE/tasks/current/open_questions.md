@@ -10,6 +10,14 @@ Usar este archivo solo como enlace temporal si alguna herramienta espera la ruta
 Preguntas del cambio: `openspec/changes/<change-id>/`
 ```
 
+## Ejemplo Minimo
+
+```markdown
+Preguntas del cambio: `openspec/changes/add-request-priority/design.md`
+
+No mantener preguntas paralelas aqui.
+```
+
 ## Regla Breve
 
 Una pregunta abierta debe vivir junto al cambio que puede resolverla.

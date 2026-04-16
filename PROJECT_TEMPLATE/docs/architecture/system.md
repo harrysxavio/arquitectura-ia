@@ -10,6 +10,18 @@ Este documento responde "como esta construido el sistema?". Debe ser suficientem
 
 No debe duplicar reglas funcionales. Si una regla describe comportamiento aprobado, enlazar a OpenSpec.
 
+## Que Contiene
+
+Componentes, limites, contratos, datos, integraciones y validacion tecnica. Debe explicar decisiones tecnicas vigentes, no tareas futuras.
+
+## Orden de Uso
+
+Completar despues de `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y la primera spec funcional. Actualizar cuando cambian componentes, datos, integraciones o contratos.
+
+## Relacion con Otros Documentos
+
+OpenSpec define comportamiento; este documento define estructura. ADRs explican decisiones estructurales durables. Memoria guarda restricciones y patrones compactos.
+
 ## Fuentes Estables
 
 - Comportamiento funcional: `openspec/specs/*/spec.md`
@@ -27,6 +39,17 @@ No debe duplicar reglas funcionales. Si una regla describe comportamiento aproba
 | Herramientas | Por definir |
 
 Completar la tabla con componentes reales. Cada fila debe explicar responsabilidad, no solo repetir el nombre de una carpeta.
+
+## Ejemplo Minimo de Componentes
+
+```markdown
+| Componente | Rol |
+|---|---|
+| `api/` | Expone endpoints internos para solicitudes. |
+| `domain/requests.py` | Contiene reglas de dominio implementadas desde OpenSpec. |
+| `storage/` | Persiste solicitudes en SQLite. |
+| `tests/` | Valida comportamiento y contratos principales. |
+```
 
 ## Limites y Contratos
 
@@ -53,6 +76,17 @@ La validacion puede incluir tests, lint, chequeos de contratos, ejecuciones manu
 ## Regla
 
 No duplicar requirements funcionales aqui. Enlazar a OpenSpec en su lugar.
+
+## Ejemplo Minimo de Validacion
+
+```bash
+python -m pytest
+python -m mypy src
+```
+
+```markdown
+La arquitectura se considera valida si pasan tests unitarios, los contratos principales no cambian sin ADR y la spec OpenSpec relevante sigue enlazada desde los componentes de dominio.
+```
 
 ## Checklist de Calidad
 

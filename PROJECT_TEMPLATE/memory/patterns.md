@@ -4,6 +4,18 @@
 
 Este archivo registra formas aprobadas de trabajar que conviene repetir. Sirve para consistencia, no para reemplazar arquitectura ni OpenSpec.
 
+## Que Contiene
+
+Patrones aprobados y antipatrones que el equipo quiere evitar. Deben ser accionables y repetibles.
+
+## Orden de Uso
+
+Consultar durante implementacion o revision cuando haga falta consistencia. Actualizar solo cuando un patron ya fue validado por uso real.
+
+## Relacion con Otros Documentos
+
+Arquitectura describe estructura; patrones describen formas habituales de trabajar. OpenSpec sigue gobernando comportamiento funcional.
+
 ## Aprobados
 
 - Poner comportamiento funcional en `openspec/specs/*/spec.md`.
@@ -17,6 +29,21 @@ Este archivo registra formas aprobadas de trabajar que conviene repetir. Sirve p
 - Duplicar reglas funcionales fuera de OpenSpec.
 - Usar memoria como backlog.
 - Tratar salidas derivadas como autoridad.
+
+## Ejemplo Minimo
+
+```markdown
+## Aprobados
+
+- Toda regla funcional nueva empieza en `openspec/changes/*`.
+- Los tests de dominio usan nombres alineados con los escenarios OpenSpec.
+- Los ADRs se usan solo para decisiones estructurales durables.
+
+## Evitar
+
+- Crear documentos paralelos para cambios activos.
+- Guardar tareas pendientes en memoria.
+```
 
 ## Cuando Actualizar
 

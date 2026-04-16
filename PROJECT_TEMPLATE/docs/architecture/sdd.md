@@ -6,12 +6,30 @@ Este archivo existe como puente para equipos que esperan encontrar un `sdd.md`. 
 
 Usarlo solo si el proyecto necesita un resumen narrativo de diseño para lectores humanos. La autoridad tecnica estable debe vivir en `docs/architecture/system.md`; el comportamiento funcional debe vivir en OpenSpec.
 
+## Que Contiene
+
+Un resumen narrativo opcional de diseño. Debe enlazar fuentes canonicas y no competir con ellas.
+
+## Orden de Uso
+
+Completar solo despues de tener arquitectura estable suficiente. Si no aporta claridad adicional, mantenerlo como puente breve.
+
+## Relacion con Otros Documentos
+
+`docs/architecture/system.md` manda para arquitectura. OpenSpec manda para comportamiento. ADRs explican decisiones durables.
+
 ## Uso Recomendado
 
 - Resumir decisiones de diseño en lenguaje accesible.
 - Enlazar a `docs/architecture/system.md` para detalles tecnicos.
 - Enlazar a OpenSpec para reglas funcionales.
 - Mantenerlo corto si no aporta algo distinto.
+
+## Ejemplo Minimo
+
+```markdown
+Este proyecto usa una API interna y una base SQLite local. La arquitectura detallada vive en `docs/architecture/system.md`. Las reglas funcionales de solicitudes viven en `openspec/specs/requests/spec.md`.
+```
 
 ## No Usar Para
 

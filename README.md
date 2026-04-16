@@ -8,6 +8,13 @@ Principio rector:
 
 Para una persona no tecnica, este proyecto es una forma de ordenar el conocimiento de un proyecto para que humanos y agentes entiendan lo mismo. Para una persona tecnica, es una arquitectura reusable de documentacion, contexto, specs, decisiones y memoria compacta.
 
+## Para Quien Esta Pensado
+
+- Personas no tecnicas que necesitan entender como se organiza el conocimiento de un proyecto con IA.
+- Equipos tecnicos que quieren aplicar agentes sin perder control de contexto, reglas y decisiones.
+- Agentes de IA que necesitan saber que leer primero y que fuente respetar.
+- Proyectos que quieren separar comportamiento, arquitectura, decisiones, memoria y navegacion derivada.
+
 ## Que Problema Resuelve
 
 Los proyectos con IA suelen fallar por razones poco visibles:
@@ -51,6 +58,7 @@ En un proyecto activo, la autoridad se reparte asi:
 /
 |-- README.md                 entrada maestra al framework
 |-- AGENTS.md                 reglas locales para agentes dentro de este repo
+|-- docs/                     guias transversales de setup y stack
 |-- OPERACION/                reglas de ejecucion, contexto y roles de agentes
 |-- GRAPHIFY/                 politica para contexto estructural derivado
 |-- PROJECT_BLUEPRINT/        guia para adoptar el modelo en un proyecto real
@@ -67,6 +75,7 @@ En un proyecto activo, la autoridad se reparte asi:
 | Capa | Para que existe | Como se usa |
 |---|---|---|
 | `README.md` | Dar una vision completa y navegable. | Primera lectura para entender el sistema. |
+| `docs/` | Explicar setup y stack transversal. | Referencia antes de instalar herramientas. |
 | `THEORY/` | Explicar los principios detras del modelo. | Lectura conceptual antes de adaptar el framework. |
 | `OPERACION/` | Definir como un agente decide contexto, rol y validacion. | Referencia durante trabajo real con agentes. |
 | `PROJECT_BLUEPRINT/` | Mostrar como pasar del framework a un proyecto concreto. | Guia de adopcion sin copiar todavia la plantilla. |
@@ -74,6 +83,48 @@ En un proyecto activo, la autoridad se reparte asi:
 | `GRAPHIFY/` | Definir cuando un grafo de conocimiento ayuda y cuando no. | Se consulta para navegacion, impacto y tareas amplias. |
 | `SATELLITE/` | Poner limites a herramientas externas como Obsidian o NotebookLM. | Evita que notas externas se vuelvan autoridad accidental. |
 | `EXAMPLES/` | Mostrar recorridos operativos cortos. | Ayuda a ejecutar bugs, features e investigacion sin improvisar. |
+
+## Stack y Setup
+
+El framework usa Markdown y Git como base. El resto del stack depende de lo que quieras hacer:
+
+| Herramienta | Rol | Cuando la necesitas |
+|---|---|---|
+| Markdown | Escribir documentacion versionada y legible. | Siempre. |
+| Git | Versionar docs, specs, decisiones y codigo. | Siempre. |
+| Python | Ejecutar scripts, ejemplos o proyectos Python. | Solo si el proyecto activo lo usa. |
+| OpenSpec | Gobernar comportamiento funcional y cambios. | Siempre como modelo; su CLI es opcional. |
+| Node/npm | Instalar y ejecutar OpenSpec CLI cuando se usa la herramienta oficial. | Solo si tu flujo OpenSpec lo requiere. |
+| Graphify | Generar grafo derivado para navegacion e impacto. | Opcional para proyectos amplios o ambiguos. |
+| MarkItDown | Convertir insumos externos a Markdown antes de resumirlos. | Opcional para investigacion o migracion documental. |
+| Obsidian | Notas personales y mapas de pensamiento. | Opcional; no es fuente canonica. |
+| Codex | Agente para operar sobre el repo. | Opcional; no es dependencia del proyecto. |
+
+No todo va en `requirements.txt`. Las dependencias runtime de una aplicacion Python van ahi; herramientas de desarrollo pueden ir en `requirements-dev.txt`; herramientas auxiliares como conversion documental o analisis pueden ir en `requirements-tools.txt`; OpenSpec CLI se instala con Node/npm; Obsidian y Codex se instalan fuera del proyecto.
+
+La guia completa esta en `docs/stack.md`.
+
+## Instalacion Rapida
+
+Instalacion minima para aprender y usar la documentacion:
+
+```bash
+git clone <repo>
+cd arquitectura-ia
+```
+
+Con eso basta para leer Markdown, revisar el blueprint y copiar `PROJECT_TEMPLATE/`.
+
+Instalacion completa segun capacidades:
+
+1. Instalar Python si el proyecto activo ejecuta scripts o codigo Python.
+2. Instalar Node/npm si se usara OpenSpec mediante CLI.
+3. Instalar Graphify solo si se necesita grafo derivado.
+4. Instalar MarkItDown solo si se convertiran fuentes externas.
+5. Instalar Obsidian manualmente solo si se quieren notas personales.
+6. Usar Codex u otro agente desde su entorno propio, no como dependencia del repo.
+
+No instales herramientas opcionales antes de necesitarlas. El framework funciona como sistema documental aun sin Graphify, MarkItDown u Obsidian.
 
 ## Como Leer Este Repositorio
 
@@ -103,6 +154,53 @@ Si eres un agente trabajando dentro de un proyecto activo:
 4. Carga arquitectura solo si hay impacto tecnico.
 5. Usa memoria solo si afecta la tarea.
 6. Usa Graphify solo si el trabajo es amplio, ambiguo o multiarchivo.
+
+## Flujo Operativo
+
+El flujo del framework empieza con orientacion y termina con validacion. Un agente o persona no deberia saltar directo al codigo si la tarea afecta comportamiento.
+
+1. `AGENTS.md` define reglas locales de trabajo.
+2. `PROJECT_GUIDE.md` explica identidad, alcance y stack del proyecto.
+3. `CONTEXT_INDEX.md` indica que fuente oficial corresponde a la pregunta.
+4. OpenSpec entra cuando hay comportamiento funcional o cambio activo.
+5. `docs/architecture/system.md` entra cuando hay estructura tecnica, datos, integraciones o contratos.
+6. Decisiones y memoria entran cuando hay historia aprobada, restricciones o patrones que cambian la decision.
+7. Graphify entra solo si ayuda a navegar impacto amplio o propiedad poco clara.
+
+Este orden reduce tokens porque evita leer carpetas completas. Tambien reduce errores porque separa fuentes activas, memoria y salidas derivadas.
+
+## Ejemplos Concretos
+
+### Cambio Funcional: Agregar Prioridad Urgente
+
+Supongamos que un sistema debe agregar una nueva prioridad `urgente` para solicitudes de soporte.
+
+1. Leer `AGENTS.md` para reglas locales.
+2. Leer `PROJECT_GUIDE.md` para confirmar alcance del sistema.
+3. Leer `CONTEXT_INDEX.md` para ubicar la spec de solicitudes.
+4. Abrir `openspec/specs/<capability>/spec.md` para ver el comportamiento vigente.
+5. Crear `openspec/changes/add-urgent-priority/proposal.md` con intencion, alcance y no alcance.
+6. Agregar el delta funcional bajo `openspec/changes/add-urgent-priority/specs/<capability>/spec.md`.
+7. Usar `design.md` solo si cambia arquitectura, datos o contratos.
+8. Consultar `memory/constraints.md` si hay limites de negocio o seguridad sobre prioridades.
+9. Consultar `decisions/decision_log.md` si ya hubo decisiones sobre triage o clasificacion.
+10. Usar Graphify solo si no esta claro que modulos implementan prioridad o que tests se verian afectados.
+
+OpenSpec entra al principio porque la regla es funcional. Arquitectura entra solo si el cambio modifica estructura tecnica. Graphify no hace falta si la spec y el codigo afectado son obvios.
+
+### Cambio Tecnico: Cambiar Persistencia Local por Base de Datos
+
+Supongamos que un proyecto quiere reemplazar un JSON local por una base de datos.
+
+1. Leer `AGENTS.md`, `PROJECT_GUIDE.md` y `CONTEXT_INDEX.md`.
+2. Abrir `docs/architecture/system.md` porque el cambio afecta datos, componentes y validacion tecnica.
+3. Revisar `memory/constraints.md` para limites de seguridad, costo, hosting o compliance.
+4. Revisar `decisions/decision_log.md` y ADRs por decisiones previas sobre persistencia.
+5. Crear un ADR si la decision es durable y tiene alternativas relevantes.
+6. Crear un cambio OpenSpec solo si la persistencia cambia comportamiento visible para usuarios.
+7. Usar Graphify si el repositorio es grande y no esta claro que componentes leen o escriben datos.
+
+Aqui arquitectura entra antes que OpenSpec porque el nucleo del cambio es tecnico. OpenSpec entra solo si cambia comportamiento observable. Memoria y decisiones son importantes porque persistencia suele tocar restricciones, costos y riesgos.
 
 ## Rol de Graphify
 

@@ -11,6 +11,13 @@ Plan vigente: `openspec/changes/<change-id>/design.md`
 Tareas vigentes: `openspec/changes/<change-id>/tasks.md`
 ```
 
+## Ejemplo Minimo
+
+```markdown
+Plan vigente: `openspec/changes/add-request-priority/design.md`
+Tareas vigentes: `openspec/changes/add-request-priority/tasks.md`
+```
+
 ## Regla Breve
 
 Un plan paralelo se desactualiza; el cambio OpenSpec debe concentrar el trabajo activo.

@@ -25,6 +25,8 @@ OpenSpec define comportamiento y cambios. Git versiona el conocimiento. Markdown
 
 La regla no es usar pocas herramientas por austeridad. La regla es que cada herramienta tenga un rol que no duplique ni contradiga otro.
 
+La instalacion concreta se documenta en `../docs/stack.md`. Esa guia separa dependencias runtime, dependencias de desarrollo, herramientas auxiliares y herramientas manuales para evitar meter todo en `requirements.txt`.
+
 ## Herramientas Derivadas
 
 Una herramienta derivada procesa fuentes existentes y produce una vista nueva: un grafo, un resumen, una visualizacion o una nota de investigacion. Eso puede ser muy util para explorar, pero no debe gobernar el proyecto.
