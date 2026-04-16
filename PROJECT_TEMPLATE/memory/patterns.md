@@ -2,6 +2,8 @@
 
 > Patrones compactos de implementacion y documentacion.
 
+Este archivo registra formas aprobadas de trabajar que conviene repetir. Sirve para consistencia, no para reemplazar arquitectura ni OpenSpec.
+
 ## Aprobados
 
 - Poner comportamiento funcional en `openspec/specs/*/spec.md`.
@@ -15,3 +17,13 @@
 - Duplicar reglas funcionales fuera de OpenSpec.
 - Usar memoria como backlog.
 - Tratar salidas derivadas como autoridad.
+
+## Cuando Actualizar
+
+Actualizar cuando el equipo descubre una forma de trabajo que se repite y reduce errores: estructura de tests, forma de documentar cambios, convenciones de modulos o patrones de validacion.
+
+No actualizar por cada preferencia puntual. Un patron debe ser estable, util y accionable.
+
+## Regla Breve
+
+Un patron dice "asi trabajamos normalmente"; si define comportamiento del sistema, pertenece a OpenSpec.

@@ -2,6 +2,22 @@
 
 Este archivo es la autoridad para decidir que contexto debe cargar un agente.
 
+## Proposito
+
+El router existe para evitar dos fallas comunes: leer demasiado y leer lo incorrecto. Un agente no debe abrir carpetas completas por costumbre; debe justificar cada fuente que carga segun la tarea.
+
+Para una persona no tecnica, este archivo responde "por donde empiezo a mirar?". Para una persona tecnica o un agente, responde "que documentos son suficientes para actuar sin romper autoridad documental?".
+
+## Como Usarlo
+
+1. Clasifica la tarea: bug, funcionalidad, refactor, docs, revision o investigacion.
+2. Estima riesgo y amplitud: local, funcional, estructural o ambiguo.
+3. Carga el contexto base del proyecto.
+4. Agrega solo las fuentes que cambian la decision.
+5. Antes de cerrar, verifica que la fuente de autoridad usada sea la correcta.
+
+El router no reemplaza criterio. Lo ordena.
+
 ## Protocolo Base
 
 1. Identificar tipo de tarea y complejidad.
@@ -18,6 +34,12 @@ Este archivo es la autoridad para decidir que contexto debe cargar un agente.
 | 2 | Funcional o multarchivo | Contexto base + spec/cambio OpenSpec relevante |
 | 3 | Estructural, ambiguo o amplio | Nivel 2 + `docs/architecture/system.md` + decisiones/memoria + Graphify si aporta |
 
+## Señales Para Subir de Nivel
+
+Sube de nivel cuando una respuesta local no basta: aparecen varios modulos, una regla funcional no esta clara, hay impacto de datos, una decision previa puede aplicar o no sabes que componente posee el comportamiento.
+
+No subas de nivel por ansiedad. Si la tarea es corregir un typo o ajustar un texto local con fuente clara, Graphify y memoria probablemente agregan ruido.
+
 ## Matriz de Tareas
 
 | Tipo | Empezar con | Agregar cuando haga falta |
@@ -28,6 +50,14 @@ Este archivo es la autoridad para decidir que contexto debe cargar un agente.
 | docs | documento objetivo y fuente canonica | OpenSpec o arquitectura como fuente |
 | revision | diff y spec/cambio relevante | decisiones, arquitectura, tests |
 | investigacion | objetivo y fuente | resultado compacto en memoria o docs si se vuelve canonico |
+
+## Ejemplos de Decision
+
+- Si una regla de negocio cambia, empezar por OpenSpec aunque el codigo parezca obvio.
+- Si cambia un contrato tecnico entre componentes, agregar `docs/architecture/system.md`.
+- Si una restriccion previa puede bloquear el cambio, revisar `memory/constraints.md`.
+- Si no sabes que modulo tocar, usar Graphify como mapa derivado y validar luego en archivos fuente.
+- Si el trabajo es documental, usar la fuente canonica que el documento debe explicar o enlazar.
 
 ## Orden de Autoridad
 
@@ -48,3 +78,7 @@ Este archivo es la autoridad para decidir que contexto debe cargar un agente.
 - No duplicar reglas funcionales fuera de OpenSpec.
 - No usar Graphify como autoridad.
 - No usar material heredado archivado como fuente activa.
+
+## Cierre Esperado
+
+Al terminar una tarea, el agente deberia poder decir: que tipo de tarea era, que nivel aplico, que fuentes cargo, que fuente mando y que validacion realizo. Si no puede explicarlo, probablemente cargo contexto por costumbre y no por necesidad.

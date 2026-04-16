@@ -2,6 +2,8 @@
 
 > Hechos confirmados y compactos para un proyecto instanciado desde esta plantilla.
 
+Este archivo guarda informacion estable que una persona o agente no deberia redescubrir cada vez que trabaja. Debe ser breve, verificable y vigente.
+
 ## Proyecto
 
 - Nombre: Por definir
@@ -13,6 +15,10 @@
 
 - Por definir
 
+## Integraciones
+
+- Por definir
+
 ## Problemas Vigentes
 
 Registrar solo problemas que sigan siendo relevantes para investigacion, implementacion o soporte.
@@ -20,3 +26,11 @@ Registrar solo problemas que sigan siendo relevantes para investigacion, impleme
 | Problema | Impacto | Mitigacion |
 |---|---|---|
 | Por definir | Por definir | Por definir |
+
+## Criterio de Entrada
+
+Agregar un hecho solo si esta confirmado y cambia decisiones futuras. Si es una opinion, una tarea pendiente o una hipotesis, no pertenece aqui.
+
+## Regla Breve
+
+Hechos es memoria de trabajo durable, no historia completa.

@@ -1,5 +1,11 @@
 # RESTRICCIONES: Politica de Herramientas y Modelos
 
+Este documento evita que el framework se convierta en una coleccion de herramientas sin criterio. Las herramientas solo tienen sentido si mejoran el sistema de fuentes, contexto y validacion.
+
+## Como Leer Este Documento
+
+Para una persona no tecnica, la regla importante es que ninguna herramienta debe mandar sobre el proyecto solo porque parece poderosa. Para una persona tecnica o un agente, este archivo define criterios de adopcion, escalamiento y limites de uso.
+
 ## Regla maestra de adopcion
 
 > [!IMPORTANT]
@@ -63,6 +69,12 @@
 - PROHIBIDO cambiar todo de golpe.
 - PROHIBIDO reestructurar sin necesidad.
 - PROHIBIDO introducir herramientas sin uso claro documentado.
+
+## Integracion con el Framework
+
+Cuando una herramienta produce conocimiento, ese conocimiento debe ubicarse en una fuente correcta. Si define comportamiento, va a OpenSpec. Si describe estructura estable, va a arquitectura. Si registra una direccion aprobada, va a decisiones. Si solo ayuda a navegar, se mantiene como derivado.
+
+La pregunta final no es "podemos usar esta herramienta?", sino "que parte del sistema mejora y que autoridad respeta?".
 
 ---
 > [!NOTE]

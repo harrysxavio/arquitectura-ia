@@ -1,5 +1,11 @@
 ﻿# Documentos de un Proyecto OpenSpec-First
 
+Este documento explica que archivo responde cada pregunta dentro de un proyecto activo. Sirve para evitar que README, memoria, arquitectura y OpenSpec compitan entre si.
+
+## Proposito
+
+La documentacion no debe ser una pila de archivos equivalentes. Cada documento existe para resolver una necesidad distinta. Cuando esa responsabilidad esta clara, humanos y agentes saben donde buscar, que actualizar y que no duplicar.
+
 ## Documentos Base
 
 | Documento | Rol | Cuando se consulta |
@@ -20,6 +26,14 @@
 | `memory/glossary.md` | Terminos del dominio. | Solo si evita ambiguedad real. |
 | `graphify-out/*` | Contexto derivado. | Para navegacion e impacto, no para autoridad. |
 
+## Lectura Para Humanos
+
+Si alguien llega por primera vez, deberia empezar por `PROJECT_GUIDE.md` y `CONTEXT_INDEX.md`. El primero explica que es el proyecto; el segundo dice donde esta cada fuente oficial. Desde ahi, la persona puede ir a OpenSpec, arquitectura o decisiones segun su pregunta.
+
+## Lectura Para Agentes
+
+Un agente debe usar esta tabla como mapa de carga de contexto. No necesita leer todo: necesita identificar que fuente tiene autoridad sobre la tarea. Si el cambio es funcional, OpenSpec primero. Si es estructural, arquitectura. Si requiere historia de decisiones, `decisions/`.
+
 ## Reparto de Autoridad
 
 OpenSpec responde que debe hacer el sistema y que cambio se esta proponiendo.
@@ -35,3 +49,7 @@ OpenSpec responde que debe hacer el sistema y que cambio se esta proponiendo.
 ## Regla de No Duplicacion
 
 Si una regla funcional vive en OpenSpec, otros documentos pueden enlazarla o resumir su impacto, pero no competir como fuente principal.
+
+## Señal de Buen Uso
+
+El sistema documental esta funcionando cuando una pregunta concreta lleva a un documento concreto. Si una persona debe leer cinco archivos para saber que fuente manda, el reparto de autoridad necesita ajuste.

@@ -6,16 +6,24 @@
 
 Describe identidad del proyecto, usuarios, alcance, estructura, stack y restricciones importantes.
 
+Este archivo es la puerta de entrada del proyecto activo. Debe permitir que una persona o agente entienda que problema existe, para quien se resuelve y que limites no deben cruzarse.
+
+No define comportamiento funcional detallado. Para eso esta OpenSpec. Tampoco reemplaza arquitectura tecnica. Su funcion es orientar.
+
 ## Identidad
 
 - Nombre:
 - Usuario principal:
 - Problema que resuelve:
 
+Escribir el problema en lenguaje humano, no como lista de features. Una buena descripcion permite distinguir que pertenece al proyecto y que es expansion de alcance.
+
 ## Alcance
 
 - Incluido:
 - Fuera de alcance:
+
+El alcance evita que el proyecto crezca por inercia. "Fuera de alcance" es tan importante como "incluido" porque protege decisiones futuras.
 
 ## Estructura
 
@@ -25,6 +33,8 @@ Describe identidad del proyecto, usuarios, alcance, estructura, stack y restricc
 - `memory/`: hechos, restricciones y patrones compactos.
 - `graphify-out/`: contexto derivado.
 
+Esta seccion debe explicar las carpetas propias del proyecto si hay particularidades. Si la estructura es estandar, mantenerla breve y enlazar a `CONTEXT_INDEX.md`.
+
 ## Stack
 
 - Backend:
@@ -32,12 +42,23 @@ Describe identidad del proyecto, usuarios, alcance, estructura, stack y restricc
 - Data:
 - Hosting:
 
+Usar nombres concretos cuando existan. Si algo no aplica, escribir "No aplica" en vez de dejarlo ambiguo.
+
 ## Restricciones
 
 - Tecnicas:
 - Negocio:
 - Seguridad:
 
+Registrar solo restricciones de alto nivel que una persona debe conocer antes de actuar. Las restricciones detalladas y vigentes viven en `memory/constraints.md`.
+
 ## Regla
 
 No poner reglas funcionales aqui. Enlazar a OpenSpec en su lugar.
+
+## Checklist de Calidad
+
+- Una persona nueva puede explicar que problema resuelve el proyecto.
+- Queda claro que esta fuera de alcance.
+- Las rutas clave apuntan a documentos existentes.
+- No hay reglas funcionales duplicadas desde OpenSpec.

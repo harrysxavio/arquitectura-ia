@@ -2,6 +2,12 @@
 
 > Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
 
+Este archivo es el mapa de fuentes oficiales. Su trabajo es decir donde mirar segun la pregunta, no explicar todo el proyecto.
+
+## Proposito
+
+Sin un indice de contexto, humanos y agentes tienden a abrir carpetas completas. Este archivo reduce busqueda y ruido: para cada necesidad, indica el documento que tiene autoridad o utilidad principal.
+
 ## Fuentes Oficiales
 
 | Necesidad | Archivo | Uso |
@@ -24,3 +30,11 @@
 ## Regla
 
 El comportamiento funcional empieza en OpenSpec. Graphify ayuda a navegar, pero nunca reemplaza fuentes canonicas.
+
+## Como Mantenerlo
+
+Actualizar este indice cuando una fuente canonica cambia de ruta, aparece una nueva capacidad OpenSpec o se agrega una pieza estable de arquitectura. No agregar archivos temporales, notas personales ni salidas derivadas como autoridad.
+
+## Señal de Buen Uso
+
+Si un agente puede responder "que debo leer para esta tarea?" usando este archivo, el indice esta cumpliendo su funcion.

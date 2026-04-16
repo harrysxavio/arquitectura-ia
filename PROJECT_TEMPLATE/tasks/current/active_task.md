@@ -1,1 +1,15 @@
-Placeholder heredado. El contenido historico fue archivado antes de la migracion OpenSpec-first. Esta ruta no es una autoridad activa.
+# Tarea Activa
+
+Esta ruta existe solo como compatibilidad para equipos o herramientas que esperan `tasks/current/`. En el modelo OpenSpec-first, el trabajo activo debe vivir en `openspec/changes/<change-id>/`.
+
+## Uso Recomendado
+
+No usar este archivo como fuente principal. Si se conserva, debe enlazar al cambio OpenSpec activo.
+
+```text
+Trabajo activo actual: `openspec/changes/<change-id>/`
+```
+
+## Regla Breve
+
+La tarea activa no debe competir con OpenSpec.
