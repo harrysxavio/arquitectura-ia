@@ -23,6 +23,18 @@ En la practica:
 | `openspec/changes/<change-id>/tasks.md` | Lista verificable de implementacion y validacion. | Agente puede generar y actualizar; humano revisa. |
 | `openspec/changes/<change-id>/specs/<capability>/spec.md` | Delta funcional: requirements agregados, modificados o removidos. | Humano o agente; debe revisarse antes de implementar. |
 
+## Persona y Agente
+
+| Momento | Que hace la persona | Que puede hacer el agente |
+|---|---|---|
+| Antes del cambio | Explica el problema, prioridad, alcance y limites. | Ordena la solicitud, detecta preguntas abiertas y propone estructura. |
+| Al crear OpenSpec | Aprueba intencion, alcance y comportamiento esperado. | Redacta `proposal.md`, deltas de spec y primeros escenarios. |
+| Durante diseno | Decide restricciones, riesgos aceptables y alternativas relevantes. | Propone `design.md`, impacto tecnico y tareas verificables. |
+| Durante implementacion | Revisa que no se haya cambiado el alcance. | Implementa segun `tasks.md`, actualiza checkboxes y reporta desvio. |
+| Al cerrar | Acepta el resultado funcional. | Ayuda a validar, archivar el cambio y actualizar docs derivadas. |
+
+La persona no tiene que escribir todo a mano, pero si debe aportar criterio. El agente puede acelerar redaccion y ejecucion; no debe decidir solo una regla de negocio, una excepcion de seguridad o un cambio de alcance.
+
 ## Que Completa la Persona
 
 La persona debe aportar intencion, prioridades, limites y aceptacion. En particular:
@@ -62,6 +74,45 @@ Usa este flujo aunque no instales el CLI oficial:
 8. Implementar siguiendo `tasks.md`.
 9. Validar con tests o revision documental.
 10. Al aprobarse, consolidar el comportamiento en `openspec/specs/*`.
+
+## Adaptar un Proyecto Existente
+
+Si ya tienes un proyecto con codigo, no empieces moviendo archivos ni pidiendo un refactor grande. Primero crea gobierno documental alrededor de lo que ya existe.
+
+Pasos recomendados:
+
+1. Copiar o adaptar `PROJECT_TEMPLATE/` dentro del proyecto existente.
+2. Completar `PROJECT_GUIDE.md` con proposito, usuarios, alcance, stack real y limites.
+3. Completar `CONTEXT_INDEX.md` apuntando a codigo, docs, specs y decisiones reales.
+4. Identificar una o dos capacidades principales que el sistema ya ofrece.
+5. Crear `openspec/specs/<capability>/spec.md` para describir comportamiento vigente, no comportamiento deseado.
+6. Completar `docs/architecture/system.md` con componentes, datos, integraciones y flujos reales.
+7. Registrar decisiones ya vigentes en `decisions/decision_log.md` solo si afectan trabajo futuro.
+8. Registrar en `memory/` solo hechos confirmados, restricciones y patrones que conviene recordar.
+9. Crear el primer `openspec/changes/<change-id>/` solo para el proximo cambio real.
+10. Usar Graphify si el proyecto es grande y no esta claro donde viven las capacidades.
+
+El objetivo de esta adaptacion no es documentar todo el pasado. Es crear suficientes fuentes confiables para que el siguiente cambio ya no dependa de memoria informal.
+
+## Cuando Pedir Refactor al Agente
+
+Pide refactor al agente cuando ya exista una base minima de autoridad:
+
+- la capacidad afectada esta descrita en `openspec/specs/*/spec.md` o en un cambio activo;
+- `docs/architecture/system.md` explica los componentes que se tocaran;
+- las restricciones relevantes estan en `memory/constraints.md` o decisiones;
+- el alcance del cambio esta escrito en `proposal.md`;
+- hay una forma de validar, aunque sea revision manual guiada por `tasks.md`.
+
+Todavia no conviene pedir refactor cuando:
+
+- no sabes si el cambio es funcional, tecnico o ambos;
+- el comportamiento vigente no esta escrito en ningun lugar;
+- el agente tendria que inferir reglas de negocio desde codigo ambiguo;
+- no hay acuerdo sobre alcance, riesgos o compatibilidad;
+- el repositorio es grande y nadie sabe que areas toca el cambio.
+
+En esos casos, pide primero investigacion, mapa de impacto o borrador de OpenSpec. El refactor viene despues de fijar el marco de verdad.
 
 ## Cuando Usar Solo la Estructura OpenSpec
 

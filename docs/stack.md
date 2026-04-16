@@ -92,15 +92,104 @@ Graphify, Obsidian y Codex dependen del entorno del usuario. Instalarlos solo si
 
 ## Segun Tu Caso
 
-| Caso | Necesitas | No necesitas al inicio |
-|---|---|---|
-| Solo quiero leer y aprender | Git, Markdown, README, `docs/openspec.md` | Python, Node, Graphify, MarkItDown |
-| Quiero crear un proyecto nuevo | Git, Markdown, `PROJECT_TEMPLATE/` | Graphify, Obsidian |
-| Quiero usar OpenSpec CLI | Node.js 20.19+, npm/pnpm/yarn/bun, `@fission-ai/openspec` | Python salvo que tu proyecto lo use |
-| Quiero usar Graphify | Instalacion de Graphify y `graphify-out/` | Convertirlo en dependencia runtime |
-| Quiero usar MarkItDown | Python 3.10+, `markitdown` | Node/npm |
-| Quiero usar Obsidian | App de escritorio Obsidian | Cambiar fuentes canonicas |
-| Quiero trabajar con Codex | Entorno Codex y `AGENTS.md` claro | Instalar Codex en `requirements.txt` |
+### Solo Quiero Leer y Aprender
+
+Instala:
+
+- Git.
+- Un editor de Markdown.
+
+Comandos:
+
+```bash
+git clone <url-del-repo>
+cd arquitectura-ia
+```
+
+No hace falta instalar Python, Node/npm, Graphify, MarkItDown, Obsidian ni Codex. Lee `README.md`, `docs/openspec.md` y `PROJECT_BLUEPRINT/README.md`.
+
+### Quiero Adaptar un Proyecto Existente
+
+Instala:
+
+- Git.
+- Editor de Markdown.
+- El stack que tu proyecto ya use para ejecutar y validar codigo.
+
+Comandos sugeridos desde el repo del framework:
+
+```bash
+cp -r PROJECT_TEMPLATE ../mi-proyecto-base
+```
+
+En Windows puedes copiar la carpeta desde el explorador o usar PowerShell:
+
+```powershell
+Copy-Item -Recurse PROJECT_TEMPLATE ..\mi-proyecto-base
+```
+
+No hace falta instalar Graphify ni OpenSpec CLI al inicio. Primero completa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, una spec vigente y `docs/architecture/system.md`. Luego decide si necesitas CLI, grafo o herramientas de conversion.
+
+### Quiero Usar OpenSpec CLI
+
+Instala:
+
+- Node.js 20.19.0 o superior.
+- npm, pnpm, yarn o bun.
+- Paquete `@fission-ai/openspec`.
+
+Comandos:
+
+```bash
+npm install -g @fission-ai/openspec@latest
+openspec --version
+openspec list
+openspec validate <change-id> --strict
+```
+
+No hace falta Python salvo que tu proyecto lo use. La estructura Markdown de OpenSpec puede usarse sin CLI, pero el CLI ayuda a validar y operar cambios.
+
+### Quiero Usar Graphify
+
+Instala Graphify segun tu entorno. Si esta disponible como comando:
+
+```bash
+graphify update .
+```
+
+No lo pongas en `requirements.txt` salvo que la aplicacion lo importe o ejecute en runtime. Si solo lo usas para analizar el repo, tratalo como herramienta auxiliar y documentalo en setup o `requirements-tools.txt` cuando aplique.
+
+Graphify es opcional. Ayuda a navegar impacto; no reemplaza OpenSpec, arquitectura ni decisiones.
+
+### Quiero Usar MarkItDown
+
+Instala Python 3.10 o superior y la herramienta:
+
+```bash
+python -m pip install "markitdown[all]"
+markitdown entrada.pdf -o salida.md
+```
+
+No hace falta Node/npm. Si el proyecto controla herramientas auxiliares, agrega MarkItDown a `requirements-tools.txt`, no a `requirements.txt`, salvo que la aplicacion lo necesite para ejecutarse.
+
+### Quiero Usar Obsidian
+
+Instala Obsidian manualmente como aplicacion de escritorio. No hay comando obligatorio del repo.
+
+No hace falta Python ni Node/npm para usar Obsidian como lector o mapa personal. Tampoco debes mover la autoridad a Obsidian: si una nota se vuelve relevante, resumirla en OpenSpec, arquitectura, decisiones o memoria.
+
+### Quiero Trabajar con Codex
+
+Instala o abre Codex desde su entorno propio. No va en `requirements.txt`, `requirements-dev.txt` ni `requirements-tools.txt`.
+
+Antes de pedir cambios, asegurate de que el proyecto tenga:
+
+- `AGENTS.md` con reglas locales;
+- `PROJECT_GUIDE.md` con identidad y alcance;
+- `CONTEXT_INDEX.md` con fuentes oficiales;
+- OpenSpec suficiente para el comportamiento que se quiere tocar.
+
+Codex puede redactar specs, proponer tareas e implementar, pero necesita fuentes claras para no inventar autoridad.
 
 ## Instalacion Para un Proyecto Python
 

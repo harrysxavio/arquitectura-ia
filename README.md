@@ -39,7 +39,7 @@ Trabajar OpenSpec-first significa que el comportamiento aprobado vive en `opensp
 
 La consecuencia practica es importante: si una regla afecta lo que el sistema debe hacer, no se esconde en memoria, arquitectura ni un README. Se expresa como spec o cambio OpenSpec. Los demas documentos pueden orientar, enlazar o explicar, pero no competir como fuente funcional.
 
-La guia operativa esta en `docs/openspec.md`. Lee esa guia si quieres saber que poner en `proposal.md`, `design.md`, `tasks.md`, que puede redactar un agente y cuando conviene usar el CLI oficial.
+La guia operativa esta en `docs/openspec.md`. Este README explica el mapa general y el reparto de autoridad; `docs/openspec.md` muestra el flujo paso a paso: que archivo crear primero, que completa la persona, que puede proponer el agente, como adaptar un proyecto existente y cuando conviene usar el CLI oficial.
 
 En un proyecto activo, la autoridad se reparte asi:
 
@@ -104,7 +104,7 @@ El framework usa Markdown y Git como base. El resto del stack depende de lo que 
 
 No todo va en `requirements.txt`. Las dependencias runtime de una aplicacion Python van ahi; herramientas de desarrollo pueden ir en `requirements-dev.txt`; herramientas auxiliares como conversion documental o analisis pueden ir en `requirements-tools.txt`; OpenSpec CLI se instala con Node/npm; Obsidian y Codex se instalan fuera del proyecto.
 
-La guia completa esta en `docs/stack.md`. Ve ahi si necesitas elegir entre instalacion minima, instalacion completa, OpenSpec CLI, Graphify, MarkItDown, Obsidian o Codex.
+La guia completa esta en `docs/stack.md`. Ve ahi si necesitas elegir entre instalacion minima, instalacion completa, OpenSpec CLI, Graphify, MarkItDown, Obsidian o Codex. Si tu duda es "que instalo para mi caso?", ese documento es la siguiente parada.
 
 ## Instalacion Rapida
 
@@ -244,7 +244,6 @@ La mejora no viene de tener mas documentos. Viene de que cada documento tenga un
 - No cargar carpetas amplias por defecto si una fuente especifica basta.
 - No tratar `SAMPLE_PROJECT/` como plantilla productiva.
 - No reintroducir material heredado como autoridad activa.
-
 
 ## Takeaway
 

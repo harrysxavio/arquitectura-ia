@@ -31,26 +31,26 @@ PROJECT_TEMPLATE/
 
 ## Vista Maestra del Template
 
-| Archivo | Para que sirve | Cuando se completa | Que no debe ponerse | Relacion principal |
-|---|---|---|---|---|
-| `PROJECT_GUIDE.md` | Explica identidad, usuarios, problema, alcance y stack. | Primero, antes de specs y arquitectura. | Reglas funcionales detalladas. | Da contexto a `CONTEXT_INDEX.md` y OpenSpec. |
-| `CONTEXT_INDEX.md` | Mapa de fuentes oficiales. | Despues de `PROJECT_GUIDE.md`; se actualiza con nuevas specs o fuentes. | Explicaciones largas o notas temporales. | Guia a humanos y agentes hacia OpenSpec, arquitectura, decisiones y memoria. |
-| `AGENTS.md` | Reglas locales para agentes. | Al preparar trabajo asistido por IA. | Teoria general o reglas funcionales. | Usa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y el router de operacion. |
-| `openspec/specs/*/spec.md` | Comportamiento funcional aprobado. | Antes de implementar o al consolidar cambios aprobados. | Detalles internos de implementacion. | Es la fuente funcional principal. |
-| `openspec/changes/*/proposal.md` | Intencion, alcance y no alcance de un cambio. | Al iniciar cambio funcional o significativo. | Implementacion detallada. | Se complementa con deltas, `design.md` y `tasks.md`. |
-| `openspec/changes/*/design.md` | Diseno tecnico del cambio. | Solo si cambia arquitectura, datos, contratos o integraciones. | Reglas funcionales completas. | Enlaza OpenSpec con `docs/architecture/system.md`. |
-| `openspec/changes/*/tasks.md` | Lista verificable de ejecucion y validacion. | Durante implementacion del cambio. | Backlog general del proyecto. | Sigue `proposal.md`, `design.md` y deltas OpenSpec. |
-| `docs/architecture/system.md` | Arquitectura tecnica estable. | Despues de definir primeras capacidades y estructura. | Requirements funcionales detallados. | Explica como se implementa lo que OpenSpec gobierna. |
-| `docs/architecture/sdd.md` | Puente opcional de diseno narrativo. | Solo si ayuda a lectores humanos. | Arquitectura completa duplicada. | Enlaza a `system.md` y OpenSpec. |
-| `docs/product/spec.md` | Puente opcional de lectura de producto. | Solo si hace falta una narrativa de producto separada. | Scenarios funcionales autoritativos. | Enlaza a `PROJECT_GUIDE.md` y OpenSpec. |
-| `decisions/decision_log.md` | Indice breve de decisiones vigentes. | Cuando se aprueba una direccion durable. | Tareas pendientes o debates largos. | Puede enlazar ADRs y cambios OpenSpec. |
-| `decisions/adr/*.md` | Contexto y consecuencias de decisiones grandes. | Para decisiones estructurales o de alto impacto. | Cambios funcionales que pertenecen a OpenSpec. | Se indexa desde `decision_log.md`. |
-| `memory/facts.md` | Hechos confirmados que conviene recordar. | Cuando existan hechos reales y vigentes. | Hipotesis, backlog o historia larga. | Complementa contexto sin reemplazar fuentes. |
-| `memory/constraints.md` | Limites tecnicos, negocio, seguridad y costo. | Antes de implementar restricciones relevantes. | Preferencias vagas. | Informa decisiones y cambios. |
-| `memory/patterns.md` | Patrones aprobados y antipatrones. | Cuando una forma de trabajo ya esta validada. | Reglas funcionales. | Ayuda a consistencia de implementacion y revision. |
-| `memory/glossary.md` | Terminos ambiguos del dominio. | Solo cuando evita malentendidos reales. | Diccionario general. | Ayuda a specs, docs y agentes. |
-| `graphify-out/*` | Salida derivada para navegacion. | Cuando Graphify se use en el proyecto. | Autoridad funcional o tecnica. | Ayuda a encontrar archivos; no decide. |
-| `tasks/current/*` | Puente de compatibilidad. | Solo si una herramienta espera esa ruta. | Trabajo activo real. | Debe enlazar a `openspec/changes/*`. |
+| Archivo | Para que sirve | Quien lo completa primero | Cuando se usa | Que no debe ponerse | Relacion principal |
+|---|---|---|---|---|---|
+| `PROJECT_GUIDE.md` | Explica identidad, usuarios, problema, alcance y stack. | Persona responsable del proyecto. | Primero, antes de specs y arquitectura. | Reglas funcionales detalladas. | Da contexto a `CONTEXT_INDEX.md` y OpenSpec. |
+| `CONTEXT_INDEX.md` | Mapa de fuentes oficiales. | Persona o agente con revision humana. | Despues de `PROJECT_GUIDE.md`; se actualiza con nuevas specs o fuentes. | Explicaciones largas o notas temporales. | Guia a humanos y agentes hacia OpenSpec, arquitectura, decisiones y memoria. |
+| `AGENTS.md` | Reglas locales para agentes. | Persona tecnica o responsable de operacion. | Al preparar trabajo asistido por IA. | Teoria general o reglas funcionales. | Usa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y el router de operacion. |
+| `openspec/specs/*/spec.md` | Comportamiento funcional aprobado. | Persona define; agente puede redactar. | Antes de implementar o al consolidar cambios aprobados. | Detalles internos de implementacion. | Es la fuente funcional principal. |
+| `openspec/changes/*/proposal.md` | Intencion, alcance y no alcance de un cambio. | Persona define; agente puede proponer borrador. | Al iniciar cambio funcional o significativo. | Implementacion detallada. | Se complementa con deltas, `design.md` y `tasks.md`. |
+| `openspec/changes/*/design.md` | Diseno tecnico del cambio. | Persona tecnica o agente con revision. | Solo si cambia arquitectura, datos, contratos o integraciones. | Reglas funcionales completas. | Enlaza OpenSpec con `docs/architecture/system.md`. |
+| `openspec/changes/*/tasks.md` | Lista verificable de ejecucion y validacion. | Agente puede proponer; persona revisa. | Durante implementacion del cambio. | Backlog general del proyecto. | Sigue `proposal.md`, `design.md` y deltas OpenSpec. |
+| `docs/architecture/system.md` | Arquitectura tecnica estable. | Persona tecnica o agente desde codigo real. | Despues de definir primeras capacidades y estructura. | Requirements funcionales detallados. | Explica como se implementa lo que OpenSpec gobierna. |
+| `docs/architecture/sdd.md` | Puente opcional de diseno narrativo. | Persona tecnica si ayuda a explicar. | Solo si ayuda a lectores humanos. | Arquitectura completa duplicada. | Enlaza a `system.md` y OpenSpec. |
+| `docs/product/spec.md` | Puente opcional de lectura de producto. | Persona de producto si hace falta. | Solo si hace falta una narrativa de producto separada. | Scenarios funcionales autoritativos. | Enlaza a `PROJECT_GUIDE.md` y OpenSpec. |
+| `decisions/decision_log.md` | Indice breve de decisiones vigentes. | Persona responsable o tech lead. | Cuando se aprueba una direccion durable. | Tareas pendientes o debates largos. | Puede enlazar ADRs y cambios OpenSpec. |
+| `decisions/adr/*.md` | Contexto y consecuencias de decisiones grandes. | Persona tecnica; agente puede redactar borrador. | Para decisiones estructurales o de alto impacto. | Cambios funcionales que pertenecen a OpenSpec. | Se indexa desde `decision_log.md`. |
+| `memory/facts.md` | Hechos confirmados que conviene recordar. | Persona o agente con evidencia. | Cuando existan hechos reales y vigentes. | Hipotesis, backlog o historia larga. | Complementa contexto sin reemplazar fuentes. |
+| `memory/constraints.md` | Limites tecnicos, negocio, seguridad y costo. | Persona responsable del dominio o tecnologia. | Antes de implementar restricciones relevantes. | Preferencias vagas. | Informa decisiones y cambios. |
+| `memory/patterns.md` | Patrones aprobados y antipatrones. | Persona tecnica o agente tras repeticion validada. | Cuando una forma de trabajo ya esta validada. | Reglas funcionales. | Ayuda a consistencia de implementacion y revision. |
+| `memory/glossary.md` | Terminos ambiguos del dominio. | Persona del dominio. | Solo cuando evita malentendidos reales. | Diccionario general. | Ayuda a specs, docs y agentes. |
+| `graphify-out/*` | Salida derivada para navegacion. | Herramienta; persona o agente la valida contra fuentes. | Cuando Graphify se use en el proyecto. | Autoridad funcional o tecnica. | Ayuda a encontrar archivos; no decide. |
+| `tasks/current/*` | Puente de compatibilidad. | Nadie como fuente principal. | Solo si una herramienta espera esa ruta. | Trabajo activo real. | Debe enlazar a `openspec/changes/*`. |
 
 ## Uso
 
