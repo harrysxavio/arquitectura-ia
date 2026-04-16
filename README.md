@@ -245,9 +245,6 @@ La mejora no viene de tener mas documentos. Viene de que cada documento tenga un
 - No tratar `SAMPLE_PROJECT/` como plantilla productiva.
 - No reintroducir material heredado como autoridad activa.
 
-## Convencion de Idioma
-
-La documentacion humana y explicativa del repositorio se escribe en espanol. En specs OpenSpec, las keywords estructurales como `Requirement`, `Scenario`, `SHALL`, `WHEN`, `THEN` y `AND` pueden mantenerse en ingles por compatibilidad.
 
 ## Takeaway
 
