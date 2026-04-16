@@ -1,76 +1,69 @@
 ﻿# Spec de Capacidad de Ejemplo
 
-> Plantilla OpenSpec. Se vuelve canonica solo dentro de un proyecto activo.
+> Plantilla OpenSpec para una capacidad funcional. Al usarla en un proyecto real, renombra `example-capability` y reemplaza este ejemplo por reglas del dominio.
 
 ## Proposito
 
-Describe el comportamiento aprobado y visible para usuarios de una capacidad del proyecto.
+Este archivo muestra como debe verse una spec vigente en `openspec/specs/*/spec.md`.
 
-Esta spec de ejemplo muestra la convencion de idioma del framework: el contenido humano esta en espanol y las keywords estructurales de OpenSpec pueden mantenerse en ingles por compatibilidad.
+Una spec vigente describe comportamiento aprobado y observable. No describe arquitectura interna, librerias, tareas pendientes ni decisiones historicas.
 
-## Que Contiene
+## Como Adaptar Esta Plantilla
 
-Requirements y scenarios verificables para una capacidad del proyecto. Debe expresar obligaciones del sistema, no detalles internos.
-
-## Orden de Uso
-
-Crear o actualizar una spec antes de implementar comportamiento. Para cambios en curso, trabajar primero en `openspec/changes/*` y luego archivar o consolidar en specs vigentes.
-
-## Relacion con Otros Documentos
-
-`PROJECT_GUIDE.md` explica alcance general. `docs/architecture/system.md` explica como se implementa. Tests validan que el comportamiento aprobado se cumpla.
-
-## Como Usarla
-
-Copiar esta estructura para una capacidad real y reemplazar el ejemplo por reglas del dominio. Cada requirement debe describir una obligacion del sistema; cada scenario debe mostrar una situacion verificable.
-
-No usar la spec para detallar arquitectura interna, librerias o decisiones de implementacion. Esos detalles viven en `docs/architecture/system.md` o en el `design.md` de un cambio.
+1. Cambia el nombre de la carpeta `example-capability` por el nombre real de la capacidad, por ejemplo `requests`, `auth` o `billing`.
+2. Cambia el titulo por el nombre de la capacidad.
+3. Reemplaza los requirements de ejemplo por reglas reales del proyecto.
+4. Escribe scenarios verificables para casos exitosos y casos rechazados.
+5. Mueve detalles tecnicos a `docs/architecture/system.md` o al `design.md` de un cambio activo.
 
 ## Requirements
 
-### Requirement: El comportamiento aprobado es explicito
+### Requirement: Crear solicitud interna
 
-El sistema SHALL mantener comportamiento funcional en OpenSpec para que humanos y agentes encuentren la regla vigente sin cargar documentos no relacionados.
-
-#### Scenario: Accion exitosa
-
-- WHEN el actor realiza una accion soportada
-- THEN el sistema devuelve el resultado aprobado
-
-#### Scenario: Accion rechazada
-
-- WHEN el actor entrega una entrada no soportada
-- THEN el sistema la rechaza con un resultado claro
-
-## Notas
-
-Mantener detalles de implementacion en `docs/architecture/system.md` o en el `design.md` de un cambio.
-
-## Ejemplo Minimo de Adaptacion
-
-```markdown
-# Spec de Solicitudes
-
-## Proposito
-
-Definir como usuarios internos crean y consultan solicitudes.
-
-## Requirements
-
-### Requirement: Crear solicitud
-
-El sistema SHALL crear una solicitud con titulo, descripcion y area solicitante.
+El sistema SHALL permitir crear una solicitud interna con titulo, descripcion, area solicitante y tipo.
 
 #### Scenario: Solicitud valida
 
-- WHEN un usuario crea una solicitud con datos obligatorios
-- THEN la solicitud queda registrada
-- AND el estado inicial es `nueva`
-```
+- WHEN una persona envia titulo, descripcion, area solicitante y tipo validos
+- THEN el sistema registra la solicitud
+- AND asigna un identificador unico
+- AND deja la solicitud en estado inicial `nueva`
+
+#### Scenario: Solicitud incompleta
+
+- WHEN una persona intenta crear una solicitud sin un dato obligatorio
+- THEN el sistema rechaza la solicitud
+- AND informa que dato falta
+
+### Requirement: Consultar solicitud interna
+
+El sistema SHALL permitir consultar una solicitud existente por su identificador.
+
+#### Scenario: Solicitud existente
+
+- WHEN una persona consulta una solicitud con un identificador existente
+- THEN el sistema devuelve los datos de la solicitud
+- AND muestra su estado actual
+
+#### Scenario: Solicitud inexistente
+
+- WHEN una persona consulta una solicitud con un identificador que no existe
+- THEN el sistema informa que la solicitud no fue encontrada
+
+## Que No Debe Ir Aqui
+
+- Componentes internos, clases, tablas o librerias.
+- Planes de implementacion.
+- Decisiones de arquitectura.
+- Notas temporales o preguntas abiertas.
+- Reglas que aun no fueron aprobadas.
+
+Para cambios propuestos usa `openspec/changes/<change-id>/`. Para arquitectura estable usa `docs/architecture/system.md`. Para decisiones durables usa `decisions/`.
 
 ## Checklist de Calidad
 
-- El lector entiende que capacidad se gobierna.
-- Los requirements son observables.
-- Los scenarios tienen condiciones y resultados claros.
-- No hay detalles tecnicos que pertenezcan a arquitectura.
+- La capacidad gobernada se entiende sin leer codigo.
+- Cada requirement expresa una obligacion observable del sistema.
+- Cada scenario tiene condicion y resultado.
+- Los casos rechazados estan cubiertos cuando afectan al usuario.
+- La spec no duplica arquitectura ni tareas.

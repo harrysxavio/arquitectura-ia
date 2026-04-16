@@ -60,7 +60,7 @@ En un proyecto activo, la autoridad se reparte asi:
 /
 |-- README.md                 entrada maestra al framework
 |-- AGENTS.md                 reglas locales para agentes dentro de este repo
-|-- docs/                     guias transversales de setup y stack
+|-- docs/                     guias transversales de adopcion, setup y stack
 |-- OPERACION/                reglas de ejecucion, contexto y roles de agentes
 |-- GRAPHIFY/                 politica para contexto estructural derivado
 |-- PROJECT_BLUEPRINT/        guia para adoptar el modelo en un proyecto real
@@ -77,7 +77,7 @@ En un proyecto activo, la autoridad se reparte asi:
 | Capa | Para que existe | Como se usa |
 |---|---|---|
 | `README.md` | Dar una vision completa y navegable. | Primera lectura para entender el sistema. |
-| `docs/` | Explicar setup y stack transversal. | Referencia antes de instalar herramientas. |
+| `docs/` | Explicar adopcion practica, setup y stack transversal. | Referencia antes de instalar herramientas o aplicar el framework. |
 | `THEORY/` | Explicar los principios detras del modelo. | Lectura conceptual antes de adaptar el framework. |
 | `OPERACION/` | Definir como un agente decide contexto, rol y validacion. | Referencia durante trabajo real con agentes. |
 | `PROJECT_BLUEPRINT/` | Mostrar como pasar del framework a un proyecto concreto. | Guia de adopcion sin copiar todavia la plantilla. |
@@ -151,13 +151,14 @@ Si solo quieres entender de que trata, lee en este orden:
 
 Si quieres aplicar el framework en un proyecto:
 
-1. Lee `PROJECT_BLUEPRINT/README.md`.
-2. Revisa `PROJECT_BLUEPRINT/PROJECT_STRUCTURE_EXAMPLE.md`.
-3. Copia o adapta `PROJECT_TEMPLATE/`.
-4. Completa `PROJECT_GUIDE.md` y `CONTEXT_INDEX.md`.
-5. Crea la primera spec en `openspec/specs/`.
-6. Usa `openspec/changes/` para el primer cambio funcional.
-7. Ajusta `AGENTS.md` para tus agentes y reglas locales.
+1. Lee `docs/adopcion_proyecto.md` como guia practica paso a paso.
+2. Lee `PROJECT_BLUEPRINT/README.md`.
+3. Revisa `PROJECT_BLUEPRINT/PROJECT_STRUCTURE_EXAMPLE.md`.
+4. Copia o adapta `PROJECT_TEMPLATE/`.
+5. Completa `PROJECT_GUIDE.md` y `CONTEXT_INDEX.md`.
+6. Crea la primera spec en `openspec/specs/`.
+7. Usa `openspec/changes/` para el primer cambio funcional.
+8. Ajusta `AGENTS.md` para tus agentes y reglas locales.
 
 Si eres un agente trabajando dentro de un proyecto activo:
 
