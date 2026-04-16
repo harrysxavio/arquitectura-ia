@@ -59,6 +59,6 @@ El comportamiento funcional empieza en OpenSpec. Graphify ayuda a navegar, pero 
 
 Actualizar este indice cuando una fuente canonica cambia de ruta, aparece una nueva capacidad OpenSpec o se agrega una pieza estable de arquitectura. No agregar archivos temporales, notas personales ni salidas derivadas como autoridad.
 
-## Señal de Buen Uso
+## Senal de Buen Uso
 
 Si un agente puede responder "que debo leer para esta tarea?" usando este archivo, el indice esta cumpliendo su funcion.

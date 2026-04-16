@@ -35,7 +35,7 @@ Mantener este archivo breve. Usar ADRs para decisiones estructurales o de alto i
 
 ## Cuando Agregar una Decision
 
-Agregar una fila cuando el equipo elige una direccion que afectara trabajo futuro: arquitectura, herramienta, restriccion, proceso o estrategia. No registrar tareas pequeñas ni conversaciones transitorias.
+Agregar una fila cuando el equipo elige una direccion que afectara trabajo futuro: arquitectura, herramienta, restriccion, proceso o estrategia. No registrar tareas pequenas ni conversaciones transitorias.
 
 ## Cuando Crear un ADR
 

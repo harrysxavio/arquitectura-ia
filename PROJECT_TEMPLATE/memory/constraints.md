@@ -54,7 +54,7 @@ OpenSpec define comportamiento; restricciones define limites. ADRs explican deci
 
 ## Como Usarlo
 
-Consultar antes de ampliar alcance, introducir herramientas, cambiar arquitectura o tocar datos sensibles. Si una restriccion bloquea un cambio, el cambio debe rediseñarse o abrir una decision explicita.
+Consultar antes de ampliar alcance, introducir herramientas, cambiar arquitectura o tocar datos sensibles. Si una restriccion bloquea un cambio, el cambio debe redisenarse o abrir una decision explicita.
 
 ## Que No Va Aqui
 

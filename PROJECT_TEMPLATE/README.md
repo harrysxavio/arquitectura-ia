@@ -29,6 +29,29 @@ PROJECT_TEMPLATE/
 `-- graphify-out/
 ```
 
+## Vista Maestra del Template
+
+| Archivo | Para que sirve | Cuando se completa | Que no debe ponerse | Relacion principal |
+|---|---|---|---|---|
+| `PROJECT_GUIDE.md` | Explica identidad, usuarios, problema, alcance y stack. | Primero, antes de specs y arquitectura. | Reglas funcionales detalladas. | Da contexto a `CONTEXT_INDEX.md` y OpenSpec. |
+| `CONTEXT_INDEX.md` | Mapa de fuentes oficiales. | Despues de `PROJECT_GUIDE.md`; se actualiza con nuevas specs o fuentes. | Explicaciones largas o notas temporales. | Guia a humanos y agentes hacia OpenSpec, arquitectura, decisiones y memoria. |
+| `AGENTS.md` | Reglas locales para agentes. | Al preparar trabajo asistido por IA. | Teoria general o reglas funcionales. | Usa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y el router de operacion. |
+| `openspec/specs/*/spec.md` | Comportamiento funcional aprobado. | Antes de implementar o al consolidar cambios aprobados. | Detalles internos de implementacion. | Es la fuente funcional principal. |
+| `openspec/changes/*/proposal.md` | Intencion, alcance y no alcance de un cambio. | Al iniciar cambio funcional o significativo. | Implementacion detallada. | Se complementa con deltas, `design.md` y `tasks.md`. |
+| `openspec/changes/*/design.md` | Diseno tecnico del cambio. | Solo si cambia arquitectura, datos, contratos o integraciones. | Reglas funcionales completas. | Enlaza OpenSpec con `docs/architecture/system.md`. |
+| `openspec/changes/*/tasks.md` | Lista verificable de ejecucion y validacion. | Durante implementacion del cambio. | Backlog general del proyecto. | Sigue `proposal.md`, `design.md` y deltas OpenSpec. |
+| `docs/architecture/system.md` | Arquitectura tecnica estable. | Despues de definir primeras capacidades y estructura. | Requirements funcionales detallados. | Explica como se implementa lo que OpenSpec gobierna. |
+| `docs/architecture/sdd.md` | Puente opcional de diseno narrativo. | Solo si ayuda a lectores humanos. | Arquitectura completa duplicada. | Enlaza a `system.md` y OpenSpec. |
+| `docs/product/spec.md` | Puente opcional de lectura de producto. | Solo si hace falta una narrativa de producto separada. | Scenarios funcionales autoritativos. | Enlaza a `PROJECT_GUIDE.md` y OpenSpec. |
+| `decisions/decision_log.md` | Indice breve de decisiones vigentes. | Cuando se aprueba una direccion durable. | Tareas pendientes o debates largos. | Puede enlazar ADRs y cambios OpenSpec. |
+| `decisions/adr/*.md` | Contexto y consecuencias de decisiones grandes. | Para decisiones estructurales o de alto impacto. | Cambios funcionales que pertenecen a OpenSpec. | Se indexa desde `decision_log.md`. |
+| `memory/facts.md` | Hechos confirmados que conviene recordar. | Cuando existan hechos reales y vigentes. | Hipotesis, backlog o historia larga. | Complementa contexto sin reemplazar fuentes. |
+| `memory/constraints.md` | Limites tecnicos, negocio, seguridad y costo. | Antes de implementar restricciones relevantes. | Preferencias vagas. | Informa decisiones y cambios. |
+| `memory/patterns.md` | Patrones aprobados y antipatrones. | Cuando una forma de trabajo ya esta validada. | Reglas funcionales. | Ayuda a consistencia de implementacion y revision. |
+| `memory/glossary.md` | Terminos ambiguos del dominio. | Solo cuando evita malentendidos reales. | Diccionario general. | Ayuda a specs, docs y agentes. |
+| `graphify-out/*` | Salida derivada para navegacion. | Cuando Graphify se use en el proyecto. | Autoridad funcional o tecnica. | Ayuda a encontrar archivos; no decide. |
+| `tasks/current/*` | Puente de compatibilidad. | Solo si una herramienta espera esa ruta. | Trabajo activo real. | Debe enlazar a `openspec/changes/*`. |
+
 ## Uso
 
 1. Copiar o adaptar la plantilla en un proyecto real.
@@ -36,6 +59,17 @@ PROJECT_TEMPLATE/
 3. Crear specs por capability en `openspec/specs/`.
 4. Usar `openspec/changes/` para cambios activos.
 5. Mantener memoria compacta y Graphify derivado.
+
+## Como Llenarlo Sin Perder Autoridad
+
+1. La persona define problema, alcance y prioridades en `PROJECT_GUIDE.md`.
+2. La persona o agente arma `CONTEXT_INDEX.md` con fuentes reales.
+3. La persona aprueba la primera capacidad y el agente puede redactar la spec inicial.
+4. El agente puede proponer `proposal.md`, `design.md` y `tasks.md`, pero la persona revisa alcance, riesgos y decisiones.
+5. Arquitectura se completa cuando hay componentes reales que explicar.
+6. Memoria se completa cuando hay hechos o restricciones confirmadas, no antes.
+
+Si un archivo aun no tiene contenido real, es mejor dejar una guia breve y ejemplo minimo que inventar informacion.
 
 ## Orden Recomendado
 

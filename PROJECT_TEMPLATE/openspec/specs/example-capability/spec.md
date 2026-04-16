@@ -6,7 +6,7 @@
 
 Describe el comportamiento aprobado y visible para usuarios de una capacidad del proyecto.
 
-Esta spec de ejemplo muestra la convencion de idioma del framework: el contenido humano esta en español y las keywords estructurales de OpenSpec pueden mantenerse en ingles por compatibilidad.
+Esta spec de ejemplo muestra la convencion de idioma del framework: el contenido humano esta en espanol y las keywords estructurales de OpenSpec pueden mantenerse en ingles por compatibilidad.
 
 ## Que Contiene
 

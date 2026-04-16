@@ -70,7 +70,7 @@ Usar SQLite para la primera version.
 
 ## Guia de Escritura
 
-Usar un ADR cuando una decision afecta estructura, costo, seguridad, integraciones, datos o forma de operar. No usarlo para tareas de implementacion pequeñas ni para reglas funcionales que pertenecen a OpenSpec.
+Usar un ADR cuando una decision afecta estructura, costo, seguridad, integraciones, datos o forma de operar. No usarlo para tareas de implementacion pequenas ni para reglas funcionales que pertenecen a OpenSpec.
 
 El texto debe responder:
 

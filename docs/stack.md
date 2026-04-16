@@ -25,12 +25,82 @@ OpenSpec, Graphify, MarkItDown, Obsidian y Codex cumplen roles distintos. No tod
 
 Usa esta instalacion si quieres aprender el framework, leer la documentacion o copiar `PROJECT_TEMPLATE/` a un proyecto nuevo.
 
-1. Instala Git.
-2. Instala un editor que lea Markdown, por ejemplo VS Code.
-3. Clona el repositorio.
-4. Lee `README.md`, `PROJECT_BLUEPRINT/README.md` y `PROJECT_TEMPLATE/README.md`.
+Prerequisitos:
+
+- Git.
+- Editor de Markdown, por ejemplo VS Code.
+
+Comandos:
+
+```bash
+git clone <url-del-repo>
+cd arquitectura-ia
+```
+
+Lectura inicial:
+
+```text
+README.md
+docs/openspec.md
+PROJECT_BLUEPRINT/README.md
+PROJECT_TEMPLATE/README.md
+```
 
 No necesitas instalar Graphify, MarkItDown ni un entorno Python solo para entender el framework.
+
+## Instalacion Completa
+
+Usa esta instalacion si quieres trabajar con todas las capacidades opcionales.
+
+```bash
+git clone <url-del-repo>
+cd arquitectura-ia
+```
+
+Python para scripts o herramientas Python:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+```
+
+macOS/Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+Node/npm para OpenSpec CLI:
+
+```bash
+node --version
+npm --version
+npm install -g @fission-ai/openspec@latest
+openspec --version
+```
+
+Herramientas Python opcionales:
+
+```bash
+python -m pip install "markitdown[all]"
+```
+
+Graphify, Obsidian y Codex dependen del entorno del usuario. Instalarlos solo si se usaran.
+
+## Segun Tu Caso
+
+| Caso | Necesitas | No necesitas al inicio |
+|---|---|---|
+| Solo quiero leer y aprender | Git, Markdown, README, `docs/openspec.md` | Python, Node, Graphify, MarkItDown |
+| Quiero crear un proyecto nuevo | Git, Markdown, `PROJECT_TEMPLATE/` | Graphify, Obsidian |
+| Quiero usar OpenSpec CLI | Node.js 20.19+, npm/pnpm/yarn/bun, `@fission-ai/openspec` | Python salvo que tu proyecto lo use |
+| Quiero usar Graphify | Instalacion de Graphify y `graphify-out/` | Convertirlo en dependencia runtime |
+| Quiero usar MarkItDown | Python 3.10+, `markitdown` | Node/npm |
+| Quiero usar Obsidian | App de escritorio Obsidian | Cambiar fuentes canonicas |
+| Quiero trabajar con Codex | Entorno Codex y `AGENTS.md` claro | Instalar Codex en `requirements.txt` |
 
 ## Instalacion Para un Proyecto Python
 
@@ -59,6 +129,22 @@ En macOS/Linux, la activacion suele ser:
 source .venv/bin/activate
 ```
 
+Si agregas herramientas auxiliares:
+
+```bash
+python -m pip install -r requirements-tools.txt
+```
+
+Distribucion recomendada:
+
+| Archivo | Va aqui | No va aqui |
+|---|---|---|
+| `requirements.txt` | Dependencias necesarias para ejecutar la aplicacion. | Linters, Graphify, MarkItDown, herramientas de docs. |
+| `requirements-dev.txt` | Tests, linters, type checkers, utilidades de desarrollo. | Dependencias runtime que produccion necesita. |
+| `requirements-tools.txt` | Conversores, generadores, analizadores documentales. | Paquetes que la app importa en runtime. |
+| Node/npm | OpenSpec CLI u otras herramientas JS. | Paquetes Python. |
+| Instalacion manual | Obsidian, Codex, apps de escritorio. | Dependencias versionables de la app. |
+
 ## OpenSpec y Node/npm
 
 OpenSpec es parte del modelo de autoridad aunque no siempre necesites su CLI. Si usas herramientas oficiales o comandos de OpenSpec, revisa su instalacion vigente y separala del stack Python.
@@ -77,6 +163,8 @@ openspec --version
 
 Si un proyecto usa OpenSpec CLI de forma estable, documentar los comandos exactos en el README del proyecto activo o en `AGENTS.md`. Si no usa CLI, mantener OpenSpec como estructura documental bajo `openspec/`.
 
+Guia operativa del framework: `docs/openspec.md`.
+
 ## Graphify
 
 Graphify es opcional y derivado. Sirve para generar `graphify-out/` y ayudar a navegar proyectos grandes o ambiguos.
@@ -88,6 +176,8 @@ graphify update .
 ```
 
 Si Graphify no esta instalado, el proyecto sigue siendo usable. Solo pierdes el mapa derivado; no pierdes autoridad documental. Nunca poner Graphify como requisito runtime de una aplicacion salvo que la aplicacion realmente lo ejecute.
+
+Despues de generar salida, leer `graphify-out/GRAPH_REPORT.md` como mapa, no como fuente de verdad.
 
 ## MarkItDown
 
@@ -128,6 +218,8 @@ Cuando Codex trabaja en un proyecto activo, debe empezar por:
 3. `CONTEXT_INDEX.md`
 4. OpenSpec relevante
 5. Arquitectura, decisiones, memoria o Graphify solo si la tarea lo requiere
+
+Codex puede proponer specs, cambios, disenos y tareas, pero debe dejar claro cuando una decision requiere aprobacion humana.
 
 ## Archivos Clave del Framework
 

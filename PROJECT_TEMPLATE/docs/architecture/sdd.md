@@ -4,11 +4,11 @@ Este archivo existe como puente para equipos que esperan encontrar un `sdd.md`. 
 
 ## Proposito
 
-Usarlo solo si el proyecto necesita un resumen narrativo de diseño para lectores humanos. La autoridad tecnica estable debe vivir en `docs/architecture/system.md`; el comportamiento funcional debe vivir en OpenSpec.
+Usarlo solo si el proyecto necesita un resumen narrativo de diseno para lectores humanos. La autoridad tecnica estable debe vivir en `docs/architecture/system.md`; el comportamiento funcional debe vivir en OpenSpec.
 
 ## Que Contiene
 
-Un resumen narrativo opcional de diseño. Debe enlazar fuentes canonicas y no competir con ellas.
+Un resumen narrativo opcional de diseno. Debe enlazar fuentes canonicas y no competir con ellas.
 
 ## Orden de Uso
 
@@ -20,7 +20,7 @@ Completar solo despues de tener arquitectura estable suficiente. Si no aporta cl
 
 ## Uso Recomendado
 
-- Resumir decisiones de diseño en lenguaje accesible.
+- Resumir decisiones de diseno en lenguaje accesible.
 - Enlazar a `docs/architecture/system.md` para detalles tecnicos.
 - Enlazar a OpenSpec para reglas funcionales.
 - Mantenerlo corto si no aporta algo distinto.

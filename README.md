@@ -39,6 +39,8 @@ Trabajar OpenSpec-first significa que el comportamiento aprobado vive en `opensp
 
 La consecuencia practica es importante: si una regla afecta lo que el sistema debe hacer, no se esconde en memoria, arquitectura ni un README. Se expresa como spec o cambio OpenSpec. Los demas documentos pueden orientar, enlazar o explicar, pero no competir como fuente funcional.
 
+La guia operativa esta en `docs/openspec.md`. Lee esa guia si quieres saber que poner en `proposal.md`, `design.md`, `tasks.md`, que puede redactar un agente y cuando conviene usar el CLI oficial.
+
 En un proyecto activo, la autoridad se reparte asi:
 
 | Pregunta | Fuente principal |
@@ -102,7 +104,7 @@ El framework usa Markdown y Git como base. El resto del stack depende de lo que 
 
 No todo va en `requirements.txt`. Las dependencias runtime de una aplicacion Python van ahi; herramientas de desarrollo pueden ir en `requirements-dev.txt`; herramientas auxiliares como conversion documental o analisis pueden ir en `requirements-tools.txt`; OpenSpec CLI se instala con Node/npm; Obsidian y Codex se instalan fuera del proyecto.
 
-La guia completa esta en `docs/stack.md`.
+La guia completa esta en `docs/stack.md`. Ve ahi si necesitas elegir entre instalacion minima, instalacion completa, OpenSpec CLI, Graphify, MarkItDown, Obsidian o Codex.
 
 ## Instalacion Rapida
 
@@ -126,15 +128,26 @@ Instalacion completa segun capacidades:
 
 No instales herramientas opcionales antes de necesitarlas. El framework funciona como sistema documental aun sin Graphify, MarkItDown u Obsidian.
 
+Resumen rapido:
+
+- Para leer y aprender: Git + editor Markdown.
+- Para crear un proyecto: Git + Markdown + `PROJECT_TEMPLATE/`.
+- Para usar OpenSpec CLI: Node/npm + `@fission-ai/openspec`.
+- Para usar MarkItDown: Python 3.10+ y paquete `markitdown`.
+- Para usar Graphify: instalar Graphify solo si necesitas grafo derivado.
+- Para Obsidian y Codex: instalacion externa al proyecto.
+
 ## Como Leer Este Repositorio
 
 Si solo quieres entender de que trata, lee en este orden:
 
 1. `README.md`
-2. `THEORY/01_principios.md`
-3. `PROJECT_BLUEPRINT/README.md`
-4. `PROJECT_BLUEPRINT/PROJECT_DOCUMENTS.md`
-5. `GRAPHIFY/GRAPHIFY_POLICY.md`
+2. `docs/stack.md`
+3. `docs/openspec.md`
+4. `THEORY/01_principios.md`
+5. `PROJECT_BLUEPRINT/README.md`
+6. `PROJECT_BLUEPRINT/PROJECT_DOCUMENTS.md`
+7. `GRAPHIFY/GRAPHIFY_POLICY.md`
 
 Si quieres aplicar el framework en un proyecto:
 
@@ -234,7 +247,7 @@ La mejora no viene de tener mas documentos. Viene de que cada documento tenga un
 
 ## Convencion de Idioma
 
-La documentacion humana y explicativa del repositorio se escribe en español. En specs OpenSpec, las keywords estructurales como `Requirement`, `Scenario`, `SHALL`, `WHEN`, `THEN` y `AND` pueden mantenerse en ingles por compatibilidad.
+La documentacion humana y explicativa del repositorio se escribe en espanol. En specs OpenSpec, las keywords estructurales como `Requirement`, `Scenario`, `SHALL`, `WHEN`, `THEN` y `AND` pueden mantenerse en ingles por compatibilidad.
 
 ## Takeaway
 
