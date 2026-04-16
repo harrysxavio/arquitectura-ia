@@ -41,6 +41,8 @@ La consecuencia practica es importante: si una regla afecta lo que el sistema de
 
 La guia operativa esta en `docs/openspec.md`. Este README explica el mapa general y el reparto de autoridad; `docs/openspec.md` muestra el flujo paso a paso: que archivo crear primero, que completa la persona, que puede proponer el agente, como adaptar un proyecto existente y cuando conviene usar el CLI oficial.
 
+Ruta practica: lee este README para entender el sistema, usa `docs/openspec.md` para operar OpenSpec sin adivinar, y usa `PROJECT_TEMPLATE/` cuando quieras crear o adaptar un proyecto real. Si estas adoptando el framework desde cero, `docs/adopcion_proyecto.md` conecta esas piezas en una secuencia completa: copiar la plantilla, completar `PROJECT_GUIDE.md`, crear la primera especificacion vigente y abrir el primer cambio controlado.
+
 En un proyecto activo, la autoridad se reparte asi:
 
 | Pregunta | Fuente principal |

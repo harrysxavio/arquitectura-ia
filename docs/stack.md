@@ -108,6 +108,34 @@ cd arquitectura-ia
 
 No hace falta instalar Python, Node/npm, Graphify, MarkItDown, Obsidian ni Codex. Lee `README.md`, `docs/openspec.md` y `PROJECT_BLUEPRINT/README.md`.
 
+### Quiero Crear un Proyecto Nuevo con Esta Arquitectura
+
+Instala:
+
+- Git.
+- VS Code o editor Markdown.
+- El stack real del proyecto, por ejemplo Python o Node.
+- Codex solo si trabajaras con agente.
+
+Comandos base:
+
+```bash
+mkdir mi-proyecto
+cd mi-proyecto
+git init
+code .
+```
+
+Copiar la plantilla desde el repo del framework en PowerShell:
+
+```powershell
+Copy-Item -Recurse PROJECT_TEMPLATE\* ..\mi-proyecto\
+```
+
+No hace falta instalar OpenSpec CLI al inicio. Puedes crear `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, `AGENTS.md` y la primera especificacion en Markdown. Instala OpenSpec CLI despues si quieres validar o archivar cambios con comandos.
+
+Si el proyecto es Python, `requirements.txt` debe guardar solo dependencias runtime. Tests y linters van en `requirements-dev.txt`; herramientas documentales van en `requirements-tools.txt`.
+
 ### Quiero Adaptar un Proyecto Existente
 
 Instala:
@@ -128,7 +156,15 @@ En Windows puedes copiar la carpeta desde el explorador o usar PowerShell:
 Copy-Item -Recurse PROJECT_TEMPLATE ..\mi-proyecto-base
 ```
 
-No hace falta instalar Graphify ni OpenSpec CLI al inicio. Primero completa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, una spec vigente y `docs/architecture/system.md`. Luego decide si necesitas CLI, grafo o herramientas de conversion.
+No hace falta instalar Graphify ni OpenSpec CLI al inicio. Primero completa `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, una especificacion vigente y `docs/architecture/system.md`. Luego decide si necesitas CLI, grafo o herramientas de conversion.
+
+Si ya existe `requirements.txt`, no agregues herramientas del framework ahi por defecto. Primero identifica:
+
+- runtime actual del proyecto: `requirements.txt` o equivalente;
+- tests y linters: `requirements-dev.txt` o equivalente;
+- herramientas auxiliares como MarkItDown: `requirements-tools.txt`;
+- OpenSpec CLI: Node/npm;
+- Obsidian y Codex: instalacion manual o externa.
 
 ### Quiero Usar OpenSpec CLI
 
@@ -178,9 +214,9 @@ Instala Obsidian manualmente como aplicacion de escritorio. No hay comando oblig
 
 No hace falta Python ni Node/npm para usar Obsidian como lector o mapa personal. Tampoco debes mover la autoridad a Obsidian: si una nota se vuelve relevante, resumirla en OpenSpec, arquitectura, decisiones o memoria.
 
-### Quiero Trabajar con Codex
+### Quiero Trabajar con Codex en VS Code
 
-Instala o abre Codex desde su entorno propio. No va en `requirements.txt`, `requirements-dev.txt` ni `requirements-tools.txt`.
+Instala o abre Codex desde su entorno propio y trabaja con el proyecto abierto en VS Code. Codex no va en `requirements.txt`, `requirements-dev.txt` ni `requirements-tools.txt`.
 
 Antes de pedir cambios, asegurate de que el proyecto tenga:
 
@@ -190,6 +226,15 @@ Antes de pedir cambios, asegurate de que el proyecto tenga:
 - OpenSpec suficiente para el comportamiento que se quiere tocar.
 
 Codex puede redactar specs, proponer tareas e implementar, pero necesita fuentes claras para no inventar autoridad.
+
+Prompt inicial recomendado:
+
+```text
+Lee AGENTS.md, PROJECT_GUIDE.md y CONTEXT_INDEX.md.
+Antes de tocar codigo, dime que fuentes necesitas para esta tarea.
+Si falta OpenSpec o arquitectura, propon primero el documento faltante.
+No instales dependencias ni refactorices sin confirmacion.
+```
 
 ## Instalacion Para un Proyecto Python
 
@@ -308,7 +353,7 @@ Cuando Codex trabaja en un proyecto activo, debe empezar por:
 4. OpenSpec relevante
 5. Arquitectura, decisiones, memoria o Graphify solo si la tarea lo requiere
 
-Codex puede proponer specs, cambios, disenos y tareas, pero debe dejar claro cuando una decision requiere aprobacion humana.
+Codex puede proponer especificaciones, cambios, disenos y tareas, pero debe dejar claro cuando una decision requiere aprobacion humana.
 
 ## Archivos Clave del Framework
 

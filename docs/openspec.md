@@ -15,13 +15,15 @@ En la practica:
 
 ## Que Vive en Cada Archivo
 
-| Archivo | Que contiene | Quien lo completa |
-|---|---|---|
-| `openspec/specs/<capability>/spec.md` | Requirements y scenarios del comportamiento vigente. | Humano o agente, con revision humana. |
-| `openspec/changes/<change-id>/proposal.md` | Por que se propone el cambio, alcance y no alcance. | Idealmente humano; el agente puede proponer borrador. |
-| `openspec/changes/<change-id>/design.md` | Diseno tecnico del cambio cuando afecta arquitectura, datos, integraciones o contratos. | Humano tecnico o agente con revision. |
-| `openspec/changes/<change-id>/tasks.md` | Lista verificable de implementacion y validacion. | Agente puede generar y actualizar; humano revisa. |
-| `openspec/changes/<change-id>/specs/<capability>/spec.md` | Delta funcional: requirements agregados, modificados o removidos. | Humano o agente; debe revisarse antes de implementar. |
+| Archivo | Que va ahi | Que no va ahi | Quien lo inicia | Que debe aprobar la persona |
+|---|---|---|---|---|
+| `openspec/specs/<capability>/spec.md` | Comportamiento funcional vigente y aprobado para una capacidad. | Ideas futuras, tareas, arquitectura interna o debates. | Persona o agente con datos confirmados. | Que la regla representa el comportamiento real o aprobado. |
+| `openspec/changes/<change-id>/proposal.md` | Problema, objetivo, alcance, fuera de alcance y motivo del cambio. | Codigo, tareas detalladas o solucion tecnica completa. | Persona; el agente puede redactar borrador. | Alcance, prioridad, riesgos y limites. |
+| `openspec/changes/<change-id>/design.md` | Diseno tecnico cuando el cambio toca arquitectura, datos, integraciones, seguridad o contratos. | Reglas funcionales completas que pertenecen a specs. | Persona tecnica o agente. | Alternativas, riesgos, impacto y decision tecnica. |
+| `openspec/changes/<change-id>/tasks.md` | Pasos verificables para implementar y validar el cambio. | Backlog general del proyecto. | Agente puede proponerlo. | Que las tareas cubren lo necesario y no amplian alcance. |
+| `openspec/changes/<change-id>/specs/<capability>/spec.md` | Delta funcional del cambio: que comportamiento se agrega, modifica o elimina. | Implementacion interna. | Agente o persona. | Que el cambio funcional sea correcto antes de implementar. |
+
+En proyectos orientados a publico hispanohablante, el contenido de requisitos y escenarios puede escribirse en espanol claro. Si decides usar el CLI oficial con validacion estricta, conserva la estructura que ese CLI espere y valida antes de cerrar el cambio.
 
 ## Persona y Agente
 
@@ -34,6 +36,8 @@ En la practica:
 | Al cerrar | Acepta el resultado funcional. | Ayuda a validar, archivar el cambio y actualizar docs derivadas. |
 
 La persona no tiene que escribir todo a mano, pero si debe aportar criterio. El agente puede acelerar redaccion y ejecucion; no debe decidir solo una regla de negocio, una excepcion de seguridad o un cambio de alcance.
+
+Regla practica: la persona define y aprueba; el agente propone, ordena, implementa y verifica dentro del marco aprobado.
 
 ## Que Completa la Persona
 
@@ -81,22 +85,26 @@ Si ya tienes un proyecto con codigo, no empieces moviendo archivos ni pidiendo u
 
 Pasos recomendados:
 
-1. Copiar o adaptar `PROJECT_TEMPLATE/` dentro del proyecto existente.
-2. Completar `PROJECT_GUIDE.md` con proposito, usuarios, alcance, stack real y limites.
-3. Completar `CONTEXT_INDEX.md` apuntando a codigo, docs, specs y decisiones reales.
-4. Identificar una o dos capacidades principales que el sistema ya ofrece.
-5. Crear `openspec/specs/<capability>/spec.md` para describir comportamiento vigente, no comportamiento deseado.
-6. Completar `docs/architecture/system.md` con componentes, datos, integraciones y flujos reales.
-7. Registrar decisiones ya vigentes en `decisions/decision_log.md` solo si afectan trabajo futuro.
-8. Registrar en `memory/` solo hechos confirmados, restricciones y patrones que conviene recordar.
-9. Crear el primer `openspec/changes/<change-id>/` solo para el proximo cambio real.
-10. Usar Graphify si el proyecto es grande y no esta claro donde viven las capacidades.
+1. Abrir el proyecto en VS Code y revisar `git status`.
+2. Crear una rama de adopcion, por ejemplo `adopt-openspec-first`.
+3. Copiar o adaptar `PROJECT_TEMPLATE/` sin sobrescribir documentos utiles.
+4. Completar `PROJECT_GUIDE.md` con proposito, usuarios, alcance, stack real y limites.
+5. Completar `CONTEXT_INDEX.md` apuntando a codigo, tests, docs, specs y decisiones reales.
+6. Identificar una o dos capacidades principales que el sistema ya ofrece.
+7. Crear `openspec/specs/<capability>/spec.md` para describir comportamiento vigente, no comportamiento deseado.
+8. Completar `docs/architecture/system.md` con componentes, datos, integraciones y flujos reales.
+9. Registrar decisiones ya vigentes en `decisions/decision_log.md` solo si afectan trabajo futuro.
+10. Registrar en `memory/` solo hechos confirmados, restricciones y patrones que conviene recordar.
+11. Crear el primer `openspec/changes/<change-id>/` solo para el proximo cambio real.
+12. Usar Graphify si el proyecto es grande y no esta claro donde viven las capacidades.
 
 El objetivo de esta adaptacion no es documentar todo el pasado. Es crear suficientes fuentes confiables para que el siguiente cambio ya no dependa de memoria informal.
 
-## Cuando Pedir Refactor al Agente
+Ejemplo minimo: si tu proyecto ya registra solicitudes internas, primero crea `openspec/specs/requests/spec.md` con lo que el sistema ya hace. Si despues quieres agregar prioridad urgente, eso va como cambio nuevo en `openspec/changes/add-urgent-priority/`.
 
-Pide refactor al agente cuando ya exista una base minima de autoridad:
+## Cuando Pedir Refactor a Codex
+
+Pide refactor a Codex cuando ya exista una base minima de autoridad:
 
 - la capacidad afectada esta descrita en `openspec/specs/*/spec.md` o en un cambio activo;
 - `docs/architecture/system.md` explica los componentes que se tocaran;
@@ -114,6 +122,15 @@ Todavia no conviene pedir refactor cuando:
 
 En esos casos, pide primero investigacion, mapa de impacto o borrador de OpenSpec. El refactor viene despues de fijar el marco de verdad.
 
+Prompt recomendado antes de refactorizar:
+
+```text
+Lee AGENTS.md, PROJECT_GUIDE.md, CONTEXT_INDEX.md, la especificacion vigente y el cambio activo.
+Confirma que entiendes el alcance.
+Indica que archivos tocarias y como validarias.
+No refactorices hasta que apruebe la propuesta.
+```
+
 ## Cuando Usar Solo la Estructura OpenSpec
 
 Usa solo la estructura de carpetas y Markdown cuando:
@@ -125,6 +142,8 @@ Usa solo la estructura de carpetas y Markdown cuando:
 - tu agente no necesita slash commands.
 
 El framework sigue funcionando porque la autoridad esta en los archivos, no en el CLI.
+
+En este modo, la persona y Codex trabajan editando Markdown en VS Code. La validacion principal es revisar diffs, leer `proposal.md`, revisar el delta de especificacion y ejecutar tests o validacion manual.
 
 ## Cuando Usar OpenSpec CLI
 
@@ -138,6 +157,17 @@ Usa el CLI oficial cuando quieres:
 - generar integraciones con asistentes compatibles.
 
 El CLI ayuda a operar la estructura; no cambia el reparto de autoridad del framework.
+
+Decision rapida:
+
+| Caso | Usa Markdown manual | Usa OpenSpec CLI |
+|---|---|---|
+| Estoy aprendiendo | Si | Opcional |
+| Proyecto pequeno | Si | Opcional |
+| Equipo revisa todo por Git | Si | Opcional |
+| Quiero validacion estricta de estructura | Puede no bastar | Si |
+| Hay muchos cambios activos | Puede volverse incomodo | Si |
+| Quiero archivar cambios con comando | No | Si |
 
 ## Instalacion del CLI
 
@@ -185,8 +215,8 @@ Cambio: agregar exportacion CSV.
 1. Persona define: "usuarios internos necesitan exportar solicitudes filtradas".
 2. Agente propone `openspec/changes/add-csv-export/proposal.md`.
 3. Agente agrega delta en `specs/requests/spec.md`:
-   - `Requirement: Exportar solicitudes filtradas`
-   - `Scenario: Exportacion con filtros activos`
+   - `Requisito: Exportar solicitudes filtradas`
+   - `Escenario: Exportacion con filtros activos`
 4. Si requiere nuevo endpoint o job, se agrega `design.md`.
 5. `tasks.md` lista implementacion, tests y docs.
 6. Se valida:
