@@ -4,23 +4,37 @@ Guia compacta para adoptar la arquitectura OpenSpec-first en un proyecto real.
 
 ## Rol
 
-`PROJECT_BLUEPRINT/` explica como leer y adoptar el modelo. No es plantilla copiable completa y no reemplaza `PROJECT_TEMPLATE/`.
+`PROJECT_BLUEPRINT/` explica como pasar del framework al uso practico. No es una plantilla copiable completa y no reemplaza `PROJECT_TEMPLATE/`.
 
-## Ruta
+## Ruta de Adopcion
 
 ```text
 framework -> PROJECT_BLUEPRINT -> PROJECT_TEMPLATE -> SAMPLE_PROJECT -> proyecto activo
 ```
 
-## Fuentes Principales
+- `framework`: define reglas, capas y politica general.
+- `PROJECT_BLUEPRINT/`: explica como se reparte la autoridad documental.
+- `PROJECT_TEMPLATE/`: entrega el molde reusable para iniciar un proyecto.
+- `SAMPLE_PROJECT/`: muestra el molde aplicado en un caso ejecutable.
+- `proyecto activo`: adapta el template y se gobierna por sus propias fuentes canonicas.
 
-- Verdad funcional: `openspec/specs/*/spec.md`
-- Cambio activo: `openspec/changes/*`
-- Arquitectura estable: `docs/architecture/system.md`
-- Decisiones: `decisions/decision_log.md` y ADRs
-- Memoria compacta: `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`
-- Contexto derivado: `graphify-out/*`
+## Autoridad Documental
+
+| Tipo de informacion | Fuente |
+|---|---|
+| Comportamiento funcional vigente | `openspec/specs/*/spec.md` |
+| Cambio activo | `openspec/changes/*` |
+| Arquitectura estable | `docs/architecture/system.md` |
+| Decisiones vigentes | `decisions/decision_log.md` y ADRs |
+| Memoria compacta | `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md` |
+| Navegacion derivada | `graphify-out/*` |
+
+## Graphify
+
+Graphify entra cuando reduce exploracion: onboarding, impacto transversal, refactors amplios o tareas ambiguas.
+
+Graphify no entra por defecto en cambios locales, typos, ajustes claros o cuando OpenSpec ya indica exactamente que revisar.
 
 ## Regla
 
-Blueprint orienta; el template moldea; el proyecto activo decide con sus fuentes canonicas.
+Blueprint orienta; template moldea; sample demuestra; el proyecto activo decide con sus fuentes canonicas.

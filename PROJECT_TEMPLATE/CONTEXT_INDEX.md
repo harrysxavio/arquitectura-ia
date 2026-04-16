@@ -1,26 +1,26 @@
 ﻿# CONTEXT_INDEX.md
 
-> Template. Becomes canonical only inside an active project.
+> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
 
-## Official Sources
+## Fuentes Oficiales
 
-| Need | File | Use |
+| Necesidad | Archivo | Uso |
 |---|---|---|
-| Identity and scope | `PROJECT_GUIDE.md` | Project entry point. |
-| Local agent rules | `AGENTS.md` | Project-specific agent guidance. |
-| Current functional truth | `openspec/specs/*/spec.md` | Approved behavior. |
-| Active change | `openspec/changes/<change-id>/proposal.md` | Intent, scope and non-goals. |
-| Change design | `openspec/changes/<change-id>/design.md` | Technical design for the change. |
-| Change tasks | `openspec/changes/<change-id>/tasks.md` | Executable checklist. |
-| Stable architecture | `docs/architecture/system.md` | Components, contracts and stable data. |
-| Decisions | `decisions/decision_log.md` | Short index of approved decisions. |
-| ADRs | `decisions/adr/*.md` | Structural or high-impact decisions. |
-| Facts | `memory/facts.md` | Confirmed context. |
-| Constraints | `memory/constraints.md` | Current limits. |
-| Patterns | `memory/patterns.md` | Approved ways of working. |
-| Glossary | `memory/glossary.md` | Optional domain terms. |
-| Graphify | `graphify-out/GRAPH_REPORT.md` | Derived context only. |
+| Identidad y alcance | `PROJECT_GUIDE.md` | Entrada base del proyecto. |
+| Reglas locales de agentes | `AGENTS.md` | Guia de agentes especifica del proyecto. |
+| Verdad funcional vigente | `openspec/specs/*/spec.md` | Comportamiento aprobado. |
+| Cambio activo | `openspec/changes/<change-id>/proposal.md` | Intencion, alcance y no alcance. |
+| Diseno del cambio | `openspec/changes/<change-id>/design.md` | Diseno tecnico del cambio. |
+| Tareas del cambio | `openspec/changes/<change-id>/tasks.md` | Checklist ejecutable. |
+| Arquitectura estable | `docs/architecture/system.md` | Componentes, contratos y datos estables. |
+| Decisiones | `decisions/decision_log.md` | Indice breve de decisiones aprobadas. |
+| ADRs | `decisions/adr/*.md` | Decisiones estructurales o de alto impacto. |
+| Hechos | `memory/facts.md` | Contexto confirmado. |
+| Restricciones | `memory/constraints.md` | Limites vigentes. |
+| Patrones | `memory/patterns.md` | Formas aprobadas de trabajar. |
+| Glosario | `memory/glossary.md` | Terminos opcionales del dominio. |
+| Graphify | `graphify-out/GRAPH_REPORT.md` | Contexto derivado, no canonico. |
 
-## Rule
+## Regla
 
-Functional behavior starts in OpenSpec. Graphify helps navigation but never replaces canonical sources.
+El comportamiento funcional empieza en OpenSpec. Graphify ayuda a navegar, pero nunca reemplaza fuentes canonicas.

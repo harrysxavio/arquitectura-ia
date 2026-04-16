@@ -1,6 +1,6 @@
 ﻿# Arquitectura Transversal para IA
 
-Framework documental para trabajar con agentes de IA usando contexto minimo, fuentes de verdad claras y flujo OpenSpec-first.
+Framework documental para trabajar con agentes de IA con contexto minimo, fuentes de verdad claras y flujo OpenSpec-first.
 
 Principio rector:
 
@@ -12,9 +12,6 @@ Principio rector:
 /
 |-- README.md
 |-- AGENTS.md
-|-- ARCHITECTURE_REDESIGN_PROPOSAL.md
-|-- ARCHITECTURE_MIGRATION_PLAN.md
-|-- ARCHITECTURE_MIGRATION_REPORT.md
 |-- OPERACION/
 |-- GRAPHIFY/
 |-- PROJECT_BLUEPRINT/
@@ -46,7 +43,7 @@ En proyectos activos, OpenSpec gobierna comportamiento y cambios:
 | Capa | Proposito | Autoridad |
 |---|---|---|
 | `OPERACION/` | Router, constraints y contratos de agentes. | Si, para ejecucion. |
-| `PROJECT_BLUEPRINT/` | Guia compacta para adoptar el modelo OpenSpec-first. | Si, para estructura recomendada. |
+| `PROJECT_BLUEPRINT/` | Guia compacta para entender y adoptar el modelo. | Si, para estructura recomendada. |
 | `PROJECT_TEMPLATE/` | Molde reusable para iniciar proyectos. | Se vuelve canonico al instanciarse. |
 | `SAMPLE_PROJECT/` | Laboratorio pedagogico con codigo, OpenSpec y validacion. | No para otros proyectos; si para el ejemplo. |
 | `GRAPHIFY/` | Politica de contexto estructural derivado. | Politica si; outputs no. |
@@ -54,13 +51,20 @@ En proyectos activos, OpenSpec gobierna comportamiento y cambios:
 | `SATELLITE/` | Politicas para conocimiento externo. | No gobierna el proyecto activo. |
 | `ARCHIVE/` | Historia y legacy no canonico. | No. |
 
-## Ruta de Lectura
+## Ruta Recomendada
 
 ```text
 framework -> blueprint -> template -> sample -> proyecto activo
 ```
 
-Para una tarea en un proyecto activo, empieza por `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y la fuente OpenSpec relevante. Escala a arquitectura, decisiones, memoria o Graphify solo si la tarea lo justifica.
+- Usa `PROJECT_BLUEPRINT/` para entender la arquitectura.
+- Usa `PROJECT_TEMPLATE/` para iniciar un proyecto real.
+- Usa `SAMPLE_PROJECT/` para ver un ejemplo completo, ejecutable y validable.
+- En un proyecto activo, empieza por `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md` y la fuente OpenSpec relevante.
+
+## Documentacion Interna
+
+Los documentos `ARCHITECTURE_REDESIGN_PROPOSAL.md` y `ARCHITECTURE_MIGRATION_PLAN.md` son historial interno de decision y migracion. No forman parte del mapa principal de uso diario.
 
 ## Regla Final
 

@@ -1,30 +1,30 @@
 ﻿# CONTEXT_INDEX.md
 
-> Official source map for SAMPLE_PROJECT.
+> Mapa de fuentes oficiales de `SAMPLE_PROJECT/`.
 
-| Need | File | Use |
+| Necesidad | Archivo | Uso |
 |---|---|---|
-| Onboarding | `README.md` | Quick start for humans. |
-| Identity and scope | `PROJECT_GUIDE.md` | What this sample is and is not. |
-| Local agent rules | `AGENTS.md` | Agent behavior inside the sample. |
-| Functional truth | `openspec/specs/support-requests/spec.md` | Approved support request behavior. |
-| Active change | `openspec/changes/add-security-priority/proposal.md` | Intent and scope of the example change. |
-| Change design | `openspec/changes/add-security-priority/design.md` | Technical design of the example change. |
-| Change tasks | `openspec/changes/add-security-priority/tasks.md` | Executable checklist. |
-| Stable architecture | `docs/architecture/system.md` | CLI, modules, data and tests. |
-| Decisions | `decisions/decision_log.md` | Short decision index. |
-| ADRs | `decisions/adr/*.md` | Structural decisions. |
-| Facts | `memory/facts.md` | Confirmed compact facts. |
-| Constraints | `memory/constraints.md` | Current limits. |
-| Patterns | `memory/patterns.md` | Approved patterns and anti-patterns. |
-| Glossary | `memory/glossary.md` | Domain terms. |
-| App CLI | `app.py` | Executable demo and commands. |
-| Code | `src/*.py` | Implementation. |
-| Tests | `tests/*.py` | Validation. |
-| Runtime data | `data/requests.json` | Local runtime data, not canonical. |
-| Graphify | `graphify-out/GRAPH_REPORT.md` | Derived context only. |
-| Validation guide | `VALIDATION_GUIDE.md` | How to validate the sample. |
+| Onboarding | `README.md` | Entrada rapida para humanos. |
+| Identidad y alcance | `PROJECT_GUIDE.md` | Que es y que no es el ejemplo. |
+| Reglas locales de agentes | `AGENTS.md` | Como operar agentes dentro del sample. |
+| Verdad funcional | `openspec/specs/support-requests/spec.md` | Comportamiento aprobado del flujo de solicitudes. |
+| Cambio activo | `openspec/changes/add-security-priority/proposal.md` | Intencion y alcance del cambio ejemplo. |
+| Diseno del cambio | `openspec/changes/add-security-priority/design.md` | Diseno tecnico del cambio ejemplo. |
+| Tareas del cambio | `openspec/changes/add-security-priority/tasks.md` | Checklist ejecutable. |
+| Arquitectura estable | `docs/architecture/system.md` | CLI, modulos, datos y tests. |
+| Decisiones | `decisions/decision_log.md` | Indice breve de decisiones. |
+| ADRs | `decisions/adr/*.md` | Decisiones estructurales. |
+| Hechos | `memory/facts.md` | Hechos confirmados y problemas vigentes. |
+| Restricciones | `memory/constraints.md` | Limites actuales. |
+| Patrones | `memory/patterns.md` | Patrones y anti-patrones aprobados. |
+| Glosario | `memory/glossary.md` | Terminos del dominio. |
+| CLI | `app.py` | Demo y comandos ejecutables. |
+| Codigo | `src/*.py` | Implementacion. |
+| Tests | `tests/*.py` | Validacion automatizada. |
+| Datos runtime | `data/requests.json` | Datos locales de ejecucion, no canonicos. |
+| Graphify | `graphify-out/GRAPH_REPORT.md` | Contexto derivado, no canonico. |
+| Guia de validacion | `VALIDATION_GUIDE.md` | Como validar el ejemplo y el valor de Graphify. |
 
-## Rule
+## Regla
 
-Start from OpenSpec for behavior and from the active change for work in progress. Use Graphify only to navigate.
+Para comportamiento, empezar por OpenSpec. Para trabajo en curso, abrir el change activo. Usar Graphify solo para orientar navegacion e impacto.
