@@ -1,6 +1,6 @@
-﻿# CONSTRAINTS: Architecture
+﻿# RESTRICCIONES: Arquitectura
 
-## Required Project Base
+## Base Obligatoria de Proyecto
 
 - `AGENTS.md`
 - `PROJECT_GUIDE.md`
@@ -12,9 +12,9 @@
 - `memory/constraints.md`
 - `memory/patterns.md`
 
-## Rules
+## Reglas
 
-- OpenSpec governs functional behavior and active changes.
-- Stable architecture lives in one system document.
-- Decisions stay short unless an ADR is justified.
-- Graphify is derived and cannot override canonical sources.
+- OpenSpec gobierna comportamiento funcional y cambios activos.
+- La arquitectura estable vive en un unico documento de sistema.
+- Las decisiones se mantienen breves salvo que un ADR este justificado.
+- Graphify es derivado y no puede reemplazar fuentes canonicas.

@@ -1,14 +1,14 @@
-﻿# Example: New Feature
+﻿# Ejemplo: Nueva Funcionalidad
 
-## Context
+## Contexto
 
-A feature starts as an OpenSpec change.
+Una funcionalidad empieza como cambio OpenSpec.
 
-## Flow
+## Flujo
 
-1. Create or select `openspec/changes/<change-id>/proposal.md`.
-2. Add functional deltas under `openspec/changes/<change-id>/specs/`.
-3. Add `design.md` if architecture, data or contracts change.
-4. Track execution in `tasks.md` inside the change.
-5. Update stable specs after approval/archive.
-6. Keep memory and decisions compact.
+1. Crear o seleccionar `openspec/changes/<change-id>/proposal.md`.
+2. Agregar deltas funcionales bajo `openspec/changes/<change-id>/specs/`.
+3. Agregar `design.md` si cambian arquitectura, datos o contratos.
+4. Registrar la ejecucion en `tasks.md` dentro del cambio.
+5. Actualizar las specs estables despues de aprobacion/archivo.
+6. Mantener memoria y decisiones compactas.

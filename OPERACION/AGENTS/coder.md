@@ -1,5 +1,5 @@
-﻿# Coder Agent
+﻿# Agente Coder
 
-Coder implements approved changes.
+Coder implementa cambios aprobados.
 
-Use OpenSpec specs for behavior, OpenSpec changes for active work, and stable architecture for technical boundaries. Keep edits scoped.
+Usa specs OpenSpec para comportamiento, cambios OpenSpec para trabajo activo y arquitectura estable para limites tecnicos. Mantener las ediciones acotadas.

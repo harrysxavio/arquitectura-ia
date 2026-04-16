@@ -1,14 +1,14 @@
-﻿# Decision Log
+﻿# Registro de Decisiones
 
-> Short index of approved, current decisions for SAMPLE_PROJECT.
+> Indice breve de decisiones aprobadas y vigentes para SAMPLE_PROJECT.
 
-| Date | Decision | Impact | Reference |
+| Fecha | Decision | Impacto | Referencia |
 |---|---|---|---|
-| 2026-04-13 | Keep functional behavior in versioned project docs before automation. | The CLI implements approved behavior instead of governing it. | `decisions/adr/0001-documentar-triage-en-markdown.md` |
-| 2026-04-13 | Treat Graphify as derived context only. | `graphify-out/` can guide navigation but cannot override OpenSpec or decisions. | `GRAPHIFY/GRAPHIFY_POLICY.md` |
-| 2026-04-13 | Keep the automation minimal and pedagogical. | `app.py`, `src/`, `tests/` and `data/` remain example assets, not production scaffolding. | `docs/architecture/system.md` |
-| 2026-04-16 | Adopt OpenSpec-first architecture for the sample. | Functional authority moves to `openspec/specs/support-requests/spec.md`; active change flow moves to `openspec/changes/*`. | `openspec/changes/add-security-priority/proposal.md` |
+| 2026-04-13 | Mantener comportamiento funcional en docs versionados del proyecto antes de automatizar. | La CLI implementa comportamiento aprobado en vez de gobernarlo. | `decisions/adr/0001-documentar-triage-en-markdown.md` |
+| 2026-04-13 | Tratar Graphify solo como contexto derivado. | `graphify-out/` puede guiar navegacion, pero no reemplazar OpenSpec ni decisiones. | `GRAPHIFY/GRAPHIFY_POLICY.md` |
+| 2026-04-13 | Mantener la automatizacion minima y pedagogica. | `app.py`, `src/`, `tests/` y `data/` siguen siendo recursos de ejemplo, no estructura productiva. | `docs/architecture/system.md` |
+| 2026-04-16 | Adoptar arquitectura OpenSpec-first para el ejemplo. | La autoridad funcional pasa a `openspec/specs/support-requests/spec.md`; el flujo de cambio activo pasa a `openspec/changes/*`. | `openspec/changes/add-security-priority/proposal.md` |
 
-## Rule
+## Regla
 
-Keep this file as a short index. Use ADRs for structural decisions and OpenSpec changes for active change rationale.
+Mantener este archivo como indice breve. Usar ADRs para decisiones estructurales y cambios OpenSpec para justificar cambios activos.

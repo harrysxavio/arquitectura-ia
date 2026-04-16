@@ -1,21 +1,21 @@
-﻿# Constraints
+﻿# Restricciones
 
-> Compact constraints for a project instantiated from this template.
+> Restricciones compactas para un proyecto instanciado desde esta plantilla.
 
-## Technical
+## Tecnicas
 
-- Keep functional behavior in OpenSpec.
-- Keep stable architecture in `docs/architecture/system.md`.
-- Keep Graphify derived.
+- Mantener comportamiento funcional en OpenSpec.
+- Mantener arquitectura estable en `docs/architecture/system.md`.
+- Mantener Graphify como derivado.
 
-## Business
+## Negocio
 
-- TBD
+- Por definir
 
-## Security
+## Seguridad
 
-- Do not store real secrets, credentials or tokens in Markdown.
+- No almacenar secretos, credenciales ni tokens reales en Markdown.
 
-## Cost
+## Costo
 
-- TBD
+- Por definir

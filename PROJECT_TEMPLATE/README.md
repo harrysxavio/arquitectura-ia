@@ -25,7 +25,7 @@ PROJECT_TEMPLATE/
 
 ## Uso
 
-1. Copiar o adaptar el template en un proyecto real.
+1. Copiar o adaptar la plantilla en un proyecto real.
 2. Completar `PROJECT_GUIDE.md` y `CONTEXT_INDEX.md`.
 3. Crear specs por capability en `openspec/specs/`.
 4. Usar `openspec/changes/` para cambios activos.

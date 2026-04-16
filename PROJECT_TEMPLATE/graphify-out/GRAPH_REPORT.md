@@ -1,5 +1,5 @@
-﻿# Graph Report Placeholder
+﻿# Placeholder de Reporte Graphify
 
-This is a placeholder for derived Graphify output in a project instantiated from the template.
+Este es un placeholder para salida derivada de Graphify en un proyecto instanciado desde la plantilla.
 
-Graphify helps navigation and impact analysis. It is not a source of truth and does not replace OpenSpec, architecture, decisions or memory.
+Graphify ayuda con navegacion y analisis de impacto. No es fuente de verdad y no reemplaza OpenSpec, arquitectura, decisiones ni memoria.

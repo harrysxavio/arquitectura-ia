@@ -1,14 +1,14 @@
-﻿# Example: Bug Investigation
+﻿# Ejemplo: Investigacion de Bug
 
-## Context
+## Contexto
 
-Start with `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, affected logs/tests and the relevant OpenSpec spec if behavior is involved.
+Empieza con `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, logs/tests afectados y la spec OpenSpec relevante si hay comportamiento involucrado.
 
-## Flow
+## Flujo
 
-1. Confirm expected behavior in OpenSpec.
-2. Reproduce with focused tests.
-3. Inspect affected code.
-4. Use compact memory only if prior facts or constraints matter.
-5. Use Graphify only if impact is broad or ownership is unclear.
-6. Record durable decisions in `decisions/decision_log.md` or an ADR.
+1. Confirmar el comportamiento esperado en OpenSpec.
+2. Reproducir con tests enfocados.
+3. Inspeccionar el codigo afectado.
+4. Usar memoria compacta solo si importan hechos o restricciones previas.
+5. Usar Graphify solo si el impacto es amplio o la propiedad no esta clara.
+6. Registrar decisiones durables en `decisions/decision_log.md` o en un ADR.

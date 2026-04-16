@@ -59,6 +59,6 @@ project/
 
 ## Cuando Usar Graphify
 
-Usarlo para onboarding tecnico, impacto multiarchivo, refactors y tareas ambiguas.
+Usarlo para incorporacion tecnica, impacto multiarchivo, refactors y tareas ambiguas.
 
 No usarlo como paso obligatorio en cambios locales, ajustes triviales o cuando el archivo afectado ya esta claro.

@@ -1,15 +1,15 @@
-﻿# CONSTRAINTS: Memory
+﻿# RESTRICCIONES: Memoria
 
-## Official Memory
+## Memoria Oficial
 
-- `memory/facts.md`: confirmed facts and current issues.
-- `memory/constraints.md`: current technical, business, security and cost limits.
-- `memory/patterns.md`: approved patterns and anti-patterns.
-- `memory/glossary.md`: optional domain terms.
-- `decisions/decision_log.md`: short index of approved decisions.
+- `memory/facts.md`: hechos confirmados y problemas vigentes.
+- `memory/constraints.md`: limites tecnicos, de negocio, seguridad y costo vigentes.
+- `memory/patterns.md`: patrones y antipatrones aprobados.
+- `memory/glossary.md`: terminos opcionales del dominio.
+- `decisions/decision_log.md`: indice breve de decisiones aprobadas.
 
-## Rules
+## Reglas
 
-- Memory is compact, current and actionable.
-- Memory does not duplicate OpenSpec or architecture.
-- Derived context must be validated before becoming memory.
+- La memoria es compacta, vigente y accionable.
+- La memoria no duplica OpenSpec ni arquitectura.
+- El contexto derivado debe validarse antes de convertirse en memoria.

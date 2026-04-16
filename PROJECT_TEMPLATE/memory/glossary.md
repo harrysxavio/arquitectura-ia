@@ -1,9 +1,9 @@
-﻿# Glossary
+﻿# Glosario
 
-> Optional. Use only when the domain has ambiguous terms.
+> Opcional. Usar solo cuando el dominio tenga terminos ambiguos.
 
-| Term | Meaning |
+| Termino | Significado |
 |---|---|
-| Capability | A coherent area of user-visible behavior described by an OpenSpec spec. |
-| Change | A proposed modification under `openspec/changes/*`. |
-| Derived context | Generated navigation help, such as Graphify output, without authority. |
+| Capability | Area coherente de comportamiento visible para usuarios descrita por una spec OpenSpec. |
+| Change | Modificacion propuesta bajo `openspec/changes/*`. |
+| Contexto derivado | Ayuda de navegacion generada, como salida de Graphify, sin autoridad. |

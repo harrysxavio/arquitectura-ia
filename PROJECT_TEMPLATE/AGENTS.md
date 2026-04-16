@@ -1,20 +1,20 @@
 ﻿# AGENTS.md
 
-> Template for project-local agent guidance.
+> Plantilla para guia local de agentes del proyecto.
 
-## Context Order
+## Orden de Contexto
 
 1. `PROJECT_GUIDE.md`
 2. `CONTEXT_INDEX.md`
-3. Relevant `openspec/specs/*/spec.md`
-4. Active `openspec/changes/*` when a change is in progress
-5. `docs/architecture/system.md` for structural work
-6. `decisions/decision_log.md` and memory only when needed
-7. `graphify-out/*` for derived navigation on broad or ambiguous tasks
+3. Spec relevante en `openspec/specs/*/spec.md`
+4. `openspec/changes/*` activo cuando hay un cambio en curso
+5. `docs/architecture/system.md` para trabajo estructural
+6. `decisions/decision_log.md` y memoria solo cuando haga falta
+7. `graphify-out/*` para navegacion derivada en tareas amplias o ambiguas
 
-## Rules
+## Reglas
 
-- Do not duplicate functional behavior outside OpenSpec.
-- Do not treat Graphify as authority.
-- Keep memory compact and current.
-- Keep decisions short unless an ADR is justified.
+- No duplicar comportamiento funcional fuera de OpenSpec.
+- No tratar Graphify como autoridad.
+- Mantener memoria compacta y vigente.
+- Mantener decisiones breves salvo que un ADR este justificado.

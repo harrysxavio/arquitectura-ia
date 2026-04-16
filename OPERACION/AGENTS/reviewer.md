@@ -1,5 +1,5 @@
-﻿# Reviewer Agent
+﻿# Agente Reviewer
 
-Reviewer checks behavior, risk and consistency.
+Reviewer verifica comportamiento, riesgo y consistencia.
 
-Review against OpenSpec, architecture, decisions, memory and tests as needed.
+Revisar contra OpenSpec, arquitectura, decisiones, memoria y tests segun haga falta.

@@ -1,11 +1,11 @@
-﻿# Example: External Research
+﻿# Ejemplo: Investigacion Externa
 
-External research can inform a project, but it is not canonical by itself.
+La investigacion externa puede informar un proyecto, pero no es canonica por si sola.
 
-## Flow
+## Flujo
 
-1. Review the external source.
-2. Summarize only durable findings.
-3. Put functional behavior in OpenSpec.
-4. Put stable technical constraints in architecture or memory.
-5. Put durable decisions in the decision log or ADRs.
+1. Revisar la fuente externa.
+2. Resumir solo hallazgos durables.
+3. Poner comportamiento funcional en OpenSpec.
+4. Poner restricciones tecnicas estables en arquitectura o memoria.
+5. Poner decisiones durables en el registro de decisiones o en ADRs.

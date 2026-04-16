@@ -1,51 +1,51 @@
-﻿# System Architecture
+﻿# Arquitectura del Sistema
 
-> Stable technical architecture for the SAMPLE_PROJECT support desk example.
+> Arquitectura tecnica estable para el ejemplo de mesa de soporte de SAMPLE_PROJECT.
 
-## Purpose
+## Proposito
 
-Describe the stable technical shape of the sample CLI app without duplicating functional rules. Functional behavior lives in `openspec/specs/support-requests/spec.md`; active changes live in `openspec/changes/*`.
+Describe la forma tecnica estable de la app CLI de ejemplo sin duplicar reglas funcionales. El comportamiento funcional vive en `openspec/specs/support-requests/spec.md`; los cambios activos viven en `openspec/changes/*`.
 
-## Context
+## Contexto
 
-`SAMPLE_PROJECT/` is a small pedagogical project, not a production template. It demonstrates how documentation, code, decisions, memory, tests and Graphify can coexist with compact context.
+`SAMPLE_PROJECT/` es un proyecto pedagogico pequeno, no una plantilla productiva. Demuestra como documentacion, codigo, decisiones, memoria, tests y Graphify pueden coexistir con contexto compacto.
 
-## Components
+## Componentes
 
-| Component | Role |
+| Componente | Rol |
 |---|---|
-| `app.py` | CLI entrypoint for `demo`, `create`, `list` and `close`. |
-| `src/enums.py` | Domain enums for type, priority and status. |
-| `src/models.py` | Request data model. |
-| `src/triage.py` | Initial priority and next-status helper logic. |
-| `src/service.py` | Application service for create, list and close operations. |
-| `src/storage.py` | JSON runtime persistence. |
-| `src/reporter.py` | Text output formatting. |
-| `tests/` | Unit tests for triage, service and storage behavior. |
-| `data/requests.json` | Runtime example data; not canonical. |
-| `graphify-out/` | Derived structural context; not canonical. |
+| `app.py` | Entry point CLI para `demo`, `create`, `list` y `close`. |
+| `src/enums.py` | Enums de dominio para tipo, prioridad y estado. |
+| `src/models.py` | Modelo de datos de solicitud. |
+| `src/triage.py` | Logica auxiliar de prioridad inicial y siguiente estado. |
+| `src/service.py` | Servicio de aplicacion para operaciones de crear, listar y cerrar. |
+| `src/storage.py` | Persistencia JSON de ejecucion. |
+| `src/reporter.py` | Formato de salida de texto. |
+| `tests/` | Tests unitarios para comportamiento de triage, servicio y almacenamiento. |
+| `data/requests.json` | Datos de ejecucion de ejemplo; no canonicos. |
+| `graphify-out/` | Contexto estructural derivado; no canonico. |
 
-## Contracts
+## Contratos
 
-A support request contains title, description, area, type, priority, status, optional owner, optional closing note and timestamps. The approved behavior is governed by OpenSpec.
+Una solicitud de soporte contiene titulo, descripcion, area, tipo, prioridad, estado, responsable opcional, nota de cierre opcional y timestamps. El comportamiento aprobado lo gobierna OpenSpec.
 
-## Data
+## Datos
 
-There is no production database and no migration system. `data/requests.json` exists only to run the local example.
+No hay base de datos productiva ni sistema de migraciones. `data/requests.json` existe solo para ejecutar el ejemplo local.
 
-## Risks
+## Riesgos
 
-- Treating the sample as a production app.
-- Treating runtime JSON as an authority.
-- Treating Graphify output as a source of truth.
+- Tratar el ejemplo como app productiva.
+- Tratar JSON de ejecucion como autoridad.
+- Tratar salida de Graphify como fuente de verdad.
 
-## Validation
+## Validacion
 
-From `SAMPLE_PROJECT/`:
+Desde `SAMPLE_PROJECT/`:
 
 ```bash
 python -B -m unittest discover -s tests
 python -B app.py demo
 ```
 
-Graphify can be regenerated when available, but its output remains derived.
+Graphify puede regenerarse cuando este disponible, pero su salida sigue siendo derivada.

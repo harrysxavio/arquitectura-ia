@@ -1,56 +1,56 @@
 ﻿# PROJECT_GUIDE.md
 
-> Canonical identity and scope for SAMPLE_PROJECT.
+> Identidad y alcance canonicos para SAMPLE_PROJECT.
 
-## Identity
+## Identidad
 
-- Name: Mesa Interna de Soporte Operativo.
-- Primary user: operations coordinators and internal teams requesting support.
-- Problem solved: centralize internal requests, classify priority and keep traceability.
+- Nombre: Mesa Interna de Soporte Operativo.
+- Usuario principal: coordinadores de operaciones y equipos internos que solicitan soporte.
+- Problema que resuelve: centralizar solicitudes internas, clasificar prioridad y mantener trazabilidad.
 
-## Scope
+## Alcance
 
-Included:
+Incluido:
 
-- Manual registration of internal requests.
-- Request type, area, status and priority tracking.
-- Basic CLI flow for create, list, demo and close.
-- OpenSpec documentation for approved behavior and active changes.
-- Runtime JSON persistence for the example.
+- Registro manual de solicitudes internas.
+- Seguimiento de tipo, area, estado y prioridad de solicitudes.
+- Flujo CLI basico para `create`, `list`, `demo` y `close`.
+- Documentacion OpenSpec para comportamiento aprobado y cambios activos.
+- Persistencia JSON de ejecucion para el ejemplo.
 
-Out of scope:
+Fuera de alcance:
 
-- Real authentication.
-- External help desk integration.
-- Production database.
-- Automatic notifications.
-- Full web interface.
-- Production template for new systems.
+- Autenticacion real.
+- Integracion con mesa de ayuda externa.
+- Base de datos productiva.
+- Notificaciones automaticas.
+- Interfaz web completa.
+- Plantilla productiva para sistemas nuevos.
 
-## Structure
+## Estructura
 
-- `openspec/`: functional truth and active changes.
-- `docs/architecture/system.md`: stable technical architecture.
-- `decisions/`: short decision index and ADRs.
-- `memory/`: compact facts, constraints, patterns and glossary.
-- `app.py`, `src/`, `tests/`, `data/`: pedagogical CLI app.
-- `graphify-out/`: derived structural context.
-- `ARCHIVE/legacy-open-spec-migration/`: historical migration evidence at repo root.
+- `openspec/`: verdad funcional y cambios activos.
+- `docs/architecture/system.md`: arquitectura tecnica estable.
+- `decisions/`: indice breve de decisiones y ADRs.
+- `memory/`: hechos, restricciones, patrones y glosario compactos.
+- `app.py`, `src/`, `tests/`, `data/`: app CLI pedagogica.
+- `graphify-out/`: contexto estructural derivado.
+- `ARCHIVE/legacy-open-spec-migration/`: evidencia historica de migracion en la raiz del repo.
 
 ## Stack
 
-- Backend: Python standard library.
-- Frontend: none.
-- Data: local JSON runtime file.
-- Hosting: none.
+- Backend: biblioteca estandar de Python.
+- Frontend: ninguno.
+- Datos: archivo JSON de ejecucion local.
+- Hosting: ninguno.
 
-## Constraints
+## Restricciones
 
-- Keep the sample small and pedagogical.
-- Do not treat runtime data as authority.
-- Do not treat Graphify output as authority.
-- Do not store real secrets or personal data.
+- Mantener el ejemplo pequeno y pedagogico.
+- No tratar datos de ejecucion como autoridad.
+- No tratar salidas de Graphify como autoridad.
+- No almacenar secretos ni datos personales reales.
 
-## Rule
+## Regla
 
-Functional behavior lives in OpenSpec. This guide explains identity and scope only.
+El comportamiento funcional vive en OpenSpec. Esta guia solo explica identidad y alcance.

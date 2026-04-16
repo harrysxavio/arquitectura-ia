@@ -1,10 +1,10 @@
-﻿# Glossary
+﻿# Glosario
 
-> Terms used in the SAMPLE_PROJECT support desk example.
+> Terminos usados en el ejemplo de mesa de soporte de SAMPLE_PROJECT.
 
-| Term | Meaning |
+| Termino | Significado |
 |---|---|
-| Support request | Internal operations request tracked by the sample CLI. |
-| Triage | Classification and priority review before assignment. |
-| Runtime data | Local example data used by the CLI, without canonical authority. |
-| Derived context | Generated navigation help, such as Graphify output, without authority. |
+| Solicitud de soporte | Solicitud interna de operaciones seguida por la CLI de ejemplo. |
+| Triage | Clasificacion y revision de prioridad antes de asignar. |
+| Datos de ejecucion | Datos locales de ejemplo usados por la CLI, sin autoridad canonica. |
+| Contexto derivado | Ayuda de navegacion generada, como salida de Graphify, sin autoridad. |

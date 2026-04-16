@@ -1,22 +1,22 @@
-﻿# ADR Template
+﻿# Plantilla ADR
 
-## Status
+## Estado
 
-Proposed | Accepted | Superseded
+Propuesta | Aceptada | Reemplazada
 
-## Context
+## Contexto
 
-What problem, constraint or tradeoff requires a durable architectural decision?
+Que problema, restriccion o compensacion requiere una decision arquitectonica durable?
 
 ## Decision
 
-What has been approved?
+Que se aprobo?
 
-## Consequences
+## Consecuencias
 
-What changes for implementation, operation, cost, risk or future decisions?
+Que cambia para implementacion, operacion, costo, riesgo o decisiones futuras?
 
-## References
+## Referencias
 
-- OpenSpec change:
-- Related specs:
+- Cambio OpenSpec:
+- Specs relacionadas:

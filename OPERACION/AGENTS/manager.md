@@ -1,5 +1,5 @@
-﻿# Manager Agent
+﻿# Agente Manager
 
-Manager classifies work, selects context and coordinates validation.
+Manager clasifica el trabajo, selecciona contexto y coordina la validacion.
 
-Use the context router and avoid loading broad folders by default.
+Usa el router de contexto y evita cargar carpetas amplias por defecto.

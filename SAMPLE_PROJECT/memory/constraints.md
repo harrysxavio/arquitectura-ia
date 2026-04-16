@@ -1,26 +1,26 @@
-﻿# Constraints
+﻿# Restricciones
 
-> Compact constraints for the SAMPLE_PROJECT support desk example.
+> Restricciones compactas para el ejemplo de mesa de soporte de SAMPLE_PROJECT.
 
-## Technical
+## Tecnicas
 
-- Do not turn the sample into a production app.
-- Do not add runtime dependencies for the mini app.
-- Keep code small and aligned with OpenSpec.
-- Do not treat runtime JSON as canonical.
-- Do not treat Graphify output as a source of truth.
+- No convertir el ejemplo en app productiva.
+- No agregar dependencias de ejecucion para la mini app.
+- Mantener el codigo pequeno y alineado con OpenSpec.
+- No tratar JSON de ejecucion como canonico.
+- No tratar salida de Graphify como fuente de verdad.
 
-## Business
+## Negocio
 
-- Cover only internal operations support requests.
-- Do not model external customer support.
-- Do not store real person, customer or incident data.
+- Cubrir solo solicitudes internas de soporte operativo.
+- No modelar soporte a clientes externos.
+- No almacenar datos reales de personas, clientes ni incidentes.
 
-## Security
+## Seguridad
 
-- Do not store credentials, tokens or secrets in Markdown.
-- `.env.example` may contain dummy variable names only.
+- No almacenar credenciales, tokens ni secretos en Markdown.
+- `.env.example` puede contener solo nombres de variables dummy.
 
-## Cost
+## Costo
 
-- Do not add paid services or hosting.
+- No agregar servicios pagos ni hosting.

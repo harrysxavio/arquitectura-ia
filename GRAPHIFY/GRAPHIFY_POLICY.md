@@ -2,30 +2,30 @@
 
 ## Rol
 
-Graphify is derived structural context. It helps with navigation, onboarding, impact analysis and broad refactors.
+Graphify es contexto estructural derivado. Ayuda con navegacion, incorporacion tecnica, analisis de impacto y refactors amplios.
 
-## Authority
+## Autoridad
 
-Graphify is never canonical. It does not replace:
+Graphify nunca es canonico. No reemplaza:
 
-- OpenSpec specs
-- OpenSpec changes
-- stable architecture
-- decisions
-- compact memory
+- specs OpenSpec
+- cambios OpenSpec
+- arquitectura estable
+- decisiones
+- memoria compacta
 
-## When to Use
+## Cuando Usarlo
 
-Use Graphify for:
+Usa Graphify para:
 
-- broad architecture questions;
-- unclear ownership;
-- multi-module impact;
-- onboarding;
-- refactors where navigation cost is high.
+- preguntas amplias de arquitectura;
+- propiedad poco clara;
+- impacto entre multiples modulos;
+- incorporacion tecnica;
+- refactors donde el costo de navegacion es alto.
 
-Do not use it by default for local edits, typos or obvious one-file changes.
+No usarlo por defecto para ediciones locales, typos o cambios obvios de un solo archivo.
 
-## Governance
+## Gobernanza
 
-If Graphify reveals a relation that should govern the project, validate it against source files and then record it in OpenSpec, architecture, decisions or memory.
+Si Graphify revela una relacion que debe gobernar el proyecto, validala contra archivos fuente y luego registrala en OpenSpec, arquitectura, decisiones o memoria.

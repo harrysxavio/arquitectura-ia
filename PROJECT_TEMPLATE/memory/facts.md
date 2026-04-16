@@ -1,22 +1,22 @@
-﻿# Facts
+﻿# Hechos
 
-> Compact confirmed facts for a project instantiated from this template.
+> Hechos confirmados y compactos para un proyecto instanciado desde esta plantilla.
 
-## Project
+## Proyecto
 
-- Name: TBD
-- Primary user: TBD
-- Runtime environments: TBD
-- Integrations: TBD
+- Nombre: Por definir
+- Usuario principal: Por definir
+- Entornos de ejecucion: Por definir
+- Integraciones: Por definir
 
-## Runtime Data
+## Datos de Ejecucion
 
-- TBD
+- Por definir
 
-## Current Issues
+## Problemas Vigentes
 
-Record only issues that are still relevant to investigation, implementation or support.
+Registrar solo problemas que sigan siendo relevantes para investigacion, implementacion o soporte.
 
-| Issue | Impact | Mitigation |
+| Problema | Impacto | Mitigacion |
 |---|---|---|
-| TBD | TBD | TBD |
+| Por definir | Por definir | Por definir |

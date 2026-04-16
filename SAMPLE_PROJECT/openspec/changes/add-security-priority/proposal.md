@@ -1,29 +1,29 @@
-﻿# Proposal: Add Security Priority
+﻿# Propuesta: Agregar Prioridad de Seguridad
 
-## Summary
+## Resumen
 
-Use OpenSpec changes as the active change flow for the sample project and demonstrate a functional change around security request priority.
+Usar cambios OpenSpec como flujo de cambio activo para el ejemplo y demostrar un cambio funcional sobre prioridad de solicitudes de seguridad.
 
-## Problem
+## Problema
 
-The legacy flow stored active task, implementation plan and open questions in separate task files. That duplicated OpenSpec's role and forced agents to load extra context.
+El flujo heredado guardaba tarea activa, plan de implementacion y preguntas abiertas en archivos de tareas separados. Eso duplicaba el rol de OpenSpec y obligaba a los agentes a cargar contexto extra.
 
-## Goals
+## Objetivos
 
-- Represent the active change in OpenSpec.
-- Keep the approved behavior in the support requests spec.
-- Show how a functional rule change is proposed, designed and validated.
-- Keep the sample pedagogical, not production-grade.
+- Representar el cambio activo en OpenSpec.
+- Mantener el comportamiento aprobado en la spec de solicitudes de soporte.
+- Mostrar como se propone, disena y valida un cambio de regla funcional.
+- Mantener el ejemplo pedagogico, no productivo.
 
-## Non Goals
+## No Objetivos
 
-- Build a production API.
-- Add a web UI.
-- Add a production database.
-- Add external integrations.
+- Construir una API productiva.
+- Agregar una UI web.
+- Agregar una base de datos productiva.
+- Agregar integraciones externas.
 
-## Scope
+## Alcance
 
-- Confirm security requests start with high priority.
-- Keep runtime JSON as non-canonical example data.
-- Validate the CLI and tests against the approved spec.
+- Confirmar que las solicitudes de seguridad empiezan con prioridad alta.
+- Mantener JSON de ejecucion como datos de ejemplo no canonicos.
+- Validar la CLI y los tests contra la spec aprobada.

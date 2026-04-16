@@ -11,7 +11,7 @@
 | Verdad funcional vigente | `openspec/specs/*/spec.md` | Comportamiento aprobado. |
 | Cambio activo | `openspec/changes/<change-id>/proposal.md` | Intencion, alcance y no alcance. |
 | Diseno del cambio | `openspec/changes/<change-id>/design.md` | Diseno tecnico del cambio. |
-| Tareas del cambio | `openspec/changes/<change-id>/tasks.md` | Checklist ejecutable. |
+| Tareas del cambio | `openspec/changes/<change-id>/tasks.md` | Lista ejecutable. |
 | Arquitectura estable | `docs/architecture/system.md` | Componentes, contratos y datos estables. |
 | Decisiones | `decisions/decision_log.md` | Indice breve de decisiones aprobadas. |
 | ADRs | `decisions/adr/*.md` | Decisiones estructurales o de alto impacto. |

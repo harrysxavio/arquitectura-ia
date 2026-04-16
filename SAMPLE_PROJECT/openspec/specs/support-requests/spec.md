@@ -20,7 +20,7 @@ Definir como se crean, clasifican, priorizan, asignan y cierran solicitudes inte
 - Registrar estado como `nueva`, `en triage`, `asignada`, `bloqueada` o `cerrada`.
 - Asignar responsable cuando corresponda.
 - Cerrar una solicitud con una nota breve.
-- Usar JSON local solo como persistencia runtime del ejemplo.
+- Usar JSON local solo como persistencia de ejecucion del ejemplo.
 
 ## Fuera de Alcance
 
@@ -29,7 +29,7 @@ Definir como se crean, clasifican, priorizan, asignan y cierran solicitudes inte
 - Adjuntos obligatorios.
 - Portal web productivo.
 - Integraciones externas.
-- Tratar el JSON runtime como autoridad del proyecto.
+- Tratar el JSON de ejecucion como autoridad del proyecto.
 
 ## Requirements
 

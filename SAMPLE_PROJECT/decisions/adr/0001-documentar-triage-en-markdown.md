@@ -1,20 +1,20 @@
-﻿# ADR 0001 - Markdown-first triage documentation
+﻿# ADR 0001 - Documentacion de triage Markdown-first
 
-## Status
+## Estado
 
-Accepted, updated for OpenSpec-first architecture.
+Aceptada, actualizada para arquitectura OpenSpec-first.
 
-## Context
+## Contexto
 
-The sample needs visible, versioned rules before automation. The approved functional rules now live in OpenSpec. The CLI remains an implementation of those rules, not the authority.
+El ejemplo necesita reglas visibles y versionadas antes de automatizar. Las reglas funcionales aprobadas ahora viven en OpenSpec. La CLI sigue siendo una implementacion de esas reglas, no la autoridad.
 
 ## Decision
 
-Use OpenSpec as the functional source and keep stable technical architecture in `docs/architecture/system.md`. Keep the CLI small and pedagogical.
+Usar OpenSpec como fuente funcional y mantener arquitectura tecnica estable en `docs/architecture/system.md`. Mantener la CLI pequena y pedagogica.
 
-## Consequences
+## Consecuencias
 
-- Functional changes start in `openspec/changes/*`.
-- Approved behavior is archived into `openspec/specs/*`.
-- Code and tests should trace back to OpenSpec.
-- Runtime JSON and Graphify output are not canonical.
+- Los cambios funcionales empiezan en `openspec/changes/*`.
+- El comportamiento aprobado se archiva en `openspec/specs/*`.
+- Codigo y tests deben trazar hacia OpenSpec.
+- JSON de ejecucion y salida de Graphify no son canonicos.

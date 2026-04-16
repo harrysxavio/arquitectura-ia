@@ -1,5 +1,5 @@
-﻿# Obsidian Policy
+﻿# Politica de Obsidian
 
-Obsidian can hold personal notes, maps or thinking aids. It is not canonical for an active project.
+Obsidian puede contener notas personales, mapas o apoyos de pensamiento. No es canonico para un proyecto activo.
 
-Canonical project knowledge lives in OpenSpec, architecture, decisions and compact memory.
+El conocimiento canonico del proyecto vive en OpenSpec, arquitectura, decisiones y memoria compacta.

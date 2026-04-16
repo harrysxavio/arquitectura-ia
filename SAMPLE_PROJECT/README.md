@@ -26,7 +26,7 @@ python -B app.py create --title "Acceso VPN" --description "Alta para equipo ope
 python -B app.py list
 ```
 
-`data/requests.json` es runtime local, no fuente de verdad.
+`data/requests.json` es ejecucion local, no fuente de verdad.
 
 ## Como Leer
 

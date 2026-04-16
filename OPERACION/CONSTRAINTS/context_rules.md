@@ -1,13 +1,13 @@
-﻿# CONSTRAINTS: Context Hygiene
+﻿# RESTRICCIONES: Higiene de Contexto
 
-## Principle
+## Principio
 
-Do not load context because it exists. Load it because the task needs it.
+No cargar contexto porque existe. Cargarlo porque la tarea lo necesita.
 
-## Rules
+## Reglas
 
-- Start with project guide, context index and relevant OpenSpec source.
-- Add architecture for technical structure.
-- Add memory only for facts, constraints or patterns that affect the task.
-- Add Graphify only for structural, broad or ambiguous work.
-- If Graphify reveals something canonical, write it back to OpenSpec, architecture, decisions or memory after validation.
+- Empezar con la guia del proyecto, indice de contexto y fuente OpenSpec relevante.
+- Agregar arquitectura para estructura tecnica.
+- Agregar memoria solo para hechos, restricciones o patrones que afecten la tarea.
+- Agregar Graphify solo para trabajo estructural, amplio o ambiguo.
+- Si Graphify revela algo canonico, registrarlo en OpenSpec, arquitectura, decisiones o memoria despues de validarlo.

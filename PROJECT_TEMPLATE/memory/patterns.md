@@ -1,17 +1,17 @@
-﻿# Patterns
+﻿# Patrones
 
-> Compact implementation and documentation patterns.
+> Patrones compactos de implementacion y documentacion.
 
-## Approved
+## Aprobados
 
-- Put functional behavior in `openspec/specs/*/spec.md`.
-- Put active change work in `openspec/changes/*`.
-- Put stable architecture in `docs/architecture/system.md`.
-- Keep `decision_log.md` short and current.
-- Use Graphify only as derived navigation context.
+- Poner comportamiento funcional en `openspec/specs/*/spec.md`.
+- Poner trabajo de cambio activo en `openspec/changes/*`.
+- Poner arquitectura estable en `docs/architecture/system.md`.
+- Mantener `decision_log.md` breve y vigente.
+- Usar Graphify solo como contexto de navegacion derivado.
 
-## Avoid
+## Evitar
 
-- Duplicating functional rules outside OpenSpec.
-- Using memory as a backlog.
-- Treating derived outputs as authority.
+- Duplicar reglas funcionales fuera de OpenSpec.
+- Usar memoria como backlog.
+- Tratar salidas derivadas como autoridad.

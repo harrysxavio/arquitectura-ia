@@ -10,10 +10,10 @@
 | `openspec/specs/*/spec.md` | Verdad funcional vigente. | En cambios de comportamiento. |
 | `openspec/changes/*/proposal.md` | Intencion y alcance del cambio. | En trabajo activo. |
 | `openspec/changes/*/design.md` | Diseno tecnico del cambio. | Si afecta arquitectura, datos o contratos. |
-| `openspec/changes/*/tasks.md` | Checklist de ejecucion. | Durante implementacion y validacion. |
-| `docs/architecture/system.md` | Arquitectura estable. | En cambios estructurales u onboarding tecnico. |
+| `openspec/changes/*/tasks.md` | Lista de ejecucion. | Durante implementacion y validacion. |
+| `docs/architecture/system.md` | Arquitectura estable. | En cambios estructurales o incorporacion tecnica. |
 | `decisions/decision_log.md` | Indice breve de decisiones. | Para entender decisiones vigentes. |
-| `decisions/adr/*.md` | Decisiones de alto impacto. | Cuando una decision necesita contexto y tradeoffs. |
+| `decisions/adr/*.md` | Decisiones de alto impacto. | Cuando una decision necesita contexto y compensaciones explicitas. |
 | `memory/facts.md` | Hechos confirmados. | Para no redescubrir contexto. |
 | `memory/constraints.md` | Restricciones vigentes. | Antes de decidir o ampliar alcance. |
 | `memory/patterns.md` | Patrones aprobados. | Al implementar o revisar consistencia. |

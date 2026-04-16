@@ -1,4 +1,4 @@
-# CONSTRAINTS: Politica de Herramientas y Modelos
+# RESTRICCIONES: Politica de Herramientas y Modelos
 
 ## Regla maestra de adopcion
 

@@ -38,23 +38,27 @@ En proyectos activos, OpenSpec gobierna comportamiento y cambios:
 | Memoria compacta | `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md` |
 | Contexto derivado | `graphify-out/*` |
 
+## Convencion de Idioma
+
+La documentacion humana y explicativa del repositorio se escribe en español. En specs OpenSpec, las keywords estructurales como `Requirement`, `Scenario`, `SHALL`, `WHEN`, `THEN` y `AND` pueden mantenerse en ingles por compatibilidad.
+
 ## Capas
 
 | Capa | Proposito | Autoridad |
 |---|---|---|
-| `OPERACION/` | Router, constraints y contratos de agentes. | Si, para ejecucion. |
+| `OPERACION/` | Router, restricciones y contratos de agentes. | Si, para ejecucion. |
 | `PROJECT_BLUEPRINT/` | Guia compacta para entender y adoptar el modelo. | Si, para estructura recomendada. |
 | `PROJECT_TEMPLATE/` | Molde reusable para iniciar proyectos. | Se vuelve canonico al instanciarse. |
 | `SAMPLE_PROJECT/` | Laboratorio pedagogico con codigo, OpenSpec y validacion. | No para otros proyectos; si para el ejemplo. |
-| `GRAPHIFY/` | Politica de contexto estructural derivado. | Politica si; outputs no. |
-| `THEORY/` | Fundamentos conceptuales. | No para runtime. |
+| `GRAPHIFY/` | Politica de contexto estructural derivado. | Politica si; salidas no. |
+| `THEORY/` | Fundamentos conceptuales. | No para ejecucion. |
 | `SATELLITE/` | Politicas para conocimiento externo. | No gobierna el proyecto activo. |
-| `ARCHIVE/` | Historia y legacy no canonico. | No. |
+| `ARCHIVE/` | Historia y material heredado no canonico. | No. |
 
 ## Ruta Recomendada
 
 ```text
-framework -> blueprint -> template -> sample -> proyecto activo
+framework -> blueprint -> plantilla -> ejemplo -> proyecto activo
 ```
 
 - Usa `PROJECT_BLUEPRINT/` para entender la arquitectura.

@@ -1,15 +1,15 @@
-﻿# Graphify Output Contract
+﻿# Contrato de Salida de Graphify
 
-Graphify outputs are derived artifacts. They may include reports, JSON graphs or visualizations.
+Las salidas de Graphify son artefactos derivados. Pueden incluir reportes, grafos JSON o visualizaciones.
 
-## Expected Outputs
+## Salidas Esperadas
 
 - `graphify-out/GRAPH_REPORT.md`
 - `graphify-out/graph.json`
-- optional visual output if the tool generates it
+- salida visual opcional si la herramienta la genera
 
-## Rules
+## Reglas
 
-- Outputs can be stale.
-- Outputs guide navigation only.
-- Canonical information must live in OpenSpec, architecture, decisions or memory.
+- Las salidas pueden quedar desactualizadas.
+- Las salidas solo guian la navegacion.
+- La informacion canonica debe vivir en OpenSpec, arquitectura, decisiones o memoria.

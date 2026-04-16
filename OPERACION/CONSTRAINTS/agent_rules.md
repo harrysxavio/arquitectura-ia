@@ -1,7 +1,7 @@
-﻿# CONSTRAINTS: Agent Rules
+﻿# RESTRICCIONES: Reglas de Agentes
 
-- Respect the context router.
-- Prefer the smallest sufficient context.
-- Treat OpenSpec as functional authority.
-- Treat Graphify as derived navigation only.
-- Preserve user changes and avoid unrelated refactors.
+- Respetar el router de contexto.
+- Preferir el menor contexto suficiente.
+- Tratar OpenSpec como autoridad funcional.
+- Tratar Graphify solo como navegacion derivada.
+- Preservar cambios del usuario y evitar refactors no relacionados.

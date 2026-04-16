@@ -1,11 +1,11 @@
-﻿# Decision Log
+﻿# Registro de Decisiones
 
-> Template. Short index of approved, current decisions.
+> Plantilla. Indice breve de decisiones aprobadas y vigentes.
 
-| Date | Decision | Impact | Reference |
+| Fecha | Decision | Impacto | Referencia |
 |---|---|---|---|
-| YYYY-MM-DD | TBD | TBD | `decisions/adr/...` or `openspec/changes/...` |
+| YYYY-MM-DD | Por definir | Por definir | `decisions/adr/...` u `openspec/changes/...` |
 
-## Rule
+## Regla
 
-Keep this file brief. Use ADRs for structural or high-impact decisions and OpenSpec changes for active change rationale.
+Mantener este archivo breve. Usar ADRs para decisiones estructurales o de alto impacto y cambios OpenSpec para la justificacion de cambios activos.

@@ -1,25 +1,25 @@
-﻿# Design: Add Security Priority
+﻿# Diseno: Agregar Prioridad de Seguridad
 
-## Context
+## Contexto
 
-The sample app is a small Python CLI with standard-library modules. The stable architecture lives in `docs/architecture/system.md`; this file covers only the active change.
+La app de ejemplo es una CLI pequena de Python con modulos de biblioteca estandar. La arquitectura estable vive en `docs/architecture/system.md`; este archivo cubre solo el cambio activo.
 
 ## Decision
 
-Keep the security priority rule in OpenSpec and reflect it in the existing triage function. Do not introduce API, database migration or new dependency.
+Mantener la regla de prioridad de seguridad en OpenSpec y reflejarla en la funcion de triage existente. No introducir API, migracion de base de datos ni dependencia nueva.
 
-## Impact
+## Impacto
 
-- `src/triage.py` owns the initial priority calculation.
-- `tests/test_triage.py` validates the security priority rule.
-- `app.py` demonstrates the flow through `demo`, `create`, `list` and `close`.
+- `src/triage.py` contiene el calculo de prioridad inicial.
+- `tests/test_triage.py` valida la regla de prioridad de seguridad.
+- `app.py` demuestra el flujo mediante `demo`, `create`, `list` y `close`.
 
-## Data
+## Datos
 
-No persistent schema change. `data/requests.json` remains runtime example data.
+No hay cambio de esquema persistente. `data/requests.json` sigue siendo dato de ejecucion de ejemplo.
 
-## Validation
+## Validacion
 
-- Run unit tests from `SAMPLE_PROJECT/`.
-- Run the CLI demo.
-- Confirm Graphify remains derived context only.
+- Ejecutar tests unitarios desde `SAMPLE_PROJECT/`.
+- Ejecutar el demo CLI.
+- Confirmar que Graphify sigue siendo solo contexto derivado.

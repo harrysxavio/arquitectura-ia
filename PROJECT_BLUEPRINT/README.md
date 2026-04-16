@@ -16,7 +16,7 @@ framework -> PROJECT_BLUEPRINT -> PROJECT_TEMPLATE -> SAMPLE_PROJECT -> proyecto
 - `PROJECT_BLUEPRINT/`: explica como se reparte la autoridad documental.
 - `PROJECT_TEMPLATE/`: entrega el molde reusable para iniciar un proyecto.
 - `SAMPLE_PROJECT/`: muestra el molde aplicado en un caso ejecutable.
-- `proyecto activo`: adapta el template y se gobierna por sus propias fuentes canonicas.
+- `proyecto activo`: adapta la plantilla y se gobierna por sus propias fuentes canonicas.
 
 ## Autoridad Documental
 
@@ -31,10 +31,10 @@ framework -> PROJECT_BLUEPRINT -> PROJECT_TEMPLATE -> SAMPLE_PROJECT -> proyecto
 
 ## Graphify
 
-Graphify entra cuando reduce exploracion: onboarding, impacto transversal, refactors amplios o tareas ambiguas.
+Graphify entra cuando reduce exploracion: incorporacion tecnica, impacto transversal, refactors amplios o tareas ambiguas.
 
 Graphify no entra por defecto en cambios locales, typos, ajustes claros o cuando OpenSpec ya indica exactamente que revisar.
 
 ## Regla
 
-Blueprint orienta; template moldea; sample demuestra; el proyecto activo decide con sus fuentes canonicas.
+Blueprint orienta; la plantilla moldea; el ejemplo demuestra; el proyecto activo decide con sus fuentes canonicas.

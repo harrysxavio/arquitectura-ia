@@ -1,12 +1,12 @@
-﻿# Support Requests Spec Delta
+﻿# Delta de Spec de Solicitudes de Soporte
 
 ## ADDED Requirements
 
-### Requirement: Security requests start high priority
+### Requirement: Solicitudes de seguridad empiezan con prioridad alta
 
-The system SHALL assign high priority to every newly created security request.
+El sistema SHALL asignar prioridad alta a toda nueva solicitud de seguridad.
 
-#### Scenario: New security request
+#### Scenario: Nueva solicitud de seguridad
 
-- WHEN a request is created with type `security`
-- THEN its initial priority is `high`
+- WHEN se crea una solicitud con tipo `seguridad`
+- THEN su prioridad inicial es `alta`

@@ -1,21 +1,21 @@
-﻿# Patterns
+﻿# Patrones
 
-> Compact approved patterns and anti-patterns for the SAMPLE_PROJECT support desk example.
+> Patrones y antipatrones aprobados y compactos para el ejemplo de mesa de soporte de SAMPLE_PROJECT.
 
-## Approved
+## Aprobados
 
-- Document functional behavior in `openspec/specs/support-requests/spec.md`.
-- Represent active work in `openspec/changes/*`.
-- Reflect approved functional behavior in the small CLI automation.
-- Keep decisions brief in `decisions/decision_log.md` and use ADRs for structural decisions.
-- Keep memory short, current and actionable.
-- Use Graphify for navigation and impact analysis only.
-- Use `unittest` and the Python standard library.
+- Documentar comportamiento funcional en `openspec/specs/support-requests/spec.md`.
+- Representar trabajo activo en `openspec/changes/*`.
+- Reflejar comportamiento funcional aprobado en la automatizacion CLI pequena.
+- Mantener decisiones breves en `decisions/decision_log.md` y usar ADRs para decisiones estructurales.
+- Mantener memoria breve, vigente y accionable.
+- Usar Graphify solo para navegacion y analisis de impacto.
+- Usar `unittest` y la biblioteca estandar de Python.
 
-## Avoid
+## Evitar
 
-- Building a production API or UI inside the sample.
-- Treating runtime JSON as canonical.
-- Copying external research directly into canonical docs without review.
-- Treating `SAMPLE_PROJECT/` as a production template.
-- Duplicating theory inside the sample.
+- Construir una API o UI productiva dentro del ejemplo.
+- Tratar JSON de ejecucion como canonico.
+- Copiar investigacion externa directamente a docs canonicos sin revision.
+- Tratar `SAMPLE_PROJECT/` como plantilla productiva.
+- Duplicar teoria dentro del ejemplo.

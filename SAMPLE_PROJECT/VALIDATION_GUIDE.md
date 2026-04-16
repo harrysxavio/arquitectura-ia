@@ -19,7 +19,7 @@ Comprobar:
 - `demo` ejecuta un flujo pequeno completo.
 - Las solicitudes de tipo `seguridad` parten con prioridad `alta`.
 - El cierre sin nota falla con mensaje claro.
-- `data/requests.json` se usa solo como persistencia runtime.
+- `data/requests.json` se usa solo como persistencia de ejecucion.
 
 ## Validacion Documental
 
@@ -38,7 +38,7 @@ La arquitectura funciona si una persona o agente puede responder estas preguntas
 
 | Pregunta | Fuente esperada |
 |---|---|
-| Que problema resuelve el sample? | `PROJECT_GUIDE.md` |
+| Que problema resuelve el ejemplo? | `PROJECT_GUIDE.md` |
 | Donde esta la regla funcional? | `openspec/specs/support-requests/spec.md` |
 | Donde esta el cambio activo? | `openspec/changes/add-security-priority/` |
 | Como esta construida la mini app? | `docs/architecture/system.md` |
@@ -50,7 +50,7 @@ Senales de fallo:
 
 - Hay que leer todo el repo para entender una tarea simple.
 - Una regla funcional aparece como autoridad fuera de OpenSpec.
-- Un output derivado se usa para decidir comportamiento.
+- Una salida derivada se usa para decidir comportamiento.
 - La memoria se convierte en backlog o diario historico.
 
 ## Validacion de Graphify
@@ -63,17 +63,17 @@ graphify update .
 
 Comprobar:
 
-- `graphify-out/GRAPH_REPORT.md` menciona nodos reales del sample.
+- `graphify-out/GRAPH_REPORT.md` menciona nodos reales del ejemplo.
 - `graphify-out/graph.json` se actualiza.
 - El reporte ayuda a ubicar componentes, no a reemplazar OpenSpec.
-- Si el reporte esta stale, se marca como derivado stale y no se usa como base de decision.
+- Si el reporte esta desactualizado, se marca como derivado desactualizado y no se usa como base de decision.
 
 ## Sin Graphify vs Con Graphify
 
 | Modo | Contexto inicial | Uso esperado | Riesgo |
 |---|---|---|---|
 | Sin Graphify | `PROJECT_GUIDE.md`, `CONTEXT_INDEX.md`, OpenSpec relevante | Bueno para cambios locales o reglas claras. | Puede requerir mas exploracion si el impacto cruza modulos. |
-| Con Graphify | Contexto inicial + `graphify-out/GRAPH_REPORT.md` | Bueno para onboarding, impacto transversal o refactors. | Puede agregar ruido si la tarea ya era local y clara. |
+| Con Graphify | Contexto inicial + `graphify-out/GRAPH_REPORT.md` | Bueno para incorporacion tecnica, impacto transversal o refactors. | Puede agregar ruido si la tarea ya era local y clara. |
 
 Ejemplo practico: si cambia la prioridad de seguridad, primero consulta OpenSpec. Usa Graphify solo si necesitas ubicar que modulos y tests implementan esa regla.
 
@@ -122,4 +122,4 @@ Usar esta plantilla cuando se quiera comparar trabajo manual contra trabajo con 
 
 ## Cierre Esperado
 
-La validacion es satisfactoria cuando el sample puede ejecutarse, las fuentes de autoridad son claras, Graphify se mantiene derivado y una persona puede explicar que leer para una tarea sin cargar el repo completo.
+La validacion es satisfactoria cuando el ejemplo puede ejecutarse, las fuentes de autoridad son claras, Graphify se mantiene derivado y una persona puede explicar que leer para una tarea sin cargar el repo completo.

@@ -1,35 +1,35 @@
-﻿# System Architecture
+﻿# Arquitectura del Sistema
 
-> Stable technical architecture for the project template. Becomes canonical only inside an active project.
+> Arquitectura tecnica estable para la plantilla de proyecto. Se vuelve canonica solo dentro de un proyecto activo.
 
-## Purpose
+## Proposito
 
-Describe the stable technical shape of the project: components, boundaries, data, integrations and validation strategy.
+Describe la forma tecnica estable del proyecto: componentes, limites, datos, integraciones y estrategia de validacion.
 
-## Stable Sources
+## Fuentes Estables
 
-- Functional behavior: `openspec/specs/*/spec.md`
-- Active changes: `openspec/changes/*`
-- Decisions: `decisions/decision_log.md` and ADRs
-- Compact memory: `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`
+- Comportamiento funcional: `openspec/specs/*/spec.md`
+- Cambios activos: `openspec/changes/*`
+- Decisiones: `decisions/decision_log.md` y ADRs
+- Memoria compacta: `memory/facts.md`, `memory/constraints.md`, `memory/patterns.md`
 
-## Components
+## Componentes
 
-| Component | Role |
+| Componente | Rol |
 |---|---|
-| Application | TBD |
-| Data | TBD |
-| Tests | TBD |
-| Tooling | TBD |
+| Aplicacion | Por definir |
+| Datos | Por definir |
+| Tests | Por definir |
+| Herramientas | Por definir |
 
-## Data and Runtime State
+## Datos y Estado de Ejecucion
 
-Document runtime data here only when it is stable architecture. Runtime data is not automatically canonical.
+Documentar datos de ejecucion aqui solo cuando sean arquitectura estable. Los datos de ejecucion no son automaticamente canonicos.
 
-## Validation
+## Validacion
 
-List the commands or checks that prove the architecture still works.
+Listar los comandos o revisiones que prueban que la arquitectura sigue funcionando.
 
-## Rule
+## Regla
 
-Do not duplicate functional requirements here. Link to OpenSpec instead.
+No duplicar requirements funcionales aqui. Enlazar a OpenSpec en su lugar.

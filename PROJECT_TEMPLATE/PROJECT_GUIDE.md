@@ -1,29 +1,29 @@
 ﻿# PROJECT_GUIDE.md
 
-> Template. Becomes canonical only inside an active project.
+> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
 
-## Purpose
+## Proposito
 
-Describe project identity, users, scope, structure, stack and important constraints.
+Describe identidad del proyecto, usuarios, alcance, estructura, stack y restricciones importantes.
 
-## Identity
+## Identidad
 
-- Name:
-- Primary user:
-- Problem solved:
+- Nombre:
+- Usuario principal:
+- Problema que resuelve:
 
-## Scope
+## Alcance
 
-- Included:
-- Out of scope:
+- Incluido:
+- Fuera de alcance:
 
-## Structure
+## Estructura
 
-- `openspec/`: functional truth and active changes.
-- `docs/architecture/system.md`: stable architecture.
-- `decisions/`: decision index and ADRs.
-- `memory/`: compact facts, constraints and patterns.
-- `graphify-out/`: derived context.
+- `openspec/`: verdad funcional y cambios activos.
+- `docs/architecture/system.md`: arquitectura estable.
+- `decisions/`: indice de decisiones y ADRs.
+- `memory/`: hechos, restricciones y patrones compactos.
+- `graphify-out/`: contexto derivado.
 
 ## Stack
 
@@ -32,12 +32,12 @@ Describe project identity, users, scope, structure, stack and important constrai
 - Data:
 - Hosting:
 
-## Constraints
+## Restricciones
 
-- Technical:
-- Business:
-- Security:
+- Tecnicas:
+- Negocio:
+- Seguridad:
 
-## Rule
+## Regla
 
-Do not put functional rules here. Link to OpenSpec instead.
+No poner reglas funcionales aqui. Enlazar a OpenSpec en su lugar.

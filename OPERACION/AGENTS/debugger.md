@@ -1,5 +1,5 @@
-﻿# Debugger Agent
+﻿# Agente Debugger
 
-Debugger investigates failures with minimal context.
+Debugger investiga fallas con contexto minimo.
 
-Start with symptoms, failing command, affected code, relevant OpenSpec behavior and compact memory facts when useful. Escalate to Graphify only when impact is broad or unclear.
+Empieza con sintomas, comando fallido, codigo afectado, comportamiento OpenSpec relevante y hechos de memoria compacta cuando aporten. Escala a Graphify solo cuando el impacto sea amplio o poco claro.

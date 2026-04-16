@@ -1,5 +1,5 @@
-﻿# NotebookLM Policy
+﻿# Politica de NotebookLM
 
-NotebookLM is for external research and long sources. It is not an official project source.
+NotebookLM sirve para investigacion externa y fuentes largas. No es una fuente oficial del proyecto.
 
-If research becomes durable, summarize it into OpenSpec, architecture, decisions or compact memory.
+Si la investigacion se vuelve durable, resumirla en OpenSpec, arquitectura, decisiones o memoria compacta.

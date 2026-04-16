@@ -1,27 +1,27 @@
-﻿# Example Capability Spec
+﻿# Spec de Capacidad de Ejemplo
 
-> OpenSpec template. Becomes canonical only inside an active project.
+> Plantilla OpenSpec. Se vuelve canonica solo dentro de un proyecto activo.
 
-## Purpose
+## Proposito
 
-Describe the approved user-visible behavior for one project capability.
+Describe el comportamiento aprobado y visible para usuarios de una capacidad del proyecto.
 
 ## Requirements
 
-### Requirement: Approved behavior is explicit
+### Requirement: El comportamiento aprobado es explicito
 
-The system SHALL keep functional behavior in OpenSpec so humans and agents can find the current rule without loading unrelated documents.
+El sistema SHALL mantener comportamiento funcional en OpenSpec para que humanos y agentes encuentren la regla vigente sin cargar documentos no relacionados.
 
-#### Scenario: Successful action
+#### Scenario: Accion exitosa
 
-- WHEN the actor performs a supported action
-- THEN the system returns the approved result
+- WHEN el actor realiza una accion soportada
+- THEN el sistema devuelve el resultado aprobado
 
-#### Scenario: Rejected action
+#### Scenario: Accion rechazada
 
-- WHEN the actor provides unsupported input
-- THEN the system rejects it with a clear outcome
+- WHEN el actor entrega una entrada no soportada
+- THEN el sistema la rechaza con un resultado claro
 
-## Notes
+## Notas
 
-Keep implementation details in `docs/architecture/system.md` or in a change design.
+Mantener detalles de implementacion en `docs/architecture/system.md` o en el `design.md` de un cambio.
