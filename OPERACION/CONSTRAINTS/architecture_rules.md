@@ -1,55 +1,20 @@
-# CONSTRAINTS: Arquitectura y Estructura
+﻿# CONSTRAINTS: Architecture
 
-## Separacion Obligatoria
-
-> [!IMPORTANT]
-> `PROJECT_TEMPLATE/` es molde, no fuente de verdad operativa.
-
-- El framework global reusable vive en este repo.
-- Un proyecto activo real vive en un repo instanciado desde `PROJECT_TEMPLATE/`.
-- Obsidian y NotebookLM son conocimiento satelite, no nucleo oficial.
-
-## Proyecto Activo
-
-Todo proyecto instanciado debe tener:
+## Required Project Base
 
 - `AGENTS.md`
 - `PROJECT_GUIDE.md`
 - `CONTEXT_INDEX.md`
-- `tasks/current/active_task.md`
+- `openspec/specs/*/spec.md`
+- `docs/architecture/system.md`
 - `decisions/decision_log.md`
-- `memory/project_facts.md`
+- `memory/facts.md`
+- `memory/constraints.md`
+- `memory/patterns.md`
 
-> [!WARNING]
-> Si falta alguno, el proyecto esta incompleto para operacion disciplinada.
+## Rules
 
-## Fuente de Verdad
-
-- Estructura del proyecto: `PROJECT_GUIDE.md`
-- Ruta de consulta: `CONTEXT_INDEX.md`
-- Trabajo actual: `tasks/current/active_task.md`
-- Decisiones: `decisions/decision_log.md`
-- Hechos vigentes: `memory/project_facts.md`
-- Diseno tecnico: `docs/architecture/sdd.md`
-- Contexto estructural derivado: `graphify-out/*`
-
-## Graphify
-
-- Graphify puede orientar exploracion arquitectonica, onboarding y refactors.
-- Graphify no reemplaza SDD, decision log, spec ni memoria.
-- En tareas estructurales, usar Graphify antes de exploracion amplia de modulos.
-
-## No Ruido
-
-- No crear documentos que ningun agente o humano usara.
-- Todo documento operativo debe aparecer en `CONTEXT_INDEX.md`.
-- No mantener duplicacion por respeto historico.
-
-## Seguridad Basica
-
-> [!WARNING]
-> No guardar credenciales reales en Markdown, logs o decisiones.
-
-- Referenciar secretos, no escribirlos.
-- Mantener `.env.example` con valores dummy cuando aplique.
-- Excluir `.env`, `.env.*` y credenciales locales cuando el proyecto use Git.
+- OpenSpec governs functional behavior and active changes.
+- Stable architecture lives in one system document.
+- Decisions stay short unless an ADR is justified.
+- Graphify is derived and cannot override canonical sources.

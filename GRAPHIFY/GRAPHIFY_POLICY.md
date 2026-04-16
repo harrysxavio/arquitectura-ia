@@ -1,65 +1,31 @@
-# Politica Oficial de Graphify
+﻿# Politica Oficial de Graphify
 
 ## Rol
 
-Graphify es la capa central de contexto estructural persistente. Su funcion es orientar navegacion, onboarding, investigacion interna, analisis de impacto y refactors amplios.
+Graphify is derived structural context. It helps with navigation, onboarding, impact analysis and broad refactors.
 
-> [!IMPORTANT]
-> Sus outputs son derivados. Ayudan a leer mejor el repo, pero no reemplazan documentos canonicos.
+## Authority
 
-## Prioridad
+Graphify is never canonical. It does not replace:
 
-> [!TIP]
-> Usa Graphify cuando el problema sea estructural, transversal o ambiguo.
+- OpenSpec specs
+- OpenSpec changes
+- stable architecture
+- decisions
+- compact memory
 
-Usar Graphify con prioridad alta en:
+## When to Use
 
-- arquitectura,
-- onboarding,
-- investigacion interna del repo,
-- impacto transversal,
-- refactors amplios,
-- tareas ambiguas,
-- revision multi-modulo.
+Use Graphify for:
 
-No usarlo por defecto en:
+- broad architecture questions;
+- unclear ownership;
+- multi-module impact;
+- onboarding;
+- refactors where navigation cost is high.
 
-- typos,
-- cambios locales obvios,
-- ajustes visuales menores,
-- renombres acotados,
-- fixes con archivo afectado ya claro.
+Do not use it by default for local edits, typos or obvious one-file changes.
 
-## Orden en Tareas Estructurales
+## Governance
 
-Para tareas estructurales o ambiguas, Graphify entra despues del contexto base y del router, pero antes de exploracion amplia:
-
-1. `PROJECT_GUIDE.md`
-2. `CONTEXT_INDEX.md`
-3. `tasks/current/active_task.md`
-4. `OPERACION/CONTEXT_ROUTER.md`
-5. `graphify-out/GRAPH_REPORT.md` o `graphify-out/graph.json`
-6. `docs/product/spec.md`
-7. `docs/architecture/sdd.md`
-8. `decisions/decision_log.md`
-9. `memory/constraints.md` y `memory/patterns.md`
-10. Modulos impactados
-
-## Limites
-
-> [!WARNING]
-> Si Graphify esta desactualizado, debe marcarse como stale y regenerarse antes de usarlo para decisiones estructurales.
-
-- No es fuente de verdad oficial.
-- No reemplaza `PROJECT_GUIDE.md`.
-- No reemplaza `CONTEXT_INDEX.md`.
-- No reemplaza `spec.md`, `sdd.md`, `decision_log.md` ni memoria oficial.
-
-## Gobernanza
-
-Si Graphify revela una relacion o patron que debe gobernar el proyecto, registrar esa informacion en:
-
-- `CONTEXT_INDEX.md`,
-- `docs/architecture/sdd.md`,
-- `decisions/decision_log.md`,
-- `memory/patterns.md`.
+If Graphify reveals a relation that should govern the project, validate it against source files and then record it in OpenSpec, architecture, decisions or memory.

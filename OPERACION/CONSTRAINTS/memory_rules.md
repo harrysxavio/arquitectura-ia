@@ -1,43 +1,15 @@
-# CONSTRAINTS: Memoria y Persistencia
+﻿# CONSTRAINTS: Memory
 
-## Fuentes Oficiales de Memoria
+## Official Memory
 
-- `memory/project_facts.md`: hechos vigentes.
-- `memory/constraints.md`: restricciones tecnicas, de negocio, acceso, seguridad o costo.
-- `memory/known_issues.md`: problemas conocidos y workarounds.
-- `memory/patterns.md`: patrones aprobados.
-- `memory/glossary.md`: terminos del dominio.
-- `decisions/decision_log.md`: decisiones cronologicas.
+- `memory/facts.md`: confirmed facts and current issues.
+- `memory/constraints.md`: current technical, business, security and cost limits.
+- `memory/patterns.md`: approved patterns and anti-patterns.
+- `memory/glossary.md`: optional domain terms.
+- `decisions/decision_log.md`: short index of approved decisions.
 
-## Regla de No Duplicacion
+## Rules
 
-> [!IMPORTANT]
-> Una idea debe vivir en un solo lugar canonico. Si aparece en Graphify, Obsidian o research externo y debe gobernar el proyecto, debe volver al repo en la fuente oficial correspondiente.
-
-## Graphify
-
-> [!NOTE]
-> `graphify-out/*` es memoria estructural derivada, no memoria canonica.
-
-- Puede ayudar a descubrir relaciones, dependencias y zonas de impacto.
-- No debe usarse para sustituir decisiones, hechos, restricciones o patrones aprobados.
-
-## Conocimiento Satelite
-
-- Obsidian: notas personales, mapas, comparativas y visualizacion humana. No es fuente oficial.
-- NotebookLM: research sobre fuentes externas. No es memoria viva del repo.
-- El repo del proyecto activo es siempre la fuente oficial para tareas, decisiones, memoria y documentacion tecnica.
-
-## Actualizacion
-
-> [!TIP]
-> Al cerrar una tarea importante, revisa si corresponde actualizar memoria o decisiones.
-
-Al cerrar una tarea importante, evaluar si corresponde actualizar:
-
-- `decisions/decision_log.md`
-- `memory/project_facts.md`
-- `memory/constraints.md`
-- `memory/known_issues.md`
-- `memory/patterns.md`
-- `CONTEXT_INDEX.md`
+- Memory is compact, current and actionable.
+- Memory does not duplicate OpenSpec or architecture.
+- Derived context must be validated before becoming memory.

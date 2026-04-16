@@ -1,20 +1,14 @@
-# Decision Log
+﻿# Decision Log
 
-> Ejemplo rellenado. Registro cronologico de decisiones aprobadas.
+> Short index of approved, current decisions for SAMPLE_PROJECT.
 
-## Registro
+| Date | Decision | Impact | Reference |
+|---|---|---|---|
+| 2026-04-13 | Keep functional behavior in versioned project docs before automation. | The CLI implements approved behavior instead of governing it. | `decisions/adr/0001-documentar-triage-en-markdown.md` |
+| 2026-04-13 | Treat Graphify as derived context only. | `graphify-out/` can guide navigation but cannot override OpenSpec or decisions. | `GRAPHIFY/GRAPHIFY_POLICY.md` |
+| 2026-04-13 | Keep the automation minimal and pedagogical. | `app.py`, `src/`, `tests/` and `data/` remain example assets, not production scaffolding. | `docs/architecture/system.md` |
+| 2026-04-16 | Adopt OpenSpec-first architecture for the sample. | Functional authority moves to `openspec/specs/support-requests/spec.md`; active change flow moves to `openspec/changes/*`. | `openspec/changes/add-security-priority/proposal.md` |
 
-| Fecha | Decision | Motivo | Impacto | Referencia |
-|---|---|---|---|---|
-| 2026-04-13 | Mantener el flujo de triage en Markdown canonico antes de automatizar. | El equipo necesita claridad operativa antes de implementar comportamiento. | `docs/product/spec.md` gobierna reglas; la automatizacion minima debe alinearse con esa fuente. | `decisions/adr/0001-documentar-triage-en-markdown.md` |
-| 2026-04-13 | Tratar Graphify como contexto derivado, no como fuente de verdad. | Evita que un reporte stale contradiga la spec o memoria vigente. | `graphify-out/*` vive en `SAMPLE_PROJECT/` como output derivado. | `GRAPHIFY/GRAPHIFY_POLICY.md` |
-| 2026-04-13 | Implementar automatizacion minima alineada con Markdown canonico. | Se necesita un laboratorio real para validar Graphify sin construir producto grande. | `app.py`, `src/`, `tests/` y `data/requests.json` pasan a existir como ejemplo funcional pedagogico. | `decisions/adr/0001-documentar-triage-en-markdown.md` |
-| 2026-04-13 | Mantener guias de validacion como extras pedagogicos del sample. | Validan el framework sin convertir el template en app ni en suite obligatoria. | `VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md` y `CHAT_SCENARIOS.md` no se agregan a `PROJECT_TEMPLATE/`. | `PROJECT_BLUEPRINT/PROJECT_STRUCTURE_EXAMPLE.md` |
+## Rule
 
-## Detalle Opcional
-
-La primera decision evita automatizar reglas no documentadas. La automatizacion minima actual no reemplaza la spec: la implementa para validar el framework y Graphify en un proyecto pequeno.
-
-## Nota de uso
-
-No registrar conversaciones ni ideas descartadas sin decision. Si una decision crea una restriccion vigente, actualizar tambien `memory/constraints.md`.
+Keep this file as a short index. Use ADRs for structural decisions and OpenSpec changes for active change rationale.

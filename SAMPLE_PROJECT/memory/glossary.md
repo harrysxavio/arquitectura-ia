@@ -1,22 +1,10 @@
-# Glossary
+﻿# Glossary
 
-> Ejemplo rellenado. Terminos del dominio.
+> Terms used in the SAMPLE_PROJECT support desk example.
 
-## Terminos
-
-| Termino | Definicion |
+| Term | Meaning |
 |---|---|
-| Solicitud interna | Pedido creado por un equipo interno para resolver una necesidad operativa. |
-| Triage | Revision inicial para clasificar tipo, prioridad y responsable. |
-| Prioridad alta | Solicitud que requiere atencion rapida por impacto operativo o seguridad. |
-| Prioridad critica | Solicitud que bloquea operacion esencial y requiere respuesta inmediata. |
-| Bloqueada | Solicitud que no puede avanzar hasta resolver una dependencia o falta de informacion. |
-| Nota de cierre | Resumen breve que explica como se resolvio o por que se cerro la solicitud. |
-| Fuente canonica | Documento que gobierna una regla, decision o hecho vigente. |
-| Contexto derivado | Informacion generada para orientar lectura, como Graphify, sin autoridad canonica. |
-| Persistencia runtime | Datos locales usados por la ejecucion del ejemplo, como `data/requests.json`, sin autoridad canonica. |
-| Mini app pedagogica | Aplicacion pequena y ejecutable para aprender y validar el framework, no una plantilla productiva. |
-
-## Nota de uso
-
-No duplicar definiciones extensas de producto. Si un termino implica una regla de negocio, documentarla en `docs/product/spec.md`.
+| Support request | Internal operations request tracked by the sample CLI. |
+| Triage | Classification and priority review before assignment. |
+| Runtime data | Local example data used by the CLI, without canonical authority. |
+| Derived context | Generated navigation help, such as Graphify output, without authority. |

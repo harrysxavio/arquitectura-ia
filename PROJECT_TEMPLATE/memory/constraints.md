@@ -1,38 +1,21 @@
-# Constraints
+﻿# Constraints
 
-> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+> Compact constraints for a project instantiated from this template.
 
-## Proposito
+## Technical
 
-Registrar restricciones vigentes que limitan decisiones o implementaciones.
+- Keep functional behavior in OpenSpec.
+- Keep stable architecture in `docs/architecture/system.md`.
+- Keep Graphify derived.
 
-## Como llenarlo
+## Business
 
-Escribir restricciones concretas y accionables. Evitar preferencias blandas que no cambian la ejecucion.
+- TBD
 
-## Ejemplo minimo
+## Security
 
-```text
-Seguridad: No guardar tokens externos en Markdown.
-Costo: No agregar servicios pagos sin decision documentada.
-```
+- Do not store real secrets, credentials or tokens in Markdown.
 
-## Tecnicas
+## Cost
 
--
-
-## Negocio
-
--
-
-## Seguridad
-
--
-
-## Costo
-
--
-
-## Nota de uso
-
-Cuando una restriccion provenga de una decision, enlazar o mencionar la referencia en `decisions/decision_log.md`.
+- TBD

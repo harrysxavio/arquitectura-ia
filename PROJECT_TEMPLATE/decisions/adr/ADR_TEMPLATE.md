@@ -1,39 +1,22 @@
-# ADR: Titulo de la decision
+﻿# ADR Template
 
-> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+## Status
 
-## Proposito
+Proposed | Accepted | Superseded
 
-Documentar una decision arquitectonica que necesita mas contexto que una fila del `decision_log.md`.
+## Context
 
-## Como llenarlo
-
-Usar cuando la decision afecta estructura, contratos, datos, integraciones, seguridad o costos. Mantener una ADR por decision principal.
-
-## Ejemplo minimo
-
-```text
-Decision: Usar PostgreSQL como base principal.
-Motivo: Necesitamos integridad relacional y consultas transaccionales.
-Impacto: Los reportes analiticos se resolveran fuera del flujo transaccional.
-```
-
-## Estado
-
-`propuesta | aceptada | reemplazada | descartada`
-
-## Contexto
+What problem, constraint or tradeoff requires a durable architectural decision?
 
 ## Decision
 
-## Alternativas consideradas
+What has been approved?
 
--
+## Consequences
 
-## Consecuencias
+What changes for implementation, operation, cost, risk or future decisions?
 
-## Referencias
+## References
 
-## Nota de uso
-
-Si esta ADR reemplaza otra decision, enlazar la decision anterior y actualizar `decisions/decision_log.md`.
+- OpenSpec change:
+- Related specs:

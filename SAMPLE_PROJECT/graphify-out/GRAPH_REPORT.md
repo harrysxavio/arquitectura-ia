@@ -1,12 +1,12 @@
-# Graph Report - .  (2026-04-13)
+# Graph Report - .  (2026-04-16)
 
 ## Corpus Check
-- 13 files · ~12,630 words
+- 13 files · ~4,391 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 72 nodes · 130 edges · 9 communities detected
-- Extraction: 63% EXTRACTED · 37% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.5)
+- 72 nodes · 128 edges · 10 communities detected
+- Extraction: 62% EXTRACTED · 38% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -19,6 +19,7 @@
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `RequestType` - 13 edges
@@ -51,12 +52,12 @@ Cohesion: 0.25
 Nodes (11): Priority, RequestStatus, RequestType, Data models for the support desk example., SupportRequest, Application service for support desk requests., Raised when a request id is not present in storage., RequestNotFoundError (+3 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.2
-Nodes (5): Enum, Enumerations for the support desk domain., String enum with a compact parser for CLI and JSON inputs., TextEnum, str
-
-### Community 2 - "Community 2"
 Cohesion: 0.22
 Nodes (2): Formatting helpers for CLI output., JSON storage for the runtime example data.
+
+### Community 2 - "Community 2"
+Cohesion: 0.29
+Nodes (5): Enum, Enumerations for the support desk domain., String enum with a compact parser for CLI and JSON inputs., TextEnum, str
 
 ### Community 3 - "Community 3"
 Cohesion: 0.43
@@ -80,6 +81,10 @@ Nodes (1): Small utilities for the support desk example.
 
 ### Community 8 - "Community 8"
 Cohesion: 0.67
+Nodes (0): 
+
+### Community 9 - "Community 9"
+Cohesion: 0.67
 Nodes (1): Tests for SAMPLE_PROJECT.
 
 ## Knowledge Gaps
@@ -89,12 +94,12 @@ Nodes (1): Tests for SAMPLE_PROJECT.
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `RequestType` connect `Community 0` to `Community 2`, `Community 3`, `Community 4`, `Community 5`, `Community 6`?**
+  _High betweenness centrality (0.185) - this node is a cross-community bridge._
 - **Why does `SupportDeskServiceTest` connect `Community 3` to `Community 0`, `Community 4`?**
   _High betweenness centrality (0.176) - this node is a cross-community bridge._
-- **Why does `RequestType` connect `Community 0` to `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 6`?**
-  _High betweenness centrality (0.166) - this node is a cross-community bridge._
-- **Why does `SupportDeskService` connect `Community 4` to `Community 0`, `Community 2`, `Community 3`, `Community 6`?**
-  _High betweenness centrality (0.165) - this node is a cross-community bridge._
+- **Why does `SupportDeskService` connect `Community 4` to `Community 0`, `Community 1`, `Community 3`, `Community 6`?**
+  _High betweenness centrality (0.164) - this node is a cross-community bridge._
 - **Are the 11 inferred relationships involving `RequestType` (e.g. with `CLI for the SAMPLE_PROJECT support desk example.` and `SupportRequest`) actually correct?**
   _`RequestType` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 11 inferred relationships involving `SupportRequest` (e.g. with `Priority` and `RequestStatus`) actually correct?**

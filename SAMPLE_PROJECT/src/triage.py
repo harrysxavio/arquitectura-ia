@@ -1,4 +1,4 @@
-"""Triage rules aligned with docs/product/spec.md."""
+"""Triage rules aligned with OpenSpec support request behavior."""
 
 from __future__ import annotations
 

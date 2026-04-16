@@ -1,28 +1,21 @@
-# Patterns
+﻿# Patterns
 
-> Ejemplo rellenado. Patrones aprobados y anti-patrones del proyecto.
+> Compact approved patterns and anti-patterns for the SAMPLE_PROJECT support desk example.
 
-## Patrones Aprobados
+## Approved
 
-- Documentar reglas funcionales primero en `docs/product/spec.md`.
-- Reflejar reglas documentadas en automatizacion minima solo despues de fijar la fuente canonica.
-- Registrar decisiones duraderas en `decisions/decision_log.md`.
-- Usar ADR cuando una decision tenga alternativas, impacto o riesgo.
-- Mantener memoria breve, vigente y accionable.
-- Convertir insumos externos a Markdown con MarkItDown solo si aportan contexto real.
-- Usar Graphify para orientacion estructural, no para gobernar reglas.
-- Usar `graphify update .` desde `SAMPLE_PROJECT/` como comando principal de regeneracion Graphify.
-- Usar `unittest` y biblioteca estandar para mantener bajo el costo del ejemplo.
+- Document functional behavior in `openspec/specs/support-requests/spec.md`.
+- Represent active work in `openspec/changes/*`.
+- Reflect approved functional behavior in the small CLI automation.
+- Keep decisions brief in `decisions/decision_log.md` and use ADRs for structural decisions.
+- Keep memory short, current and actionable.
+- Use Graphify for navigation and impact analysis only.
+- Use `unittest` and the Python standard library.
 
-## Anti-Patrones
+## Avoid
 
-- Implementar una API antes de estabilizar reglas de triage.
-- Tratar `data/requests.json` como fuente canonica.
-- Copiar contenido convertido por MarkItDown directamente a memoria canonica sin revisar.
-- Tratar `SAMPLE_PROJECT/` como plantilla de produccion.
-- Usar `graphify-out/*` como fuente de verdad.
-- Duplicar teoria de `THEORY/` dentro del proyecto ejemplo.
-
-## Nota de uso
-
-Si un patron nace de una decision relevante, registrar tambien la decision en `decisions/decision_log.md`.
+- Building a production API or UI inside the sample.
+- Treating runtime JSON as canonical.
+- Copying external research directly into canonical docs without review.
+- Treating `SAMPLE_PROJECT/` as a production template.
+- Duplicating theory inside the sample.

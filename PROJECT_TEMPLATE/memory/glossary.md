@@ -1,27 +1,9 @@
 ﻿# Glossary
 
-> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+> Optional. Use only when the domain has ambiguous terms.
 
-## Proposito
-
-Definir terminos del dominio para reducir ambiguedad entre humanos, agentes y documentacion.
-
-## Como llenarlo
-
-Agregar solo terminos que puedan causar confusion o que tengan significado especifico en el proyecto.
-
-## Ejemplo minimo
-
-| Termino | Definicion |
+| Term | Meaning |
 |---|---|
-| Cliente bloqueado | Cliente que no puede crear nuevas ordenes hasta resolver su estado. |
-
-## Terminos
-
-| Termino | Definicion |
-|---|---|
-|  |  |
-
-## Nota de uso
-
-No duplicar definiciones extensas de producto. Si un termino implica una regla de negocio, documentarla en `docs/product/spec.md`.
+| Capability | A coherent area of user-visible behavior described by an OpenSpec spec. |
+| Change | A proposed modification under `openspec/changes/*`. |
+| Derived context | Generated navigation help, such as Graphify output, without authority. |

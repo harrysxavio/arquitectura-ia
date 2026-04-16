@@ -1,32 +1,26 @@
-# Constraints
+﻿# Constraints
 
-> Ejemplo rellenado. Restricciones vigentes que limitan decisiones.
+> Compact constraints for the SAMPLE_PROJECT support desk example.
 
-## Tecnicas
+## Technical
 
-- No construir una app completa ni productiva dentro de `SAMPLE_PROJECT/`.
-- No agregar dependencias runtime externas para la mini app.
-- Mantener `src/` pequeno y alineado con la documentacion canonica.
-- No tratar `data/requests.json` como fuente canonica.
-- No usar `graphify-out/*` como fuente de verdad.
+- Do not turn the sample into a production app.
+- Do not add runtime dependencies for the mini app.
+- Keep code small and aligned with OpenSpec.
+- Do not treat runtime JSON as canonical.
+- Do not treat Graphify output as a source of truth.
 
-## Negocio
+## Business
 
-- El ejemplo cubre solo solicitudes internas de operaciones.
-- No modelar soporte a clientes finales.
-- No registrar datos reales de personas, clientes ni incidentes.
+- Cover only internal operations support requests.
+- Do not model external customer support.
+- Do not store real person, customer or incident data.
 
-## Seguridad
+## Security
 
-- No guardar credenciales, tokens ni secretos en Markdown.
-- `.env.example` puede mostrar nombres de variables ficticias, nunca valores reales.
-- Solicitudes de seguridad deben partir con prioridad alta.
+- Do not store credentials, tokens or secrets in Markdown.
+- `.env.example` may contain dummy variable names only.
 
-## Costo
+## Cost
 
-- No agregar servicios pagos ni hosting.
-- No asumir servicios pagos ni hosting. Graphify puede requerir instalacion local para regenerar `graphify-out/`.
-
-## Nota de uso
-
-Cuando una restriccion provenga de una decision, enlazar o mencionar la referencia en `decisions/decision_log.md`.
+- Do not add paid services or hosting.

@@ -1,60 +1,26 @@
-# AGENTS.md
+﻿# AGENTS.md
 
-> Adaptacion local del proyecto ejemplo. No reemplaza los contratos globales de `OPERACION/AGENTS/*.md`.
+> Local agent guidance for SAMPLE_PROJECT.
 
-## Proposito
-
-Definir como se aplican los roles base del framework dentro de la Mesa Interna de Soporte Operativo.
-
-## Relacion con los agentes globales
-
-Los contratos oficiales viven en la raiz del framework:
-
-- `OPERACION/AGENTS/manager.md`
-- `OPERACION/AGENTS/coder.md`
-- `OPERACION/AGENTS/reviewer.md`
-- `OPERACION/AGENTS/debugger.md`
-
-Este archivo solo agrega contexto local. Si contradice los contratos globales, gana el contrato global salvo decision documentada.
-
-## Contexto base local
-
-Todo agente debe empezar con:
+## Context Order
 
 1. `PROJECT_GUIDE.md`
 2. `CONTEXT_INDEX.md`
-3. `tasks/current/active_task.md`
+3. `openspec/specs/support-requests/spec.md`
+4. `openspec/changes/add-security-priority/` when discussing the example change
+5. `docs/architecture/system.md` for technical structure
+6. `decisions/decision_log.md` and `memory/*` only when needed
+7. `graphify-out/*` for derived navigation on broad or ambiguous work
 
-Despues debe cargar solo los documentos que correspondan segun el tipo y nivel de tarea.
+## Role Notes
 
-## Roles Base
+- Manager: classify the task and choose minimal context.
+- Coder: implement only within the approved OpenSpec and architecture boundaries.
+- Reviewer: verify changes against OpenSpec, architecture, decisions and tests.
+- Debugger: inspect symptoms, code and compact memory before widening scope.
 
-- Manager: clasifica tarea y contexto.
-- Coder: implementa cambios documentales o codigo minimo dentro del alcance.
-- Reviewer: revisa calidad, coherencia y evidencia.
-- Debugger: investiga fallos o contradicciones con evidencia.
+## Rules
 
-## Ajustes Locales
-
-- Manager:
-  - confirmar si la tarea es documental, funcional, tecnica o de memoria;
-  - no cargar `graphify-out/` salvo tarea estructural o ambigua;
-  - usar `CONTEXT_INDEX.md` para decidir fuentes.
-- Coder:
-  - tratar `docs/product/spec.md` como verdad funcional;
-  - tratar `docs/architecture/sdd.md` como verdad tecnica cuando aplique;
-  - mantener `src/` como automatizacion minima y pedagogica;
-  - no tratar `data/requests.json` como fuente canonica.
-- Reviewer:
-  - validar que cambios de reglas tambien actualicen decision o memoria si corresponde;
-  - verificar que Graphify no se use como fuente canonica;
-  - verificar que `VALIDATION_GUIDE.md` siga permitiendo probar app y Graphify;
-  - revisar que el ejemplo siga alineado con `PROJECT_TEMPLATE/`.
-- Debugger:
-  - revisar primero `memory/known_issues.md`;
-  - documentar causa raiz si un fallo se vuelve relevante para futuras tareas;
-  - no convertir un bug puntual en redisenio amplio.
-
-## Nota de uso
-
-No crear agentes nuevos para este ejemplo. Si aparece una necesidad repetible, documentarla como patron o workflow antes de convertirla en rol.
+- Do not use runtime JSON as authority.
+- Do not use Graphify as authority.
+- Do not expand the sample into a production system without a new approved change.

@@ -1,45 +1,30 @@
-# CONTEXT_INDEX.md
+﻿# CONTEXT_INDEX.md
 
-> Ejemplo rellenado. Mapea fuentes oficiales para cargar solo el contexto necesario.
+> Official source map for SAMPLE_PROJECT.
 
-## Proposito
-
-Indicar que documento consultar segun la necesidad de trabajo dentro de la Mesa Interna de Soporte Operativo funcional y pedagogica.
-
-## Fuentes Oficiales
-
-| Necesidad | Archivo | Uso |
+| Need | File | Use |
 |---|---|---|
-| Onboarding del ejemplo | `README.md` | Guia paso a paso para principiantes. |
-| Identidad del proyecto | `PROJECT_GUIDE.md` | Entrada base del proyecto y alcance. |
-| Reglas locales de agentes | `AGENTS.md` | Ajustes locales sin reemplazar `OPERACION/AGENTS/*.md`. |
-| Validacion del ejemplo | `VALIDATION_GUIDE.md` | Pruebas funcionales, documentales y comparativa con Graphify. |
-| Validacion arquitectonica | `ARCHITECTURE_VALIDATION.md` | Prueba del sistema completo: contexto, docs, memoria, decisiones y Graphify. |
-| Escenarios de chat | `CHAT_SCENARIOS.md` | Prompts y trazas para comparar rutas con y sin Graphify. |
-| Reporte de ejecucion | `TEST_EXECUTION_REPORT.md` | Evidencia de comandos ejecutados y resultados observados. |
-| Traza observada | `TRACE_LOG.md` | Registro auditable de contexto cargado, Graphify y resultados por escenario. |
-| Tarea actual | `tasks/current/active_task.md` | Alcance y estado del trabajo activo. |
-| Plan actual | `tasks/current/implementation_plan.md` | Secuencia de ejecucion de la tarea activa. |
-| Preguntas abiertas | `tasks/current/open_questions.md` | Dudas que bloquean o cambian alcance. |
-| Decisiones | `decisions/decision_log.md` | Decisiones aprobadas y su impacto. |
-| ADRs | `decisions/adr/*.md` | Decisiones arquitectonicas extensas. |
-| Hechos vigentes | `memory/project_facts.md` | Datos confirmados del proyecto. |
-| Restricciones | `memory/constraints.md` | Limites tecnicos, negocio, seguridad y costo. |
-| Problemas conocidos | `memory/known_issues.md` | Bugs, deuda o workarounds vigentes. |
-| Patrones aprobados | `memory/patterns.md` | Formas aceptadas de implementar y documentar. |
-| Glosario | `memory/glossary.md` | Terminos del dominio de soporte operativo. |
-| Spec funcional | `docs/product/spec.md` | Verdad funcional del flujo de solicitudes. |
-| Diseno tecnico | `docs/architecture/sdd.md` | Diseno tecnico e integracion con la mini app. |
-| App CLI | `app.py` | Punto de entrada ejecutable para demo, create, list y close. |
-| Codigo funcional | `src/*.py` | Automatizacion minima alineada con spec y SDD. |
-| Tests | `tests/*.py` | Validacion basica de triage, servicio y storage. |
-| Datos runtime | `data/requests.json` | Persistencia local del ejemplo. No canonica. |
-| Graphify | `graphify-out/GRAPH_REPORT.md` | Contexto estructural derivado. No canonico. |
+| Onboarding | `README.md` | Quick start for humans. |
+| Identity and scope | `PROJECT_GUIDE.md` | What this sample is and is not. |
+| Local agent rules | `AGENTS.md` | Agent behavior inside the sample. |
+| Functional truth | `openspec/specs/support-requests/spec.md` | Approved support request behavior. |
+| Active change | `openspec/changes/add-security-priority/proposal.md` | Intent and scope of the example change. |
+| Change design | `openspec/changes/add-security-priority/design.md` | Technical design of the example change. |
+| Change tasks | `openspec/changes/add-security-priority/tasks.md` | Executable checklist. |
+| Stable architecture | `docs/architecture/system.md` | CLI, modules, data and tests. |
+| Decisions | `decisions/decision_log.md` | Short decision index. |
+| ADRs | `decisions/adr/*.md` | Structural decisions. |
+| Facts | `memory/facts.md` | Confirmed compact facts. |
+| Constraints | `memory/constraints.md` | Current limits. |
+| Patterns | `memory/patterns.md` | Approved patterns and anti-patterns. |
+| Glossary | `memory/glossary.md` | Domain terms. |
+| App CLI | `app.py` | Executable demo and commands. |
+| Code | `src/*.py` | Implementation. |
+| Tests | `tests/*.py` | Validation. |
+| Runtime data | `data/requests.json` | Local runtime data, not canonical. |
+| Graphify | `graphify-out/GRAPH_REPORT.md` | Derived context only. |
+| Validation guide | `VALIDATION_GUIDE.md` | How to validate the sample. |
 
-## Nota de uso
+## Rule
 
-Para tareas simples, empezar por `PROJECT_GUIDE.md`, este indice y `tasks/current/active_task.md`. Escalar a `spec.md`, `sdd.md`, decisiones, memoria, codigo o Graphify solo cuando la tarea lo justifique.
-
-Graphify orienta navegacion, pero no reemplaza spec, SDD, decision log ni memoria canonica. `data/requests.json` tampoco es canonico: solo refleja datos runtime del ejemplo.
-
-`VALIDATION_GUIDE.md`, `ARCHITECTURE_VALIDATION.md` y `CHAT_SCENARIOS.md` son guias pedagogicas del laboratorio `SAMPLE_PROJECT/`; no son requisitos obligatorios de `PROJECT_TEMPLATE/`.
+Start from OpenSpec for behavior and from the active change for work in progress. Use Graphify only to navigate.

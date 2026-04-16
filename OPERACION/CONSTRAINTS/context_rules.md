@@ -1,47 +1,13 @@
-# CONSTRAINTS: Reglas de Higiene Contextual
+﻿# CONSTRAINTS: Context Hygiene
 
-Este archivo define reglas generales de contexto. La matriz concreta de que leer por tipo de tarea vive solo en `OPERACION/CONTEXT_ROUTER.md`.
+## Principle
 
-## Principio
+Do not load context because it exists. Load it because the task needs it.
 
-> [!IMPORTANT]
-> No cargar contexto por disponibilidad. Cargarlo por necesidad.
+## Rules
 
-- El contexto minimo es el punto de partida.
-- Cada escalamiento debe justificarse por alcance, riesgo o ambiguedad.
-
-## Niveles
-
-| Nivel | Uso | Regla |
-|---|---|---|
-| 1 | Tarea simple y local | Leer contexto base y archivo afectado |
-| 2 | Cambio funcional o multiarchivo | Agregar spec, constraint o memoria puntual segun router |
-| 3 | Cambio estructural, ambiguo o transversal | Consultar Graphify vigente antes de exploracion amplia |
-
-## Graphify
-
-> [!TIP]
-> En Nivel 3, consulta Graphify vigente antes de explorar documentacion amplia o modulos completos.
-
-- Graphify es contexto estructural persistente y derivado.
-- En Nivel 3 debe consultarse antes de leer documentacion amplia o modulos completos.
-- No se usa por defecto en microcambios locales.
-- Si Graphify contradice una fuente canonica, gana la fuente canonica.
-- Si Graphify revela informacion que debe gobernar el proyecto, esa informacion debe registrarse en `CONTEXT_INDEX.md`, `docs/architecture/sdd.md`, `decisions/decision_log.md` o `memory/patterns.md`.
-
-## Compresion
-
-- Si una investigacion larga produce conocimiento reutilizable, convertirla en artefacto comprimido.
-- Formatos validos: `GRAPH_REPORT.md`, `repo-summary.md`, `module-map.md`, `incident-summary.md`, `decision-summary.md`.
-- No obligar al agente a releer material completo si ya existe un resumen vigente.
-
-## Prohibiciones
-
-> [!WARNING]
-> Estas reglas evitan que el agente use contexto excesivo o fuentes no canonicas.
-
-- Prohibido cargar todo el repo por defecto.
-- Prohibido cargar toda la carpeta `docs/` por defecto.
-- Prohibido cargar todas las decisiones o memorias por si acaso.
-- Prohibido usar `THEORY/` como instruccion de runtime tecnico.
-- Prohibido tratar `PROJECT_TEMPLATE/` como proyecto activo.
+- Start with project guide, context index and relevant OpenSpec source.
+- Add architecture for technical structure.
+- Add memory only for facts, constraints or patterns that affect the task.
+- Add Graphify only for structural, broad or ambiguous work.
+- If Graphify reveals something canonical, write it back to OpenSpec, architecture, decisions or memory after validation.

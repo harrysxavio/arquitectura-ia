@@ -1,39 +1,11 @@
 ﻿# Decision Log
 
-> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+> Template. Short index of approved, current decisions.
 
-## Proposito
+| Date | Decision | Impact | Reference |
+|---|---|---|---|
+| YYYY-MM-DD | TBD | TBD | `decisions/adr/...` or `openspec/changes/...` |
 
-Registrar decisiones aprobadas de forma cronologica y ligera.
+## Rule
 
-## Como llenarlo
-
-Agregar una fila por decision. Usar ADR cuando la decision requiera contexto, alternativas o impacto amplio.
-
-## Ejemplo minimo
-
-| Fecha | Decision | Motivo | Impacto | Referencia |
-|---|---|---|---|---|
-| 2026-01-15 | Validar permisos en servicio, no en UI. | Evita bypass desde clientes externos. | Ajusta tests de API. | `decisions/adr/0001-auth-boundary.md` |
-
-## Registro
-
-| Fecha | Decision | Motivo | Impacto | Referencia |
-|---|---|---|---|---|
-| YYYY-MM-DD |  |  |  |  |
-
-## Detalle Opcional
-
-Usar este bloque solo cuando una decision necesita contexto breve, pero no justifica una ADR completa.
-
-```text
-Fecha: YYYY-MM-DD
-Decision:
-Alternativas consideradas:
-Impacto:
-Referencia:
-```
-
-## Nota de uso
-
-No registrar conversaciones ni ideas descartadas sin decision. Si una decision crea una restriccion vigente, actualizar tambien `memory/constraints.md`.
+Keep this file brief. Use ADRs for structural or high-impact decisions and OpenSpec changes for active change rationale.

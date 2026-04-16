@@ -1,51 +1,43 @@
 ﻿# PROJECT_GUIDE.md
 
-> Plantilla. Se vuelve canonica solo dentro de un proyecto activo.
+> Template. Becomes canonical only inside an active project.
 
-## Proposito
+## Purpose
 
-Describir que es el proyecto, para quien existe, que problema resuelve, cual es su alcance y como esta organizado.
+Describe project identity, users, scope, structure, stack and important constraints.
 
-## Como llenarlo
+## Identity
 
-Completar este archivo primero al instanciar un proyecto. Mantenerlo breve y factual: identidad, alcance, estructura principal, stack y restricciones relevantes.
+- Name:
+- Primary user:
+- Problem solved:
 
-## Ejemplo minimo
+## Scope
 
-```text
-Proyecto: Portal interno de soporte.
-Problema: Centralizar tickets y estado de clientes.
-Stack: Next.js, API REST, PostgreSQL.
-```
+- Included:
+- Out of scope:
 
-## Identidad
+## Structure
 
-- Nombre:
-- Usuario principal:
-- Problema que resuelve:
-
-## Alcance
-
-- Incluido:
-- Fuera de alcance:
-
-## Estructura
-
-Describir carpetas principales del proyecto activo.
+- `openspec/`: functional truth and active changes.
+- `docs/architecture/system.md`: stable architecture.
+- `decisions/`: decision index and ADRs.
+- `memory/`: compact facts, constraints and patterns.
+- `graphify-out/`: derived context.
 
 ## Stack
 
 - Backend:
 - Frontend:
-- Base de datos:
+- Data:
 - Hosting:
 
-## Restricciones
+## Constraints
 
-- Tecnicas:
-- Negocio:
-- Seguridad:
+- Technical:
+- Business:
+- Security:
 
-## Nota de uso
+## Rule
 
-Si este documento contradice archivos mas especificos, actualizar la fuente que corresponda y reflejar el cambio aqui solo si afecta la identidad o estructura general del proyecto.
+Do not put functional rules here. Link to OpenSpec instead.
